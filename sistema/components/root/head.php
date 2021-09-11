@@ -4,6 +4,7 @@
 <script type="text/javascript" src="sistema/js/icons.js"></script>
 
 <link rel="stylesheet" href="sistema/css/style.css">
+<link rel="stylesheet" href="sistema/css/cards.css">
 
 <link rel="icon" type="image/png" href="sistema/images/logos/cropped-logo_bockcao-black-270x270.png" />
 <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>

@@ -198,19 +198,19 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default {
     border-color: transparent !important;
-    background-color: #222;
+    background-color: #222 !important;
 }
 
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fff;
+    color: #fff !important;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #fec503;
+    color: #555;
 }
 
 .navbar-default .navbar-collapse {
@@ -218,17 +218,17 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #850c2c;
-    background-color: #850c2c;
+    border-color: #fff;
+    background-color: #000;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
+    background-color: #000;
 }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #850c2c;
+    background-color: #000;
 }
 
 .navbar-default .nav li a {
@@ -249,13 +249,13 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #555 !important;
-    background-color: #fff !important;
+    background-color: #ccc !important;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #555 !important;
-    background-color: #fff !important; 
+    background-color: #eee !important; 
 }
 
 @media(min-width:768px) {
@@ -402,7 +402,7 @@ section h3.section-subheading {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: #fec50360;
+    background: #22222277;
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -430,6 +430,10 @@ section h3.section-subheading {
 #servicio .servicio-item .servicio-link .servicio-hover .servicio-hover-content h3,
 #servicio .servicio-item .servicio-link .servicio-hover .servicio-hover-content h4 {
     margin: 0;
+}
+
+.servicio-caption{
+    min-height: 100px !important;
 }
 
 #servicio .servicio-item .servicio-caption {
@@ -682,6 +686,26 @@ section h3.section-subheading {
     margin-top: 0;
 }
 
+
+.bg-fix{
+    background-image: url("../images/bg/eee.jpg");
+    background-attachment: fixed;
+    overflow: scroll;
+}
+
+/* section {
+    background-image: url(../images/bg/eee.jpg); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+/* section#about {
+    background-image: url(../images/bg/eee.jpg); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
 /* 
 section#contact {
     background-color: #222;
@@ -908,12 +932,12 @@ ul.social-buttons li a:active {
 
 ::-moz-selection {
     text-shadow: none;
-    background: #fec30360;
+    background: #55555555;
 }
 
 ::selection {
     text-shadow: none;
-    background: #fec30360;
+    background: #55555555;
 }
 
 img::selection {
@@ -924,6 +948,14 @@ img::-moz-selection {
     background: 0 0;
 }
 
-body {
-    webkit-tap-highlight-color: #850c2c;
-}
+
+.img-responsive{
+    width: 100% !important;
+    height: 225px !important;
+    margin-top: 5%;
+  }
+
+  .position-center{
+    text-align: center;
+    text-align: -webkit-center;
+  }
