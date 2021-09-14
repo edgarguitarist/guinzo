@@ -1,7 +1,7 @@
 <div class="container casi90">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2 class="section-heading">SERVICIOS</h2>
+            <h2 class="section-heading">Servicios</h2>
         </div>
     </div>
     <div class="row">

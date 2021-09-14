@@ -6,6 +6,7 @@
     $site = "Inicio";
     include "sistema/components/root/head.php"
     ?>
+    
 </head>
 
 <body>

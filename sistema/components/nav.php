@@ -17,20 +17,20 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden active">
-                    <a href="#page-top"></a>
+                    <a href="index.php#page-top"></a>
                 </li>
                 <li class="">
-                    <a class="page-scroll" href="#servicio"><b>SERVICIOS</b></a>
+                    <a class="page-scroll" href="index.php#servicio"><b>SERVICIOS</b></a>
                 </li>
                 <li class="">
-                    <a class="page-scroll" href="#contact"><b>INFORMACIÓN</b></a>
+                    <a class="page-scroll" href="index.php#contact"><b>INFORMACIÓN</b></a>
                 </li>
 
                 <li class="">
-                    <a class="page-scroll" href="#about"><b>Quienes Somos</b></a>
+                    <a class="page-scroll" href="index.php#about"><b>Quienes Somos</b></a>
                 </li>
                 <li class="">
-                    <a class="page-scroll" href="#myv"><b>Misión y Visión</b></a>
+                    <a class="page-scroll" href="index.php#myv"><b>Misión y Visión</b></a>
                 </li>
 
                 <li class="">

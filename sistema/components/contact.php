@@ -1,13 +1,13 @@
 <div class="container casi90">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2 class="section-heading">INFORMACIÓN</h2>
+            <h2 class="section-heading">Información</h2>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
             <div class="team-member">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15947.9106467947!2d-79.9099018!3d-2.1622025!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2b379a610bc58d8a!2sBockCao%2FAntonio%20Cacao!5e0!3m2!1ses-419!2sec!4v1631305562661!5m2!1ses-419!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15947.9106467947!2d-79.9099018!3d-2.1622025!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2b379a610bc58d8a!2sBockCao%2FAntonio%20Cacao!5e0!3m2!1ses-419!2sec!4v1631305562661!5m2!1ses-419!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="mapa"></iframe>
                 <div align="center" width="100%">
                     <h4>BOCKCAO / Antonio Cacao</h4>
                     <p class="text-muted">Urbanización El Portón, Ed. Alcalá 1, Apt.2, Piso 2, Guayaquil</p>
