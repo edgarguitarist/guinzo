@@ -1,35 +1,28 @@
-<?php //include('header_dashboard.php'); ?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <?php
+    $site = 'Error 404';
+    include('sistema/components/root/head.php');
+    ?>
+</head>
+
 <!-- FIXME: Arreglar la pagina de Error 404 -->
-<body id="class_div">
-    <?php //include('navbar_about.php'); ?>
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span12" id="content">
-                <div class="row-fluid">
-                    <!-- block -->
-                    <div class="block mincon">
-                        <div class="navbar navbar-inner block-header">
-                            <div id="" class="muted pull-right"><a href="javascript:history.back();"><i class="icon-arrow-left"></i> Volver</a></div>
-                        </div>
-                        <div class="block-content collapse in">
-                            <center><h1>Pagina no Encontrada</h1></center>
-                            <hr>                            
-                            <div>
-                                <center>
-                                    <h1 class="error-critic">ERROR</h1>
-                                    <img id="developer_f" src="admin/images/404.gif">
-                                </center>
-                            </div>
-                            <br><br>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php include('footer.php'); ?>
+
+<body>
+    <?php include "sistema/components/nav-404.php" ?>
+    <div class="center">
+        <h1 style="margin-top:10%;"></h1>
+        <img src="sistema/images/logos/cropped-logo_bockcao-black-270x270.png" alt="error-404">
+        <h1>Lo sentimos...</h1>
+        <h2>Pagina no Encontrada!!!</h2>
     </div>
-    <?php include('script.php'); ?>
 </body>
+
+<footer style="position: absolute; bottom: 0;">
+    <?php include "sistema/components/footer.php" ?>
+</footer>
+<?php include "sistema/includes/root/scripts.php" ?>
 
 </html>

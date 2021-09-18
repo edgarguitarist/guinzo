@@ -19,8 +19,9 @@
                 <li class="hidden active">
                     <a href="index.php#page-top"></a>
                 </li>
+                <!-- TODO: Poner iconos en el navbar -->
                 <li class="">
-                    <a class="page-scroll" href="index.php#servicio"><b>SERVICIOS</b></a>
+                    <a class="page-scroll" href="index.php#servicio"><b>SERVICIOS</b></a> 
                 </li>
                 <li class="">
                     <a class="page-scroll" href="index.php#contact"><b>INFORMACIÓN</b></a>

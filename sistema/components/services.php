@@ -1,7 +1,7 @@
 <div class="container casi90">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Servicios</h2>
+            <h2 class="section-heading b-600">Servicios</h2>
         </div>
     </div>
     <div class="row">
@@ -13,7 +13,7 @@
                         <i class="fa fa-search fa-3x"></i>
                     </div>
                 </div>
-                <div class="position-center">
+                <div class="center">
                     <img src="sistema/images/services/encasa.jpeg" class="img-responsive modern" alt="encasa">
                 </div>
             </a>
@@ -30,7 +30,7 @@
                         <i class="fa fa-search fa-3x"></i>
                     </div>
                 </div>
-                <div class="position-center">
+                <div class="center">
                     <img src="sistema/images/services/corporativo.jpg" class="img-responsive modern" alt="corporativo">
                 </div>
             </a>
@@ -47,7 +47,7 @@
                         <i class="fa fa-search fa-3x"></i>
                     </div>
                 </div>
-                <div class="position-center">
+                <div class="center">
                     <img src="sistema/images/services/especial.jpeg" class="img-responsive modern" alt="especial">
                 </div>
             </a>
@@ -64,7 +64,7 @@
                         <i class="fa fa-search fa-3x"></i>
                     </div>
                 </div>
-                <div class="position-center">
+                <div class="center">
                     <img src="sistema/images/services/social.jpg" class="img-responsive modern" alt="social">
                 </div>
             </a>
@@ -81,7 +81,7 @@
                         <i class="fa fa-search fa-3x"></i>
                     </div>
                 </div>
-                <div class="position-center">
+                <div class="center">
                     <img src="sistema/images/services/matrimonio.jpg" class="img-responsive modern" alt="social">
                 </div>
             </a>
@@ -95,7 +95,7 @@
 
     <!-- <div class="card-columns">
         <div class="card border-0">
-            <div class="position-center">
+            <div class="center">
                 <img src="sistema/images/services/encasa.jpeg" class="img-responsive modern" alt="encasa">
             </div>
             <div class="card-body">
@@ -107,7 +107,7 @@
             </div>
         </div>
         <div class="card border-0">
-            <div class="position-center">
+            <div class="center">
                 <img src="sistema/images/services/corporativo.jpg" class="img-responsive modern" alt="corporativo">
             </div>
             <div class="card-body">
@@ -119,7 +119,7 @@
             </div>
         </div>
         <div class="card border-0">
-            <div class="position-center">
+            <div class="center">
                 <img src="sistema/images/services/especial.jpeg" class="img-responsive modern" alt="especial">
             </div>
             <div class="card-body">
@@ -131,7 +131,7 @@
             </div>
         </div>
         <div class="card border-0">
-            <div class="position-center">
+            <div class="center">
                 <img src="sistema/images/services/social.jpg" class="img-responsive modern" alt="social">
             </div>
             <div class="card-body">
@@ -143,7 +143,7 @@
             </div>
         </div>
         <div class="card border-0">
-            <div class="position-center">
+            <div class="center">
                 <img src="sistema/images/services/matrimonio.jpg" class="img-responsive modern" alt="matrimonio">
             </div>
             <div class="card-body">
