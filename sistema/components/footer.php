@@ -1,20 +1,14 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <span class="copyright">Copyright © Bockcao 2021</span>
-        </div>
-        <div class="col-md-4">
-            <ul class="list-inline social-buttons">
-                <li><a class="ins" target="_blank" href="https://www.instagram.com/embutidosjossy/"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li><a class="fb" target="_blank" href="https://www.facebook.com/embutidosjossy"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li><a class="yt" target="_blank" href="https://www.youtube.com/channel/UCU6p-IZCOwWwX5OMjJ34qaA"><i class="fab fa-youtube"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            
-        </div>
+<div class="columns is-full">
+    <div class="column is-three-fifths self-center has-text-centered">
+        <p class="copyright-text">Copyright &copy; 2021 - Desarrollado por <strong class="has-text-white">Kevin Güinzo - Andreina Montigue</strong></p>
     </div>
+    <div class="column">
+        <ul class="list-inline social-buttons">
+            <li class="ul-padding"><a class="fb" target="_blank" href="#"><em class="fab fa-facebook-f"></em></a></li>
+            <li class="ul-padding"><a class="ins" target="_blank" href="#"><em class="fab fa-instagram"></em></a></li>
+            <li class="ul-padding"><a class="twi" target="_blank" href="#"><em class="fab fa-twitter"></em></a></li>
+            <li class="ul-padding"><a class="yt" target="_blank" href="#"><em class="fab fa-youtube"></em></a></li>
+        </ul>
+    </div>
+    <div class="column"></div>
 </div>

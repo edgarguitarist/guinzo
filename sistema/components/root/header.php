@@ -1,6 +1,6 @@
-<div style="width: 100%; padding:0%; margin: 3% auto 0% auto;" class="container">
+<div>
 
-    <div style="height: 95vh;" id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="carousel-example-generic" class="carousel slide carousel-height" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -13,19 +13,19 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img style="width:100%; margin:auto; height: 95vh;" src="sistema/images/slides/slide1.jpg">
+                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide1.jpg">
             </div>
             <div class="item">
-                <img style="width:100%; margin:auto; height: 95vh;" src="sistema/images/slides/slide2.jpg">
+                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide2.jpg">
             </div>
             <div class="item">
-                <img style="width:100%; margin:auto; height: 95vh;" src="sistema/images/slides/slide3.jpg">
+                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide3.jpg">
             </div>
             <div class="item">
-                <img style="width:100%; margin:auto; height: 95vh;" src="sistema/images/slides/slide4.jpg">
+                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide4.jpg">
             </div>
             <div class="item">
-                <img style="width:100%; margin:auto; height: 95vh;" src="sistema/images/slides/slide5.jpg">
+                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide5.jpg">
             </div>
         </div>
 

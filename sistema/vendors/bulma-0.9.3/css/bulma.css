@@ -6138,8 +6138,9 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 .navbar-link:focus-within,
 .navbar-link:hover,
 .navbar-link.is-active {
-  background-color: #fafafa;
+  background-color: hsl(0, 0%, 14%);
   color: #485fc7;
+  text-decoration: none;
 }
 
 .navbar-item {

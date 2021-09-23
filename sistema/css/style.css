@@ -1,8 +1,4 @@
-/*!
- * Start Bootstrap - Agency Bootstrap Theme (https://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+
 
 body {
   overflow-x: hidden;
@@ -69,7 +65,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #17d0d5;
+  color: #555;
 }
 
 h1,
@@ -339,7 +335,7 @@ fieldset[disabled] .btn-xl.active {
 
 header {
   text-align: center;
-  color: #fff;
+  color: #555;
   background-attachment: scroll;
   /*background-image: url(https://unsplash.imgix.net/uploads%2F14115408840644deb16b0%2F2dc933e3?q=75&fm=jpg&auto=format&s=7f43646e4d26049c6c39890afb2e5ced);*/
   background-position: center center;
@@ -398,13 +394,20 @@ header .intro-text .intro-heading {
 
 section {
   padding: 100px 0;
-  min-height: 100vh;
+}
+
+section h1.section-heading {
+  margin-top: 0;
+  font-size: 45px;
+  font-family: Cookie;
+  color: black !important;
+  text-transform: capitalize !important;
 }
 
 section h2.section-heading {
   margin-top: 0;
   margin-bottom: 50px;
-  font-size: 50px;
+  font-size: 30px;
   font-family: Cookie;
   text-transform: capitalize !important;
 }
@@ -413,7 +416,16 @@ section h3.section-subheading {
   margin-bottom: 75px;
   text-transform: none;
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+section h4.section-subheading {
+  margin-bottom: 75px;
+  text-transform: none;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
   font-style: italic;
   font-weight: 400;
 }
@@ -880,76 +892,6 @@ ul.social-buttons li a:active {
   outline: 0;
 }
 
-.servicio-modal .modal-content {
-  padding: 100px 0;
-  min-height: 100%;
-  border: 0;
-  border-radius: 0;
-  text-align: center;
-  background-clip: border-box;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.servicio-modal .modal-content h2 {
-  margin-bottom: 15px;
-  font-size: 3em;
-}
-
-.servicio-modal .modal-content p {
-  margin-bottom: 30px;
-}
-
-.servicio-modal .modal-content p.item-intro {
-  margin: 20px 0 30px;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-style: italic;
-}
-
-.servicio-modal .modal-content ul.list-inline {
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-.servicio-modal .modal-content img {
-  margin-bottom: 30px;
-}
-
-.servicio-modal .close-modal {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  width: 75px;
-  height: 75px;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.servicio-modal .close-modal:hover {
-  opacity: 0.3;
-}
-
-.servicio-modal .close-modal .lr {
-  z-index: 1051;
-  width: 1px;
-  height: 75px;
-  margin-left: 35px;
-  background-color: #222;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.servicio-modal .close-modal .lr .rl {
-  z-index: 1052;
-  width: 1px;
-  height: 75px;
-  background-color: #222;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
 
 ::-moz-selection {
   text-shadow: none;
@@ -972,7 +914,6 @@ img::-moz-selection {
 .img-responsive {
   width: 100% !important;
   height: 225px !important;
-  margin-top: 5%;
 }
 
 .img-large {
@@ -1142,23 +1083,137 @@ img::-moz-selection {
 }
 
 .vh-50 {
-  min-height: 50vh;
+  min-height: 50vh;  
+  height: 50vh;
 }
 .vh-60 {
   min-height: 60vh;
+  height: 60vh;
 }
 .vh-70 {
   min-height: 70vh;
+  height: 70vh;
 }
 .vh-75 {
   min-height: 75vh;
+  height: 75vh;
 }
 .vh-80 {
   min-height: 80vh;
+  height: 80vh;
 }
 .vh-90 {
   min-height: 90vh;
+  height: 90vh;
 }
 .vh-100 {
   min-height: 100vh;
+  height: 100vh;
+}
+
+/* algo raro paso aqui, no se si funciona esto para que no se rompa en los celulares*/
+@media only screen and (max-width: 768px) {
+  [class*="vh-"] {
+    min-height: 50vh !important;
+    height: 50vh !important;
+  }
+}
+
+.carousel-height {
+  max-height: 100vh !important;
+}
+/*
+
+@media only screen and (max-width: 1200px) {
+  .carousel-height {
+    min-height: 75vh !important;
+    height: 75vh !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .carousel-height {
+    min-height: 50vh !important;
+    height: 50vh !important;
+  }
+} */
+
+
+.is-new{
+  border-radius: 40px;
+}
+
+.is-modern{
+  border-radius: 25px;
+}
+
+.is-old{
+  border-radius: 10px;
+}
+
+.is-casi-90{
+  width: 90%;
+}
+
+.is-casi-80{
+  width: 80%;
+}
+.is-casi-70{
+  width: 70%;
+}
+
+body{
+  /* margin-top: 40px; */
+}
+
+.no-overflow{
+  overflow: hidden;
+}
+
+.ver-centered{
+  align-self: center;
+}
+
+.topped{
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.divider-space{
+  margin-top: -70px;
+}
+
+.is-primary-light:hover{
+  background-color: #000;
+  color: white;
+}
+
+.alto-total{
+  height: max-content;
+}
+
+.margin-nav{
+  margin-top: 100px;
+}
+
+.margin-foot{
+  margin-bottom: 150px;
+}
+
+.sidebar {
+  width: 70px !important;
+}
+
+em {
+  padding: 8px 8px 8px 0px;
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.cookie{
+  font-family: Cookie;
+}
+
+.button:hover{
+  text-decoration: none;
 }

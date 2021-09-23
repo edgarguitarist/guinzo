@@ -8,15 +8,15 @@
     ?>
 </head>
 
-<!-- FIXME: Arreglar la pagina de Error 404 -->
+<!-- DOIT: Arreglar la pagina de Error 404 -->
 
 <body>
-    <?php include "sistema/components/nav-404.php" ?>
+    <?php include "sistema/components/nav.php" ?>
     <div class="center">
-        <h1 style="margin-top:10%;"></h1>
-        <img src="sistema/images/logos/cropped-logo_bockcao-black-270x270.png" alt="error-404">
-        <h1>Lo sentimos...</h1>
-        <h2>Pagina no Encontrada!!!</h2>
+        <h1 style="margin-top:7.5%;"></h1>
+        <img src="sistema/images/logos/cropped-logo_bockcao-black-270x270.png" alt="error-404" class="vh-50">
+        <h1 class="title">Lo sentimos...</h1>
+        <h1 class="title">Pagina no Encontrada!</h1>
     </div>
 </body>
 

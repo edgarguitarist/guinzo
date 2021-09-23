@@ -3,25 +3,32 @@
 
 <head>
     <?php
-    $site = "Inicio";
+    $site = "Team";
     include "sistema/components/root/head.php"
     ?>
-
 </head>
 
-<body>
-    <!-- partial:index.partial.html -->
+<!-- partial:index.partial.html -->
 
-    <body id="page-top" class="index" data-pinterest-extension-installed="cr1.3.4">
 
-        <!-- Navigation -->
-        <?php include "sistema/components/nav.php" ?>
-
+<body id="page-top">
+    <!-- Navigation -->
+    <?php include "sistema/components/nav.php" ?>
+    
+    
+     <div class="bg-fix">
         
+        <!-- Sections -->
+        
+    </div>
 
 
 
-    </body>
+
 </body>
+<footer style="position: absolute; bottom: 0;">
+    <?php include "sistema/components/footer.php" ?>
+</footer>
+<?php include "sistema/includes/root/scripts.php" ?>
 
 </html>
