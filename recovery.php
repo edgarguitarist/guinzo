@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html style="overflow-y: hidden;" lang="es">
 
 <head>
     <?php
-    $site = "Team";
+    $site = "Login";
     include "sistema/components/root/head.php"
     ?>
+    <link rel="stylesheet" href="sistema/css/login.css">
+    
 </head>
 
 <!-- partial:index.partial.html -->
@@ -19,16 +21,16 @@
      <div class="bg-fix">
         
         <!-- Sections -->
-        
+        <?php include "sistema/components/form-recovery.php" ?>
     </div>
 
 
 
 
 </body>
-<footer style="position: fixed; bottom: 0;">
+<footer width="100%" style="position: fixed; bottom: 0px;">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>
-
+<!-- <script src="sistema/js/login.js"></script> -->
 </html>

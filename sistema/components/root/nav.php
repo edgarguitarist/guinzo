@@ -30,7 +30,7 @@
 <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="index.php">
-            <img src="images/logos/logo-bockcao-white.png" class="h-60" alt="logo">
+            <img src="sistema/images/logos/logo-bockcao-white.png" class="h-60" alt="logo">
         </a>
 
         <a role="button" class="navbar-burger has-text-white" aria-label="menu" aria-expanded="false" data-target="navbarBulma" style="align-self: center;">
@@ -48,41 +48,55 @@
             </a>
 
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#servicio">
-                <i class="fas fa-concierge-bell"></i>&nbsp;Clientes
-            </a>
-            <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#contact">
-                <i class="fas fa-info-circle"></i>&nbsp;Empleados
-            </a>
-            <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#about">
-                <i class="fas fa-comments"></i>&nbsp;Inventario Productos
-            </a>
-            <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#about">
-                <i class="fas fa-comments"></i>&nbsp;Inventario Materiales
-            </a>
-            <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#myv">
-                <i class="fas fa-star"></i>&nbsp;Eventos
-            </a>
-            <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#myv">
-                <i class="fas fa-star"></i>&nbsp;Reportes
+                <i class="fas fa-concierge-bell"></i>&nbsp;Servicios
             </a>
 
+            <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#contact">
+                <i class="fas fa-info-circle"></i>&nbsp;Información
+            </a>
+            <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#about">
+                <i class="fas fa-comments"></i>&nbsp;Quienes Somos
+            </a>
+            <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#myv">
+                <i class="fas fa-star"></i>&nbsp;Misión y Visión
+            </a>
         </div>
         <div class="navbar-end">
+
             <div class="navbar-item">
-                <img class="h-60 mr-15" src="<?php echo $_SESSION['photo']; ?>" alt="photo">
-                <span class="is-in-nav"><?php echo $_SESSION['username']; ?></span>
-            </div>
+
+                <?php
+                if (isset($_SESSION['id_role'])) {
+                    ?>
+                        <img class="h-60 mr-15" src="<?php echo "sistema/" . $_SESSION['photo']; ?>" alt="photo">
+                        <span class="is-in-nav"><?php echo $_SESSION['username']; ?></span>
+                        </div>
             <div class="navbar-item">
                 <div class="buttons">
-                    <a target="_blank" class="button is-primary-light" onclick="logout();">
+                    <a target="_blank" class="button is-primary-light" onclick="logout2();">
                         <i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión
                     </a>
                 </div>
+                    <?php
+                } else { ?>
+                    <div class="buttons">
+                        <a target="_blank" class="button is-primary-light" href="login.php">
+                            <i class="fas fa-user"></i>&nbsp;Iniciar Sesión
+                        </a>
+                    </div>
+                <?php
+                }
+
+                ?>
+
+
             </div>
         </div>
 
 
         <!-- <div class="navbar-end">
+
+
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link has-text-weight-bold is-size-6">
                     

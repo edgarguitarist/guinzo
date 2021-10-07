@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html style="overflow-y: hidden;" lang="es">
 
 <head>
     <?php
@@ -11,7 +11,7 @@
 <!-- DOIT: Arreglar la pagina de Error 404 -->
 
 <body>
-    <?php include "sistema/components/nav.php" ?>
+    <?php include "sistema/components/root/nav.php" ?>
     <div class="center">
         <h1 style="margin-top:7.5%;"></h1>
         <img src="sistema/images/logos/cropped-logo_bockcao-black-270x270.png" alt="error-404" class="vh-50">
@@ -20,7 +20,7 @@
     </div>
 </body>
 
-<footer style="position: absolute; bottom: 0;">
+<footer style="position: fixed; bottom: 0;">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>

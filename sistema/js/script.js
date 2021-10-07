@@ -1,41 +1,50 @@
-$(function () {
-  $("a.page-scroll").bind("click", function (event) {
-    var $anchor = $(this);
-    $("html, body")
-      .stop()
-      .animate(
-        {
-          scrollTop: $($anchor.attr("href")).offset().top,
-        },
-        1500,
-        "easeInOutExpo"
-      );
-    event.preventDefault();
+function logout() {
+  $.ajax({
+    type: "POST",
+    url: "components/logout.php",
+    success: function (resultado) {
+      $.jGrowl("CERRANDO LA SESIÓN", {
+        header: "RESPUESTA",
+      });
+
+      setTimeout(function () {
+        window.location.href = "../index.php?info=logout";
+      }, 3000);
+    },
+    error: function (resultado) {
+      $.jGrowl("NO SE HA PODIDO MANEJAR LA SESIÓN", {
+        header: "RESPUESTA",
+      });
+
+      setTimeout(function () {
+        window.location.href = "../";
+      }, 3000);
+    },
   });
-});
+}
 
-// Highlight the top nav as scrolling occurs
-$("body").scrollspy({
-  target: ".navbar-fixed-top",
-});
+function logout2() {
+  $.ajax({
+    type: "POST",
+    url: "sistema/components/logout.php",
+    success: function (resultado) {
+      $.jGrowl("CERRANDO LA SESIÓN", {
+        header: "RESPUESTA",
+      });
 
-// Closes the Responsive Menu on Menu Item Click
-$(".navbar-collapse ul li a").click(function () {
-  $(".navbar-toggle:visible").click();
-});
+      setTimeout(function () {
+        window.location.href = "index.php?info=logout";
+      }, 3000);
+    },
+    error: function (resultado) {
+      $.jGrowl("NO SE HA PODIDO MANEJAR LA SESIÓN", {
+        header: "RESPUESTA",
+      });
 
-//Carousel
-$(".carousel").swipe({
-  swipe: function (
-    event,
-    direction,
-    _distance,
-    duration,
-    fingerCount,
-    fingerData
-  ) {
-    if (direction == "left") $(this).carousel("next");
-    if (direction == "right") $(this).carousel("prev");
-  },
-  allowPageScroll: "vertical",
-});
+      setTimeout(function () {
+        window.location.href = "index.php?info=error";
+      }, 3000);
+    },
+  });
+}
+

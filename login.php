@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html style="overflow-y: hidden;" lang="es">
 
 <head>
     <?php
     $site = "Login";
-    include "sistema/components/root/head.php"
+    include "sistema/components/root/head.php";
+
     ?>
+    <link rel="stylesheet" href="sistema/css/login.css">
+
 </head>
 
 <!-- partial:index.partial.html -->
@@ -13,22 +16,26 @@
 
 <body id="page-top">
     <!-- Navigation -->
-    <?php include "sistema/components/nav.php" ?>
-    
-    
-     <div class="bg-fix">
-        
+    <?php include "sistema/components/root/nav.php" ?>
+
+
+    <div class="bg-fix">
+
         <!-- Sections -->
-        
+        <?php include "sistema/components/form-login.php" ?>
+
     </div>
 
 
 
 
 </body>
-<footer style="position: absolute; bottom: 0;">
+<footer width="100%" style="position: fixed; bottom: 0px;">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>
+<script src="sistema/js/login.js"></script>
+<?php include "sistema/components/jgrowl-messages.php" ?>
+
 
 </html>

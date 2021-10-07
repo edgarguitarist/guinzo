@@ -5374,7 +5374,7 @@ button.dropdown-item.is-active {
 
 .navbar {
   background-color: white;
-  min-height: 3.25rem;
+  min-height: 5.25rem;
   position: relative;
   z-index: 30;
 }
@@ -6044,7 +6044,7 @@ body.has-navbar-fixed-bottom {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
-  min-height: 3.25rem;
+  min-height: 7.25rem;
 }
 
 .navbar-brand a.navbar-item:focus, .navbar-brand a.navbar-item:hover {
@@ -6062,23 +6062,23 @@ body.has-navbar-fixed-bottom {
   color: #4a4a4a;
   cursor: pointer;
   display: block;
-  height: 3.25rem;
+  height: 5.25rem;
   position: relative;
-  width: 3.25rem;
+  width: 5.25rem;
   margin-left: auto;
 }
 
 .navbar-burger span {
   background-color: currentColor;
   display: block;
-  height: 1px;
+  height: 10px;
   left: calc(50% - 8px);
   position: absolute;
   transform-origin: center;
   transition-duration: 86ms;
   transition-property: background-color, opacity, transform;
   transition-timing-function: ease-out;
-  width: 16px;
+  width: 24px;
 }
 
 .navbar-burger span:nth-child(1) {

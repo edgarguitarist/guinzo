@@ -13,11 +13,11 @@
 
 <body id="page-top">
     <!-- Navigation -->
-    <?php include "sistema/components/nav.php" ?>
+    <?php include "sistema/components/root/nav.php" ?>
 
     
     <div class="bg-fix">
-        <!-- TODO: Revisar la importancia de esto para el responsive -->
+        <!-- DOIT: Revisar la importancia de esto para el responsive -->
         <!-- Header -->
         <header style="margin-top: inherit;" id="top">
             <div class="columns has-background-info-light" id="carousel-prueba">
@@ -54,12 +54,12 @@
     <!-- servicio Modals -->
     <!-- Use the modals below to showcase details about your services in this projects! -->
 
-    <?php include "sistema/components/modals.php" ?>
+    <?php include "sistema/components/root/modals-services.php" ?>
 
 </body>
 <footer>
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>
-
+<?php include "sistema/components/jgrowl-messages.php" ?>
 </html>
