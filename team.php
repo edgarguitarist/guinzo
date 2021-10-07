@@ -8,7 +8,7 @@
     ?>
 </head>
 
-<!-- partial:index.partial.html -->
+<!-- partial:index.partial.html  -->
 
  
 
