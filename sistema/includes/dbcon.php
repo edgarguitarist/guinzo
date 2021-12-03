@@ -1,12 +1,12 @@
 <?php
 $hostname = 'localhost';
-$username1 = 'u440807742_prueba'; // username online
-$password1 = '1q2w3e4r5t6Y'; // password online
+$username1 = 'u103247758_bockcao'; // username online
+$password1 = '^roSzIvBaX7'; // password online
 
 $username2 = 'root';
 $password2 = '';
 
-$dbname = 'bockcao';
+$dbname = 'u103247758_bockcao';
 
 $selector='online';
 #Para efectos del ejemplo supondremos que es la misma base de datos en ambas bases de datos tanto la remota como la local 

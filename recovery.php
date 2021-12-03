@@ -18,7 +18,7 @@
     <?php include "sistema/components/root/nav.php" ?>
     
     
-     <div class="bg-fix">
+     <div class="padre center_login">
         
         <!-- Sections -->
         <?php include "sistema/components/form-recovery.php" ?>
@@ -32,5 +32,5 @@
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>
-<!-- <script src="sistema/js/login.js"></script> -->
+<script src="sistema/js/login.js"></script>
 </html>

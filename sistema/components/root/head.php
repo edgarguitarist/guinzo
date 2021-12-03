@@ -12,7 +12,8 @@ session_start();
 <link rel="icon" type="image/png" href="sistema/images/logos/cropped-logo_bockcao-black-270x270.png" />
 
 <!-- jQuery -->
-<!-- <script type="text/javascript" src="sistema/js/jquery.min.js"></script>
+<!-- 
+<script type="text/javascript" src="sistema/js/jquery.min.js"></script>
 <script src="sistema/vendors/jquery-1.11.1.min.js"></script>
 <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'> -->
 
@@ -39,6 +40,8 @@ session_start();
 
 <!-- Iconos -->
 <script type="text/javascript" src="sistema/js/icons.js"></script>
+<!-- <script src='https://use.fontawesome.com/826a7e3dce.js'></script> -->
+<!-- <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/> -->
 
 <!-- jGrowl -->
 <link href="sistema/vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
@@ -46,8 +49,13 @@ session_start();
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.js"></script> -->
 
 
+<!-- slick -->
+
+<!-- fechas -->
 <?php
 date_default_timezone_set('America/Guayaquil');
 $hoy = date('Y-m-d');
+$hora = date('H:i:s');
+$fecha = date('Y-m-d H:i:s'); 
 $minimo = date("Y-m-d", strtotime($hoy."- 18 years"));
 ?>

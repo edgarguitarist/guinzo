@@ -19,7 +19,8 @@
                     <img src="sistema/images/team/antonio-c.jpg" class="img-large modern" alt="encasa" width="90%">
                     
                     <h1 class="subtitle b-600 mv-10">ANTONIO CACAO</h1>
-                    <!--TODO: Hacer modal de este mmv -->
+                    <h2 class="subtitle is-6">Event Designer</h2>
+                    <!--DOIT: Hacer modal de este mmv -->
                 </a>
             </div>
         </div>
@@ -27,7 +28,7 @@
 
     <div class="columns is-centrado">
         <div class="column">
-            <a href="team.php" class="button f-20 is-dark is-outlined"><i class="fas fa-users"></i>&nbsp;Nuestro Equipo</a>
+            <a href="team.php" class="button f-20 is-dark is-outlined"><em class="fas fa-users"></em>&nbsp;Nuestro Equipo</a>
         </div>
     </div>
 </div>

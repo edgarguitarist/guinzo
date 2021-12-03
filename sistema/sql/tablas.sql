@@ -1,5 +1,8 @@
+/* insertar datos en la tabla usuarios */
+
 table
     cliente
+        id_cliente
         id_user
         tipo_cliente
             --> Preferencial
@@ -8,6 +11,7 @@ table
             --> Problematico
             --> Vetado
     empleado
+        id_empleado
         id_user
         tipo_empleado
             --> Estrella
@@ -54,19 +58,24 @@ table
     asignacion_productos
         id_asignacion_productos
         id_evento
-        id_productos --> en el frontend mostrar todos diferenciando el tipo de producto de agregar y quitar
+        id_productos --> en el frontend mostrar todos, diferenciando el tipo de producto de agregar y quitar
     
     inventario_productos
+        id_inventario_productos
         tipo_producto
         id_proveedor
 
     inventario_materiales
+        id_inventario_materiales
         tipo_material
         id_proveedor
 
     servicios
+        id_servicio
         tipo_servicio
+        descripcion
     
     servicios_terceros
+        id_servicio_terceros
         id_proveedor
-        tipo_servicio
+        id_servicio

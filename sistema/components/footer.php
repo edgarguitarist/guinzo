@@ -4,10 +4,11 @@
     </div>
     <div class="column">
         <ul class="list-inline social-buttons">
-            <li class="ul-padding"><a class="fb" target="_blank" href="#"><em class="fab fa-facebook-f"></em></a></li>
-            <li class="ul-padding"><a class="ins" target="_blank" href="#"><em class="fab fa-instagram"></em></a></li>
-            <li class="ul-padding"><a class="twi" target="_blank" href="#"><em class="fab fa-twitter"></em></a></li>
-            <li class="ul-padding"><a class="yt" target="_blank" href="#"><em class="fab fa-youtube"></em></a></li>
+            <li class="ul-padding"><a class="fb" target="_blank" href="https://www.facebook.com/bockcao"><em class="fab fa-facebook-f"></em></a></li>
+            <li class="ul-padding"><a class="ins" target="_blank" href="https://www.instagram.com/bockcao/"><em class="fab fa-instagram"></em></a></li>
+            <li class="ul-padding"><a class="twi" target="_blank" href="https://twitter.com/bockcao"><em class="fab fa-twitter"></em></a></li>
+            <!-- <li class="ul-padding"><a class="yt" target="_blank" href="#"><em class="fab fa-youtube"></em></a></li> -->
+            <li class="ul-padding"><a class="yt" target="_blank" href="https://www.pinterest.com/bockcao/"><em class="fab fa-pinterest-p"></em></a></li>
         </ul>
     </div>
     <div class="column"></div>

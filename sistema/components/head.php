@@ -7,8 +7,13 @@ $login = "Location: ../login.php?info=no_session";
 if (!isset($_SESSION['id_role'])) {
     header($login);
     session_destroy();
-    //header("location: ../login.php");
+}else{
+    if ($_SESSION['id_role'] != 1) {
+        header($login);
+        session_destroy();
+    }
 }
+
 ?>
 
 

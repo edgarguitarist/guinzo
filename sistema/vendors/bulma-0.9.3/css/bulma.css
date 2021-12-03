@@ -24,6 +24,8 @@
   vertical-align: top;
 }
 
+
+
 .button:focus, .input:focus, .textarea:focus, .select select:focus, .file-cta:focus,
 .file-name:focus, .pagination-previous:focus,
 .pagination-next:focus,
@@ -9089,6 +9091,11 @@ a.has-text-info-dark:hover, a.has-text-info-dark:focus {
 .has-text-success {
   color: #48c78e !important;
 }
+.has-text-green{
+  color: #29b35e !important;
+}
+
+
 
 a.has-text-success:hover, a.has-text-success:focus {
   color: #34a873 !important;

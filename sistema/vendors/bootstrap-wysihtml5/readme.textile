@@ -77,7 +77,7 @@ For example, the default template used for the editHtml mode button looks like t
 <pre>
 <li>
   <div class='btn-group'>
-    <a class='btn" + size + "' data-wysihtml5-action='change_view' title='" + locale.html.edit + "'><i class='icon-pencil'></i></a>"
+    <a class='btn" + size + "' data-wysihtml5-action='change_view' title='" + locale.html.edit + "'><em class='icon-pencil'></em></a>"
   </div>
 </li>
 </pre>

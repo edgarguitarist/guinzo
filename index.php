@@ -16,7 +16,7 @@
     <?php include "sistema/components/root/nav.php" ?>
 
     
-    <div class="bg-fix">
+    <div class="">
         <!-- DOIT: Revisar la importancia de esto para el responsive -->
         <!-- Header -->
         <header style="margin-top: inherit;" id="top">
@@ -33,7 +33,7 @@
         </section>
 
         <!-- CONTACTO Section -->
-        <section id="contact">
+        <section class="" id="contact">
             <?php include "sistema/components/contact.php" ?>
         </section>
 

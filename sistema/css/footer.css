@@ -51,7 +51,7 @@ ul.social-buttons li a:active {
 }
 
 
-.fb, .yt, .ins, .twi{
+.fb, .yt, .ins, .twi, .pin{
     display: block;
     width: 40px;
     height: 40px;
@@ -84,6 +84,8 @@ ul.social-buttons li a:active {
     background: #c4302b;
     background-color: #c4302b;
 }
+
+
 
 .ins:hover, .ins:focus, .ins:active{
     color: #fff;

@@ -5,42 +5,37 @@ $password = $_POST['password'];
 $user_error = "Location: ../../../login.php?info=user_error"; //login
 $rol_error = "Location: ../../../login.php?info=rol_error"; //login
 
-if(empty($email) || empty($password)){
+if (empty($email) || empty($password)) {
 	header($user_error);
 	exit();
 }
 
 include "../../includes/dbcon.php";
 session_start();
-$consulta="SELECT * FROM users WHERE email='$email' AND password = '$password'";
-$result=mysqli_query($con,$consulta);
+$consulta = "SELECT * FROM users WHERE email='$email' AND password = '$password'";
+$result = mysqli_query($con, $consulta);
 
-if($row = mysqli_fetch_array($result)){
-	if($row['id_role'] = 1){
-		$_SESSION['username'] = $row['name'].' '.$row['lastname'];
-		$_SESSION['dni'] = $row['dni'];
-		$_SESSION['id_role'] = 1;
-		$_SESSION['birthday']   = $row['birthday'];
-        $_SESSION['password']   = $row['password'];
-        $_SESSION['email']   = $row['email'];
-		$_SESSION['photo']   = $row['floc'];
-        echo "todo bien";
+if ($row = mysqli_fetch_array($result)) {
+	$_SESSION['dni'] = $row['dni'];
+	$_SESSION['name'] = $row['name'];
+	$_SESSION['lastname'] = $row['lastname'];
+	$_SESSION['username'] = $row['name'] . ' ' . $row['lastname'];
+	$_SESSION['phone'] = $row['phone'];
+	$_SESSION['birthday']   = $row['birthday'];
+	$_SESSION['email']   = $row['email'];
+	$_SESSION['password']   = $row['password'];
+	$_SESSION['token'] = $row['token'];
+	$_SESSION['id_role'] = $row['id_role'];
+	$_SESSION['photo']   = $row['floc'];
+
+	if ($row['id_role'] == 1) {
 		header("Location: ../../index.php?info=bienvenido");
-	}else if($row['id_role'] = 6 || $row['id_role'] = 7){
-		$_SESSION['username'] = $row['name'].' '.$row['lastname'];
-		$_SESSION['dni'] = $row['dni'];
-		$_SESSION['id_role'] = 1;
-		$_SESSION['birthday']   = $row['birthday'];
-        $_SESSION['password']   = $row['password'];
-        $_SESSION['email']   = $row['email'];
-		$_SESSION['photo']   = $row['floc'];
-        echo "todo bien";
+	} else if ($row['id_role'] == 6) {
 		header("Location: ../../../index.php?info=bienvenido");
-	}else{
+	} else {
 		header($rol_error);
 	}
-}else{
-    echo "usuario no encontrado";
+} else {	
 	header($user_error);
 	session_destroy();
 	exit();

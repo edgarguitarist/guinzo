@@ -11,25 +11,43 @@
             <div class="has-text-centered" width="100%">
                 <h2>BOCKCAO / Antonio Cacao</h2>
                 <p class="text-muted">Urbanización El Portón, Ed. Alcalá 1, Apt.2, Piso 2, Guayaquil</p>
-            </div> 
+            </div>
         </div>
 
         <div class="column">
             <div class="hero has-text-centered">
                 <h1 class="title has-text-black">CONTACTO</h1>
-                <h2 class="has-text-black">Telefono:<i style="margin: 0 10px 0 10px;" class="fa fa-phone"></i><a target="_blank" href="tel:+59342881098">(04) 288-1098</a></h2>
-                <h2 class="has-text-black">WHATSAPP:<i style="margin: 0 10px 0 10px;" class="fab fa-whatsapp"></i><a target="_blank" href="https://api.whatsapp.com/send?phone=%2B5930991737020&fbclid=IwAR3-tnONKUGCIsftwMERRipfP9IHKzdjApu_F980IUlMjvbSN6R2GFAaBrk&text=Hola%20BockCao%20Events%20Designers">+593991737020</a></h2>
+                <h2 class="has-text-black">Telefono:<em style="margin: 0 10px 0 10px; color:blue;" class="fa fa-phone is-size-4"></em><a target="_blank" href="tel:+59342881098">(04) 288-1098</a></h2>
+                <h2 class="has-text-black">WHATSAPP:<em style="margin: 10px 10px 0 10px; color:green;" class="fab fa-whatsapp is-size-4"></em><a target="_blank" href="https://api.whatsapp.com/send?phone=%2B5930991737020&fbclid=IwAR3-tnONKUGCIsftwMERRipfP9IHKzdjApu_F980IUlMjvbSN6R2GFAaBrk&text=Hola%20BockCao%20Events%20Designers">099 173 7020</a></h2>
                 <br><br>
                 <h1 class="subtitle b-600 has-text-black">Horarios de Atención</h1>
                 <h2 class="b-600 has-text-black">Lunes a Viernes</h2>
-                <h3 class="">08:00 - 18:00</h3>
+
+                <?php
+                $sab = '';
+                $lav = '';
+                if (date('l') == 'Monday' || date('l') == 'Tuesday' || date('l') == 'Wednesday' || date('l') == 'Thursday' || date('l') == 'Friday') {
+                    $lav = date('H:i') >= '08:00' && date('H:i') <= '18:00' ?
+                        '<span class="has-text-green b-600">(Abierto)</span>' :
+                        '<span class="has-text-danger">(Cerrado)</span>';
+                } else if (date('l') == 'Saturday') {
+                    $sab = date('H:i') >= '08:00' && date('H:i') <= '14:00' ?
+                        '<span class="has-text-green b-600">(Abierto)</span>' :
+                        '<span class="has-text-danger">(Cerrado)</span>';
+                }
+                ?>
+
+                <h3 class="">08:00 - 18:00 <?= $lav ?></h3>
                 <br>
                 <h2 class="b-600 has-text-black">Sábados</h2>
-                <h3>08:00 - 14:00</h3>
+                <h3>08:00 - 14:00 <?= $sab ?></h3>
                 <br>
                 <h2 class="b-600 has-text-black">Domingos</h2>
-                <h3>Cerrado</h3>
+                <h3>No Disponibles</h3>
             </div>
         </div>
     </div>
+    <h1 class="subtitle b-600 has-text-centered has-text-black">Clientes</h2>
+        <iframe src="sistema/components/customers.php" width="100%" frameborder="0"></iframe>
+
 </div>

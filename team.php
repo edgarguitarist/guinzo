@@ -10,17 +10,17 @@
 
 <!-- partial:index.partial.html  -->
 
- 
+
 
 <body id="page-top">
     <!-- Navigation -->
     <?php include "sistema/components/root/nav.php" ?>
-    
-    
-     <div class="bg-fix">
-        
-        <!-- Sections -->
-        
+
+    <div class="padre center_login">
+        <div style="width:100%;">
+
+            <?php include "sistema/components/crew.php" ?>
+        </div>
     </div>
 
 

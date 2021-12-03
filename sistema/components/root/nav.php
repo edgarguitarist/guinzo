@@ -37,28 +37,28 @@
             <!-- <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span> -->
-            <i style="margin-top:10px;" class="wd-60 maxcon fas fa-bars"></i>
+            <em style="margin-top:10px;" class="wd-60 maxcon fas fa-bars"></em>
         </a>
     </div>
     <!-- TODO: Reparar el responsive, posible problema -> "Los iconos! :C" -->
     <div id="navbarBulma" class="navbar-menu has-background-black-bis">
         <div class="navbar-end">
             <a class="navbar-item has-text-weight-medium has-text-white	" href="index.php#">
-                <i class="fas fa-home" style="/*margin-top: -4.5px;*/"></i>&nbsp;Inicio
+                <em class="fas fa-home" style="/*margin-top: -4.5px;*/"></em>&nbsp;Inicio
             </a>
 
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#servicio">
-                <i class="fas fa-concierge-bell"></i>&nbsp;Servicios
+                <em class="fas fa-concierge-bell"></em>&nbsp;Servicios
             </a>
 
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#contact">
-                <i class="fas fa-info-circle"></i>&nbsp;Información
+                <em class="fas fa-info-circle"></em>&nbsp;Información
             </a>
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#about">
-                <i class="fas fa-comments"></i>&nbsp;Quienes Somos
+                <em class="fas fa-comments"></em>&nbsp;Quienes Somos
             </a>
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#myv">
-                <i class="fas fa-star"></i>&nbsp;Misión y Visión
+                <em class="fas fa-star"></em>&nbsp;Misión y Visión
             </a>
         </div>
         <div class="navbar-end">
@@ -74,14 +74,14 @@
             <div class="navbar-item">
                 <div class="buttons">
                     <a target="_blank" class="button is-primary-light" onclick="logout2();">
-                        <i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión
+                        <em class="fas fa-sign-out-alt"></em>&nbsp;Cerrar Sesión
                     </a>
                 </div>
                     <?php
                 } else { ?>
                     <div class="buttons">
                         <a target="_blank" class="button is-primary-light" href="login.php">
-                            <i class="fas fa-user"></i>&nbsp;Iniciar Sesión
+                            <em class="fas fa-user"></em>&nbsp;Iniciar Sesión
                         </a>
                     </div>
                 <?php

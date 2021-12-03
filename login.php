@@ -19,7 +19,7 @@
     <?php include "sistema/components/root/nav.php" ?>
 
 
-    <div class="bg-fix">
+    <div class="padre center_login">
 
         <!-- Sections -->
         <?php include "sistema/components/form-login.php" ?>

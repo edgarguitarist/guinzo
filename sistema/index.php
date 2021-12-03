@@ -16,14 +16,14 @@
     <?php include "components/nav.php" ?>
 
 
-    <div class="bg-fix">
+    <div class="">
 
     </div>
 
     <!-- servicio Modals -->
     <!-- Use the modals below to showcase details about your services in this projects! -->
 
-    <?php include "components/modals.php" ?>
+    <?php //include "components/modals.php" ?>
 
 </body>
 <footer style="position:fixed; bottom:0;">

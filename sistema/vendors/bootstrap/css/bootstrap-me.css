@@ -9,6 +9,7 @@ html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
   }
   body {
     margin: 0;
@@ -2392,7 +2393,7 @@ html {
   input[type="time"],
   input[type="datetime-local"],
   input[type="month"] {
-    line-height: 34px;
+    line-height: inherit;
     line-height: 1.42857143 \0;
   }
   input[type="date"].input-sm,
@@ -5267,9 +5268,16 @@ html {
          -o-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
+  @viewport {
+    width: device-width;
+  }
   @-ms-viewport {
     width: device-width;
   }
+  @-o-viewport{
+    width: device-width;
+  }
+
   .visible-xs,
   .visible-sm,
   .visible-md,

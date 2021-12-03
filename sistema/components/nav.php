@@ -37,33 +37,33 @@
             <!-- <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span> -->
-            <i style="margin-top:10px;" class="wd-60 maxcon fas fa-bars"></i>
+            <em style="margin-top:10px;" class="wd-60 maxcon fas fa-bars"></em>
         </a>
     </div>
     <!-- TODO: Reparar el responsive, posible problema -> "Los iconos! :C" -->
     <div id="navbarBulma" class="navbar-menu has-background-black-bis">
         <div class="navbar-end">
             <a class="navbar-item has-text-weight-medium has-text-white	" href="index.php#">
-                <i class="fas fa-home" style="/*margin-top: -4.5px;*/"></i>&nbsp;Inicio
+                <em class="fas fa-home" style="/*margin-top: -4.5px;*/"></em>&nbsp;Inicio
             </a>
 
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#servicio">
-                <i class="fas fa-concierge-bell"></i>&nbsp;Clientes
+                <em class="fas fa-star"></em>&nbsp;Clientes
             </a>
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#contact">
-                <i class="fas fa-info-circle"></i>&nbsp;Empleados
+                <em class="fas fa-users"></em>&nbsp;Empleados
             </a>
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#about">
-                <i class="fas fa-comments"></i>&nbsp;Inventario Productos
+                <em class="fas fa-apple-alt"></em>&nbsp;Productos
             </a>
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#about">
-                <i class="fas fa-comments"></i>&nbsp;Inventario Materiales
+                <em class="fas fa-utensils"></em>&nbsp;Materiales
             </a>
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#myv">
-                <i class="fas fa-star"></i>&nbsp;Eventos
+                <em class="fas fa-calendar-alt"></em>&nbsp;Eventos
             </a>
             <a class="navbar-item has-text-weight-medium has-text-white" href="index.php#myv">
-                <i class="fas fa-star"></i>&nbsp;Reportes
+                <em class="fas fa-table"></em>&nbsp;Reportes
             </a>
 
         </div>
@@ -75,7 +75,7 @@
             <div class="navbar-item">
                 <div class="buttons">
                     <a target="_blank" class="button is-primary-light" onclick="logout();">
-                        <i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión
+                        <em class="fas fa-sign-out-alt"></em>&nbsp;Cerrar Sesión
                     </a>
                 </div>
             </div>
