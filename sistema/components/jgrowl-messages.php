@@ -36,7 +36,7 @@ $mensajes = [
 ];
 
 
-echo json_encode($mensajes);
+//echo json_encode($mensajes);
 
 if (isset($_GET["info"])) {
     $mensaje = $_GET["info"];
