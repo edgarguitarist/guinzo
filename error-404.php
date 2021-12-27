@@ -14,7 +14,7 @@
     <?php include "sistema/components/root/nav.php" ?>
     <div class="center">
         <h1 style="margin-top:7.5%;"></h1>
-        <img src="sistema/images/logos/cropped-logo_bockcao-black-270x270.png" alt="error-404" class="vh-50">
+        <img src="sistema/images/logos/logo-bockcao-white.png" alt="error-404" class="vh-50 is-color-inverted">
         <h1 class="title">Lo sentimos...</h1>
         <h1 class="title">Pagina no Encontrada!</h1>
     </div>

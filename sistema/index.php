@@ -11,22 +11,26 @@
 <!-- partial:index.partial.html -->
 
 
-<body id="page-top">
+<body>
     <!-- Navigation -->
     <?php include "components/nav.php" ?>
+    <div class="container padre center_login">
+        <div class="has-text-centered wd-100">
+            <h1 style="margin-bottom: 0px;" class="has-text-centered title is-cookie">Bienvenido</h1>
 
+            <img src="images/logos/logo-bockcao-white.png" alt="logo" class="wd-40 is-color-inverted">
 
-    <div class="">
-
+        </div>
     </div>
 
     <!-- servicio Modals -->
     <!-- Use the modals below to showcase details about your services in this projects! -->
 
-    <?php //include "components/modals.php" ?>
+    <?php //include "components/modals.php" 
+    ?>
 
 </body>
-<footer style="position:fixed; bottom:0;">
+<footer class="footer2">
     <?php include "components/footer.php" ?>
 </footer>
 <?php include "includes/scripts.php" ?>

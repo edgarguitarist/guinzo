@@ -2068,7 +2068,7 @@ html {
   .table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: top;
+    vertical-align: baseline;
     border-top: 1px solid #ddd;
   }
   .table > thead > tr > th {
@@ -2430,9 +2430,9 @@ html {
   .radio-inline input[type="radio"],
   .checkbox input[type="checkbox"],
   .checkbox-inline input[type="checkbox"] {
-    position: absolute;
+    /* position: absolute; */
     margin-top: 4px \9;
-    margin-left: -20px;
+    /* margin-left: -20px; */
   }
   .radio + .radio,
   .checkbox + .checkbox {

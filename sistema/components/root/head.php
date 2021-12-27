@@ -29,6 +29,7 @@ session_start();
 
 <!-- My Styles -->
 <link rel="stylesheet" href="sistema/css/style.css">
+<link rel="stylesheet" href="sistema/css/custom.css">
 <link rel="stylesheet" href="sistema/css/footer.css">
 <link rel="stylesheet" href="sistema/css/modal.css">
 
@@ -40,13 +41,10 @@ session_start();
 
 <!-- Iconos -->
 <script type="text/javascript" src="sistema/js/icons.js"></script>
-<!-- <script src='https://use.fontawesome.com/826a7e3dce.js'></script> -->
-<!-- <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/> -->
+
 
 <!-- jGrowl -->
 <link href="sistema/vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
-<!-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.js"></script> -->
 
 
 <!-- slick -->

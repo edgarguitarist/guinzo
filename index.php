@@ -11,12 +11,10 @@
 <!-- partial:index.partial.html -->
 
 
-<body id="page-top">
+<body class="large-body">
     <!-- Navigation -->
     <?php include "sistema/components/root/nav.php" ?>
-
-    
-    <div class="">
+    <div>
         <!-- DOIT: Revisar la importancia de esto para el responsive -->
         <!-- Header -->
         <header style="margin-top: inherit;" id="top">
@@ -57,7 +55,7 @@
     <?php include "sistema/components/root/modals-services.php" ?>
 
 </body>
-<footer>
+<footer class="footer3">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>

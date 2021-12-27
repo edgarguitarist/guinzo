@@ -27,6 +27,15 @@ $modal_services = [
                             <p><strong>Que servicios estan disponibles?</strong></p>
                             <p>Poner Lista de Servicios Aqui.</p>',
         'link' => '3'
+    ],
+    'servicioModalCacao' => [
+        'id' => 'servicioModalCacao',
+        'title' => 'Antonio Cacao',
+        'img' => 'sistema/images/team/antonio-c.jpg',
+        'description' => '  <p>Agregar descripcion mas concisa y detallada</p> <!-- Descripcion -->
+                            <p><strong>Que servicios estan disponibles?</strong></p>
+                            <p>Poner Lista de Servicios Aqui.</p>',
+        'link' => '3'
     ]
 ];
 ?>

@@ -21,7 +21,7 @@ if (empty($email) || empty($password)) {
 
 include "../../includes/dbcon.php";
 session_start();
-$consulta = "SELECT * FROM users WHERE email='$email' OR dni='$cedula'";
+$consulta = "SELECT * FROM users WHERE email='$email' OR dni='$cedula'"; // Revision de que ese cliente no exista
 $result = mysqli_query($con, $consulta);
 
 $rows = mysqli_num_rows($result);
@@ -32,10 +32,14 @@ if ($rows > 0) {
 } else {
     $insertar = "INSERT INTO users (dni, name, lastname, birthday, email, password, token) VALUES ('$cedula', '$name', '$lastname', '$birthday', '$email', '$password', '$token')";
     $resultado = mysqli_query($con, $insertar);
+    
     if ($resultado) {
         $consulta = "SELECT * FROM users WHERE dni='$cedula'";
         $result = mysqli_query($con, $consulta);
         $row = mysqli_fetch_array($result);
+        $dni = $row['dni'];
+        $insertar2 = "INSERT INTO customers (id_user) VALUES ('$dni')";
+        $resultado2 = mysqli_query($con, $insertar2);
         //$_SESSION['id'] = $row['id'];
         $_SESSION['dni'] = $row['dni'];
         $_SESSION['name'] = $row['name'];
@@ -47,7 +51,7 @@ if ($rows > 0) {
         $_SESSION['password'] = $row['password'];
         $_SESSION['token'] = $row['token'];
         $_SESSION['id_role'] = $row['id_role'];
-        $_SESSION['photo'] = $row['floc'];
+        $_SESSION['photo'] = $row['path_photo'];
         header($signup_success);
     }else{
         header($error);

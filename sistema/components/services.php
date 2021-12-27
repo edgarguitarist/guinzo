@@ -62,7 +62,7 @@ $services = [
     </div>
     <div class="columns is-centrado is-multiline">
         <?php foreach ($services as $service) : ?>
-            <div class="column is-one-third servicio-item">
+            <div class="column is-one-third-desktop is-half servicio-item">
                 <a id="prueba" href="#<?= $service['id'] ?>" class="servicio-link" data-toggle="modal">
                     <!-- a href -->
                     <div class="servicio-hover modern img-responsive">
@@ -75,8 +75,8 @@ $services = [
                     </div>
                 </a>
                 <div class="servicio-caption old">
-                    <h4 class="is-uppercase"><?= $service['title'] ?></h4> <!-- title -->
-                    <p class="text-muted is-capitalized"><?= $service['subtitle'] ?></p> <!-- subtitle -->
+                    <h4 class="is-uppercase is-size-4 is-size-6-desktop"><?= $service['title'] ?></h4> <!-- title -->
+                    <p class="text-muted is-capitalized is-size-4 is-size-6-desktop"><?= $service['subtitle'] ?></p> <!-- subtitle -->
                 </div>
             </div>
         <?php endforeach; ?>

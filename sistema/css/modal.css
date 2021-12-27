@@ -7,6 +7,7 @@
     background: #fff;
     border-radius: 0;
     text-align: center;
+    -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;

@@ -38,9 +38,9 @@ if (!isset($_SESSION['id_role'])) {
 
 <!-- My Styles -->
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/modal.css">
-
 
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,8 +52,10 @@ if (!isset($_SESSION['id_role'])) {
 
 <!-- jGrowl -->
 <link href="vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
-<!-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.css" />
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.8/jquery.jgrowl.min.js"></script> -->
+
+
+
+
 
 
 <?php

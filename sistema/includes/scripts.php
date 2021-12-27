@@ -10,6 +10,8 @@
 
 <script src="js/script.js"></script>
 <script src="js/utilities.js"></script>
+<script src="js/form_checks.js"></script>
+
 
 <!-- jGrowl -->
 <script src="vendors/jGrowl/jquery.jgrowl.js"></script>

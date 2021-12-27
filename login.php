@@ -14,7 +14,7 @@
 <!-- partial:index.partial.html -->
 
 
-<body id="page-top">
+<body>
     <!-- Navigation -->
     <?php include "sistema/components/root/nav.php" ?>
 
@@ -22,7 +22,7 @@
     <div class="padre center_login">
 
         <!-- Sections -->
-        <?php include "sistema/components/form-login.php" ?>
+        <?php include "sistema/components/forms/form-login.php" ?>
 
     </div>
 
@@ -30,7 +30,7 @@
 
 
 </body>
-<footer width="100%" style="position: fixed; bottom: 0px;">
+<footer class="footer2">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>

@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <h1 class="subtitle b-600 has-text-centered has-text-black">Clientes</h2>
+    <h1 class="subtitle b-600 has-text-centered has-text-black is-size-5-desktop is-size-3">Clientes</h2>
         <iframe src="sistema/components/customers.php" width="100%" frameborder="0"></iframe>
 
 </div>

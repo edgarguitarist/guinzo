@@ -12,7 +12,7 @@ if (empty($email) || empty($password)) {
 
 include "../../includes/dbcon.php";
 session_start();
-$consulta = "SELECT * FROM users WHERE email='$email' AND password = '$password'";
+$consulta = "SELECT * FROM users WHERE email='$email' AND password = '$password' AND status_user = 'Active'";
 $result = mysqli_query($con, $consulta);
 
 if ($row = mysqli_fetch_array($result)) {
@@ -26,7 +26,7 @@ if ($row = mysqli_fetch_array($result)) {
 	$_SESSION['password']   = $row['password'];
 	$_SESSION['token'] = $row['token'];
 	$_SESSION['id_role'] = $row['id_role'];
-	$_SESSION['photo']   = $row['floc'];
+	$_SESSION['photo']   = $row['path_photo'];
 
 	if ($row['id_role'] == 1) {
 		header("Location: ../../index.php?info=bienvenido");

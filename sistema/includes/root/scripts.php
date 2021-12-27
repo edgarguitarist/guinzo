@@ -12,6 +12,7 @@
 
 <script src="sistema/js/script.js"></script>
 <script src="sistema/js/utilities.js"></script>
+<script src="sistema/js/form_checks.js"></script>
 
 <!-- jGrowl -->
 <script src="sistema/vendors/jGrowl/jquery.jgrowl.js"></script>

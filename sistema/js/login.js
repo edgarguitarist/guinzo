@@ -2,7 +2,6 @@
  * Variables
  */
 
-
 const signupButton = document.getElementById("signup-button"),
   signupButton_r = document.getElementById("signup-button-r"),
   loginButton = document.getElementById("login-button"),
@@ -33,16 +32,19 @@ loginButton.addEventListener(
 );
 
 function checkCampoCorreo() {
-    campo = document.getElementById("email");
-    if (campo.value.length == 0) {
-        campo.className = 'forms_field-input is-danger';
-        //mostrar el mensaje de error  
-        document.getElementById('mensaje').style.display = 'block';
-        return false;
-    } else {
-        campo.className = 'forms_field-input';
-        //ocultar el mensaje de error
-        document.getElementById('mensaje').style.display = 'none';
-        return true;
-    }
+  campo = document.getElementById("email");
+  //validar si campo es un email correcto
+
+  if (campo.value.length < 10) {
+    campo.className = "forms_field-input is-danger";
+    document.getElementById("mensaje").style.display = "block";
+    //deshabilitar submit
+    document.getElementById("submit").disabled = true;
+  } else {
+    campo.className = "forms_field-input";
+    document.getElementById("mensaje").style.display = "none";
+    //habilitar submit
+    document.getElementById("submit").disabled = false;
+  }
 }
+

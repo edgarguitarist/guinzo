@@ -12,19 +12,13 @@
 
 
 
-<body id="page-top">
+<body>
     <!-- Navigation -->
     <?php include "sistema/components/root/nav.php" ?>
 
-    <div class="padre center_login">
-        <div style="width:100%;">
-
-            <?php include "sistema/components/crew.php" ?>
-        </div>
+    <div class="padre center_login has-text-centered" style="place-content: center;">
+        <?php include "sistema/components/crew.php" ?>
     </div>
-
-
-
 
 </body>
 <footer style="position: fixed; bottom: 0;">
