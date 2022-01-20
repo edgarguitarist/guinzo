@@ -84,7 +84,7 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
                     </a>
 
                     <div class="navbar-dropdown">
-                        <a href="#changePhoto" class="navbar-item is-size-6 text-white-mobile" data-toggle="modal">
+                        <a href="#changePhotoS" class="navbar-item is-size-6 text-white-mobile" data-toggle="modal">
                             Cambiar Foto de Perfil
                         </a>
                         <a id="modal-js-example" href="#" class="navbar-item is-size-6 text-white-mobile">
