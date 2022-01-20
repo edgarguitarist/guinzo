@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include("../../sistema/includes/dbcon.php");
+$query_Customers = mysqli_query($con, "SELECT * FROM carousel_customers WHERE status='1' and deleted='0'");
+$num_rows_Customers = mysqli_num_rows($query_Customers);
+?>
 
 <head>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
@@ -123,7 +128,6 @@
         .slick-arrow.slick-hidden {
             display: none;
         }
-
     </style>
 
 </head>
@@ -133,12 +137,9 @@
     <div class="">
         <!-- <h2>Our Partners</h2> -->
         <section class="customer-logos slider">
-            <div class="slide"><img src="../../sistema/images/clients/camara-comercio-01.jpg" alt="Owl Image"></div>
-            <div class="slide"><img src="../../sistema/images/clients/CORPEI.jpg" alt="Owl Image"></div>
-            <div class="slide"><img src="../../sistema/images/clients/empresa-pesquera-polar-03.jpg" alt="Owl Image"></div>
-            <div class="slide"><img src="../../sistema/images/clients/paradais02.jpg" alt="Owl Image"></div>
-            <div class="slide"><img src="../../sistema/images/clients/solca04.jpg" alt="Owl Image"></div>
-            <div class="slide"><img src="../../sistema/images/clients/yara03.jpg" alt="Owl Image"></div>
+            <?php while ($data = mysqli_fetch_array($query_Customers)) { ?>
+                <div class="slide"><img src="../../<?= $data['path'] ?>" alt="<?= $data['name'] ?>"></div>
+            <?php } ?>
         </section>
     </div>
 

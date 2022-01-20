@@ -30,7 +30,7 @@
 
 
 </body>
-<footer class="footer2">
+<footer id="footy" class="footer2">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>

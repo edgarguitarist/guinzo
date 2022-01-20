@@ -15,11 +15,12 @@ table
         id_employee
         id_user
         type_employee
-            --> Estrella
-            --> Excelente
-            --> Bueno
-            --> Regular
-            --> Malo
+            --> Estrella 5
+            --> Excelente 4
+            --> Bueno 3
+            --> Regular 2
+            --> Malo 1
+            --> Nuevo 0
         estado_employee
             --> Activo
             --> Desactivo
@@ -62,7 +63,7 @@ table
         id_event
         id_productos --> en el frontend mostrar todos, diferenciando el type de producto de agregar y quitar
     
-    inventario_productos
+    productos
         id_inventario_productos
         type_producto
         id_proveedor

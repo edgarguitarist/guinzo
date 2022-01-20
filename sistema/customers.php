@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="no-overflow-x" lang="es">
 
 <head>
     <?php
@@ -32,7 +32,7 @@
 
 </body>
 
-<footer class="<?= $foot ?>">
+<footer id="footy" class="<?= $foot ?>">
     <?php include "components/footer.php" ?>
 </footer>
 

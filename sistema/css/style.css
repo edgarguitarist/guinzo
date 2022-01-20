@@ -375,6 +375,7 @@ section h4.section-subheading {
 
 #servicio .servicio-item .servicio-link .servicio-hover:hover {
   opacity: 1;
+  transform: scale(1);
 }
 
 #servicio

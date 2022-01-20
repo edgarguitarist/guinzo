@@ -53,12 +53,11 @@ if (!isset($_SESSION['id_role'])) {
 <!-- jGrowl -->
 <link href="vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
 
-
-
-
-
+<!-- Modals Need it -->
+<link rel="stylesheet" href="css/form_signup.css">
 
 <?php
+include 'paths.php ';
 date_default_timezone_set('America/Guayaquil');
 $hoy = date('Y-m-d');
 $minimo = date("Y-m-d", strtotime($hoy."- 18 years"));

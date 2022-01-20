@@ -17,4 +17,7 @@
 <!-- jGrowl -->
 <script src="sistema/vendors/jGrowl/jquery.jgrowl.js"></script>
 
+<!-- DragAndDrop -->
+<script src="sistema/js/draganddrop.js"></script>
+
 

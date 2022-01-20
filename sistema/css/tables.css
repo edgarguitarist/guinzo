@@ -37,7 +37,7 @@ table tbody tr td img{
 }
 
 table tbody tr td a:hover{
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #0088cc;
 }
 
@@ -538,11 +538,12 @@ li.prev.disabled {}
  /*  Cambio de propiedades de columnas de las tablas por ID */
 
  #td_path_photo {
-   width: 10%;
+   width: 5%;
  }
 
  #td_actions {
-   width: 25%;
+   width: fit-content;
+   width: -moz-fit-content;
    text-align: center;
    align-content: center;
  }
@@ -551,20 +552,32 @@ li.prev.disabled {}
    width: 10%;
  }
 
-  #td_last_name {
+  #td_lastname {
     width: 10%;
   }
 
  #td_phone{
-   width: 10%;
+   width: 8%;
    text-align: end;
  }
  
  #td_email {
-   width: 25%;
+   width: 20%;
+ }
+
+ #td_eventos {
+   width: 10%;
+   font-weight: bold;
+   text-align: center;
  }
  #td_type_customer {
    width: 10%;
    font-weight: bold;
    text-align: center;
+ }
+
+ table tbody tr td img.modern{
+  height: 60px !important;
+  width: 60px !important;
+  object-fit: cover;
  }

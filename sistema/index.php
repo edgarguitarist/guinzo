@@ -23,14 +23,14 @@
         </div>
     </div>
 
+    <!-- TODO: DASHBOARD -->
+
     <!-- servicio Modals -->
     <!-- Use the modals below to showcase details about your services in this projects! -->
 
-    <?php //include "components/modals.php" 
-    ?>
 
 </body>
-<footer class="footer2">
+<footer id="footy" class="footer2">
     <?php include "components/footer.php" ?>
 </footer>
 <?php include "includes/scripts.php" ?>

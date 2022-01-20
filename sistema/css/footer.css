@@ -1,12 +1,12 @@
-footer {
+#footy {
   padding: 25px 0;
   text-align: center;
   background-color: #111;
   position: absolute;
   width: 100%;
   color: white;
-  margin-top: 100px;
-  z-index: 999;  
+  /* margin-top: 100px; */
+  z-index: 30;
   overflow-x: hidden;
 }
 
@@ -55,12 +55,40 @@ ul.social-buttons li a svg {
   margin: 0px !important;
 }
 
+.fb,
+.yt,
+.ins,
+.tw,
+.wa {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  line-height: 40px;
+  outline: 0;
+  color: #fff;
+  background-color: #444;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .fb:hover,
 .fb:focus,
 .fb:active {
   color: #fff;
   background: #3b5998;
   background-color: #3b5998;
+}
+
+.wa:hover,
+.wa:focus,
+.wa:active {
+  color: #fff;
+  /*color de whatsapp*/
+  background: #25d366;
+  background-color: #25d366;
 }
 
 .twi:hover,
@@ -71,9 +99,9 @@ ul.social-buttons li a svg {
   background-color: #00acee;
 }
 
-.yt:hover,
-.yt:focus,
-.yt:active {
+.pin:hover,
+.pin:focus,
+.pin:active {
   color: #fff;
   background: #c4302b;
   background-color: #c4302b;
@@ -132,7 +160,7 @@ ul.social-buttons li a svg {
 }
 
 .footer3 {
-  width: 106%;
+  width: 100%;
 }
 
 .footerN {

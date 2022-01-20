@@ -1,44 +1,54 @@
+<?php
+include "sistema/includes/dbcon.php";
+$queryCarousel = mysqli_query($con, "SELECT * FROM carousel_images WHERE status='1' AND deleted='0'");
+$num_rows = mysqli_num_rows($queryCarousel);
+?>
+
 <div>
 
     <div id="carousel-example-generic" class="carousel slide carousel-height" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+            <?php
+            for ($i = 0; $i < $num_rows; $i++) {
+                if ($i == 0) {
+                    echo '<li data-target="#carousel-example-generic" data-slide-to="' . $i . '" class="active"></li>';
+                } else {
+                    echo '<li data-target="#carousel-example-generic" data-slide-to="' . $i . '"></li>';
+                }
+            }
+            ?>
         </ol>
+
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide1.jpg">
-            </div>
-            <div class="item">
-                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide2.jpg">
-            </div>
-            <div class="item">
-                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide3.jpg">
-            </div>
-            <div class="item">
-                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide4.jpg">
-            </div>
-            <div class="item">
-                <img style="width:100%; margin:auto;" class="carousel-height" src="sistema/images/slides/slide5.jpg">
-            </div>
+            <?php
+            $cont = 0;
+            while ($data = mysqli_fetch_array($queryCarousel)) {
+                if ($cont == 0) { ?>
+                    <div class="item active">
+                    <?php } else { ?>
+                        <div class="item">
+                        <?php } ?>
+                        <img style="width:100%; margin:auto;" class="carousel-height" src="<?= $data['path'] ?>" alt="<?= $data['name'] ?>">
+                    </div>
+                    <?php
+                    $cont++;
+                }
+                    ?>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
         </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-        </a>
+
     </div>
-
-
-</div>

@@ -19,6 +19,9 @@ body {
   zoom: 80%;
 }
 
+.no-overflow-x {
+  overflow-x: hidden;
+}
 
 .text-muted {
   color: #777;
@@ -94,54 +97,13 @@ h6 {
   font-weight: 700;
 }
 
-.img-centered {
-  margin: 0 auto;
-}
 
-.fb,
-.yt,
-.ins {
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  font-size: 20px;
-  line-height: 40px;
-  outline: 0;
-  color: #fff;
-  background-color: #444;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
 
-.fb:hover,
-.fb:focus,
-.fb:active {
-  background-color: #3b5998;
-}
 
-.yt:hover,
-.yt:focus,
-.yt:active {
-  background-color: #c4302b;
-}
 
-.ins:hover,
-.ins:focus,
-.ins:active {
-  background: #d6249f;
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
-}
-*/ .btn:focus,
+
+
+.btn:focus,
 .btn:active,
 .btn.active,
 .btn:active:focus {
@@ -184,6 +146,15 @@ img::-moz-selection {
 
 .img-small {
   height: 200px;
+}
+.img-centered {
+  margin: 0 auto;
+}
+
+
+#photo-user{  
+object-fit: cover;
+border-radius: 50%;
 }
 
 .center {
@@ -291,6 +262,16 @@ img::-moz-selection {
   margin-bottom: 20px !important;
 }
 
+.mv-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.mh-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .mh-10 {
   margin-left: 10px !important;
   margin-right: 10px !important;
@@ -347,6 +328,14 @@ img::-moz-selection {
   padding-right: 20px !important;
 }
 
+.pv-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.pv-5 {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
 .pv-10 {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
@@ -388,6 +377,8 @@ img::-moz-selection {
   min-height: 100vh;
   height: 100vh;
 }
+
+
 
 /* algo raro paso aqui, no se si funciona esto para que no se rompa en los celulares*/
 @media only screen and (max-width: 768px) {
@@ -471,6 +462,11 @@ em {
   text-decoration: none;
 }
 
+.wd-fit-content {
+  width: -moz-fit-content;
+  width: fit-content !important;
+}
+
 .wd-2c {
   width: 47.5%;
 }
@@ -552,6 +548,11 @@ em {
   margin: 0;
   padding: 0;
 }
+.h-60e {
+  height: 60px !important;
+  margin: 0;
+  padding: 0;
+}
 .h-70 {
   height: 70px !important;
 }
@@ -567,6 +568,44 @@ em {
 .h-100 {
   height: 100px !important;
 }
+
+.w-10{
+  width: 10px !important;
+}
+.w-20{
+  width: 20px !important;
+}
+.w-30{
+  width: 30px !important;
+}
+.w-40{
+  width: 40px !important;
+}
+.w-45{
+  width: 45px !important;
+}
+.w-50{
+  width: 50px !important;
+}
+.w-60{
+  width: 60px !important;
+}
+.w-70{
+  width: 70px !important;
+}
+.w-75{
+  width: 75px !important;
+}
+.w-80{
+  width: 80px !important;
+}
+.w-90{
+  width: 90px !important;
+}
+.w-100{
+  width: 100px !important;
+}
+
 
 .is-in-nav {
   font-size: 1.2em;
@@ -641,8 +680,16 @@ svg {
 @media screen and (max-width: 990px) {
   /* Mobile  */
 
-  .h-60 {
+  .h-60e {
     height: 130px !important;
+  }
+
+  .inline-flex-mobile{
+    display: inline-flex;
+  }
+  .text-white-mobile{
+    color: white !important;
+    font-size: 20px !important;
   }
 
   .footerN {
@@ -691,8 +738,98 @@ svg {
 }
 
 button[type="submit"]:disabled {
-  background-color: var(--bone);
-  color: var(--dark);
-  border: 1px solid var(--dark);
+  background-color: #b02818;
+  border-bottom: 4px solid #6e190f;
+  border-radius: 3px;
+  padding: 10px 35px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
   cursor: not-allowed;
+}
+.scale-101 :hover{
+  transform: scale(1.01);
+  transition: 0.3s;
+}
+.scale-102 :hover{
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+.scale-103 :hover{
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+.scale-104 :hover{
+  transform: scale(1.04);
+  transition: 0.3s;
+}
+.scale-105 :hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.is-inline-flex {
+  display: inline-flex;
+}
+
+.fit-contain {
+  object-fit: contain;
+}
+
+.is-my-primary:hover :nth-child(),
+.is-my-primary:focus :nth-child(),
+.is-my-primary:active :nth-child(),
+.is-my-primary:visited :nth-child(),
+.is-my-primary:link :nth-child(){
+  background-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+.center-total{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: inherit;
+  min-height: inherit;
+}
+
+.is-place-content-center{
+  /* align-items: center; */
+  justify-content: center;
+  place-content: center;
+}
+
+.modalAddImage svg:hover{
+  display: block;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+}
+
+.decoration-none{
+  text-decoration: none !important;
+}
+.object-fit-scale-down{
+  object-fit: scale-down;
+}
+
+.img-card-fix{
+  height: 213.24px !important;
+}
+
+.add-image {
+  /* color: #d6249f; */
+  color: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  /* box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25); */
 }

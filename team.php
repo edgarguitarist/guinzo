@@ -16,12 +16,15 @@
     <!-- Navigation -->
     <?php include "sistema/components/root/nav.php" ?>
 
-    <div class="padre center_login has-text-centered" style="place-content: center;">
-        <?php include "sistema/components/crew.php" ?>
+    <div class="has-text-centered is-flex top-nav">
+        <div class="mv-auto mh-auto has-text-centered">
+            <?php include "sistema/components/crew.php" ?>
+        </div>
     </div>
 
+
 </body>
-<footer style="position: fixed; bottom: 0;">
+<footer id="footy" class="footer2">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>

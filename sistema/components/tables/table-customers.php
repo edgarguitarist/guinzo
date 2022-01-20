@@ -1,6 +1,3 @@
-<?php #include_once "components/tables/types.php"; ?>
-
-
 <table class="table" id="example" aria-describedby="tabla">
     <thead>
         <tr>
@@ -10,7 +7,8 @@
             <th id="phone">Celular</th>
             <th id="email">Correo</th>
             <th id="type_customer">Tipo de Cliente</th>
-            <th id="actions">Acciones</th>
+            <th id="eventos">Eventos Activo</th>
+            <th id="actions" class="wd-fit-content">Acciones</th>
 
         </tr>
     </thead>
@@ -23,9 +21,9 @@
         if ($result > 0) {
             while ($data = mysqli_fetch_array($query)) {
 
-                $degradar_customer = "<a class='button is-dark is-outlined is-size-6-desktop is-size-6' title='Degradar Rank' href='components/tables/update-customer.php?action=downgrade&id=" . $data['dni'] . "' ><em class='has-text-orange fas fa-minus-circle '></em> Bajar</a>";
-                $mejorar_customer = "<a class='button is-dark is-outlined is-size-6-desktop is-size-6' title='Subir Cliente' href='components/tables/update-customer.php?action=upgrade&id=" . $data['dni'] . "' ><em class='has-text-success fas fa-plus'></em> Mejorar </a>";
-                $eliminar_customer = $data['status_user'] == "Active" ? "<a class='button is-dark is-outlined is-size-6-desktop is-size-6' title='Eliminar Cliente' href='components/tables/update-customer.php?action=delete&id=" . $data['dni'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='button is-dark is-outlined is-size-6-desktop is-size-6' title='Eliminar Cliente' href='components/tables/update-customer.php?action=undelete&id=" . $data['dni'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
+                $degradar_customer = "<a class='button is-dark is-outlined is-size-6-desktop is-size-6' title='Bajar de Rango' href='components/tables/update-users.php?who=customers&action=downgrade&id=" . $data['dni'] . "' ><em class='has-text-orange fas fa-minus-circle '></em> Bajar</a>";
+                $mejorar_customer = "<a class='button is-dark is-outlined is-size-6-desktop is-size-6' title='Subir de Rango' href='components/tables/update-users.php?who=customers&action=upgrade&id=" . $data['dni'] . "' ><em class='has-text-success fas fa-plus'></em> Mejorar </a>";
+                $eliminar_customer = $data['status_user'] == "Active" ? "<a class='button is-dark is-outlined is-size-6-desktop is-size-6' title='Eliminar Cliente' href='components/tables/update-users.php?who=customers&action=delete&id=" . $data['dni'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='button is-dark is-outlined is-size-6-desktop is-size-6' title='Eliminar Cliente' href='components/tables/update-users.php?who=customers&action=undelete&id=" . $data['dni'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
                 
                 if($data['id_type_customer'] == 1){
                     $salida = $mejorar_customer . " " . $eliminar_customer;
@@ -37,13 +35,14 @@
 
         ?>
                 <tr>
-                    <td id="td_path_photo"><img src="<?= $data["path_photo"]; ?>" alt="photo-customer"></td>
+                    <td id="td_path_photo"><img class="modern" src="<?= $data["path_photo"]; ?>" alt="<?= $data["name"]. ' ' . $data["lastname"] ; ?>"></td>
                     <td id="td_name" ><?= $data["name"]; ?></td>
                     <td id="td_lastname"><?= $data["lastname"]; ?></td>
                     <td id="td_phone" title="Escribir Mensaje por Whatsapp"> <a target="_blank" href="https://api.whatsapp.com/send?phone=593<?= substr($data['phone'], 1); ?>"> <?= $data["phone"]; ?></a></td>
                     <td id="td_email" title="Escribir un Correo"> <a href="mailto:<?= $data["email"]; ?>"><?= $data["email"]; ?></a></td>
                     <td id="td_type_customer" title="<?= $data['description_type_customer'] ?>"> <?= $data["name_type_customer"] ?></td>
-                    <td id="td_actions"> <?= $salida;  ?> </td>
+                    <td id="td_eventos">Ninguno</td>
+                    <td id="td_actions" class="wd-fit-content"> <?= $salida;  ?> </td>
                 </tr>
             <?php
             }

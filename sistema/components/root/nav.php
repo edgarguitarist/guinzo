@@ -30,7 +30,7 @@
 <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="index.php">
-            <img src="sistema/images/logos/logo-bockcao-white.png" class="h-60" alt="logo">
+            <img src="sistema/images/logos/logo-bockcao-white.png" class="h-60e" alt="logo">
         </a>
 
         <a role="button" class="navbar-burger has-text-white is-size-6-desktop is-size-3" aria-label="menu" aria-expanded="false" data-target="navbarBulma" style="align-self: center;">
@@ -60,40 +60,62 @@
             <a class="navbar-item has-text-weight-medium has-text-white is-size-6-desktop is-size-3" href="index.php#myv">
                 <em class="fas fa-star"></em>Misión y Visión
             </a>
-            <a class="navbar-item has-text-weight-medium has-text-white is-size-6-desktop is-size-3" href="workwithus.php">
-                <em class="fas fa-user-tie"></em>Trabaja con Nosotros
-            </a>
+            <?php if (!isset($_SESSION['id_role'])) { ?>
+                <a class="navbar-item has-text-weight-medium has-text-white is-size-6-desktop is-size-3" href="workwithus.php">
+                    <em class="fas fa-user-tie"></em>Trabaja con Nosotros
+                </a>
+            <?php } ?>
         </div>
         <div class="navbar-end">
 
-            <div class="navbar-item">
+            <?php
+            if (isset($_SESSION['id_role'])) {
+            ?>
+                <div class="navbar-item is-flex-mobile">
+                    <div class="navbar-item has-dropdown is-hoverable is-my-primary">
+                        <img id="photo-user" class="h-60 w-60 mr-15 inline-flex-mobile" src="sistema/<?= $_SESSION['photo']; ?>" alt="photo">
+                        <a class="navbar-link  inline-flex-mobile">
+                            <!-- Docs -->
+                            <span class="is-in-nav has-text-weight-bold is-size-6-desktop is-size-3"><?= $_SESSION['username']; ?></span>
+                        </a>
 
-                <?php
-                if (isset($_SESSION['id_role'])) {
-                    ?>
-                        <img class="h-60 mr-15" src="<?php echo "sistema/" . $_SESSION['photo']; ?>" alt="photo">
-                        <span class="is-in-nav is-size-6-desktop is-size-3 has-text-weight-bold"><?php echo $_SESSION['username']; ?></span>
+                        <div class="navbar-dropdown">
+                            <a id="modal-js-example" href="#changePhoto" class="navbar-item is-size-6 text-white-mobile" data-toggle="modal">
+                                Cambiar Foto de Perfil
+                            </a>
+                            <a id="modal-js-example" href="#" class="navbar-item is-size-6 text-white-mobile">
+                                Editar mi Perfil
+                            </a>
+                            <hr class="navbar-divider">
+                            <div class="navbar-item  text-white-mobile">
+                                Version 2.0.1
+                            </div>
                         </div>
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a target="_blank" class="button is-primary-light is-size-6-desktop is-size-3" onclick="logout2();">
-                        <em class="fas fa-sign-out-alt"></em>Cerrar Sesión
-                    </a>
+                    </div>
                 </div>
-                    <?php
-                } else { ?>
+
+
+                <div class="navbar-item">
                     <div class="buttons">
-                        <a target="_blank" class="button is-primary-light is-size-6-desktop is-size-3" href="login.php">
+                        <a target="_blank" class="button is-primary-light is-size-6-desktop is-size-3" onclick="logout2();">
+                            <em class="fas fa-sign-out-alt"></em>Cerrar Sesión
+                        </a>
+                    </div>
+                <?php
+            } else { ?>
+                    <div class="buttons">
+                        <a target="_blank" class="button is-primary-light is-size-6-desktop is-size-3 mr-3" href="login.php">
                             <em class="fas fa-user"></em>Iniciar Sesión
                         </a>
                     </div>
                 <?php
-                }
+            }
 
                 ?>
 
 
-            </div>
+                </div>
         </div>
     </div>
 </nav>
+<?php include "sistema/components/modals/modals-photo.php" ?>

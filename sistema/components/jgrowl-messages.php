@@ -2,14 +2,19 @@
 
 $Nombres = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 
-if(!isset($ssite)){
+if (!isset($ssite)) {
     $ssite = $site;
 }
 
 $mensajes = [
     'bienvenido' => [
-        'header' => 'BIENVENIDO!!! 🤩',
-        'message' => 'Es un gusto volver a verte ' . $Nombres. '!',
+        'header' => 'BIENVENIDO!!!',
+        'message' => 'Es un gusto volver a verte ' . $Nombres . '!',
+        'type' => 'INFO'
+    ],
+    'employee' => [
+        'header' => 'BIENVENIDO!!!',
+        'message' => 'Estamos revisando tu perfil ' . $Nombres . '!',
         'type' => 'INFO'
     ],
     'no_session' => [
@@ -84,8 +89,8 @@ $mensajes = [
 
 if (isset($_GET["info"])) {
     $mensaje = $_GET["info"];
-    $cabecera = $mensajes[$mensaje]['header'];
-    $respuesta = $mensajes[$mensaje]['message'];   
+    $cabecera = $mensajes[$mensaje]['header'] ?? 'Información';
+    $respuesta = $mensajes[$mensaje]['message'] ?? 'Datos Actualizados';
 ?>
     <script>
         (function($) {

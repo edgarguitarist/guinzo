@@ -19,7 +19,7 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addCustomer"><em class="has-text-success fas fa-plus"></em>Añadir Empleado</a> <!-- TODO: Add Employee Button to Modal -->
+            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addEmployee"><em class="has-text-success fas fa-plus"></em>Añadir Empleado</a> <!-- TODO: Add Employee Button to Modal -->
             <h1 class="has-text-centered title is-cookie">Empleados</h1>
         </div>
 
@@ -30,7 +30,7 @@
     </div>
 </body>
 
-<footer class="<?= $foot ?>">
+<footer id="footy" class="<?= $foot ?>">
     <?php include "components/footer.php" ?>
 </footer>
 

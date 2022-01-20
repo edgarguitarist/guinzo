@@ -6,6 +6,7 @@
     $site = "Inicio";
     include "sistema/components/root/head.php"
     ?>
+    
 </head>
 
 <!-- partial:index.partial.html -->
@@ -31,7 +32,7 @@
         </section>
 
         <!-- CONTACTO Section -->
-        <section class="" id="contact">
+        <section id="contact">
             <?php include "sistema/components/contact.php" ?>
         </section>
 
@@ -55,9 +56,11 @@
     <?php include "sistema/components/root/modals-services.php" ?>
 
 </body>
-<footer class="footer3">
+<footer id="footy" class="footer3">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>
 <?php include "sistema/components/jgrowl-messages.php" ?>
+
+
 </html>

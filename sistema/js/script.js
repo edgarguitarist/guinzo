@@ -5,22 +5,22 @@ function logout() {
     success: function (resultado) {
       $.jGrowl("CERRANDO LA SESIÓN", {
         header: "RESPUESTA",
-      });
+      })
 
       setTimeout(function () {
-        window.location.href = "../index.php?info=logout";
-      }, 3000);
+        window.location.href = "../index.php?info=logout"
+      }, 3000)
     },
     error: function (resultado) {
       $.jGrowl("NO SE HA PODIDO MANEJAR LA SESIÓN", {
         header: "RESPUESTA",
-      });
+      })
 
       setTimeout(function () {
-        window.location.href = "../";
-      }, 3000);
+        window.location.href = "../"
+      }, 3000)
     },
-  });
+  })
 }
 
 function logout2() {
@@ -30,20 +30,31 @@ function logout2() {
     success: function (resultado) {
       $.jGrowl("CERRANDO LA SESIÓN", {
         header: "RESPUESTA",
-      });
+      })
 
       setTimeout(function () {
-        window.location.href = "index.php?info=logout";
-      }, 3000);
+        window.location.href = "index.php?info=logout"
+      }, 3000)
     },
     error: function (resultado) {
       $.jGrowl("NO SE HA PODIDO MANEJAR LA SESIÓN", {
         header: "RESPUESTA",
-      });
+      })
 
       setTimeout(function () {
-        window.location.href = "index.php?info=error";
-      }, 3000);
+        window.location.href = "index.php?info=error"
+      }, 3000)
     },
-  });
+  })
 }
+
+let currentPath = window.location.href.split("?")
+let previousPath = document.referrer.split("?")
+
+localStorage.setItem("currentPath", currentPath[0])
+localStorage.setItem("previousPath", previousPath[0])
+
+function copia(valor){
+  let aux = document.getElementById("prueba")
+  aux.innerHTML = valor;
+ }

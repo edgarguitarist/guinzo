@@ -26,7 +26,7 @@
     </div>
 
 </body>
-<footer class="footer2">
+<footer id="footy" class="footer2">
     <?php include "components/footer.php" ?>
 </footer>
 <?php include "includes/scripts.php" ?>

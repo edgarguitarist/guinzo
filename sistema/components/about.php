@@ -13,15 +13,15 @@
             </div>
             <h4 class="section-subheading text-muted is-size-5-desktop is-size-4">Bockcao//Cacao somos una empresa de profesionales en el Diseño, Planificación y Ejecución de Eventos Especiales, amantes de la Innovación y Nuevas Ideas.</h4>
         </div>
-        <div class="column"> 
+        <div class="column">
             <div class="center">
-                <a href="#servicioModalCacao" class="servicio-link" data-toggle="modal">
-                    <img src="sistema/images/team/antonio-c.jpg" class="img-large modern" alt="encasa" width="90%">
-                    
-                    <h1 class="subtitle b-600 mv-10">ANTONIO CACAO</h1>
-                    <h2 class="subtitle is-6">Event Designer</h2>
-                    <!--DOIT: Hacer modal de este mmv -->
-                </a>
+
+                <img src="sistema/images/team/Antonio-c2.jpg" class="img-large modern" alt="encasa" width="90%">
+
+                <h1 class="subtitle b-600 mv-10">ANTONIO CACAO</h1>
+                <h2 class="subtitle is-6">Event Designer</h2>
+                <!--DOIT: Hacer modal de este mmv -->
+
             </div>
         </div>
     </div>

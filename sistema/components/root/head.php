@@ -47,10 +47,12 @@ session_start();
 <link href="sistema/vendors/jGrowl/jquery.jgrowl.css" rel="stylesheet" media="screen">
 
 
-<!-- slick -->
+<!-- Modals Need it -->
+<link rel="stylesheet" href="sistema/css/form_signup.css">
 
 <!-- fechas -->
 <?php
+include 'paths.php ';
 date_default_timezone_set('America/Guayaquil');
 $hoy = date('Y-m-d');
 $hora = date('H:i:s');

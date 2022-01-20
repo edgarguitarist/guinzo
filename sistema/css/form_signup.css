@@ -122,6 +122,8 @@ input::placeholder{
   position: relative;
   color: var(--primary);
   width: 25%;
+  min-height: 150px;
+  height: 150px;
 }
 
 .image-dropping,
@@ -145,7 +147,8 @@ input::placeholder{
   font-weight: 100;
   text-transform: uppercase;
   color: inherit;
-  padding: 60px 0;
+  /* margin: auto 0px; */
+  padding: 10px 0px;
 }
 
 
@@ -162,11 +165,11 @@ input::placeholder{
   width: -moz-fit-content;
   margin: 0;
   color: #fff;
-  background: #cd4535;
+  background: #b02818;
   border: none;
   padding: 10px 35px;
   border-radius: 4px;
-  border-bottom: 4px solid #b02818;
+  border-bottom: 4px solid #6e190f;
   transition: all .2s ease;
   outline: none;
   text-transform: uppercase;

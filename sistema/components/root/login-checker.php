@@ -16,6 +16,16 @@ $consulta = "SELECT * FROM users WHERE email='$email' AND password = '$password'
 $result = mysqli_query($con, $consulta);
 
 if ($row = mysqli_fetch_array($result)) {
+
+	if ($row['id_role'] == 1) {
+		header("Location: ../../index.php?info=bienvenido");
+	} else if ($row['id_role'] == 6) {
+		header("Location: ../../../index.php?info=bienvenido");
+	} else {
+		header($rol_error);
+		session_destroy();
+		exit();
+	}
 	$_SESSION['dni'] = $row['dni'];
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['lastname'] = $row['lastname'];
@@ -27,15 +37,7 @@ if ($row = mysqli_fetch_array($result)) {
 	$_SESSION['token'] = $row['token'];
 	$_SESSION['id_role'] = $row['id_role'];
 	$_SESSION['photo']   = $row['path_photo'];
-
-	if ($row['id_role'] == 1) {
-		header("Location: ../../index.php?info=bienvenido");
-	} else if ($row['id_role'] == 6) {
-		header("Location: ../../../index.php?info=bienvenido");
-	} else {
-		header($rol_error);
-	}
-} else {	
+} else {
 	header($user_error);
 	session_destroy();
 	exit();
