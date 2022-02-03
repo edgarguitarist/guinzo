@@ -844,6 +844,10 @@ button[type="submit"]:disabled {
     font-size: 6rem !important;
   }
 
+  .h1-cookie{
+    font-size: 6rem !important;
+  }
+
   .is-cookie {
     font-size: 6rem !important;
   }
