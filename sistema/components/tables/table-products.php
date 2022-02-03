@@ -28,6 +28,7 @@
                 $eliminar_product = $data['del'] == 0 ? "<a class='".$default_class_anchors."' title='Eliminar' href='components/tables/update-data.php?who=products&action=delete&id=" . $data['id_product'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='".$default_class_anchors."' title='Restaurar' href='components/tables/update-data.php?who=products&action=undelete&id=" . $data['id_product'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
                 $salida = $editar_product . " " . $eliminar_product;
                 $fecha = explode(" " , $data['arrival_date']);
+                $peso = $data["peso"] > 0 ? $data["peso"] . " lbs." : "0 lbs.";
         ?>
                 <tr>
                     <td> <?= $data["name_product"]; ?></td>
@@ -39,7 +40,7 @@
                     <td align="center"> <?= $data["expiry_date"]; ?></td>
                     <!-- No Necesario -->
                     <td> <?= $data['name_company']; ?></td>
-                    <td align="center" class="wd-fit-content"> <?= $data["peso"] ?> lbs.</td>
+                    <td align="center" class="wd-fit-content"> <?= $peso ?></td>
                     <td align="center" class="wd-fit-content"> <?= $salida  ?> </td>
                 </tr>
             <?php
