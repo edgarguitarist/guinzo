@@ -1,5 +1,12 @@
+<div class="columns is-centrado">
+    <div class="column">
+        <h1 class="h1-cookie">Nuestro Equipo</h1>
+        
+    </div>
+</div>
+
 <div class="columns mh-auto wd-90 is-multiline">
-    <div class="column is-one-third-desktop  is-half-tablet is-full-mobile">
+    <div class="column  is-one-quarter-desktop is-half">
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
@@ -21,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+    <div class="column  is-one-quarter-desktop is-half">
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
@@ -43,11 +50,11 @@
             </div>
         </div>
     </div>
-    <div class="column is-one-third-desktop  is-half-tablet is-full-mobile">
+    <div class="column  is-one-quarter-desktop is-half">
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
-                <img class="fit-contain is-color-inverted" src="sistema/images/logos/logo-bockcao-white.png" alt="Placeholder image">
+                    <img class="fit-contain is-color-inverted" src="sistema/images/logos/logo-bockcao-white.png" alt="Placeholder image">
                 </figure>
             </div>
             <div class="card-content">
@@ -65,7 +72,7 @@
             </div>
         </div>
     </div>
-    <div class="column is-one-third-desktop  is-half-tablet is-full-mobile">
+    <div class="column  is-one-quarter-desktop is-half">
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
@@ -88,7 +95,9 @@
         </div>
     </div>
 </div>
-
+<br><br>
+<h2 class="title is-size-5"><em class="fas fa-star"></em> Somos un equipo de profesionales que resolveremos todo por ti
+Creamos momentos únicos y especiales, haciendo lo ordinario… extraordinario.</h2>
 <!-- <div class="has-text-centered">
     <a href="#servicioModalCacao" class="servicio-link" data-toggle="modal">
         <img src="sistema/images/team/antonio-c.jpg" class="img-large modern" alt="encasa" width="80%">
@@ -97,3 +106,12 @@
         <h2 class="subtitle is-6">Event Designer</h2>
     </a>
 </div> -->
+
+<!-- INFO:
+Porque elegir nuestro equipo?
+Seleccionar al mejor equipo para los Eventos Especiales es una decisión importante. Deseas tener junto a ti a un Equipo de Profesionales en eventos, con Experiencia probada, y con Testimonios reales de Eventos exitosos.
+Eso es Bockcao, además le añadimos Energía positiva, toque de Originalidad y sobretodo el Carisma único que nos caracteriza.
+El equipo Bockcao te brinda confianza y tranquilidad que te garantiza que disfrutes al 100% tu evento.
+Ser El ALMA DE FIESTA!!
+
+-->

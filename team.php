@@ -21,10 +21,8 @@
             <?php include "sistema/components/crew.php" ?>
         </div>
     </div>
-
-
 </body>
-<footer id="footy" class="footer">
+<footer id="footy" class="footer3">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>

@@ -16,7 +16,7 @@
         <div class="column">
             <div class="center">
 
-                <img src="sistema/images/team/Antonio-c2.jpg" class="img-large modern" alt="encasa" width="90%">
+                <img src="sistema/images/team/Antonio-c2.jpg" class="img-large modern ph-20 pv-0" alt="encasa" width="90%">
 
                 <h1 class="subtitle b-600 mv-10">ANTONIO CACAO</h1>
                 <h2 class="subtitle is-6">Event Designer</h2>
@@ -24,11 +24,15 @@
 
             </div>
         </div>
-    </div>
 
+    </div>
+    <h2> <em class="fas fa-star"></em> Somos un equipo de profesionales que resolveremos todo por ti
+        Creamos momentos únicos y especiales, haciendo lo ordinario… extraordinario.</h2>
+
+    <br>
     <div class="columns is-centrado">
         <div class="column">
-            <a href="team.php" class="button is-dark is-outlined is-size-6-desktop is-size-4"><em class="fas fa-users"></em>Nuestro Equipo</a>
+            <a href="team.php" class="button is-dark is-outlined is-size-5-desktop is-size-4"><em class="fas fa-users"></em>Nuestro Equipo</a>
         </div>
     </div>
 </div>
