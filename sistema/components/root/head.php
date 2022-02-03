@@ -8,7 +8,7 @@ session_start();
 ?>
 
 <!-- Tittle & Logo -->
-<title><?php echo $site ?> - Bockcao</title>
+<title><?= $site ?> - Bockcao</title>
 <link rel="icon" type="image/png" href="sistema/images/logos/cropped-logo_bockcao-black-270x270.png" />
 
 <!-- jQuery -->

@@ -24,7 +24,7 @@
 
 
 </body>
-<footer id="footy" class="footer2">
+<footer id="footy" class="footer">
     <?php include "sistema/components/footer.php" ?>
 </footer>
 <?php include "sistema/includes/root/scripts.php" ?>

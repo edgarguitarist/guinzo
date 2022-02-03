@@ -121,12 +121,10 @@ function checkEmail(elemento) {
         if (resultado === "existe") {
           correo.className = "input is-danger";
           document.getElementById("email_error").innerHTML =
-            "El correo ya existe";
-          
+            "El correo ya existe";          
         } else {
           correo.className = "input is-success";
-          document.getElementById("email_error").innerHTML = "&nbsp;";
-          
+          document.getElementById("email_error").innerHTML = "&nbsp;";          
         }
       },
       error: function (resultado) {
@@ -136,8 +134,7 @@ function checkEmail(elemento) {
     });
   } else {
     correo.className = "input is-danger";
-    document.getElementById("email_error").innerHTML = "El correo no es valido";
-    
+    document.getElementById("email_error").innerHTML = "El correo no es valido";    
   }
 }
 

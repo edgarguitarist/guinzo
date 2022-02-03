@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    $site = "Proveedores";
+    $site = "Materiales";
     $ssite = substr($site, 0, -2);
     include "components/head.php";
     include "includes/dbcon.php";
@@ -19,11 +19,11 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addProvider"><em class="has-text-success fas fa-plus"></em>Añadir Proveedor</a> <!-- TODO: Add Proveedores Button to Modal -->
-            <h1 class="has-text-centered title is-cookie">Proveedores</h1>
+            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addMaterial"><em class="has-text-success fas fa-plus"></em>Añadir Material</a> <!-- TODO: Add Materiales Button to Modal -->
+            <h1 class="has-text-centered title is-cookie">Materiales</h1>
         </div>
         <div class="wd-90">
-            <?php include "components/tables/table-providers.php" ?>
+            <?php include "components/tables/table-materials.php" ?>
         </div>
 
     </div>

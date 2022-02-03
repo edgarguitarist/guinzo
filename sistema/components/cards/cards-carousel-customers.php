@@ -11,7 +11,7 @@ $query_carousel_customers = mysqli_query($con, "SELECT * FROM carousel_customers
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-4by3">
-                        <img class="object-fit-scale-down" src="../<?= $data['path']; ?>" alt="<?= $data['name']; ?>">
+                        <img class="object-fit-contain" src="../<?= $data['path']; ?>" alt="<?= $data['name']; ?>">
                     </figure>
                 </div>
                 <footer class="card-footer">
@@ -22,7 +22,7 @@ $query_carousel_customers = mysqli_query($con, "SELECT * FROM carousel_customers
         </div>
     <?php } ?>
     <div class="column is-one-fifth-desktop is-half servicio-item scale-101 mb-6">
-        <div class="card">
+    <div class="card" style="height: 100%;">
             <a id="prueba" href="#changeCarouselImage" class="img-card-fix servicio-link" data-toggle="modal">
                 <div class="img-card-fix servicio-hover img-responsive">
                     <div class="servicio-hover-content">

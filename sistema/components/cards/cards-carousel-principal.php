@@ -23,7 +23,7 @@ $query_carousel_images = mysqli_query($con, "SELECT * FROM carousel_images WHERE
         </div>
     <?php } ?>
     <div class="column is-one-fifth-desktop is-half servicio-item scale-101 mb-6">
-        <div class="card">
+        <div class="card" style="height: 100%;">
             <a id="prueba" href="#changeCarouselImage" class="img-card-fix servicio-link" data-toggle="modal">
                 <div class="img-card-fix servicio-hover img-responsive">
                     <div class="servicio-hover-content">

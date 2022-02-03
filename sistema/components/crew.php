@@ -47,13 +47,13 @@
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
-                    <img class="fit-contain" src="sistema/images/team/antonio-c.jpg" alt="Placeholder image">
+                <img class="fit-contain is-color-inverted" src="sistema/images/logos/logo-bockcao-white.png" alt="Placeholder image">
                 </figure>
             </div>
             <div class="card-content">
                 <div class="media mb-1">
                     <div class="wd-90 mh-auto">
-                        <p class="title is-4">ANTONIO CACAO</p>
+                        <p class="title is-4">Otro Miembro</p>
                         <p class="ml-3 is-6">Event Designer</p>
                     </div>
                 </div>
@@ -69,13 +69,13 @@
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
-                    <img class="fit-contain" src="sistema/images/team/antonio-c.jpg" alt="Placeholder image">
+                    <img class="fit-contain is-color-inverted" src="sistema/images/logos/logo-bockcao-white.png" alt="Placeholder image">
                 </figure>
             </div>
             <div class="card-content">
                 <div class="media mb-1">
                     <div class="wd-90 mh-auto">
-                        <p class="title is-4">ANTONIO CACAO</p>
+                        <p class="title is-4">Otro Miembro</p>
                         <p class="ml-3 is-6">Event Designer</p>
                     </div>
                 </div>

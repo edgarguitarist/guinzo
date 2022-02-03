@@ -57,10 +57,10 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
             <a class="<?= $a_class; ?>" href="providers.php">
                 <em class="fas fa-truck"></em>Proveedores
             </a>
-            <a class="<?= $a_class; ?>" href="coming-soon.php">
+            <a class="<?= $a_class; ?>" href="products.php">
                 <em class="fas fa-apple-alt"></em>Productos
             </a>
-            <a class="<?= $a_class; ?>" href="coming-soon.php">
+            <a class="<?= $a_class; ?>" href="materials.php">
                 <em class="fas fa-utensils"></em>Materiales
             </a>
             <a class="<?= $a_class; ?>" href="coming-soon.php">

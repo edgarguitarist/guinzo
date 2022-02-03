@@ -36,8 +36,14 @@
     <?php include "components/footer.php" ?>
 </footer>
 
-<?php include "includes/scripts.php" ?>
-<?php include "components/jgrowl-messages.php" ?>
-<?php include "components/tables/script.php" ?>
+<script>
+    position_sort_table = 1
+</script>
+
+<?php 
+    include "includes/scripts.php"; 
+    include "components/jgrowl-messages.php";    
+    include "components/tables/script_sort.php"; 
+?>
 
 </html>

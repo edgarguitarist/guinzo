@@ -95,8 +95,8 @@ if (isset($_GET["info"])) {
     <script>
         (function($) {
             $(document).ready(function() {
-                $.jGrowl('<?php echo $respuesta ?>', {
-                    header: '<?php echo $cabecera ?>'
+                $.jGrowl('<?= $respuesta ?>', {
+                    header: '<?= $cabecera ?>'
                 })
             });
         })(jQuery);

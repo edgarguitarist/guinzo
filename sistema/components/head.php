@@ -18,7 +18,7 @@ if (!isset($_SESSION['id_role'])) {
 
 
 <!-- Tittle & Logo -->
-<title><?php echo $site ?> - Bockcao</title>
+<title><?= $site ?> - Bockcao</title>
 <link rel="icon" type="image/png" href="images/logos/cropped-logo_bockcao-black-270x270.png" />
 
 <!-- jQuery -->
