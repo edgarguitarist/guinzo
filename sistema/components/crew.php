@@ -12,7 +12,7 @@ $num_rows_crew = mysqli_num_rows($query_crew);
 </div>
 
 <div class="columns mh-auto wd-90 is-multiline">
-    <div class="column  is-one-quarter-desktop is-half">
+    <div class="column is-one-quarter-desktop is-half">
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
@@ -34,7 +34,7 @@ $num_rows_crew = mysqli_num_rows($query_crew);
             </div>
         </div>
     </div>
-    <div class="column  is-one-quarter-desktop is-half">
+    <div class="column is-one-quarter-desktop is-half">
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
@@ -56,9 +56,8 @@ $num_rows_crew = mysqli_num_rows($query_crew);
             </div>
         </div>
     </div>
-    <?php while ($data = mysqli_fetch_array($query_crew)) {
-        //$name_Service = str_replace(' ', '', $data['name_service']); ?>
-        <div class="column  is-one-quarter-desktop is-half">
+    <?php while ($data = mysqli_fetch_array($query_crew)) { ?>
+        <div class="column is-one-quarter-desktop is-half">
             <div class="card">
                 <div class="card-image pt-5">
                     <figure class="image is-4by3">
@@ -81,7 +80,7 @@ $num_rows_crew = mysqli_num_rows($query_crew);
             </div>
         </div>
     <?php } ?>
-    <div class="column  is-one-quarter-desktop is-half">
+    <div class="column is-one-quarter-desktop is-half">
         <div class="card">
             <div class="card-image pt-5">
                 <figure class="image is-4by3">
