@@ -1,3 +1,5 @@
 *.sql
 sistema/js/test.js
 test.php
+sistema/informacion.todo
+.htaccess
