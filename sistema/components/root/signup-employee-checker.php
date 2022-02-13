@@ -54,7 +54,7 @@ if ($rows > 0) {
     
     $insertar_user = "INSERT INTO users (dni, name, lastname, phone, birthday, email, password, token, id_role, path_photo) VALUES ('$cedula', '$name', '$lastname', '$phone', '$birthday', '$email', '$password', '$token', '$id_role', '$path_photo')";
    
-    $insertar_employee = "INSERT INTO employee (id_user, middleName, secondLastName, date_signup, curriculum, know_us) VALUES ('$cedula', '$middle_name', '$second_lastname', '$today', '$path_curriculum ', '$question')";
+    $insertar_employee = "INSERT INTO employee (id_user, middleName, secondLastName, city, date_signup, curriculum, know_us) VALUES ('$cedula', '$middle_name', '$second_lastname', '$city', '$today', '$path_curriculum ', '$question')";
     
 
     $resultado_user = mysqli_query($con, $insertar_user);

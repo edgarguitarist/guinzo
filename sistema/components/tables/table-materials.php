@@ -6,10 +6,9 @@
             <th>Tipo</th>
             <th>Descripción</th>
             <th>Fecha de Llegada</th>
-            <th>Hora de Llegada</th>
             <th>Fecha de Expiración</th>
             <th>Proveedor</th>
-            <th>Total</th>
+            <th>Total &nbsp;</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -22,7 +21,7 @@
         if ($result > 0) {
             while ($data = mysqli_fetch_array($query)) {
                 $default_class_anchors = "button is-dark is-outlined is-size-6-desktop is-size-6 mt--7";
-                $editar_material = "<a class='$default_class_anchors' title='Editar' href='edit-data.php?who=material&id=" . $data['id_material'] . "' ><em class='has-text-info fas fa-user-edit '></em> Editar</a>";
+                $editar_material = "<a class='$default_class_anchors' title='Editar' href='edit-data.php?who=materials&id=" . $data['id_material'] . "' ><em class='has-text-primary fas fa-edit '></em> Editar</a>";
                 $detalle_material = "";
                 $eliminar_material = $data['del'] == 0 ? "<a class='".$default_class_anchors."' title='Eliminar' href='components/tables/update-data.php?who=materials&action=delete&id=" . $data['id_material'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='".$default_class_anchors."' title='Restaurar' href='components/tables/update-data.php?who=materials&action=undelete&id=" . $data['id_material'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
                 $salida = $editar_material . " " . $eliminar_material;
@@ -33,8 +32,7 @@
                     <td align="right"> <?= $data["amount"]; ?></td>
                     <td> <?= $data["name_type_material"]; ?></td>
                     <td> <?= $data["description_material"]; ?></td>
-                    <td align="center"> <?= $fecha[0]; ?></td>
-                    <td align="center"> <?= $fecha[1]; ?></td>
+                    <td align="center"> <?= $data['arrival_date_material']; ?></td>
                     <td align="center"> <?= $data["expiry_date_material"]; ?></td>
                     <!-- No Necesario -->
                     <td> <?= $data['name_company']; ?></td>
@@ -51,5 +49,5 @@
     </tbody>
     </table>
 <?php   }
-        $foot = $result > 4 ? "" : "footer2";
+        $foot = $result > 8 ? "" : "footer2";
 ?>

@@ -45,8 +45,8 @@
                         </div>
 
                         <div class="forms_field">
-                            <input title="Cedula" type="text" placeholder="Cedula" onkeyup="checkCedula()" id="cedula" name="cedula" minlength="10" maxlength="10" class="forms_field-input wd-45" required />
-                            <input title="Telefono" type="text" style="position: relative; float: right;" placeholder="Telefono" id="phone" name="phone" minlength="10" maxlength="10" class="forms_field-input wd-45" required />
+                            <input title="Cedula" type="text" placeholder="Cedula" onkeyup="checkCedula()" id="cedula" name="cedula" minlength="10" maxlength="10" class="forms_field-input wd-45  solo-numeros" required />
+                            <input title="Telefono" type="text" style="position: relative; float: right;" placeholder="Telefono" id="phone" name="phone" minlength="10" maxlength="10" class="forms_field-input wd-45  solo-numeros" required />
                             <span id="dni_error" style="display: flex;"></span>
                         </div>
 

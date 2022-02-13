@@ -5,7 +5,7 @@
             <th id="name">Nombre</th>
             <th id="lastname">Apellido</th>
             <th id="phone">Celular</th>
-            <th id="email">Correo</th>
+            <th>Correo</th>
             <th >Tipo de Cliente</th>
             <th id="eventos">Eventos Activo</th>
             <th class="wd-fit-content">Acciones</th>
@@ -26,7 +26,7 @@
                 //$degradar_customer = "<a class='$default_class_anchors' title='Bajar de Rango' href='components/tables/update-data.php?who=customers&action=downgrade&id=" . $data['dni'] . "' ><em class='has-text-orange fas fa-minus-circle '></em> Bajar</a>";
                 //$mejorar_customer = "<a class='$default_class_anchors' title='Subir de Rango' href='components/tables/update-data.php?who=customers&action=upgrade&id=" . $data['dni'] . "' ><em class='has-text-success fas fa-plus'></em> Mejorar </a>";
                 $eliminar_customer = $data['status_user'] == "Active" ? "<a class='$default_class_anchors' title='Eliminar Cliente' href='components/tables/update-data.php?who=customers&action=delete&id=" . $data['dni'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='$default_class_anchors' title='Eliminar Cliente' href='components/tables/update-data.php?who=customers&action=undelete&id=" . $data['dni'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
-                $editar_customer = "<a class='$default_class_anchors' title='Editar Cliente' href='edit-data.php?who=customer&id=" . $data['dni'] . "' ><em class='has-text-primary fas fa-edit'></em> Editar </a>";
+                $editar_customer = "<a class='$default_class_anchors' title='Editar Cliente' href='edit-data.php?who=customers&id=" . $data['dni'] . "' ><em class='has-text-primary fas fa-edit'></em> Editar </a>";
                 $degradar_customer2 = "<a class='$default_class_anchors2' title='Bajar de Rango' href='components/tables/update-data.php?who=customers&action=downgrade&id=" . $data['dni'] . "' ><em class='m-auto has-text-orange fas fa-minus-circle'></em></a>";
                 $mejorar_customer2 = "<a class='$default_class_anchors2' title='Subir de Rango' href='components/tables/update-data.php?who=customers&action=upgrade&id=" . $data['dni'] . "' ><em class='m-auto has-text-success fas fa-plus'></em></a>";
                 
@@ -70,5 +70,5 @@
     </tbody>
     </table>
 <?php   }
-        $foot = $result > 4 ? "" : "footer2";
+        $foot = $result > 8 ? "" : "footer2";
 ?>

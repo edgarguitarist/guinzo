@@ -5,6 +5,7 @@
     <?php
     $site = "Productos";
     $ssite = substr($site, 0, -1);
+
     include "components/head.php";
     include "includes/dbcon.php";
     ?>
@@ -19,10 +20,10 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addProduct"><em class="has-text-success fas fa-plus"></em>Añadir Producto</a> <!-- TODO: Add Proveedores Button to Modal -->
+            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addProduct" onmouseover="buscarModal(this)" data-toggle="modal" href="#addProductModal"><em class="has-text-success fas fa-plus"></em>Añadir Producto</a> <!-- TODO: Add Proveedores Button to Modal -->
             <h1 class="has-text-centered title is-cookie">Productos</h1>
         </div>
-        <div class="wd-90">
+        <div class="wd-90 zoom-90">
             <?php include "components/tables/table-products.php" ?>
         </div>
     </div>
@@ -31,11 +32,14 @@
 <footer id="footy" class="<?= $foot ?>">
     <?php include "components/footer.php" ?>
 </footer>
-
+<script>
+    position_sort_table = 6
+    order_sort_table = "desc"
+</script>
 <?php 
     include "includes/scripts.php"; 
     include "components/jgrowl-messages.php";
-    include "components/tables/script.php" 
+    include "components/tables/script_sort.php"; 
 ?>
 
 </html>

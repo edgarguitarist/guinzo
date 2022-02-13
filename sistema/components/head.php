@@ -13,19 +13,11 @@ if (!isset($_SESSION['id_role'])) {
         session_destroy();
     }
 }
-
 ?>
-
 
 <!-- Tittle & Logo -->
 <title><?= $site ?> - Bockcao</title>
 <link rel="icon" type="image/png" href="images/logos/cropped-logo_bockcao-black-270x270.png" />
-
-<!-- jQuery -->
-<!-- <script type="text/javascript" src="js/jquery.min.js"></script>
-<script src="vendors/jquery-1.11.1.min.js"></script>
-<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'> -->
-
 
 <!-- Bootstrap -->
 <link rel='stylesheet' href='vendors/bootstrap/css/font-awesome.css'>
@@ -60,5 +52,8 @@ if (!isset($_SESSION['id_role'])) {
 include 'paths.php ';
 date_default_timezone_set('America/Guayaquil');
 $hoy = date('Y-m-d');
+$ayer = date("Y-m-d", strtotime($hoy."- 1 days"));
+$dos_semanas = date("Y-m-d", strtotime($hoy."+ 15 days"));
+$un_mes = date("Y-m-d", strtotime($hoy."+ 1 months"));
 $minimo = date("Y-m-d", strtotime($hoy."- 18 years"));
 ?>

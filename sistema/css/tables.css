@@ -4,7 +4,6 @@
   display: -webkit-box;
   display: inline-flex;
   width: 100%;
-
 }
 
 table {
@@ -523,7 +522,6 @@ li.prev.disabled {}
  }
  
  input[type="search"],
- input[type="tel"],
  input[type="color"],
  .uneditable-input {
    display: inline-block;

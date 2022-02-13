@@ -3,8 +3,17 @@
         "áéíóúabcdefghijklmnñopqrstuvwxyz",
         "bockcao",
         "dbcon",
+        "defaultcity",
+        "defaultrole",
+        "defaulttype",
+        "elementruc",
+        "firstname",
+        "isquery",
         "logearse",
         "longcheck",
-        "Preferencial"
+        "minimo",
+        "oclass",
+        "Preferencial",
+        "twoinserts"
     ]
 }

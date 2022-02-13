@@ -24,20 +24,15 @@ $(".navbar-collapse ul li a").click(function () {
   $(".navbar-toggle:visible").click();
 });
 
-//Carousel
-$(".carousel").swipe({
-  swipe: function (
-    event,
-    direction,
-    _distance,
-    duration,
-    fingerCount,
-    fingerData
-  ) {
-    if (direction == "left") $(this).carousel("next");
-    if (direction == "right") $(this).carousel("prev");
-  },
-  allowPageScroll: "vertical",
-});
-
-
+//buscar todos los elementos que contengan la clase modal
+function buscarModal(elemento) {
+  var modal = document.getElementsByClassName("modal");
+  nameElement = elemento.id + "Modal";
+  for (var i = 0; i < modal.length; i++) {
+    if(modal[i].id == nameElement || modal[i].id == "changePhotoS" || modal[i].id == "changePhoto") {
+      //console.log(modal[i].id)
+    }else{
+      modal[i].remove();
+    } 
+  }
+}

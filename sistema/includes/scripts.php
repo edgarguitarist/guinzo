@@ -2,7 +2,6 @@
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
 <!-- Partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
@@ -18,3 +17,5 @@
 
 <!-- DragAndDrop -->
 <script src="js/draganddrop.js"></script>
+
+<?php include "components/modals/modals-add.php";?>

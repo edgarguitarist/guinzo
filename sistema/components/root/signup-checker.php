@@ -5,6 +5,7 @@ $name = $_POST['name'];
 $lastname = $_POST['lastname'];
 $birthday = $_POST['birthday'];
 $email = $_POST['email_r'];
+$phone = $_POST['phone'];
 $password = $_POST['password_r'];
 $token = base64_encode($email);
 
@@ -30,7 +31,7 @@ if ($rows > 0) {
     header($signup_error);
     exit();
 } else {
-    $insertar = "INSERT INTO users (dni, name, lastname, birthday, email, password, token) VALUES ('$cedula', '$name', '$lastname', '$birthday', '$email', '$password', '$token')";
+    $insertar = "INSERT INTO users (dni, name, lastname, phone, birthday, email, password, token) VALUES ('$cedula', '$name', '$lastname', '$phone' ,'$birthday', '$email', '$password', '$token')";
     $resultado = mysqli_query($con, $insertar);
     
     if ($resultado) {

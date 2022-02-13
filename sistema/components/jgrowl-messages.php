@@ -81,6 +81,16 @@ $mensajes = [
         'header' => 'LO SENTIMOS! ',
         'message' => 'No hemos podido Cambiar el Rank del ' . $ssite . '.',
         'type' => 'ERROR'
+    ],
+    'add' => [
+        'header' => 'Datos Actualizados! ',
+        'message' => 'Hemos agregado un nuevo ' . $ssite . '.',
+        'type' => 'SUCCESS'
+    ],
+    'add_error' => [
+        'header' => 'LO SENTIMOS! ',
+        'message' => 'No hemos podido agregar el ' . $ssite . '.',
+        'type' => 'ERROR'
     ]
 ];
 

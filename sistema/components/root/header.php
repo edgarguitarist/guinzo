@@ -20,7 +20,6 @@ $num_rows = mysqli_num_rows($queryCarousel);
             ?>
         </ol>
 
-
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <?php
@@ -31,8 +30,8 @@ $num_rows = mysqli_num_rows($queryCarousel);
                     <?php } else { ?>
                         <div class="item">
                         <?php } ?>
-                        <img style="width:100%; margin:auto;" class="carousel-height" src="<?= $data['path'] ?>" alt="<?= $data['name'] ?>">
-                    </div>
+                        <img class="carousel-height wd-100 m-auto" src="<?= $data['path'] ?>" alt="<?= $data['name'] ?>">
+                        </div>
                     <?php
                     $cont++;
                 }

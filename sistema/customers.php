@@ -4,7 +4,6 @@
 <head>
     <?php
     $site = "Clientes";
-    #quitar la ultima letra a la variable $site
     $ssite = substr($site, 0, -1);
     include "components/head.php";
     include "includes/dbcon.php";
@@ -20,11 +19,11 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4 " id="addCustomer"><em class="has-text-success fas fa-plus"></em>Añadir Cliente</a> <!-- TODO: Add Customer Button to Modal -->
+            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" onmouseover="buscarModal(this)" id="addCustomer" data-toggle="modal" href="#addCustomerModal"><em class="has-text-success fas fa-plus"></em>Añadir Cliente</a> <!-- INFO: data-toggle="modal" href="#" -->
             <h1 class="has-text-centered title is-cookie"><?= $site ?></h1>
         </div>
 
-        <div class="wd-90">
+        <div class="wd-90 zoom-90">
             <?php include "components/tables/table-customers.php" ?>
         </div>
 
@@ -40,10 +39,10 @@
     position_sort_table = 1
 </script>
 
-<?php 
-    include "includes/scripts.php"; 
-    include "components/jgrowl-messages.php";    
-    include "components/tables/script_sort.php"; 
+<?php
+include "includes/scripts.php";
+include "components/jgrowl-messages.php";
+include "components/tables/script_sort.php";
 ?>
 
 </html>

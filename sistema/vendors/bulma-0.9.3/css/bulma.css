@@ -3642,8 +3642,8 @@ a.tag:hover {
 .is-active.input,
 .is-active.textarea,
 .select select.is-active {
-  border-color: #040404;
-  box-shadow: 0 0 0 0.125em rgba(72, 95, 199, 0.25);
+   border-color: contrast(97%) brightness(97%);
+   box-shadow: 0 0 0 0.125em rgba(72, 95, 199, 0.25);
 }
 
 .input[disabled],
@@ -3654,7 +3654,7 @@ fieldset[disabled] .textarea,
 fieldset[disabled] .select select,
 .select fieldset[disabled] select {
   background-color: whitesmoke;
-  border-color: whitesmoke;
+  border-color: ;
   box-shadow: none;
   color: #7a7a7a;
 }

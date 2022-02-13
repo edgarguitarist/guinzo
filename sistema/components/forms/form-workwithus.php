@@ -78,7 +78,7 @@
                 <div class="file-upload">
                     <div class="image-upload-wrap">
                         <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
-                        <input id="photo" name="photo" class="file-upload-input" type='file' onchange="readURL2(this);" accept="image/*" required />
+                        <input id="photo" name="photo" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" required />
                         <div class="drag-text center-total">
                             <em class="far fa-image is-size-2"></em>
                             <h3>Selecciona tu foto</h3>
