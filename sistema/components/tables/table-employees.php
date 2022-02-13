@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <?php
-        $query = mysqli_query($con, "SELECT *, te.name_type_employee AS tipo FROM users u, employee e, type_employee te, roles r WHERE u.id_role != 6 AND e.id_user = u.dni AND te.id_type_employee = e.rank_employee AND u.id_role = r.id_role"); // consulta para obtener los empleados
+        $query = mysqli_query($con, "SELECT *, te.name_type_employee AS tipo, u.name AS nombre FROM users u, employee e, type_employee te, roles r WHERE u.id_role != 6 AND e.id_user = u.dni AND te.id_type_employee = e.rank_employee AND u.id_role = r.id_role"); // consulta para obtener los empleados
         mysqli_close($con);
         $result = mysqli_num_rows($query);
 
@@ -58,9 +58,9 @@
 
         ?>
                 <tr>
-                    <td id="td_path_photo"><img class="modern" src="<?= $data["path_photo"]; ?>" alt="<?= $data["name"]. ' ' . $data["lastname"] ; ?>"></td>
+                    <td id="td_path_photo"><img class="modern" src="<?= $data["path_photo"]; ?>" alt="<?= $data["nombre"]. ' ' . $data["lastname"] ; ?>"></td>
                     <td><?= $data["dni"]; ?></td>
-                    <td><?= $data["name"]. ' ' . $data["lastname"] ; ?></td>
+                    <td><?= $data["nombre"]. ' ' . $data["lastname"] ; ?></td>
                     <td title="Escribir Mensaje por Whatsapp"> <a target="_blank" href="https://api.whatsapp.com/send?phone=593<?= substr($data['phone'], 1); ?>"> <?= $data["phone"]; ?></a></td>
                     <td title="Escribir un Correo"> <a href="mailto:<?= $data["email"]; ?>"><?= $data["email"]; ?></a></td>
                     <!-- No Necesario -->

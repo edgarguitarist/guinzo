@@ -49,6 +49,9 @@ $data_who = [
         "title" => "Editar Material",
         "form" => "form-materials.php",
         "who" => "materials",
+        "query" => "SELECT * FROM materials WHERE id_material = '$id'",
+        "query2" => "",
+        "isquery2" => false,
     ],
 ];
 $query = $data_who[$who]['query'];
@@ -107,6 +110,15 @@ $data_result = [
         "precio" => $row['price'] ?? '',
         "peso" => $row['amount'] ?? '',
         "description" => $row['description_product'] ?? '',
+        "expiration" => $row['expiry_date'] ?? '',
+        "provider" => $row['id_provider'] ?? '',
+    ],
+    "materials" => [
+        "name" => $row['name_material'] ?? '',
+        "tipo" => $row['type_material'] ?? '',
+        "precio" => $row['price'] ?? '',
+        "peso" => $row['amount'] ?? '',
+        "description" => $row['description_material'] ?? '',
         "expiration" => $row['expiry_date'] ?? '',
         "provider" => $row['id_provider'] ?? '',
     ],
