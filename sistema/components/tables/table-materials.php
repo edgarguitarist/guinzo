@@ -3,6 +3,7 @@
         <tr>
             <th>Nombre</th>
             <th>Cantidad &nbsp;</th>
+            <th>Precio &nbsp;</th>
             <th>Tipo</th>
             <th>Descripción</th>
             <th>Fecha de Llegada</th>
@@ -30,6 +31,7 @@
                 <tr>
                     <td> <?= $data["name_material"]; ?></td>
                     <td align="right"> <?= $data["amount"]; ?></td>
+                    <td align="right">$ <?= $data["price"]; ?></td>
                     <td> <?= $data["name_type_material"]; ?></td>
                     <td> <?= $data["description_material"]; ?></td>
                     <td align="center"> <?= $data['arrival_date_material']; ?></td>

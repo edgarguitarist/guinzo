@@ -117,9 +117,9 @@ $data_result = [
         "name" => $row['name_material'] ?? '',
         "tipo" => $row['type_material'] ?? '',
         "precio" => $row['price'] ?? '',
-        "peso" => $row['amount'] ?? '',
+        "cantidad" => $row['amount'] ?? '',
         "description" => $row['description_material'] ?? '',
-        "expiration" => $row['expiry_date'] ?? '',
+        "expiration" => $row['expiry_date_material'] ?? '',
         "provider" => $row['id_provider'] ?? '',
     ],
 ];

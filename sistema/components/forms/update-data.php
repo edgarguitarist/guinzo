@@ -94,8 +94,10 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
     }
 
     if ($who == "materials") {
+        $id = $_POST['id'] ?? '';
         $name = $_POST['name'];
         $amount = $_POST['cantidad'];
+        $price = $_POST['precio'];
         $type_material = $_POST['tipo_material'];
         $description = $_POST['description'];
         $expiration = $_POST['expiration'];
@@ -103,7 +105,10 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
 
         $consultas = [
             "add" => "INSERT INTO materials (name_material, amount, type_material, description_material, expiry_date_material, id_provider) VALUES ('$name', '$amount', '$type_material', '$description', '$expiration', '$id_provider')",
-            "add2" => ""
+            "add2" => "",
+            "update" => "UPDATE materials SET name_material = '$name', amount = '$amount', price = '$price' , type_material = '$type_material', description_material = '$description', expiry_date_material = '$expiration', id_provider = '$id_provider' WHERE id_material = '$id'",
+            "update2" => "",
+
         ];
         $insert2 = $consultas[$action . "2"];
         $twoinserts = false;

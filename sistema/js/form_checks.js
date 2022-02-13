@@ -157,20 +157,20 @@ function checkLength(elemento, sl = true, min = 3, number = false) {
 
 function checkSelect(elemento, error_msg = true) {
   const submit = document.getElementById("submit"),
-        campo = document.getElementById(elemento.id),
-        error_sel = document.getElementById(elemento.id + "_error")
+    campo = document.getElementById(elemento.id),
+    error_sel = document.getElementById(elemento.id + "_error")
   if (campo.value == "0" || campo.value == "") {
     campo.className = "input is-danger"
     submit.disabled = true
-    if(error_msg) error_sel.innerHTML = "Seleccione una opción"
+    if (error_msg) error_sel.innerHTML = "Seleccione una opción"
   } else {
     campo.className = "input is-success"
     submit.disabled = false
-    if(error_msg) error_sel.innerHTML = "&nbsp;"
+    if (error_msg) error_sel.innerHTML = "&nbsp;"
   }
 }
 
-function checkEmail(elemento, path = "root", ) {
+function checkEmail(elemento, path = "root") {
   const submit = document.getElementById("submit")
   let email = document.getElementById(elemento.id)
   let error_email = document.getElementById(elemento.id + "_error")
@@ -213,6 +213,25 @@ $(document).ready(function () {
     )
   })
 })
+
+$(document).ready(function () {
+  $(".solo-precio").keyup(function () {
+    $(this).val(
+      $(this)
+        .val()
+        .replace(/[^0-9.]/g, "")
+    )
+    puntos = $(this).val().split(".")
+    if (puntos.length > 2) {
+      $(this).val(puntos[0] + "." + puntos[1])
+    }
+    if(puntos[1].length > 2){
+      $(this).val(puntos[0] + "." + puntos[1].substring(0,2))
+    }
+  })
+})
+
+//preguntar cuantos puntos hay en un string
 
 ////////////SOLO LETRA////////
 $(document).ready(function () {
@@ -266,12 +285,12 @@ let stateLoadSelect = {
   },
 }
 
-function loadSelects(elemento, who , default_option = "") {
+function loadSelects(elemento, who, default_option = "") {
   const select = document.getElementById(elemento.id)
   if (stateLoadSelect[who].status) {
     return
   }
-  
+
   $.ajax({
     type: "POST",
     url: "api/data-tables.php",
