@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         <?php
-        $query = mysqli_query($con, "SELECT *, te.name_type_employee AS tipo, u.name AS nombre FROM users u, employee e, type_employee te, roles r WHERE u.id_role != 6 AND e.id_user = u.dni AND te.id_type_employee = e.rank_employee AND u.id_role = r.id_role"); // consulta para obtener los empleados
+        $query = mysqli_query($con, "SELECT *, te.name_type_employee AS tipo, u.name AS nombre, r.name_role AS rol FROM users u, employee e, type_employee te, roles r WHERE u.id_role != 6 AND e.id_user = u.dni AND te.id_type_employee = e.rank_employee AND u.id_role = r.id_role"); // consulta para obtener los empleados
         mysqli_close($con);
         $result = mysqli_num_rows($query);
 
@@ -65,7 +65,7 @@
                     <td title="Escribir un Correo"> <a href="mailto:<?= $data["email"]; ?>"><?= $data["email"]; ?></a></td>
                     <!-- No Necesario -->
                     <td align="center" title="<?= $data['description_type_employee']?>"><?= $testa; ?></td>
-                    <td align="center"><b><?= $data['name_role']; ?></b></td>
+                    <td align="center"><b><?= $data['rol']; ?></b></td>
                     <td align="center"><?= $status ?></td>
                     <td align="center" class="wd-fit-content"> <?= $salida  ?> </td>
                 </tr>
