@@ -40,7 +40,6 @@
             <em style="margin-top:10px;" class="wd-60 maxcon fas fa-bars"></em>
         </a>
     </div>
-    <!-- DOIT: Reparar el responsive, posible problema -> "Los iconos! :C" -->
     <div id="navbarBulma" class="navbar-menu has-background-black-bis">
         <div class="navbar-end">
             <a class="navbar-item has-text-weight-medium has-text-white is-size-6-desktop is-size-3" href="index.php#">

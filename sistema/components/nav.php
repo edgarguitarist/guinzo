@@ -42,7 +42,6 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
             <em style="margin-top:10px;" class="wd-60 maxcon fas fa-bars"></em>
         </a>
     </div>
-    <!-- TODO: Reparar el responsive, posible problema -> "Los iconos! :C" -->
     <div id="navbarBulma" class="navbar-menu has-background-black-bis">
         <div class="navbar-end">
             <a class="<?= $a_class; ?>" href="index.php#">

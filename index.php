@@ -27,7 +27,6 @@
     <!-- Navigation -->
     <?php include "sistema/components/root/nav.php" ?>
     <div>
-        <!-- DOIT: Revisar la importancia de esto para el responsive -->
         <!-- Header -->
         <header style="margin-top: inherit;" id="top">
             <div class="columns has-background-info-light" id="carousel-prueba">

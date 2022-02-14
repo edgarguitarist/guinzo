@@ -8,7 +8,6 @@
     ?>
 </head>
 
-<!-- DOIT: Arreglar la pagina de Error 404 -->
 
 <body>
     <?php include "sistema/components/root/nav.php" ?>

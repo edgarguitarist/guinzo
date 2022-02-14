@@ -19,7 +19,7 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addProvider"><em class="has-text-success fas fa-plus"></em>Añadir Proveedor</a> <!-- TODO: Add Proveedores Button to Modal -->
+            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addProvider"><em class="has-text-success fas fa-plus"></em>Añadir Proveedor</a> 
             <h1 class="has-text-centered title is-cookie">Proveedores</h1>
         </div>
         <div class="wd-90">

@@ -20,7 +20,6 @@
 
                 <h1 class="subtitle b-600 mv-10">ANTONIO CACAO</h1>
                 <h2 class="subtitle is-6">Event Designer</h2>
-                <!--DOIT: Hacer modal de este mmv -->
 
             </div>
         </div>

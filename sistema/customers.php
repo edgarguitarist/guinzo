@@ -19,7 +19,7 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" onmouseover="buscarModal(this)" id="addCustomer" data-toggle="modal" href="#addCustomerModal"><em class="has-text-success fas fa-plus"></em>Añadir Cliente</a> <!-- INFO: data-toggle="modal" href="#" -->
+            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" onmouseover="buscarModal(this)" id="addCustomer" data-toggle="modal" href="#addCustomerModal"><em class="has-text-success fas fa-plus"></em>Añadir Cliente</a> 
             <h1 class="has-text-centered title is-cookie"><?= $site ?></h1>
         </div>
 
