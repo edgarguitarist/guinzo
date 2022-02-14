@@ -54,6 +54,9 @@
             <a class="navbar-item has-text-weight-medium has-text-white is-size-6-desktop is-size-3" href="index.php#contact">
                 <em class="fas fa-info-circle"></em>Información
             </a>
+            <a class="navbar-item has-text-weight-medium has-text-white is-size-6-desktop is-size-3" href="index.php#posts">
+                <em class="fas fa-info-circle"></em>Publicaciones
+            </a>
             <a class="navbar-item has-text-weight-medium has-text-white is-size-6-desktop is-size-3" href="index.php#about">
                 <em class="fas fa-comments"></em>Quienes Somos
             </a>

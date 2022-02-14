@@ -46,7 +46,10 @@
         <section id="contact">
             <?php include "sistema/components/contact.php" ?>
         </section>
-
+        <!-- Publicaciones Section -->
+        <section id="posts">
+            <?php include "sistema/components/publications.php" ?>
+        </section>
 
         <!-- Quienes somos Section -->
         <section id="about" class="bg-light-gray">
