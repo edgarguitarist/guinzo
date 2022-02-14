@@ -1,9 +1,16 @@
 <?php
 $who  = $_GET['who'] ?? '';
 $id   = $_GET['id'] ?? '';
+$info = $_GET['info'] ?? '';
+
+if($info === 'update-photo') {
+    header("Location: index.php?info=update-photo");
+    exit();
+}
 
 if($who === '' && $id === '' ){
     header("Location: index.php?info=error");
+    exit();
 }
 
 $isquery2 = false;
@@ -59,6 +66,7 @@ $result = mysqli_query($con, $query);
 $num_rows = mysqli_num_rows($result);
 if ($num_rows != 1) {
     header("Location: " . $data_who[$who]['who'] . ".php?info=error_edit");
+    exit();
 }
 $row = mysqli_fetch_assoc($result);
 $isquery2 = $data_who[$who]['isquery2'];

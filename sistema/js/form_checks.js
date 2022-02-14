@@ -330,3 +330,21 @@ function loadSelects(elemento, who, default_option = "") {
     },
   })
 }
+
+const togglePassword = () => {
+  let input = document.getElementById("password")
+  let anchor  = document.getElementById("togglePassword")
+  let eye = document.getElementById("eye")
+  let eye2 = document.getElementById("eye2")
+  if (input.type == "password") {
+    input.type = "text"
+    anchor.title = "Ocultar Contraseña"
+    eye.style.display = "none"
+    eye2.style.display = "block"
+  } else {
+    input.type = "password"
+    anchor.title = "Mostrar Contraseña"
+    eye.style.display = "block"
+    eye2.style.display = "none"
+  }
+}

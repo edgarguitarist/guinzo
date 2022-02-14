@@ -174,8 +174,8 @@ img::-moz-selection {
 
 .center {
   width: 100%;
-  text-align: -webkit-center;
-  /* text-align: center; */
+  text-align: -webkit-center !important;
+  /* text-align: center !important; */
 }
 
 .contiene {
@@ -337,6 +337,31 @@ img::-moz-selection {
 }
 .p-20 {
   padding: 20px !important;
+}
+
+.ph-0{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.ph-1{
+  padding-left: 1px !important;
+  padding-right: 1px !important;
+}
+.ph-2{
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+.ph-3{
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}
+.ph-4{
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+.ph-5{
+  padding-left: 5px !important;
+  padding-right: 5px !important;
 }
 
 .ph-10 {
@@ -790,8 +815,8 @@ button[type="submit"]:disabled {
 
 .is-place-content-center {
   /* align-items: center; */
-  justify-content: center;
-  place-content: center;
+  justify-content: center !important;
+  place-content: center !important;
 }
 
 .modalAddImage svg:hover {

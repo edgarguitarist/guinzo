@@ -29,7 +29,7 @@ function buscarModal(elemento) {
   var modal = document.getElementsByClassName("modal");
   nameElement = elemento.id + "Modal";
   for (var i = 0; i < modal.length; i++) {
-    if(modal[i].id == nameElement || modal[i].id == "changePhotoS" || modal[i].id == "changePhoto") {
+    if(modal[i].id == nameElement || modal[i].id == "changePhotoS" || modal[i].id == "changePhoto" || modal[i].id == "updateProfile") {
       //console.log(modal[i].id)
     }else{
       modal[i].remove();

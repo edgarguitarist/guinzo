@@ -91,7 +91,12 @@ $mensajes = [
         'header' => 'LO SENTIMOS! ',
         'message' => 'No hemos podido agregar el ' . $ssite . '.',
         'type' => 'ERROR'
-    ]
+    ],
+    'update-photo' => [
+        'header' => 'Datos Actualizados! ',
+        'message' => 'Hemos actualizado su Foto.',
+        'type' => 'SUCCESS'
+    ],
 ];
 
 

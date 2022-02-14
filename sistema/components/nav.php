@@ -87,12 +87,12 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
                         <a href="#changePhotoS" class="navbar-item is-size-6 text-white-mobile" data-toggle="modal">
                             Cambiar Foto de Perfil
                         </a>
-                        <a id="modal-js-example" href="#" class="navbar-item is-size-6 text-white-mobile">
+                        <a id="modal-js-example" href="#updateProfileS" class="navbar-item is-size-6 text-white-mobile" data-toggle="modal">
                                 Editar mi Perfil
                             </a>
                         <hr class="navbar-divider">
                         <div class="navbar-item  text-white-mobile">
-                            Version 2.0.1
+                            Version 3.0.0
                         </div>
                     </div>
                 </div>
@@ -107,5 +107,5 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
         </div>
     </div>
 </nav>
-<?php include "components/modals/modals-photo.php" ?>
+<?php include "components/modals/modals-profile.php" ?>
 

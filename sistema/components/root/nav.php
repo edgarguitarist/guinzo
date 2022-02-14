@@ -83,7 +83,7 @@
                             <a id="modal-js-example" href="#changePhoto" class="navbar-item is-size-6 text-white-mobile" data-toggle="modal">
                                 Cambiar Foto de Perfil
                             </a>
-                            <a id="modal-js-example" href="#" class="navbar-item is-size-6 text-white-mobile">
+                            <a id="modal-js-example" href="#updateProfile" class="navbar-item is-size-6 text-white-mobile" data-toggle="modal">
                                 Editar mi Perfil
                             </a>
                             <hr class="navbar-divider">
@@ -118,4 +118,4 @@
         </div>
     </div>
 </nav>
-<?php include "sistema/components/modals/modals-photo.php" ?>
+<?php include "sistema/components/modals/modals-profile.php" ?>

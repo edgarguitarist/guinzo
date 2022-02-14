@@ -38,6 +38,7 @@ $modales = [
     ]
 ];
 $conterstine = 0;
+$ssite = $ssite ?? "";
 foreach ($modales as $modal => $data) {
     if (strpos($modales[$modal]["index"], $ssite) !== false) {
         $conterstine++;
@@ -72,6 +73,6 @@ foreach ($modales as $modal => $data) {
     }  
 } 
 if ($conterstine == 0) {
-    echo "<script>console.log('No se ha encontrado ningún modal que coincida con este sitio')</script>";
+    echo "<script>//console.log('No se ha encontrado ningún modal que coincida con este sitio')</script>";
 }
 ?>

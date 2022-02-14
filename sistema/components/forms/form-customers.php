@@ -17,11 +17,11 @@
             <p>&nbsp;</p>
         </div>
         <div class="control wd-4c">
-            <input id="cedula" name="cedula" minlength="10" maxlength="10" class="input solo-numeros mt--5" onkeyup="checkCedula('gg')" type="text" placeholder="Su Cédula" value="<?= $data_result[$who]['dni'] ?? '' ?>" required  >
+            <input id="cedula" name="cedula" minlength="10" maxlength="10" class="input solo-numeros mt--5" onkeyup="checkCedula('gg')" type="text" placeholder="Su Cédula" value="<?= $data_result[$who]['dni'] ?? '' ?>" required>
             <input type="hidden" id="dni" name="dni" value="<?= $data_result[$who]['dni'] ?? '' ?>">
             <p id="dni_error" class="help is-danger">&nbsp;</p>
         </div>
-        <div class="control wd-4c">            
+        <div class="control wd-4c">
             <input id="phone" name="phone" class="input solo-numeros" type="tel" pattern="[0-9]{10}" minlength="10" maxlength="10" placeholder="Celular" value="<?= $data_result[$who]['phone'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
@@ -38,7 +38,7 @@
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">
-        <div class="field">
+            <div class="field">
                 <p class="control is-expanded has-icons-left has-icons-right">
                     <input class="input" id="email" name="email" type="email" placeholder="Correo" onkeyup="checkEmail(this, 'gg')" value="<?= $data_result[$who]['email'] ?? '' ?>" required>
                     <span class="icon is-small is-left">

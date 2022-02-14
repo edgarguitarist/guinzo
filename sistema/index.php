@@ -25,10 +25,6 @@
 
     <!-- TODO: DASHBOARD -->
 
-    <!-- servicio Modals -->
-    <!-- Use the modals below to showcase details about your services in this projects! -->
-
-
 </body>
 <footer id="footy" class="footer2">
     <?php include "components/footer.php" ?>
