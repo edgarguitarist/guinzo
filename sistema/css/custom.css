@@ -938,3 +938,27 @@ button[type="submit"]:disabled {
     margin: 15px 0px 0px 3%;
   }
 }
+
+.btn-flotante{
+  padding: 10px 20px;
+  border-radius: 25px;
+  background : var(--primary);
+  right: 3%;
+  bottom:150px;
+  position: fixed;
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:36px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.3s;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.btn-flotante:hover{
+  text-decoration: none;
+  background: #FFF;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
