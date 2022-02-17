@@ -36,7 +36,7 @@
                 
                     $testa = "<b>" . $data["city"] . "</b> ";
                     $salida = $aceptar_employee . " " . $eliminar_employee;
-                $curri = "<a class='$default_class_anchors' title='Ver Curriculum' href='" . $data['curriculum'] . "' target='_blank' ><em class='has-text-primary fas fa-eye'></em> Ver Curriculum </a>";
+                $curri = "<a class='$default_class_anchors' title='Ver Curriculum' href='" . $data['curriculum'] . "' target='_blank' ><em class='has-text-info fas fa-eye'></em> Ver Curriculum </a>";
         ?>
                 <tr>
                     <td id="td_path_photo"><img class="modern" src="<?= $data["path_photo"]; ?>" alt="<?= $data["nombre"]. ' ' . $data["lastname"] ; ?>"></td>

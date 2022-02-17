@@ -23,7 +23,7 @@
             <h1 class="has-text-centered title is-cookie">Solicitudes</h1>
         </div>
 
-        <div class="wd-90 zoom-90">
+        <div class="wd-90">
             <?php include "components/tables/table-employees-request.php" ?>
         </div>
     </div>
