@@ -22,20 +22,20 @@
 
     <div class="field">
         <div class="forms_row">
-            <label class="label has-text-left wd-4c">Cedula</label>
-            <label class="label has-text-left wd-4c">Contraseña</label>
-            <label class="label has-text-left wd-4c">Ciudad de Residencia</label>
-            <label class="label has-text-left wd-4c">Fecha de Nacimiento</label>
+            <label class="label has-text-left wd-3c">Cedula</label>
+            <!-- <label class="label has-text-left wd-4c">Contraseña</label> -->
+            <label class="label has-text-left wd-3c">Ciudad de Residencia</label>
+            <label class="label has-text-left wd-3c">Fecha de Nacimiento</label>
         </div>
         <div class="field-body forms_row">
-            <div class="control wd-4c">
+            <div class="control wd-3c">
                 <input id="cedula" name="cedula" minlength="10" maxlength="10" class="input solo-numeros" onkeyup="checkCedula()" type="text" placeholder="Su Cédula" required>
                 <p id="dni_error" class="help is-danger">&nbsp;</p>
             </div>
-            <div class="control wd-4c">
+            <!-- <div class="control wd-4c">
                 <input id="password" name="password" style="margin-top: -20px;" minlength="8" maxlength="20" class="input" type="password" placeholder="Su Contraseña" required>
-            </div>
-            <div class="control wd-4c">
+            </div> -->
+            <div class="control wd-3c">
                 <div class="select wd-100">
                     <select id="residence" name="residence" class="wd-100" onchange="checkSelect(this)" required>
                         <option value="">Seleccione su Ciudad</option>
@@ -51,7 +51,7 @@
                 </div>
                 <p id="residence_error" class="help is-danger">&nbsp;</p>
             </div>
-            <div class="control wd-4c">
+            <div class="control wd-3c">
                 <div class="left-align wd-100 ">
                     <input title="Fecha de Nacimiento" type="date" style="" max="<?= $minimo; ?>" value="<?= $minimo; ?>" id="birthday" name="birthday" class="input wd-100" required />
                 </div>

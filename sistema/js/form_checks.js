@@ -283,9 +283,15 @@ let stateLoadSelect = {
   type_material: {
     status: false,
   },
+  users: {
+    status: false,
+  },
+  type_event: {
+    status: false,
+  }
 }
 
-function loadSelects(elemento, who, default_option = "") {
+function loadSelects(elemento, who, default_option = "", condition = "") {
   const select = document.getElementById(elemento.id)
   if (stateLoadSelect[who].status) {
     return
@@ -294,7 +300,7 @@ function loadSelects(elemento, who, default_option = "") {
   $.ajax({
     type: "POST",
     url: "api/data-tables.php",
-    data: { table: who },
+    data: { table: who, conditions: condition },
     success: function (resultado) {
       if (resultado != false) {
         let data = JSON.parse(resultado)
@@ -314,6 +320,8 @@ function loadSelects(elemento, who, default_option = "") {
             option.selected = data_array[0] == default_option ? true : false
             option.innerHTML =
               data_array[6] + " - " + data_array[1] + " " + data_array[2]
+          } else if (who == "users") {
+            option.innerHTML = data_array[1] + " " + data_array[2]
           } else {
             default_option = default_option != "" ? default_option : ""
             option.selected = data_array[0] == default_option ? true : false
@@ -325,6 +333,7 @@ function loadSelects(elemento, who, default_option = "") {
       }
     },
     error: function (resultado) {
+      stateLoadSelect[who].status = false
       let data = JSON.parse(resultado)
       console.log("Error al Buscar los Datos: " + data)
     },

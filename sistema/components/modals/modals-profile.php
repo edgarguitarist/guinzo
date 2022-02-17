@@ -17,7 +17,7 @@
                         <form enctype="multipart/form-data" method="post" action="sistema/components/update-profile.php">
                             <div class="file-upload">
                                 <div class="image-upload-wrap area-img-modal">
-                                    <input id="dni" name="dni" type="hidden" value="<?= $_SESSION['dni']; ?>">
+                                    <input id="dniPhoto" name="dni" type="hidden" value="<?= $_SESSION['dni']; ?>">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" /> <!-- 3MB -->
                                     <input id="photo" name="photo" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" required />
                                     <div class="drag-text">
@@ -63,7 +63,7 @@
                         <form enctype="multipart/form-data" method="post" action="components/update-profile.php">
                             <div class="file-upload">
                                 <div class="image-upload-wrap area-img-modal">
-                                    <input id="dni" name="dni" type="hidden" value="<?= $_SESSION['dni']; ?>">
+                                    <input id="dniS" name="dni" type="hidden" value="<?= $_SESSION['dni']; ?>">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" /> <!-- 3MB -->
                                     <input id="photo" name="photo" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" required />
                                     <div class="drag-text">
@@ -107,6 +107,30 @@
                         <h1 id="titleProfile" class="title mb-5">Editar Perfil</h1>
                         <form method="post" action="components/update-profile.php">
                             <?php include "components/forms/form-profile.php" ?>
+                            <button id="submitProfileModal" name="submitProfileModal" type="submit" class="form_button mt-5">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="servicio-modal modal fade" id="updateProfile" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content opacity-modal">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr x-modal">
+                <div class="rl x-modal">
+                </div>
+            </div>
+        </div>
+        <div class="container container-modal modern">
+            <div style="text-align: -webkit-center !important;" class="row is-place-content-center">
+                <div class="modal-body wd-80">
+                    <!-- Project Details Go Here -->
+                    <div class="control">
+                        <h1 id="titleProfile" class="title mb-5">Editar Perfil</h1>
+                        <form method="post" action="sistema/components/update-profile.php">
+                            <?php include "sistema/components/forms/form-profile.php" ?>
                             <button id="submitProfileModal" name="submitProfileModal" type="submit" class="form_button mt-5">Actualizar</button>
                         </form>
                     </div>

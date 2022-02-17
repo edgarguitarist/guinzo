@@ -12,7 +12,7 @@ $lastname = $_POST['lastName']; #
 $phone = '0'.$_POST['phone']; #
 $birthday = $_POST['birthday']; #
 $email = $_POST['email']; #
-$password = $_POST['password']; #
+$password = $_POST['password'] ?? 'bockcao123'; #
 $id_role = 7; #
 //$photo = $_POST['photo']; # ruta + archivo 
 

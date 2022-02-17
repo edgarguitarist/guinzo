@@ -2,8 +2,9 @@
 require '../includes/dbcon.php';
 $contador=0;
 if (isset($_POST['table'])){
+    $conditions = $_POST['conditions'] != '' ? " WHERE " . $_POST['conditions'] : "";
     $table = $_POST['table'];
-    $consulta="SELECT * FROM $table";
+    $consulta="SELECT * FROM $table" . $conditions;
     $resultado=mysqli_query($con,$consulta);
     $contador = mysqli_num_rows($resultado);
     //si hay proveedores devolverlos en un echo

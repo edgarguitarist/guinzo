@@ -6,15 +6,14 @@
             <th>Nombres</th>
             <th>Celular</th>
             <th>Correo</th>
-            <th>Tipo</th>
-            <th>Rol</th>
-            <th>Disponibilidad</th>
+            <th>Ciudad</th>
+            <th>Curriculum</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
         <?php
-        $query = mysqli_query($con, "SELECT *, te.name_type_employee AS tipo, u.name AS nombre, r.name_role AS rolempleado FROM users u, employee e, type_employee te, roles r WHERE (u.id_role BETWEEN 2 AND 5 OR u.id_role >= 8) AND e.id_user = u.dni AND te.id_type_employee = e.rank_employee AND u.id_role = r.id_role"); // consulta para obtener los empleados
+        $query = mysqli_query($con, "SELECT *, te.name_type_employee AS tipo, u.name AS nombre, r.name_role AS rolempleado FROM users u, employee e, type_employee te, roles r WHERE u.id_role = 7 AND e.id_user = u.dni AND te.id_type_employee = e.rank_employee AND u.id_role = r.id_role"); // consulta para obtener los empleados
         mysqli_close($con);
         $result = mysqli_num_rows($query);
 
@@ -34,18 +33,10 @@
                 $degradar_employee2 = "<a class='$default_class_anchors2' title='Bajar de Rango' href='components/tables/update-data.php?who=employees&action=downgrade&id=" . $data['dni'] . "' ><em class='m-auto has-text-orange fas fa-minus-circle '></em></a>";
                 $mejorar_employee2 = "<a class='$default_class_anchors2' title='Subir de Rango' href='components/tables/update-data.php?who=employees&action=upgrade&id=" . $data['dni'] . "' ><em class='m-auto has-text-success fas fa-plus'></em></a>";
                 
-                $salida = $editar_employee . " " . $eliminar_employee;
-                if($data['id_type_employee'] == 1){
-                    $testa = "<b>" . $data["tipo"] . "</b> " . $mejorar_employee2;
-                }else if($data['id_type_employee'] > 1 && $data['id_type_employee'] < 6){
-                    $testa = "<b>" . $data["tipo"] . "</b> " . $degradar_employee2 . " " . $mejorar_employee2;
-                }else if($data['id_type_employee'] == 6){
-                    $testa = "<b>" . $data["tipo"] . "</b> " . $degradar_employee2;
-                }else {
-                    $testa = "<b>" . $data["tipo"] . "</b> ";
+                
+                    $testa = "<b>" . $data["city"] . "</b> ";
                     $salida = $aceptar_employee . " " . $eliminar_employee;
-                }
-
+                $curri = "<a class='$default_class_anchors' title='Ver Curriculum' href='" . $data['curriculum'] . "' target='_blank' ><em class='has-text-primary fas fa-eye'></em> Ver Curriculum </a>";
         ?>
                 <tr>
                     <td id="td_path_photo"><img class="modern" src="<?= $data["path_photo"]; ?>" alt="<?= $data["nombre"]. ' ' . $data["lastname"] ; ?>"></td>
@@ -55,8 +46,7 @@
                     <td title="Escribir un Correo"> <a href="mailto:<?= $data["email"]; ?>"><?= $data["email"]; ?></a></td>
                     <!-- No Necesario -->
                     <td align="center" title="<?= $data['description_type_employee']?>"><?= $testa; ?></td>
-                    <td align="center"><b><?= $data['rolempleado']; ?></b></td>
-                    <td align="center"><?= $status ?></td>
+                    <td align="center"><b><?= $curri ?></b></td>
                     <td align="center" class="wd-fit-content"> <?= $salida  ?> </td>
                 </tr>
             <?php

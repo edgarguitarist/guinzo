@@ -50,9 +50,18 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
             <a class="<?= $a_class; ?>" href="customers.php">
                 <em class="fas fa-star"></em>Clientes
             </a>
-            <a class="<?= $a_class; ?>" href="employees.php">
-                <em class="fas fa-users"></em>Empleados
-            </a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="<?= $a_class; ?>" href="employees.php">
+                    <em class="fas fa-users"></em>Empleados
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item has-text-weight-medium has-text-black is-size-6-desktop is-size-3" href="employees-request.php">
+                        <em class="fas fa-users"></em>Solicitudes
+                    </a>
+                </div>
+            </div>
             <a class="<?= $a_class; ?>" href="providers.php">
                 <em class="fas fa-truck"></em>Proveedores
             </a>
@@ -62,12 +71,13 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
             <a class="<?= $a_class; ?>" href="materials.php">
                 <em class="fas fa-utensils"></em>Materiales
             </a>
-            <a class="<?= $a_class; ?>" href="coming-soon.php">
+            <a class="<?= $a_class; ?>" href="events.php">
                 <em class="fas fa-calendar-alt"></em>Eventos
             </a>
-            <a class="<?= $a_class; ?>" href="coming-soon.php">
+            <!-- <a class="<?php //echo $a_class; 
+                            ?>" href="coming-soon.php">
                 <em class="fas fa-table"></em>Reportes
-            </a>
+            </a> -->
             <a class="<?= $a_class; ?>" href="home-page.php">
                 <em class="fas fa-store"></em>Pagina Principal
             </a>
@@ -87,8 +97,8 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
                             Cambiar Foto de Perfil
                         </a>
                         <a id="modal-js-example" href="#updateProfileS" class="navbar-item is-size-6 text-white-mobile" data-toggle="modal">
-                                Editar mi Perfil
-                            </a>
+                            Editar mi Perfil
+                        </a>
                         <hr class="navbar-divider">
                         <div class="navbar-item  text-white-mobile">
                             Version 3.0.0
@@ -107,4 +117,3 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
     </div>
 </nav>
 <?php include "components/modals/modals-profile.php" ?>
-

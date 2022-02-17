@@ -23,7 +23,7 @@ include "components/forms/get-data.php";
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a onclick="javascript:history.back();" rel="external nofollow" class="addButton button is-dark is-outlined is-size-6-desktop is-size-4"><em class="has-text-success fas fa-share"></em>Volver a la Pagina Anterior</a>
+            <a onclick="history.back()" rel="external nofollow" class="addButton button is-dark is-outlined is-size-6-desktop is-size-4"><em class="has-text-success fas fa-share"></em>Volver a la Pagina Anterior</a>
             <h1 class="has-text-centered title is-cookie"><?= $site ?></h1>
         </div>
 
@@ -46,20 +46,17 @@ include "components/forms/get-data.php";
     <?php include "components/footer.php" ?>
 </footer>
 
-<script>
-    position_sort_table = 1
-</script>
 
 <?php
 include "includes/scripts.php";
 include "components/jgrowl-messages.php";
-include "components/tables/script_sort.php";
 if ($disableDNI) {
     echo '
     <script defer> 
         const find_cedula = document.getElementById("cedula")
         if (find_cedula) {
             find_cedula.disabled = true
+            console.log("DNI disabled")
         }
         const find_ruc = document.getElementById("ruc")
         if (find_ruc) {

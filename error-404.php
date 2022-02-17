@@ -12,7 +12,7 @@
 <body>
     <?php include "sistema/components/root/nav.php" ?>
     <div class="center">
-    <a onclick="javascript:history.back();" rel="external nofollow" class="addButton button is-dark is-outlined is-size-6-desktop is-size-4"><em class="has-text-success fas fa-share"></em>Volver a la Pagina Anterior</a>
+    <a onclick="history.back()" rel="external nofollow" class="addButton button is-dark is-outlined is-size-6-desktop is-size-4"><em class="has-text-success fas fa-share"></em>Volver a la Pagina Anterior</a>
 
         <h1 style="margin-top:7.5%;"></h1>
         <img src="sistema/images/logos/logo-bockcao-white.png" alt="error-404" class="vh-50 is-color-inverted">

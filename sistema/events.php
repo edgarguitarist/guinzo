@@ -3,8 +3,8 @@
 
 <head>
     <?php
-    $site = "Proveedores";
-    $ssite = substr($site, 0, -2);
+    $site = "Eventos";
+    $ssite = substr($site, 0, -1);
     include "components/head.php";
     include "includes/dbcon.php";
     ?>
@@ -19,11 +19,11 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addEvento"><em class="has-text-success fas fa-plus"></em>Añadir un Evento</a> 
+            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" href="add-event.php" id="addEvento"><em class="has-text-success fas fa-plus"></em>Añadir un Evento</a> 
             <h1 class="has-text-centered title is-cookie">Eventos</h1>
         </div>
         <div class="wd-90">
-            <?php include "components/tables/table-eventos.php" ?>
+            <?php include "components/tables/table-events.php" ?>
         </div>
 
     </div>

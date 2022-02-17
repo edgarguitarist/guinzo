@@ -8,13 +8,16 @@
         "defaulttype",
         "elementruc",
         "firstname",
+        "hoverable",
         "isquery",
         "logearse",
         "longcheck",
         "middlename",
         "minimo",
         "oclass",
+        "ownsite",
         "Preferencial",
+        "Saloneros",
         "secondlastname",
         "twoinserts"
     ]

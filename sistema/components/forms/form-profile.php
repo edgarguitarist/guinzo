@@ -11,9 +11,9 @@ $ruta =  "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
-            <input class="input" type="hidden" name="dni" id="dni" value="<?= $_SESSION['dni'] ?? '' ?>">
+            <input class="input" type="hidden" name="dni" id="dniProfile" value="<?= $_SESSION['dni'] ?? '' ?>">
             <input class="input" type="hidden" name="ruta" id="ruta" value="<?= $ruta ?>">
-            <input id="cedula" name="cedula" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre de Material" value="<?= $_SESSION['dni'] ?? '' ?>" required disabled>
+            <input id="cedulaProfile" name="cedula" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre de Material" value="<?= $_SESSION['dni'] ?? '' ?>" required disabled>
             <p>&nbsp;</p>
         </div>
 

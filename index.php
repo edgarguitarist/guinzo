@@ -45,10 +45,11 @@
         <section id="contact">
             <?php include "sistema/components/contact.php" ?>
         </section>
+
         <!-- Publicaciones Section -->
-        <section id="posts">
-            <?php include "sistema/components/publications.php" ?>
-        </section>
+        <!-- <section id="posts">
+            <?php //include "sistema/components/publications.php" ?>
+        </section> -->
 
         <!-- Quienes somos Section -->
         <section id="about" class="bg-light-gray">
@@ -65,30 +66,7 @@
 
 </body>
 <!-- Modals -->
-<div class="servicio-modal modal fade" id="updateProfile" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-content opacity-modal">
-        <div class="close-modal" data-dismiss="modal">
-            <div class="lr x-modal">
-                <div class="rl x-modal">
-                </div>
-            </div>
-        </div>
-        <div class="container container-modal modern">
-            <div style="text-align: -webkit-center !important;" class="row is-place-content-center">
-                <div class="modal-body wd-80">
-                    <!-- Project Details Go Here -->
-                    <div class="control">
-                        <h1 id="titleProfile" class="title mb-5">Editar Perfil</h1>
-                        <form method="post" action="sistema/components/update-profile.php">
-                            <?php include "sistema/components/forms/form-profile.php" ?>
-                            <button id="submitProfileModal" name="submitProfileModal" type="submit" class="form_button mt-5">Actualizar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <footer id="footy" class="footer3">
     <?php include "sistema/components/footer.php" ?>
 </footer>
