@@ -19,25 +19,25 @@ body {
   zoom: 80%;
 }
 
-.zoom-100{
+.zoom-100 {
   zoom: 100% !important;
 }
-.zoom-90{
+.zoom-90 {
   zoom: 90% !important;
 }
-.zoom-80{
+.zoom-80 {
   zoom: 80% !important;
 }
-.zoom-75{
+.zoom-75 {
   zoom: 75% !important;
 }
-.zoom-70{
+.zoom-70 {
   zoom: 70% !important;
 }
-.zoom-60{
+.zoom-60 {
   zoom: 60% !important;
 }
-.zoom-50{
+.zoom-50 {
   zoom: 50% !important;
 }
 
@@ -274,7 +274,7 @@ img::-moz-selection {
   margin-top: 7px !important;
 }
 
-.mt-20{
+.mt-20 {
   margin-top: 20px !important;
 }
 
@@ -368,27 +368,27 @@ img::-moz-selection {
   padding: 20px !important;
 }
 
-.ph-0{
+.ph-0 {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
-.ph-1{
+.ph-1 {
   padding-left: 1px !important;
   padding-right: 1px !important;
 }
-.ph-2{
+.ph-2 {
   padding-left: 2px !important;
   padding-right: 2px !important;
 }
-.ph-3{
+.ph-3 {
   padding-left: 3px !important;
   padding-right: 3px !important;
 }
-.ph-4{
+.ph-4 {
   padding-left: 4px !important;
   padding-right: 4px !important;
 }
-.ph-5{
+.ph-5 {
   padding-left: 5px !important;
   padding-right: 5px !important;
 }
@@ -551,7 +551,7 @@ em {
   width: fit-content !important;
 }
 
-.wd-custom{
+.wd-custom {
   width: 36%;
 }
 
@@ -604,8 +604,6 @@ em {
 .wd-30 {
   width: 30% !important;
 }
-
-
 
 .wd-40 {
   width: 40% !important;
@@ -975,26 +973,35 @@ button[type="submit"]:disabled {
   }
 }
 
-.btn-flotante{
+.btn-flotante {
   padding: 10px 20px;
   border-radius: 25px;
-  background : var(--primary);
+  background: var(--primary);
   right: 3%;
-  bottom:150px;
+  bottom: 150px;
   position: fixed;
-  border:none;
-  outline:none;
-  color:#FFF;
-  font-size:36px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition:.3s;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 36px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: 0.3s;
   z-index: 100;
   text-decoration: none;
 }
 
-.btn-flotante:hover{
+.btn-flotante:hover {
   text-decoration: none;
-  background: #FFF;
+  background: #fff;
   color: var(--primary);
   border: 2px solid var(--primary);
+}
+
+.height-30 {
+  height: 30px !important;
+}
+
+.right-0 {
+  position: absolute;
+  right: 0 !important;
 }

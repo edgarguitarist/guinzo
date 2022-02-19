@@ -225,8 +225,8 @@ $(document).ready(function () {
     if (puntos.length > 2) {
       $(this).val(puntos[0] + "." + puntos[1])
     }
-    if(puntos[1].length > 2){
-      $(this).val(puntos[0] + "." + puntos[1].substring(0,2))
+    if (puntos[1].length > 2) {
+      $(this).val(puntos[0] + "." + puntos[1].substring(0, 2))
     }
   })
 })
@@ -288,7 +288,7 @@ let stateLoadSelect = {
   },
   type_event: {
     status: false,
-  }
+  },
 }
 
 function loadSelects(elemento, who, default_option = "", condition = "") {
@@ -342,7 +342,7 @@ function loadSelects(elemento, who, default_option = "", condition = "") {
 
 const togglePassword = () => {
   let input = document.getElementById("password")
-  let anchor  = document.getElementById("togglePassword")
+  let anchor = document.getElementById("togglePassword")
   let eye = document.getElementById("eye")
   let eye2 = document.getElementById("eye2")
   if (input.type == "password") {
@@ -358,7 +358,7 @@ const togglePassword = () => {
   }
 }
 
-const addCheckfromSelect = (elemento, where = "") => {
+const addCheckfromSelect = (elemento, where, inputText=false) => {
   const select = document.getElementById(elemento.id)
   const destiny = document.getElementById(where)
   const value = select.value
@@ -366,23 +366,32 @@ const addCheckfromSelect = (elemento, where = "") => {
   let checkbox = document.createElement("input")
   checkbox.type = "checkbox"
   checkbox.value = value
-  checkbox.name = where+"[]"
+  checkbox.name = where + "[]"
   checkbox.id = value
   checkbox.checked = true
   checkbox.required = true
-  checkbox.className = "is-size-4"
   checkbox.onclick = () => {
-    const none = document.getElementById("none"+capitalize(where))
+    const none = document.getElementById("none" + capitalize(where))
     none.checked = false
   }
   let label = document.createElement("label")
   label.htmlFor = value
   label.innerHTML = text
   label.className = "ml-20 is-size-5 mt--5"
-
-  destiny.appendChild(checkbox)
-  destiny.appendChild(label)  
-  select.remove(select.selectedIndex)  
+  let li = document.createElement("li")
+  li.style.listStyle = "none"
+  li.appendChild(checkbox)
+  li.appendChild(label)
+  if (inputText) {
+   let input = document.createElement("input")
+    input.type = "text"
+    input.name = where + "Input[]"
+    input.placeholder = "Cantidad"
+    input.className = "ml-10 height-30 input is-size-5 wd-40 right-0"
+    li.appendChild(input)
+  }  
+  destiny.appendChild(li)
+  select.remove(select.selectedIndex)
   select.value = ""
 }
 
@@ -390,7 +399,7 @@ const uncheckAll = (name) => {
   const destiny = document.getElementById(name)
   const inputs = destiny.getElementsByTagName("input")
   for (let i = 0; i < inputs.length; i++) {
-    if(inputs[i].name == name+"[]") {
+    if (inputs[i].name == name + "[]") {
       inputs[i].checked = false
     }
   }

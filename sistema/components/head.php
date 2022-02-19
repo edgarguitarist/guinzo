@@ -52,6 +52,8 @@ if (!isset($_SESSION['id_role'])) {
 include 'paths.php ';
 date_default_timezone_set('America/Guayaquil');
 $hoy = date('Y-m-d');
+$hoy_extended = date('Y-m-d').'T'.date('H:i');
+
 $ayer = date("Y-m-d", strtotime($hoy."- 1 days"));
 $dos_semanas = date("Y-m-d", strtotime($hoy."+ 15 days"));
 $un_mes = date("Y-m-d", strtotime($hoy."+ 1 months"));
