@@ -1,7 +1,7 @@
 <form onchange="checkForm()" class="form-new" action="sistema/components/root/signup-employee-checker.php" autocomplete="none" aria-autocomplete="none" enctype="multipart/form-data" method="post">
     <h1 class="tittle is-cookie has-text-centered">Registrate</h1>
     <div class="field">
-        <label class="label has-text-left">Nombres y Apellidos</label>
+        <label class="label has-text-left">Nombres y Apellidos *</label>
         <div class="field-body forms_row">
             <div class="control wd-4c">
                 <!--  hacer un trim a todos los datos del formulario  -->
@@ -22,10 +22,10 @@
 
     <div class="field">
         <div class="forms_row">
-            <label class="label has-text-left wd-3c">Cedula</label>
+            <label class="label has-text-left wd-3c">Cedula *</label>
             <!-- <label class="label has-text-left wd-4c">Contraseña</label> -->
-            <label class="label has-text-left wd-3c">Ciudad de Residencia</label>
-            <label class="label has-text-left wd-3c">Fecha de Nacimiento</label>
+            <label class="label has-text-left wd-3c">Ciudad de Residencia *</label>
+            <label class="label has-text-left wd-3c">Fecha de Nacimiento *</label>
         </div>
         <div class="field-body forms_row">
             <div class="control wd-3c">
@@ -62,8 +62,8 @@
 
     <div class="field">
         <div class="forms_row">
-            <label class="label wd-2c">Su Curriculum</label>
-            <label class="label wd-2c">Su Foto</label>
+            <label class="label wd-2c">Su Curriculum *</label>
+            <label class="label wd-2c">Su Foto *</label>
         </div>
         <div class="field-body forms_row">
             <div class="control wd-2c">
@@ -102,7 +102,7 @@
     </div>
 
     <div class="field">
-        <label class="label has-text-left wd-2c">Contacto</label>
+        <label class="label has-text-left wd-2c">Contacto *</label>
         <div class="field-body forms_row">
             <div class="field is-expanded">
                 <div class="field has-addons">
@@ -133,14 +133,14 @@
     </div>
 
     <div class="field">
-        <label class="label has-text-left">Cuentanos brevemente de ti</label>
+        <label class="label has-text-left">Cuentanos brevemente de ti *</label>
         <div class="control">
             <textarea id="about_you" name="aboutYou" class="textarea" maxlength="300" placeholder="Máximo de 300 caracteres" required></textarea>
         </div>
     </div>
 
     <div class="field">
-        <label class="label has-text-left">Ya has Trabajado con Nosotros?</label>
+        <label class="label has-text-left">Ya has Trabajado con Nosotros? *</label>
         <div class="control ml-3">
             <label class="radio">
                 <input id="question" value="1" type="radio" name="question" required>

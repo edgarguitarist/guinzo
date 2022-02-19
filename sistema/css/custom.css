@@ -274,6 +274,10 @@ img::-moz-selection {
   margin-top: 7px !important;
 }
 
+.mt-20{
+  margin-top: 20px !important;
+}
+
 .m-10 {
   margin: 10px !important;
 }

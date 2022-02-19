@@ -357,3 +357,41 @@ const togglePassword = () => {
     eye2.style.display = "none"
   }
 }
+
+const addCheckfromSelect = (elemento, where = "") => {
+  const select = document.getElementById(elemento.id)
+  const destiny = document.getElementById(where)
+  const value = select.value
+  const text = select.options[select.selectedIndex].text
+  let checkbox = document.createElement("input")
+  checkbox.type = "checkbox"
+  checkbox.value = value
+  checkbox.name = where+"[]"
+  checkbox.id = value
+  checkbox.checked = true
+  checkbox.required = true
+  checkbox.className = "is-size-4"
+  checkbox.onclick = () => {
+    const none = document.getElementById("none"+capitalize(where))
+    none.checked = false
+  }
+  let label = document.createElement("label")
+  label.htmlFor = value
+  label.innerHTML = text
+  label.className = "ml-20 is-size-5 mt--5"
+
+  destiny.appendChild(checkbox)
+  destiny.appendChild(label)  
+  select.remove(select.selectedIndex)  
+  select.value = ""
+}
+
+const uncheckAll = (name) => {
+  const destiny = document.getElementById(name)
+  const inputs = destiny.getElementsByTagName("input")
+  for (let i = 0; i < inputs.length; i++) {
+    if(inputs[i].name == name+"[]") {
+      inputs[i].checked = false
+    }
+  }
+}

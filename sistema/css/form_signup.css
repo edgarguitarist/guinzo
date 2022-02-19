@@ -36,6 +36,12 @@
   align-items: center;
   /* margin-top: 35px; */
 }
+.forms_row2{
+  display: flex !important;
+  justify-content: space-between;
+  /* align-items: center; */ /* Quizas sea necesario en otros formularios*/
+  /* margin-top: 35px; */
+}
 .forms_row label{
   display: flex !important;
   justify-content: space-between;

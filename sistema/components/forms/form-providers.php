@@ -1,10 +1,10 @@
 <?php $who = $who ?? ''; ?>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Nombre</label>
-        <label class="label has-text-left wd-4c">Apellido</label>
-        <label class="label has-text-left wd-4c">Cédula</label>
-        <label class="label has-text-left wd-4c">Celular</label>
+        <label class="label has-text-left wd-4c">Nombre *</label>
+        <label class="label has-text-left wd-4c">Apellido *</label>
+        <label class="label has-text-left wd-4c">Cédula *</label>
+        <label class="label has-text-left wd-4c">Celular *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
@@ -31,10 +31,8 @@
 
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Correo</label>
-        <label class="label has-text-left wd-4c"></label>
-        <label class="label has-text-left wd-4c">Ruc</label>
-        <label class="label has-text-left wd-4c"></label>
+        <label class="label has-text-left wd-2c">Correo *</label>
+        <label class="label has-text-left wd-2c">Ruc *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">
@@ -62,10 +60,9 @@
 <h2 class="subtitle is-size-3 is-bold">Empresa</h2>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Nombre</label>
-        <label class="label has-text-left wd-4c">Teléfono</label>
-        <label class="label has-text-left wd-4c">Correo</label>
-        <label class="label has-text-left wd-4c"></label>
+        <label class="label has-text-left wd-4c">Nombre *</label>
+        <label class="label has-text-left wd-4c">Teléfono *</label>
+        <label class="label has-text-left wd-2c">Correo *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
@@ -94,8 +91,8 @@
 </div>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-2-3c">Dirección</label>
-        <label class="label has-text-left wd-1-3c">Tipo</label>
+        <label class="label has-text-left wd-2-3c">Dirección *</label>
+        <label class="label has-text-left wd-1-3c">Tipo *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2-3c">

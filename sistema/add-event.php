@@ -29,7 +29,7 @@ include "includes/dbcon.php";
         <div class="wd-80">
             <br>
             <br>
-            <form onchange="checkForm()" onclick="checkForm()" onkeyup="checkForm()" method="post" action="components/forms/update-data.php">
+            <form onchange="checkForm()" onclick="checkForm()" method="post" action="components/forms/update-data.php">
                 <input type="hidden" id="who" name="who" value="events">
                 <input type="hidden" id="action" name="action" value="add">
                 <?php include "components/forms/form-events.php" ?>

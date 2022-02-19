@@ -1,11 +1,11 @@
 <?php $who = $who ?? ''; ?>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Nombre</label>
-        <label class="label has-text-left wd-4c">Tipo</label>
-        <label class="label has-text-left wd-10">Precio</label>
-        <label class="label has-text-left wd-10">Peso</label>
-        <label class="label has-text-left wd-20">Unidad de Medida</label>
+        <label class="label has-text-left wd-4c">Nombre *</label>
+        <label class="label has-text-left wd-4c">Tipo *</label>
+        <label class="label has-text-left wd-10">Precio *</label>
+        <label class="label has-text-left wd-10">Peso *</label>
+        <label class="label has-text-left wd-20">Unidad de Medida *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
@@ -43,9 +43,9 @@
 
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-2c">Descripción</label>
-        <label class="label has-text-left wd-4c">Fecha de Expiración</label>
-        <label class="label has-text-left wd-4c">Proveedor</label>
+        <label class="label has-text-left wd-2c">Descripción *</label>
+        <label class="label has-text-left wd-4c">Fecha de Expiración *</label>
+        <label class="label has-text-left wd-4c">Proveedor *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">

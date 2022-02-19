@@ -4,10 +4,10 @@ $ruta =  "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Cedula</label>
-        <label class="label has-text-left wd-4c">Nombre</label>
-        <label class="label has-text-left wd-4c">Apellido</label>
-        <label class="label has-text-left wd-4c">Fecha de Nacimiento</label>
+        <label class="label has-text-left wd-4c">Cedula *</label>
+        <label class="label has-text-left wd-4c">Nombre *</label>
+        <label class="label has-text-left wd-4c">Apellido *</label>
+        <label class="label has-text-left wd-4c">Fecha de Nacimiento *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
@@ -38,9 +38,9 @@ $ruta =  "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-2c">Correo</label>
-        <label class="label has-text-left wd-4c">Celular</label>
-        <label class="label has-text-left wd-4c">Contraseña</label>
+        <label class="label has-text-left wd-2c">Correo *</label>
+        <label class="label has-text-left wd-4c">Celular *</label>
+        <label class="label has-text-left wd-4c">Contraseña *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">

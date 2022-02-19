@@ -1,10 +1,10 @@
 <?php $who = $who ?? ''; ?>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Nombre</label>
-        <label class="label has-text-left wd-4c">Apellido</label>
-        <label class="label has-text-left wd-4c">Cedula</label>
-        <label class="label has-text-left wd-4c">Celular</label>
+        <label class="label has-text-left wd-4c">Nombre *</label>
+        <label class="label has-text-left wd-4c">Apellido *</label>
+        <label class="label has-text-left wd-4c">Cedula *</label>
+        <label class="label has-text-left wd-4c">Celular *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
@@ -31,10 +31,9 @@
 
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Correo</label>
-        <label class="label has-text-left wd-4c"></label>
-        <label class="label has-text-left wd-4c">Ciudad de Residencia</label>
-        <label class="label has-text-left wd-4c">Fecha de Nacimiento</label>
+        <label class="label has-text-left wd-2c">Correo *</label>
+        <label class="label has-text-left wd-4c">Ciudad de Residencia *</label>
+        <label class="label has-text-left wd-4c">Fecha de Nacimiento *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">

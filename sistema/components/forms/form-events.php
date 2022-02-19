@@ -1,11 +1,11 @@
 <?php $who = $who ?? ''; ?>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Cliente</label>
-        <label class="label has-text-left wd-4c">Evento</label>
-        <label class="label has-text-left wd-4c">Tipo</label>
-        <label class="label has-text-left wd-10">Numero de invitados</label>
-        <label class="label has-text-left wd-10">Precio</label>
+        <label class="label has-text-left wd-4c">Cliente *</label>
+        <label class="label has-text-left wd-4c">Evento *</label>
+        <label class="label has-text-left wd-4c">Tipo *</label>
+        <label class="label has-text-left wd-10">Numero de invitados *</label>
+        <label class="label has-text-left wd-10">Precio *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
@@ -41,9 +41,9 @@
 
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-2c">Descripción</label>
-        <label class="label has-text-left wd-custom">Dirección</label>
-        <label class="label has-text-left wd-10">Lugar Propio</label>
+        <label class="label has-text-left wd-2c">Descripción *</label>
+        <label class="label has-text-left wd-custom">Dirección *</label>
+        <label class="label has-text-left wd-10">Lugar Propio *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">
@@ -68,9 +68,9 @@
 
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-30">Fecha de Solicitud</label>
-        <label class="label has-text-left wd-30">Fecha del Evento</label>
-        <label class="label has-text-left wd-30">Fecha de Clausura</label>
+        <label class="label has-text-left wd-30">Fecha de Solicitud *</label>
+        <label class="label has-text-left wd-30">Fecha del Evento *</label>
+        <label class="label has-text-left wd-30">Fecha de Clausura *</label>
     </div>
 
     <div class="field-body forms_row">
@@ -101,123 +101,139 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-5c">Capitanes Disponibles</label>
-        <label class="label has-text-left wd-5c">Cocineros Disponibles</label>
-        <label class="label has-text-left wd-5c">Saloneros Disponibles</label>
-        <label class="label has-text-left wd-5c">Stewards</label>
-        <label class="label has-text-left wd-5c">Otros</label>
+        <label class="label has-text-left wd-5c">Capitanes Disponibles *</label>
+        <label class="label has-text-left wd-5c">Cocineros Disponibles *</label>
+        <label class="label has-text-left wd-5c">Saloneros Disponibles *</label>
+        <label class="label has-text-left wd-5c">Stewards *</label>
+        <label class="label has-text-left wd-5c">Otros *</label>
 
     </div>
-    <div class="field-body forms_row">
+    <div class="field-body forms_row2">
         <div class="control wd-5c">
-            <?php
-            #capitanes
-            $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role = 2 AND u.status_user = 'Active' AND e.rank_employee != 7";
-            $resultado = mysqli_query($con, $consulta);
+            <select class="wd-100" name="capitanes" id="capitanes" onchange="addCheckfromSelect(this, 'captains')">
+                <option value="">Seleccione un Capitán</option>
+                <?php
+                #capitanes al seleccionar una opción agregar un checkbox
+                $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role = 2 AND u.status_user = 'Active' AND e.rank_employee != 7";
+                $resultado = mysqli_query($con, $consulta);
 
-            while ($row = mysqli_fetch_array($resultado)) { ?>
-                <div class="wd-100 is-flex is-flex-direction-row is-size-5">
-                    <input type="checkbox" name="captains[]" id="<?= $row['id_user'] ?>" value="<?= $row['id_user'] ?>" class="is-size-4" required>
-                    <label for="<?= $row['id_user'] ?>" class="ml-20 is-size-5 mt--5"><?= $row['name'] . ' ' . $row['lastname'] ?></label>
+                while ($row = mysqli_fetch_array($resultado)) { ?>
+                    <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                <?php } ?>
+            </select>
+            <div class="mt-20">
+                <div id="captains" class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
+                    <!-- Aquí se muestra lo seleccionado -->
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="captains[]" id="noneCaptains" value="noneCaptains" class="is-size-4" required>
+                        <label for="noneCaptains" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
-            <?php }
-            if ($resultado->num_rows == 0) { ?>
-                <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Capitanes Disponibles</p>
-
-            <?php  } ?>
-            <div class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
-                <input type="checkbox" name="captains[]" id="noneCaptain" value="noneCaptain" class="is-size-4" required>
-                <label for="noneCaptain" class="ml-20 is-size-5 mt--5">No requerido</label>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Capitanes Disponibles</p>
+                <?php  } ?>
             </div>
         </div>
         <div class="control wd-5c">
-            <?php
-            #cocineros
-            $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user  AND (u.id_role = 3 OR u.id_role = 9) AND u.status_user = 'Active'";
-            $resultado = mysqli_query($con, $consulta);
-            while ($row = mysqli_fetch_array($resultado)) { ?>
-                <div class="wd-100 is-flex is-flex-direction-row is-size-5">
-                    <input type="checkbox" name="chefs[]" id="<?= $row['id_user'] ?>" value="<?= $row['id_user'] ?>" class="is-size-4" required>
-                    <label class="ml-20 is-size-5 mt--5"><?= $row['name'] . ' ' . $row['lastname'] ?></label>
+            <select class="wd-100" name="cocineros" id="cocineros" onchange="addCheckfromSelect(this, 'chefs')">
+                <option value="">Seleccione un Chef</option>
+                <?php
+                #cocineros
+                $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user  AND (u.id_role = 3 OR u.id_role = 9) AND u.status_user = 'Active' AND e.rank_employee != 7";
+                $resultado = mysqli_query($con, $consulta);
+                while ($row = mysqli_fetch_array($resultado)) { ?>
+                    <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                <?php } ?>
+            </select>
+            <div class="mt-20">
+                <div id="chefs" class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
+                    <!-- Aquí se muestra lo seleccionado -->
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="chefs[]" id="noneChefs" value="noneChefs" class="is-size-4" required>
+                        <label for="noneChefs" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
-            <?php }
-            if ($resultado->num_rows == 0) { ?>
-                <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Cocineros Disponibles</p>
-
-            <?php  } ?>
-            <div class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
-                <input type="checkbox" name="chefs[]" id="noneChef" value="noneChef" class="is-size-4" required>
-                <label for="noneChef" class="ml-20 is-size-5 mt--5">No requerido</label>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Chefs Disponibles</p>
+                <?php  } ?>
             </div>
-
         </div>
         <div class="control wd-5c">
-            <div class="">
+            <select class="wd-100" name="saloneros" id="saloneros" onchange="addCheckfromSelect(this, 'waitress')">
+                <option value="">Seleccione un Salonero</option>
                 <?php
                 #saloneros
-                $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND (u.id_role = 4 OR u.id_role = 5) AND u.status_user = 'Active'";
+                $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND (u.id_role = 4 OR u.id_role = 5) AND u.status_user = 'Active' AND e.rank_employee != 7";
                 $resultado = mysqli_query($con, $consulta);
                 while ($row = mysqli_fetch_array($resultado)) { ?>
-                    <div class="wd-100 is-flex is-flex-direction-row is-size-5">
-                        <input type="checkbox" name="waitress[]" id="<?= $row['id_user'] ?>" value="<?= $row['id_user'] ?>" class="is-size-4" required>
-                        <label class="ml-20 is-size-5 mt--5"><?= $row['name'] . ' ' . $row['lastname'] ?></label>
-                    </div>
-                <?php }
-                if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Saloneros Disponibles</p>
-    
-                <?php  } ?>
-                <div class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
-                    <input type="checkbox" name="waitress[]" id="noneWaitress" value="noneWaitress" class="is-size-4" required>
-                    <label for="noneWaitress" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                <?php } ?>
+            </select>
+
+            <div class="mt-20">
+                <div id="waitress" class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
+                    <!-- Aquí se muestra lo seleccionado -->
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="waitress[]" id="noneWaitress" value="noneWaitress" class="is-size-4" required>
+                        <label for="noneWaitress" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Saloneros Disponibles</p>
+                <?php  } ?>
             </div>
         </div>
         <div class="control wd-5c">
-            <div class="">
+            <select class="wd-100" name="stiward" id="stiward" onchange="addCheckfromSelect(this, 'stewards')">
+                <option value="">Seleccione un Stewards</option>
                 <?php
                 #stewards
-                $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role = 8 AND u.status_user = 'Active'";
+                $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role = 8 AND u.status_user = 'Active' AND e.rank_employee != 7";
                 $resultado = mysqli_query($con, $consulta);
                 while ($row = mysqli_fetch_array($resultado)) { ?>
-                    <div class="wd-100 is-flex is-flex-direction-row is-size-5">
-                        <input type="checkbox" name="stewards[]" id="<?= $row['id_user'] ?>" value="<?= $row['id_user'] ?>" class="is-size-4" required>
-                        <label class="ml-20 is-size-5 mt--5"><?= $row['name'] . ' ' . $row['lastname'] ?></label>
-                    </div>
-                <?php }
-                if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Stewards Disponibles</p>
-    
-                <?php  } ?>
-                <div class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
-                    <input type="checkbox" name="stewards[]" id="noneStewards" value="noneStewards" class="is-size-4" required>
-                    <label for="noneStewards" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                <?php } ?>
+            </select>
+
+            <div class="mt-20">
+                <div id="stewards" class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
+                    <!-- Aquí se muestra lo seleccionado -->
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="stewards[]" id="noneStewards" value="noneStewards" class="is-size-4" required>
+                        <label for="noneStewards" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Stewards Disponibles</p>
+                <?php  } ?>
             </div>
         </div>
         <div class="control wd-5c">
-            <div class="">
+            <select class="wd-100" name="otros" id="otros" onchange="addCheckfromSelect(this, 'others')">
+                <option value="">Seleccione un Empleado</option>
                 <?php
                 #otros
-                $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role >= 10 AND u.status_user = 'Active'";
+                $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role >= 10 AND u.status_user = 'Active' AND e.rank_employee != 7";
                 $resultado = mysqli_query($con, $consulta);
                 while ($row = mysqli_fetch_array($resultado)) { ?>
-                    <div class="wd-100 is-flex is-flex-direction-row is-size-5">
-                        <input type="checkbox" name="others[]" id="<?= $row['id_user'] ?>" value="<?= $row['id_user'] ?>" class="is-size-4" required>
-                        <label class="ml-20 is-size-5 mt--5"><?= $row['name'] . ' ' . $row['lastname'] ?></label>
-                    </div>
-                <?php }
-                if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay más Empleados Disponibles</p>
-    
-                <?php  } ?>
-                <div class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
-                    <input type="checkbox" name="others[]" id="noneOthers" value="noneOthers" class="is-size-4" required>
-                    <label for="noneOthers" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                <?php } ?>
+            </select>
+
+            <div class="mt-20">
+
+                <div id="others" class="mt-5 wd-100 is-flex is-flex-direction-row is-size-5">
+                    <!-- Aquí se muestra lo seleccionado -->
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="others[]" id="noneOthers" value="noneOthers" class="is-size-4" required>
+                        <label for="noneOthers" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Otros Empleados Disponibles</p>
+                <?php  } ?>
             </div>
         </div>
-
     </div>
 </div>
 <hr>
