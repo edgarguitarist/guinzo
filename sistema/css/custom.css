@@ -898,6 +898,10 @@ button[type="submit"]:disabled {
 @media screen and (max-width: 990px) {
   /* Mobile  */
 
+  .mobile-white{
+    color: white !important;
+  }
+
   #myv {
     margin-bottom: 100px;
   }
@@ -1004,4 +1008,10 @@ button[type="submit"]:disabled {
 .right-0 {
   position: absolute;
   right: 0 !important;
+}
+
+.input-check {
+  position: initial !important;
+  right: 0 !important;
+  width: 110px !important;
 }

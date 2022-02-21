@@ -1,6 +1,6 @@
 <?php $who = $who ?? ''; ?>
 <div class="field">
-    <label class="label has-text-left">Nombres y Apellidos</label>
+    <label class="label has-text-left">Nombres y Apellidos *</label>
     <div class="field-body forms_row">
         <div class="control wd-4c">
             <!--  hacer un trim a todos los datos del formulario  -->
@@ -21,10 +21,10 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Cédula</label>
-        <label class="label has-text-left wd-4c">Celular</label>
-        <label class="label has-text-left wd-4c">Ciudad de Residencia</label>
-        <label class="label has-text-left wd-4c">Fecha de Nacimiento</label>
+        <label class="label has-text-left wd-4c">Cédula *</label>
+        <label class="label has-text-left wd-4c">Celular *</label>
+        <label class="label has-text-left wd-4c">Ciudad de Residencia *</label>
+        <label class="label has-text-left wd-4c">Fecha de Nacimiento *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
@@ -68,10 +68,9 @@
 
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Correo</label>
-        <label class="label has-text-left wd-4c"></label>
-        <label class="label has-text-left wd-4c">Rol de Empleado</label>
-        <label class="label has-text-left wd-4c">Tipo de Empleado</label>
+        <label class="label has-text-left wd-2c">Correo *</label>
+        <label class="label has-text-left wd-4c">Rol de Empleado *</label>
+        <label class="label has-text-left wd-4c">Tipo de Empleado *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">

@@ -57,7 +57,7 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="navbar-item has-text-weight-medium has-text-black is-size-6-desktop is-size-3" href="employees-request.php">
+                    <a class="mobile-white navbar-item has-text-weight-medium has-text-black is-size-6-desktop is-size-3" href="employees-request.php">
                         <em class="fas fa-users"></em>Solicitudes
                     </a>
                 </div>

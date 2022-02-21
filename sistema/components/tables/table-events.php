@@ -24,10 +24,10 @@
         if ($result > 0) {
             while ($data = mysqli_fetch_array($query)) {
                 $default_class_anchors = "button is-dark is-outlined is-size-6-desktop is-size-6 mt--7";
-                $editar_material = "<a class='$default_class_anchors' title='Editar' href='edit-event.php?id=" . $data['id_event'] . "' ><em class='has-text-primary fas fa-edit '></em> Editar</a>";
+                $ver_evento = "<a class='$default_class_anchors' title='Editar' href='edit-event.php?id=" . $data['id_event'] . "' ><em class='has-text-primary fas fa-edit '></em> Editar</a>";
                 $detalle_material = "";
                 $eliminar_material = $data['deleted'] == 0 ? "<a class='" . $default_class_anchors . "' title='Eliminar' href='components/tables/update-data.php?who=events&action=delete&id=" . $data['id_event'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='" . $default_class_anchors . "' title='Restaurar' href='components/tables/update-data.php?who=events&action=undelete&id=" . $data['id_event'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
-                $salida = $editar_material . " " . $eliminar_material;
+                $salida = $ver_evento . " " . $eliminar_material;
                 $date_event = $data["date_event"] ? $data["date_event"] : "Por Definir";
         ?>
                 <tr>

@@ -369,11 +369,11 @@ const addCheckfromSelect = (elemento, where, inputText=false) => {
   checkbox.name = where + "[]"
   checkbox.id = value
   checkbox.checked = true
-  checkbox.required = true
   checkbox.onclick = () => {
     const none = document.getElementById("none" + capitalize(where))
     none.checked = false
   }
+  checkbox.required = true
   let label = document.createElement("label")
   label.htmlFor = value
   label.innerHTML = text
@@ -387,7 +387,8 @@ const addCheckfromSelect = (elemento, where, inputText=false) => {
     input.type = "text"
     input.name = where + "Input[]"
     input.placeholder = "Cantidad"
-    input.className = "ml-10 height-30 input is-size-5 wd-40 right-0"
+    input.className = "ml-10 height-30 input is-size-5 wd-40 input-check"
+    input.required = true
     li.appendChild(input)
   }  
   destiny.appendChild(li)
