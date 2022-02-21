@@ -340,8 +340,8 @@ function loadSelects(elemento, who, default_option = "", condition = "") {
   })
 }
 
-const togglePassword = () => {
-  let input = document.getElementById("password")
+const togglePassword = (elemento) => {
+  let input = document.getElementById(elemento)
   let anchor = document.getElementById("togglePassword")
   let eye = document.getElementById("eye")
   let eye2 = document.getElementById("eye2")

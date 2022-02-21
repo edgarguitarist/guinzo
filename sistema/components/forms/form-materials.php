@@ -10,16 +10,16 @@
     <div class="field-body forms_row">
         <div class="control wd-4c">
         <input class="input" type="hidden" name="id" id="id" value="<?= $id ?>">
-            <input id="name" name="name" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre de Material" value="<?= $data_result[$who]['name'] ?? '' ?>" required>
+            <input id="name_material" name="name" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre de Material" value="<?= $data_result[$who]['name'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
 
         <div class="control wd-10">
-            <input id="cantidad" name="cantidad" class="input solo-numeros" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Cantidad" value="<?= $data_result[$who]['cantidad'] ?? '' ?>" required>
+            <input id="cantidad_material" name="cantidad" class="input solo-numeros" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Cantidad" value="<?= $data_result[$who]['cantidad'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-10">
-            <input id="precio" name="precio" class="input solo-precio" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" required>
+            <input id="precio_material" name="precio" class="input solo-precio" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-4c">

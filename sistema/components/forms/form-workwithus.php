@@ -29,15 +29,15 @@
         </div>
         <div class="field-body forms_row">
             <div class="control wd-3c">
-                <input id="cedula" name="cedula" minlength="10" maxlength="10" class="input solo-numeros" onkeyup="checkCedula('root')" type="text" placeholder="Su Cédula" required>
-                <p id="dni_error" class="help is-danger">&nbsp;</p>
+                <input id="cedula_wwu" name="cedula" minlength="10" maxlength="10" class="input solo-numeros" onkeyup="checkCedula('root')" type="text" placeholder="Su Cédula" required>
+                <p id="cedula_wwu_error" class="help is-danger">&nbsp;</p>
             </div>
             <!-- <div class="control wd-4c">
                 <input id="password" name="password" style="margin-top: -20px;" minlength="8" maxlength="20" class="input" type="password" placeholder="Su Contraseña" required>
             </div> -->
             <div class="control wd-3c">
                 <div class="select wd-100">
-                    <select id="residence" name="residence" class="wd-100" onchange="checkSelect(this)" required>
+                    <select id="residence_wwu" name="residence" class="wd-100" onchange="checkSelect(this)" required>
                         <option value="">Seleccione su Ciudad</option>
                         <?php
                         $cities = ['Daule', 'Durán', 'Guayaquil', 'Samborondón'];
@@ -49,13 +49,13 @@
                         <option value="Otra">Otra Ciudad</option>
                     </select>
                 </div>
-                <p id="residence_error" class="help is-danger">&nbsp;</p>
+                <p id="residence_wwu_error" class="help is-danger">&nbsp;</p>
             </div>
             <div class="control wd-3c">
                 <div class="left-align wd-100 ">
-                    <input title="Fecha de Nacimiento" type="date" style="" max="<?= $minimo; ?>" value="<?= $minimo; ?>" id="birthday" name="birthday" class="input wd-100" required />
+                    <input title="Fecha de Nacimiento" type="date" style="" max="<?= $minimo; ?>" value="<?= $minimo; ?>" id="birthday_wwu" name="birthday" class="input wd-100" required />
                 </div>
-                <p id="residence_error" class="help is-danger">&nbsp;</p>
+                <p id="" class="help is-danger">&nbsp;</p>
             </div>
         </div>
     </div>
@@ -112,14 +112,14 @@
                         </a>
                     </p>
                     <p class="control is-expanded">
-                        <input id="phone" name="phone" onkeyup="checkPhone()" class="input solo-numeros" type="tel" pattern="[0-9]{9}" minlength="9" maxlength="9" placeholder="Su Número de Celular" required>
+                        <input id="phone_wwu" name="phone" onkeyup="checkPhone()" class="input solo-numeros" type="tel" pattern="[0-9]{9}" minlength="9" maxlength="9" placeholder="Su Número de Celular" required>
                     </p>
                 </div>
-                <p id="phone_error" class="help is-danger">&nbsp;</p>
+                <p id="phone_wwu_error" class="help is-danger">&nbsp;</p>
             </div>
             <div class="field">
                 <p class="control is-expanded has-icons-left has-icons-right">
-                    <input class="input" id="email" name="email" type="email" placeholder="Correo" onkeyup="checkEmail(this)" required>
+                    <input class="input" id="email_wwu" name="email" type="email" placeholder="Correo" onkeyup="checkEmail(this)" required>
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -127,7 +127,7 @@
                         <i class="fas fa-check"></i>
                     </span>
                 </p>
-                <p id="email_error" class="help is-danger">&nbsp;</p>
+                <p id="email_wwu_error" class="help is-danger">&nbsp;</p>
             </div>
         </div>
     </div>
