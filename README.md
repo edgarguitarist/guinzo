@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![logo](https://raw.githubusercontent.com/edgarguitarist/guinzo/main/sistema/images/logos/cropped-logo_bockcao-black-270x270.png)
+![logo](https://raw.githubusercontent.com/edgarguitarist/guinzo/main/sistema/images/logos/logo-bockcao-black.png)
 
 </div>
 
