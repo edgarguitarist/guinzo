@@ -33,7 +33,7 @@
             <p id="cedula_employee_error" class="help is-danger">&nbsp;</p>
         </div>
         <div class="control wd-4c">
-            <input id="phone" name="phone" class="input solo-numeros" type="tel" pattern="[0-9]{10}" minlength="10" maxlength="10" placeholder="Celular" onkeyup="checkPhone(this)" value="<?= $data_result[$who]['phone'] ?? '' ?>" required>
+            <input id="phone_employee" name="phone" class="input solo-numeros" type="tel" pattern="[0-9]{10}" minlength="10" maxlength="10" placeholder="Celular" onkeyup="checkPhone(this)" value="<?= $data_result[$who]['phone'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-4c">
