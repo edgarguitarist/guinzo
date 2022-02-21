@@ -25,12 +25,10 @@
                                 <input type="password" name="password2" onkeyup="checkPass('password_change','password_change2');" placeholder="Repita la contraseña" id="password_change2" minlength="8" class="forms_field-input" required autofocus />
                             </div>
                             <br>
-                            <br>
                             <label class="text-danger" for="email" id="mensaje_change" style="display: none;">Las contraseñas no coinciden</label>
                         </div>
                     </fieldset>
                     <div class="center">
-                        <br>
                         <br>
                         <input id="submit_change" type="submit" value="Cambiar Contraseña" class="forms_buttons-action">
                     </div>
