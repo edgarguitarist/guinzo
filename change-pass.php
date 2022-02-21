@@ -4,19 +4,20 @@
 <head>
     <?php
     $site = "Login";
+    $userID = $_GET['userID'] ?? '';
     include "sistema/components/root/head.php"
     ?>
     <link rel="stylesheet" href="sistema/css/login.css">
-    
+
 </head>
 
 <body>
     <!-- Navigation -->
-    <?php include "sistema/components/root/nav.php" ?>    
-    
-     <div class="padre center_login">        
+    <?php include "sistema/components/root/nav.php" ?>
+
+    <div class="padre center_login">
         <!-- Sections -->
-        <?php include "sistema/components/forms/form-recovery.php" ?>
+        <?php include "sistema/components/forms/form-change-pass.php" ?>
     </div>
 
 </body>

@@ -97,6 +97,26 @@ $mensajes = [
         'message' => 'Hemos actualizado su Foto.',
         'type' => 'SUCCESS'
     ],
+    'email_error' => [
+        'header' => 'LO SENTIMOS!',
+        'message' => 'No se pudo enviar el Correo, vuelva a intentar más tarde.',
+        'type' => 'ERROR'
+    ],
+    'email_success' => [
+        'header' => 'Datos Actualizados!',
+        'message' => 'Hemos enviado el correo de recuperación.',
+        'type' => 'SUCCESS'
+    ],
+    'error_change_pass' => [
+        'header' => 'LO SENTIMOS! ',
+        'message' => 'No hemos podido cambiar la contraseña.',
+        'type' => 'ERROR'
+    ],
+    'success_change_pass' => [
+        'header' => 'Datos Actualizados! ',
+        'message' => 'Hemos cambiado la contraseña.',
+        'type' => 'SUCCESS'
+    ],
 ];
 
 
