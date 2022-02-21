@@ -53,11 +53,12 @@ include "components/jgrowl-messages.php";
 if ($disableDNI) {
     echo '
     <script defer> 
-        const find_cedula = document.getElementById("cedula")
-        if (find_cedula) {
-            find_cedula.disabled = true
-            console.log("DNI disabled")
-        }
+        const find_cedula = document.getElementsByName("cedula")
+        
+            for (let i = 0; i < find_cedula.length; i++) {
+                find_cedula[i].disabled = true
+            }
+        
         const find_ruc = document.getElementById("ruc")
         if (find_ruc) {
             find_ruc.disabled = true
@@ -65,5 +66,14 @@ if ($disableDNI) {
     </script>';
 }
 ?>
+<script>
+    // deshabilitar todos los inputs que en la id tengan la palabra cedula
+    const find_cedula = document.getElementsByName("cedula")
+    if (find_cedula) {
+        for (let i = 0; i < find_cedula.length; i++) {
+            find_cedula[i].disabled = true
+        }
+    }
+</script>
 
 </html>
