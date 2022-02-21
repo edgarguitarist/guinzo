@@ -15,7 +15,7 @@ $con = @mysqli_connect($hostname, $username1, $password1);
 #notese el @ antes del comando mysql_connect para evitar que arroje mensaje de error de PHP 
 
 if (!($con)) {
-  $con = @mysqli_connect($hostname, $username2, $password2) or die('No puedo conectarme a ninguna base de datos! Intentelo nuevamente.');
+  $con = @mysqli_connect($hostname, $username2, $password2) or die('No puedo conectarme a ninguna base de datos! Inténtelo nuevamente.');
   $selector='local';
 }
 

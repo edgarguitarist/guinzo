@@ -1,8 +1,8 @@
-function checkCedula(path = "root") {
+function checkCedula(path = "root", elemento) {
   const submit = document.getElementById("submit")
-  const cad = document.getElementById("cedula").value.trim(),
-    box = document.getElementById("cedula"),
-    salida = document.getElementById("dni_error")
+  const cad = document.getElementById(elemento.id).value.trim(),
+    box = document.getElementById(elemento.id),
+    salida = document.getElementById(elemento.id + "_error")
   let total = 0
   let existe = ""
   let longitud = cad.length

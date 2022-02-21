@@ -4,16 +4,16 @@
     <div class="field-body forms_row">
         <div class="control wd-4c">
             <!--  hacer un trim a todos los datos del formulario  -->
-            <input id="firstName" name="firstName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Primer Nombre" value="<?= $data_result[$who]['firstname'] ?? '' ?>" required>
+            <input id="firstName_employee" name="firstName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Primer Nombre" value="<?= $data_result[$who]['firstname'] ?? '' ?>" required>
         </div>
         <div class="control wd-4c">
-            <input id="middleName" name="middleName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Segundo Nombre" value="<?= $data_result[$who]['middlename'] ?? '' ?>" required>
+            <input id="middleName_employee" name="middleName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Segundo Nombre" value="<?= $data_result[$who]['middlename'] ?? '' ?>" required>
         </div>
         <div class="control wd-4c">
-            <input id="lastName" name="lastName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Apellido Paterno" value="<?= $data_result[$who]['lastname'] ?? '' ?>" required>
+            <input id="lastName_employee" name="lastName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Apellido Paterno" value="<?= $data_result[$who]['lastname'] ?? '' ?>" required>
         </div>
         <div class="control wd-4c">
-            <input id="secondLastName" name="secondLastName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Apellido Materno" value="<?= $data_result[$who]['secondlastname'] ?? '' ?>" required>
+            <input id="secondLastName_employee" name="secondLastName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Apellido Materno" value="<?= $data_result[$who]['secondlastname'] ?? '' ?>" required>
         </div>
     </div>
 </div>
@@ -28,9 +28,9 @@
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
-            <input id="cedula" name="cedula" minlength="10" maxlength="10" class="input solo-numeros mt--5" onkeyup="checkCedula('gg')" type="text" placeholder="Su Cédula" value="<?= $data_result[$who]['dni'] ?? '' ?>" required>
+            <input id="cedula_employee" name="cedula" minlength="10" maxlength="10" class="input solo-numeros mt--5" onkeyup="checkCedula('gg')" type="text" placeholder="Su Cédula" value="<?= $data_result[$who]['dni'] ?? '' ?>" required>
             <input type="hidden" id="dni" name="dni" value="<?= $data_result[$who]['dni'] ?? '' ?>">
-            <p id="dni_error" class="help is-danger">&nbsp;</p>
+            <p id="cedula_employee_error" class="help is-danger">&nbsp;</p>
         </div>
         <div class="control wd-4c">
             <input id="phone" name="phone" class="input solo-numeros" type="tel" pattern="[0-9]{10}" minlength="10" maxlength="10" placeholder="Celular" onkeyup="checkPhone(this)" value="<?= $data_result[$who]['phone'] ?? '' ?>" required>
@@ -38,7 +38,7 @@
         </div>
         <div class="control wd-4c">
             <div class="select wd-100">
-                <select id="residence" name="residence" class="input is-success" onchange="checkSelect(this)" required>
+                <select id="residence_employee" name="residence" class="input is-success" onchange="checkSelect(this)" required>
                     <option value="">Seleccione su Ciudad</option>
                     <?php
                     $employee_city = $data_result[$who]['city'] ?? '';
@@ -59,9 +59,9 @@
         </div>
         <div class="control wd-4c">
             <div class="left-align wd-100 ">
-                <input title="Fecha de Nacimiento" type="date" style="" max="<?= $minimo; ?>" value="<?= $data_result[$who]['birthday'] ?? $minimo ?>" id="birthday" name="birthday" class="input wd-100" required />
+                <input title="Fecha de Nacimiento" type="date" style="" max="<?= $minimo; ?>" value="<?= $data_result[$who]['birthday'] ?? $minimo ?>" id="birthday_employee" name="birthday" class="input wd-100" required />
             </div>
-            <p id="residence_error" class="help is-danger">&nbsp;</p>
+            <p id="" class="help is-danger">&nbsp;</p>
         </div>
     </div>
 </div>
@@ -76,7 +76,7 @@
         <div class="control wd-2c">
             <div class="field">
                 <p class="control is-expanded has-icons-left has-icons-right">
-                    <input class="input" id="email" name="email" type="email" placeholder="Correo" onkeyup="checkEmail(this, 'gg')" value="<?= $data_result[$who]['email'] ?? '' ?>" required>
+                    <input class="input" id="email_employee" name="email" type="email" placeholder="Correo" onkeyup="checkEmail(this, 'gg')" value="<?= $data_result[$who]['email'] ?? '' ?>" required>
                     <span class="icon is-small is-left">
                         <em class="fas fa-envelope"></em>
                     </span>
@@ -84,7 +84,7 @@
                         <em class="fas fa-check"></em>
                     </span>
                 </p>
-                <p id="email_error" class="help is-danger">&nbsp;</p>
+                <p id="email_employee_error" class="help is-danger">&nbsp;</p>
             </div>
         </div>
         <div class="control wd-4c">

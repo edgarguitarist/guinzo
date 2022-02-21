@@ -29,7 +29,7 @@
         </div>
         <div class="field-body forms_row">
             <div class="control wd-3c">
-                <input id="cedula" name="cedula" minlength="10" maxlength="10" class="input solo-numeros" onkeyup="checkCedula()" type="text" placeholder="Su Cédula" required>
+                <input id="cedula" name="cedula" minlength="10" maxlength="10" class="input solo-numeros" onkeyup="checkCedula('root')" type="text" placeholder="Su Cédula" required>
                 <p id="dni_error" class="help is-danger">&nbsp;</p>
             </div>
             <!-- <div class="control wd-4c">
