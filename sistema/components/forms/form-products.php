@@ -9,7 +9,7 @@
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
-            <input class="input" type="hidden" name="id" id="id" value="<?= $id ?? '' ?>">
+            <input class="input" type="hidden" name="id" id="id" value="<?= $id ?? 99 ?>">
             <input id="name" name="name" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre de Producto" value="<?= $data_result[$who]['name'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
