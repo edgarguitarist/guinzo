@@ -244,7 +244,7 @@ function checkForm() {
   let inputs = document.getElementsByClassName("input")
   const submit = document.getElementById("submit")
   for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].className.includes("danger") || inputs[i].value == "") {
+    if (inputs[i].className.includes("is-danger") || inputs[i].value == "") {
       submit.disabled = true
     }
   }
