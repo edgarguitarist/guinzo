@@ -247,6 +247,7 @@ function checkForm() {
     if (inputs[i].className.includes("is-danger") || inputs[i].value == "") {
       submit.disabled = true
     }
+    console.log(inputs[i])
   }
 }
 
