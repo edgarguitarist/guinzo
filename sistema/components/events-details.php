@@ -201,7 +201,8 @@ $time_clausura = date('H:i a', strtotime($full_fecha_clausura));
 $day_clausura = date('d', strtotime($full_fecha_clausura));
 $month_clausura = date('m', strtotime($full_fecha_clausura));
 $year_clausura = date('Y', strtotime($full_fecha_clausura));
-$namepdf = $nombre_evento . '_' . $fecha_evento;
+
+$namepdf = $nombre_evento . '_' . $full_fecha_evento;
 
 ?>
 
