@@ -8,7 +8,6 @@
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
-            <!--  hacer un trim a todos los datos del formulario  -->
             <input id="firstName_customer" name="firstName" class="input solo-letras" onkeyup="checkLength(this)" minlength="3" maxlength="30" type="text" placeholder="Primer Nombre" value="<?= $data_result[$who]['firstname'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
@@ -27,7 +26,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="field">
     <div class="forms_row">

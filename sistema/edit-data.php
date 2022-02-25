@@ -30,7 +30,7 @@ include "components/forms/get-data.php";
         <div class="wd-80">
             <br>
             <br>
-            <form onchange="checkForm()" onclick="checkForm()" onkeyup="checkForm()" method="post" action="components/forms/update-data.php">
+            <form enctype="multipart/form-data" onchange="checkForm()" onclick="checkForm()" onkeyup="checkForm()" method="post" action="components/forms/update-data.php">
                 <input type="hidden" id="who" name="who" value="<?= $data_who[$who]["who"] ?>">
                 <input type="hidden" id="action" name="action" value="update">
                 <?php include "components/forms/" . $data_who[$who]["form"] ?>
@@ -66,14 +66,6 @@ if ($disableDNI) {
     </script>';
 }
 ?>
-<script>
-    // deshabilitar todos los inputs que en la id tengan la palabra cedula
-    const find_cedula = document.getElementsByName("cedula")
-    if (find_cedula) {
-        for (let i = 0; i < find_cedula.length; i++) {
-            find_cedula[i].disabled = true
-        }
-    }
-</script>
+
 
 </html>

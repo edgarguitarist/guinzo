@@ -17,7 +17,7 @@
                         <form enctype="multipart/form-data" method="post" action="sistema/components/update-profile.php">
                             <div class="file-upload">
                                 <div class="image-upload-wrap area-img-modal">
-                                    <input id="dniPhoto" name="dni" type="hidden" value="<?= $_SESSION['dni']; ?>">
+                                    <input id="dniPhoto" name="dniPhoto" type="hidden" value="<?= $_SESSION['dni']; ?>">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" /> <!-- 3MB -->
                                     <input id="photo" name="photo" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" required />
                                     <div class="drag-text">
@@ -26,7 +26,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <p id="error_photo" class="has-text-danger b-600 hidden">El tamaño de la imagen excede los 3MB, elija otra por favor.</p>
+                                <p class="has-text-danger b-600 hidden error_photo">El tamaño de la imagen excede los 3MB, elija otra por favor.</p>
                                 <div class="file-upload-content">
                                     <img id="photo-user" class="file-upload-image area-img-modal" src="#" alt="your image" />
                                     <div class="image-title-wrap">
@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button id="submitPhotoModal" name="submitPhotoModal" type="submit" class="form_button mt-5">Cambiar Foto</button>
+                            <button name="submitPhotoModal" type="submit" class="form_button mt-5 submitPhotoModal">Cambiar Foto</button>
                         </form>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         <form enctype="multipart/form-data" method="post" action="components/update-profile.php">
                             <div class="file-upload">
                                 <div class="image-upload-wrap area-img-modal">
-                                    <input id="dniS" name="dni" type="hidden" value="<?= $_SESSION['dni']; ?>">
+                                    <input id="dniS" name="dniPhoto" type="hidden" value="<?= $_SESSION['dni']; ?>">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" /> <!-- 3MB -->
                                     <input id="photo" name="photo" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" required />
                                     <div class="drag-text">
@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <p id="error_photo" class="has-text-danger b-600 hidden">El tamaño de la imagen excede los 3MB, elija otra por favor.</p>
+                                <p class="has-text-danger b-600 hidden error_photo">El tamaño de la imagen excede los 3MB, elija otra por favor.</p>
                                 <div class="file-upload-content">
                                     <img id="photo-user" class="file-upload-image area-img-modal" src="#" alt="your image" />
                                     <div class="image-title-wrap">
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button id="submitPhotoModal" name="submitPhotoModal" type="submit" class="form_button mt-5">Cambiar Foto</button>
+                            <button name="submitPhotoModal submitPhotoModal" type="submit" class="form_button mt-5">Cambiar Foto</button>
                         </form>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                         <h1 id="titleProfile" class="title mb-5">Editar Perfil</h1>
                         <form method="post" action="components/update-profile.php">
                             <?php include "components/forms/form-profile.php" ?>
-                            <button id="submitProfileModal" name="submitProfileModal" type="submit" class="form_button mt-5">Actualizar</button>
+                            <button id="submitProfileModalS" name="submitProfileModal" type="submit" class="form_button mt-5">Actualizar</button>
                         </form>
                     </div>
                 </div>

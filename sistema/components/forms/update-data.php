@@ -114,6 +114,37 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
         $twoinserts = false;
     }
 
+    if ($who == "menus") {
+        $id = $_POST['id_menu'] ?? '';
+        $name = $_POST['name_menu'];
+        $description = $_POST['description_menu'];
+        $price = $_POST['precio_menu'];
+        $type_menu = $_POST['tipo_menu'];
+
+        $timeStamp = new DateTime();
+        $namePhoto = $timeStamp->getTimestamp();
+        $today = date("Y-m-d");
+        $path = "../../uploads/";
+        $ext = pathinfo($_FILES['photo_menu']['name'] ?? "", PATHINFO_EXTENSION);
+
+        $uploaded_photo = $path . $namePhoto . '.' . $ext;
+        $path_photo = "uploads/" . $namePhoto . '.' . $ext;
+
+        move_uploaded_file($_FILES['photo_menu']['tmp_name'], $uploaded_photo);      
+
+        $photo_menu = $path_photo;
+
+        $consultas = [
+            "add" => "INSERT INTO menus (name_menu, description_menu, price_menu, type_menu, photo_menu) VALUES ('$name', '$description', '$price', '$type_menu', '$photo_menu')",
+            "add2" => "",
+            "update" => "UPDATE menus SET name_menu = '$name', description_menu = '$description', price_menu = '$price', type_menu = '$type_menu', photo_menu = '$photo_menu' WHERE id_menu = '$id'",
+            "update2" => "",
+        ];
+
+        $insert2 = $consultas[$action . "2"];
+        $twoinserts = false;
+    }
+
     $query = $consultas[$action];
     $result = mysqli_query($con, $query);
     $result2 = $twoinserts ? mysqli_query($con, $insert2) : true;

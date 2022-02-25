@@ -29,7 +29,7 @@
 <footer id="footy" class="footer2">
     <?php include "components/footer.php" ?>
 </footer>
-<?php include "includes/scripts.php" ?>
+<?php include "includes/scripts_nm.php" ?>
 
 <?php include "components/jgrowl-messages.php" ?>
 

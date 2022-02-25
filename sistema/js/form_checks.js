@@ -289,6 +289,9 @@ let stateLoadSelect = {
   type_event: {
     status: false,
   },
+  type_menu: {
+    status: false,
+  },
 }
 
 function loadSelects(elemento, who, default_option = "", condition = "") {
@@ -358,7 +361,263 @@ const togglePassword = (elemento) => {
   }
 }
 
-const addCheckfromSelect = (elemento, where, inputText=false) => {
+let prices = {
+  event_type: {
+    1: {
+      price: 50,
+    },
+    2: {
+      price: 200,
+    },
+    3: {
+      price: 150,
+    },
+    4: {
+      price: 100,
+    },
+    5: {
+      price: 250,
+    },
+    "": {
+      price: 0,
+    },
+  },
+  employees: {
+    captains: {
+      price: 50,
+    },
+    chefs: {
+      price: 35,
+    },
+    waitress: {
+      price: 30,
+    },
+    stewards: {
+      price: 25,
+    },
+    others: {
+      price: 25,
+    },
+  },
+  menus: {
+    entrances: {
+      price: 3,
+    },
+    principals: {
+      price: 5,
+    },
+    desserts: {
+      price: 3,
+    },
+    othermenus: {
+      price: 3,
+    },
+  },
+  products: {
+    meats: {
+      price: 5,
+    },
+    fruitsveges: {
+      price: 2,
+    },
+    drinks: {
+      price: 3,
+    },
+    otherproducts: {
+      price: 5,
+    },
+  },
+  materials: {
+    kitchen: {
+      price: 2,
+    },
+    cuberteria: {
+      price: 2,
+    },
+    bar: {
+      price: 2,
+    },
+    decoration: {
+      price: 2,
+    },
+    othermaterials: {
+      price: 2,
+    },
+  },
+  providers: {
+    transporte: {},
+    buffet: {},
+    otherproviders: {},
+  },
+}
+
+let statePrecio = {
+  actual: {
+    price: 0,
+  },
+  lastprice: {
+    price: 0,
+  },
+}
+
+const calculatePrice = () => {
+  let type_event = document.getElementById("tipo_evento").value // select
+  let amount_guest = document.getElementById("cantidad").value
+
+  let employee = document.getElementsByClassName("employee") // Empleados
+
+  let menu = document.getElementsByClassName("menu") // Menus
+  let amount_menu = document.getElementsByClassName("menu_amount")
+
+  let product = document.getElementsByClassName("product") // Productos
+  let amount_product = document.getElementsByClassName("product-amount")
+
+  let material = document.getElementsByClassName("material") // Materiales
+  let amount_material = document.getElementsByClassName("material-amount")
+
+  let providers = document.getElementsByClassName("provider") // Proveedores
+  let price_provider = document.getElementsByClassName("provider-price")
+
+  let other_concepts = document.getElementsByClassName("other_concepts_price") // Otros Conceptos
+
+  let total_final = document.getElementById("precio")
+  let price_total_final = document.getElementById("price_total")
+  let ownsite = document.getElementsByName("ownsite")
+  let total = 0
+
+  //numero de invitados
+  total += amount_guest * 10
+
+  //tipo de evento
+  total += prices.event_type[type_event].price
+
+  // Lugar Propio
+  for (let i = 0; i < ownsite.length; i++) {
+    if (ownsite[i].id == "ownsiteNo" && ownsite[i].checked) {
+      total += 100
+    }
+  }
+
+  // Empleados
+  for (let i = 0; i < employee.length; i++) {
+    let name = employee[i].name.substring(0, employee[i].name.length - 2)
+    if (employee[i].checked) {
+      valor = prices.employees[name].price
+      total += valor
+    }
+  }
+
+  // Menus
+  for (let i = 0; i < menu.length; i++) {
+    let name = menu[i].name.substring(0, menu[i].name.length - 2)
+    if (menu[i].checked) {
+      valor = prices.menus[name].price * amount_menu[i].value
+      total += valor
+    }
+  }
+
+  // Productos
+  for (let i = 0; i < product.length; i++) {
+    let name = product[i].name.substring(0, product[i].name.length - 2)
+    if (product[i].checked) {
+      valor = prices.products[name].price * amount_product[i].value
+      total += valor
+    }
+  }
+
+  // Materiales
+  for (let i = 0; i < material.length; i++) {
+    let name = material[i].name.substring(0, material[i].name.length - 2)
+    if (material[i].checked) {
+      valor = prices.materials[name].price * amount_material[i].value
+      total += valor
+    }
+  }
+
+  // Providers
+  for (let i = 0; i < providers.length; i++) {
+    if (providers[i].checked) {
+      valor = parseInt(price_provider[i].value)
+      total += valor
+    }
+  }
+
+  // Other Concepts
+ for (let i = 0; i < other_concepts.length; i++) {
+    valor = parseInt(other_concepts[i].value)
+    total += valor
+ }
+
+  total_final.value = total
+  price_total_final.value = total
+  statePrecio.actual.price = total
+}
+
+const addOtherConcepts = () => {
+  let otherConcepts = document.getElementById("otherConcepts")
+  let label = document.createElement("label")
+  label.innerText = "Concepto: "
+  let label2 = document.createElement("label")
+  label2.innerText = "Descripción: "
+  let label3 = document.createElement("label")
+  label3.innerText = "Precio: "
+  let otherConceptsInput = document.createElement("input")
+  otherConceptsInput.type = "text"
+  otherConceptsInput.name = "otherConcepts[]"
+  otherConceptsInput.className = "input wd-60 right2-0"
+  otherConceptsInput.placeholder = "Otros Conceptos"
+  let otherConceptsInput2 = document.createElement("textarea")
+  otherConceptsInput2.name = "otherConceptsDetail[]"
+  otherConceptsInput2.className = "input wd-60 right2-0"
+  otherConceptsInput2.placeholder = "Descripción"
+  let otherConceptsInput3 = document.createElement("input")
+  otherConceptsInput3.type = "number"
+  otherConceptsInput3.name = "otherConceptsPrice[]"
+  otherConceptsInput3.className = "input wd-30 right2-0 other_concepts_price"
+  otherConceptsInput3.placeholder = "Precio"
+  let p = document.createElement("p")
+  let p2 = document.createElement("p")
+  let p3 = document.createElement("p")
+  p2.style.marginTop = "10px"
+  p3.style.marginTop = "10px"
+  p.appendChild(label)
+  p.appendChild(otherConceptsInput)
+  p2.appendChild(label2)
+  p2.appendChild(otherConceptsInput2)
+  p3.appendChild(label3)
+  p3.appendChild(otherConceptsInput3)
+  let column = document.createElement("div")
+  column.className = "column is-one-third has-text-left"
+  column.appendChild(p)
+  column.appendChild(p2)
+  column.appendChild(p3)
+  otherConcepts.appendChild(column)
+}
+
+const addCheckfromSelect = (
+  elemento,
+  where,
+  inputText = false,
+  description = false,
+  placeholder = "Cantidad"
+) => {
+  let extraClass = ""
+  let extraClass2 = ""
+  if (prices.employees[where]) {
+    extraClass = "employee"
+  } else if (prices.menus[where]) {
+    extraClass = "menu"
+    extraClass2 = "menu_amount"
+  } else if (prices.products[where]) {
+    extraClass = "product"
+    extraClass2 = "product-amount"
+  } else if (prices.materials[where]) {
+    extraClass = "material"
+    extraClass2 = "material-amount"
+  } else if (prices.providers[where]) {
+    extraClass = "provider"
+    extraClass2 = "provider-price"
+  }
   const select = document.getElementById(elemento.id)
   const destiny = document.getElementById(where)
   const value = select.value
@@ -368,11 +627,8 @@ const addCheckfromSelect = (elemento, where, inputText=false) => {
   checkbox.value = value
   checkbox.name = where + "[]"
   checkbox.id = value
+  checkbox.className = extraClass
   checkbox.checked = true
-  checkbox.onclick = () => {
-    const none = document.getElementById("none" + capitalize(where))
-    none.checked = false
-  }
   checkbox.required = true
   let label = document.createElement("label")
   label.htmlFor = value
@@ -383,25 +639,27 @@ const addCheckfromSelect = (elemento, where, inputText=false) => {
   li.appendChild(checkbox)
   li.appendChild(label)
   if (inputText) {
-   let input = document.createElement("input")
-    input.type = "text"
+    let input = document.createElement("input")
+    input.type = "number"
     input.name = where + "Input[]"
-    input.placeholder = "Cantidad"
-    input.className = "ml-10 height-30 input is-size-5 wd-40 input-check"
+    input.placeholder = placeholder
+    input.min = "0"
+    input.className =
+      "ml-10 height-30 input is-size-5 input-check " + extraClass2
     input.required = true
     li.appendChild(input)
-  }  
+  }
+  if (description) {
+    let input2 = document.createElement("textarea")
+    input2.type = "text"
+    input2.name = where + "Description[]"
+    input2.placeholder = "Descripción"
+    input2.style = "width: 98% !important;"
+    input2.className = "ml-10 input is-size-5 textarea-check"
+    input2.required = true
+    li.appendChild(input2)
+  }
   destiny.appendChild(li)
   select.remove(select.selectedIndex)
   select.value = ""
-}
-
-const uncheckAll = (name) => {
-  const destiny = document.getElementById(name)
-  const inputs = destiny.getElementsByTagName("input")
-  for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].name == name + "[]") {
-      inputs[i].checked = false
-    }
-  }
 }

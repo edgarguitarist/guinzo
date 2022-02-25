@@ -29,11 +29,10 @@ include "includes/dbcon.php";
         <div class="wd-80">
             <br>
             <br>
-            <form onchange="checkForm()" onclick="checkForm()" method="post" action="components/forms/update-data.php">
-                <input type="hidden" id="who" name="who" value="events">
+            <form onkeyup="calculatePrice()" onchange="calculatePrice()" onclick="calculatePrice()" method="post" action="components/forms/events.php">
                 <input type="hidden" id="action" name="action" value="add">
                 <?php include "components/forms/form-events.php" ?>
-                <button onmouseover="checkForm()" id="submit" name="submit" type="submit" class="form_button mt-5">Agregar</button>
+                <button onmouseover="" id="submit" name="submit" type="submit" class="form_button mt-5">Agregar</button>
             </form>
         </div>
 

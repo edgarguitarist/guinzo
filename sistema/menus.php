@@ -3,8 +3,9 @@
 
 <head>
     <?php
-    $site = "Detalles del Evento";
-    $ssite = $site;
+    $site = "Menús";
+    $ssite = substr($site, 0, -1);
+
     include "components/head.php";
     include "includes/dbcon.php";
     ?>
@@ -19,13 +20,13 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a onclick="history.back()" rel="external nofollow" class="addButton button is-dark is-outlined is-size-6-desktop is-size-4"><em class="has-text-success fas fa-share"></em>Volver a la Pagina Anterior</a>
-            <h1 class="has-text-centered title is-cookie">Detalles</h1>
+            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addMenu" data-toggle="modal" href="#addMenuModal"><em class="has-text-success fas fa-plus"></em>Añadir Menú</a> 
+            <h1 class="has-text-centered title is-cookie">Menús</h1>
         </div>
-        <div class="wd-90">
-            <?php include "components/events-details.php" ?>
+        <div class="wd-90 zoom-100">
+            <?php // include "components/cards/cards-menus.php" ?>
+            <?php include "components/tables/table-menu.php" ?>
         </div>
-
     </div>
 </body>
 
@@ -33,7 +34,8 @@
     <?php include "components/footer.php" ?>
 </footer>
 
-<?php include "includes/scripts.php" ?>
+<?php include "includes/scripts_nm.php" ?>
+<?php include "components/modals/modal_menu.php" ?>
 <?php include "components/jgrowl-messages.php" ?>
 <?php include "components/tables/script.php" ?>
 

@@ -4,7 +4,7 @@ $timeStamp = new DateTime();
 $name = $timeStamp->getTimestamp();
 
 $today = date("Y-m-d");
-$id = $_POST['dni'];
+
 $path = "../uploads/";
 
 $ext = pathinfo($_FILES['photo']['name'] ?? "", PATHINFO_EXTENSION);
@@ -18,6 +18,7 @@ if ($_SESSION['dni'] == null) {
     exit();
 } else {
     if ($ext != "") {
+        $id = $_POST['dniPhoto'];
         $uploaded_photo = $path . $name . '.' . $ext;
         $path_photo = "uploads/" . $name . '.' . $ext;
 

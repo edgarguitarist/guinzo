@@ -107,3 +107,17 @@
   box-shadow: 0px 0px 10px 0px black !important;
 }
 
+.area-img-modal2 {
+  width: 160px !important;
+  height: 160px !important;
+  max-height: 200px !important;
+  max-width: 200px !important;
+}
+
+.area-img-modal2 .drag-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 160px;
+}

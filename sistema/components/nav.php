@@ -71,13 +71,16 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
             <a class="<?= $a_class; ?>" href="materials.php">
                 <em class="fas fa-utensils"></em>Materiales
             </a>
+            <a class="<?= $a_class; ?>" href="menus.php">
+                <em class="fas fa-hamburger"></em>Menús
+            </a>
             <a class="<?= $a_class; ?>" href="events.php">
                 <em class="fas fa-calendar-alt"></em>Eventos
             </a>
-            <!-- <a class="<?php //echo $a_class; 
+            <a class="<?php echo $a_class; 
                             ?>" href="coming-soon.php">
                 <em class="fas fa-table"></em>Reportes
-            </a> -->
+            </a>
             <a class="<?= $a_class; ?>" href="home-page.php">
                 <em class="fas fa-store"></em>Pagina Principal
             </a>

@@ -31,6 +31,10 @@ if (isset($_GET['who']) && isset($_GET['action']) && isset($_GET['id'])) {
             "delete" => "UPDATE eventos SET deleted = 1, status = 'Cancelado' WHERE id_event = '$id'",
             "undelete" => "UPDATE eventos SET deleted = 0, status = 'Pendiente' WHERE id_event = '$id'",
         ],
+        "menus" => [
+            "delete" => "UPDATE menus SET deleted = 1 WHERE id_menu = '$id'",
+            "undelete" => "UPDATE menus SET deleted = 0 WHERE id_menu = '$id'",
+        ],
     ];
     $query = $consultas[$who][$action];
     $result = mysqli_query($con, $query);

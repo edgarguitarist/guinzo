@@ -33,8 +33,7 @@
             <p>&nbsp;</p>
         </div>
         <div class="control wd-10">
-            <input id="price_total" name="price_total" type="hidden" required>
-            <input id="precio" disabled name="precio" class="input solo-precio" type="number" placeholder="0" required>
+            <input id="precio" name="precio" class="input solo-precio" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Precio" value="" required>
             <p>&nbsp;</p>
         </div>
     </div>
@@ -52,7 +51,7 @@
             <p>&nbsp;</p>
         </div>
         <div class="control wd-custom">
-            <input id="address" name="address" class="input" onkeyup="checkLength(this, false, 10, false)" minlength="10" maxlength="70" type="text" placeholder="Dirección" value="" required>
+            <input id="address" name="address" class="input" onkeyup="checkLength(this, false, 10, false)" minlength="10" maxlength="40" type="text" placeholder="Dirección" value="" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-10">
@@ -128,6 +127,10 @@
             <div class="mt-20">
                 <div id="captains" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="captains[]" id="noneCaptains" value="noneCaptains" class="is-size-4" required>
+                        <label for="noneCaptains" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Capitanes Disponibles</p>
@@ -150,7 +153,10 @@
             <div class="mt-20">
                 <div id="chefs" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="chefs[]" id="noneChefs" value="noneChefs" class="is-size-4" required>
+                        <label for="noneChefs" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Chefs Disponibles</p>
@@ -173,7 +179,10 @@
             <div class="mt-20">
                 <div id="waitress" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="waitress[]" id="noneWaitress" value="noneWaitress" class="is-size-4" required>
+                        <label for="noneWaitress" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Saloneros Disponibles</p>
@@ -196,7 +205,10 @@
             <div class="mt-20">
                 <div id="stewards" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="stewards[]" id="noneStewards" value="noneStewards" class="is-size-4" required>
+                        <label for="noneStewards" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Stewards Disponibles</p>
@@ -220,116 +232,13 @@
 
                 <div id="others" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="others[]" id="noneOthers" value="noneOthers" class="is-size-4" required>
+                        <label for="noneOthers" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Empleados Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
-<h1 class="title">Menús</h1>
-<br>
-<div class="field">
-    <div class="forms_row">
-        <label class="label has-text-left wd-4c">Entrada *</label>
-        <label class="label has-text-left wd-4c">Plato Fuerte *</label>
-        <label class="label has-text-left wd-4c">Postre *</label>
-        <label class="label has-text-left wd-4c">Otros *</label>
-    </div>
-    <div class="field-body forms_row2">
-        <div class="control wd-4c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="entradas" id="entradas" onchange="addCheckfromSelect(this, 'entrances', true)">
-                    <option value="">Seleccione la Entrada</option>
-                    <?php
-                    #entradas
-                    $consultaEntradas = "SELECT * FROM menus m, type_menu tm WHERE m.type_menu = tm.id_type_menu AND m.type_menu = 1 AND m.deleted = 0";
-                    $resultado = mysqli_query($con, $consultaEntradas);
-
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['name_menu']; ?>"><?php echo $row['name_menu']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-                <div id="entrances" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-                    
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Entradas Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-        <div class="control wd-4c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="fuertes" id="fuertes" onchange="addCheckfromSelect(this, 'principals', true)">
-                    <option value="">Seleccione el Plato Fuerte</option>
-                    <?php
-                    #plato fuerte
-                    $consulta = "SELECT * FROM menus m, type_menu tm WHERE m.type_menu = tm.id_type_menu AND m.type_menu = 2 AND m.deleted = 0";
-                    $resultado = mysqli_query($con, $consulta);
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['name_menu']; ?>"><?php echo $row['name_menu']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-                <div id="principals" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-                    
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Platos Fuertes Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-        <div class="control wd-4c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="postres" id="postres" onchange="addCheckfromSelect(this, 'desserts', true)">
-                    <option value="">Seleccione el Postre</option>
-                    <?php
-                    #bebidas
-                    $consulta = "SELECT * FROM menus m, type_menu tm WHERE m.type_menu = tm.id_type_menu AND m.type_menu = 3 AND m.deleted = 0";
-                    $resultado = mysqli_query($con, $consulta);
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['name_menu']; ?>"><?php echo $row['name_menu']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-                <div id="desserts" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-                    
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Postres Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-        <div class="control wd-4c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="otrosMenus" id="otrosMenus" onchange="addCheckfromSelect(this, 'othermenus', true)">
-                    <option value="">Seleccione otro Menú</option>
-                    <?php
-                    #otherMenu
-                    $consulta = "SELECT * FROM menus m, type_menu tm WHERE m.type_menu = tm.id_type_menu AND m.type_menu > 3 AND m.deleted = 0";
-                    $resultado = mysqli_query($con, $consulta);
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['name_menu']; ?>"><?php echo $row['name_menu']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-                <div id="othermenus" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-                    
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Menús Disponibles</p>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Otros Empleados Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -364,7 +273,10 @@
             <div class="mt-20">
                 <div id="meats" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="meats[]" id="noneMeats" value="noneMeats" class="is-size-4" required>
+                        <label for="noneMeats" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Carnes Disponibles</p>
@@ -387,7 +299,10 @@
             <div class="mt-20">
                 <div id="fruitsveges" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="fruitsveges[]" id="noneFruitsveges" value="noneFruitsveges" class="is-size-4" required>
+                        <label for="noneFruitsveges" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Frutas o Vegetales Disponibles</p>
@@ -410,7 +325,10 @@
             <div class="mt-20">
                 <div id="drinks" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="drinks[]" id="noneDrinks" value="noneDrinks" class="is-size-4" required>
+                        <label for="noneDrinks" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Bebidas Disponibles</p>
@@ -433,10 +351,13 @@
             <div class="mt-20">
                 <div id="otherproducts" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="otherproducts[]" id="noneOtherProducts" value="noneOtherProducts" class="is-size-4" required>
+                        <label for="noneOtherProducts" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Productos Disponibles</p>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Otros Productos Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -471,7 +392,10 @@
             <div class="mt-20">
                 <div id="kitchen" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="kitchen[]" id="noneKitchen" value="noneKitchen" class="is-size-4" required>
+                        <label for="noneKitchen" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
@@ -494,7 +418,10 @@
             <div class="mt-20">
                 <div id="cuberteria" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="cuberteria[]" id="noneCuberteria" value="noneCuberteria" class="is-size-4" required>
+                        <label for="noneCuberteria" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
@@ -517,7 +444,10 @@
             <div class="mt-20">
                 <div id="bar" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="bar[]" id="noneBars" value="noneBars" class="is-size-4" required>
+                        <label for="noneBars" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
@@ -540,7 +470,10 @@
             <div class="mt-20">
                 <div id="decoration" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="decoration[]" id="noneDecoration" value="noneDecoration" class="is-size-4" required>
+                        <label for="noneDecoration" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
@@ -564,10 +497,13 @@
             <div class="mt-20">
                 <div id="othermaterials" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="othermaterials[]" id="noneOtherMaterials" value="noneOtherMaterials" class="is-size-4" required>
+                        <label for="noneOtherMaterials" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Materiales Disponible</p>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Otros Materiales Disponible</p>
                 <?php  } ?>
             </div>
         </div>
@@ -585,7 +521,7 @@
     <div class="field-body forms_row2">
         <div class="control wd-3c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="transportes" id="transportes" onchange="addCheckfromSelect(this, 'transporte', true, true, 'Precio')">
+                <select class="wd-100 input" name="transportes" id="transportes" onchange="addCheckfromSelect(this, 'transporte', true)">
                     <option value="">Seleccione Proveedor</option>
                     <?php
                     #transporte
@@ -600,7 +536,10 @@
             <div class="mt-20">
                 <div id="transporte" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="transporte[]" id="noneTransporte" value="noneTransporte" class="is-size-4" required>
+                        <label for="noneTransporte" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Proveedor Disponible</p>
@@ -623,7 +562,10 @@
             <div class="mt-20">
                 <div id="buffet" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="buffet[]" id="noneBuffet" value="noneBuffet" class="is-size-4" required>
+                        <label for="noneBuffet" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Bebidas Disponibles</p>
@@ -645,29 +587,15 @@
             </div>
             <div class="mt-20">
                 <div id="otherproviders" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->                    
+                    <!-- Aquí se muestra lo seleccionado -->
+                    <?php if ($resultado->num_rows == 0) { ?>
+                        <input type="checkbox" name="otherproviders[]" id="noneOtherProviders" value="noneOtherProviders" class="is-size-4" required>
+                        <label for="noneOtherProviders" class="ml-20 is-size-5 mt--5">No requerido</label>
+                    <?php  } ?>
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Productos Disponibles</p>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Otros Productos Disponibles</p>
                 <?php  } ?>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
-<h1 class="title">Otros Conceptos</h1>
-<br>
-<div class="field">
-    <div class="forms_row">
-        <label class="label has-text-left wd-100"><a class=" button is-dark is-outlined is-size-6-desktop is-size-4" onclick="addOtherConcepts()" >Agregar OTROS CONCEPTOS</a></label>
-    </div>
-    <div class="field-body forms_row2">
-        <div class="control wd-100">
-            <div class="mt-20">
-                <div id="otherConcepts" class="mt-5 wd-100 columns is-multiline">
-                    <!-- Aquí se muestra lo seleccionado -->
-                    
-                </div>
             </div>
         </div>
     </div>

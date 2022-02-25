@@ -96,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-                <p id="error_photo2" class="has-text-danger is-size-6 has-text-centered b-600 hidden">El tamaño de la imagen excede los 3MB, elija otra por favor.</p>
+                <p class="has-text-danger is-size-6 has-text-centered b-600 hidden error_photo">El tamaño de la imagen excede los 3MB, elija otra por favor.</p>
             </div>
         </div>
     </div>

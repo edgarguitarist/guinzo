@@ -117,6 +117,16 @@ $mensajes = [
         'message' => 'Hemos cambiado la contraseña.',
         'type' => 'SUCCESS'
     ],
+    'event_created' => [
+        'header' => 'Datos Actualizados! ',
+        'message' => 'Hemos creado un nuevo evento.',
+        'type' => 'SUCCESS'
+    ],
+    'event_error' => [
+        'header' => 'LO SENTIMOS! ',
+        'message' => 'No hemos podido crear un nuevo evento.',
+        'type' => 'ERROR'
+    ],
 ];
 
 

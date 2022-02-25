@@ -60,6 +60,15 @@ $data_who = [
         "query2" => "",
         "isquery2" => false,
     ],
+    "menus" => [
+        "translate" => "Menu",
+        "title" => "Editar Menu",
+        "form" => "form-menu.php",
+        "who" => "menus",
+        "query" => "SELECT * FROM menus WHERE id_menu = '$id'",
+        "query2" => "",
+        "isquery2" => false,
+    ], 
 ];
 $query = $data_who[$who]['query'];
 $result = mysqli_query($con, $query);
@@ -129,6 +138,12 @@ $data_result = [
         "description" => $row['description_material'] ?? '',
         "expiration" => $row['expiry_date_material'] ?? '',
         "provider" => $row['id_provider'] ?? '',
+    ],
+    "menus" => [
+        "name" => $row['name_menu'] ?? '',
+        "description" => $row['description_menu'] ?? '',
+        "price" => $row['price_menu'] ?? '',
+        "type" => $row['type_menu'] ?? '',
     ],
 ];
 

@@ -9,7 +9,7 @@
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
-        <input class="input" type="hidden" name="id" id="id" value="<?= $id ?>">
+            <input class="input" type="hidden" name="id" id="id" value="<?= $id ?>">
             <input id="name_material" name="name" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre de Material" value="<?= $data_result[$who]['name'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
@@ -32,7 +32,7 @@
         </div>
         <div class="control wd-4c">
             <div class="left-align wd-100 ">
-                <input title="Mínimo 2 semanas" type="date" min="<?= $dos_semanas; ?>"  value="<?= $data_result[$who]['expiration'] ?? $dos_semanas ?>" id="expiration" name="expiration" class="input wd-100" required />
+                <input title="Mínimo 2 semanas" type="date" min="<?= $dos_semanas; ?>" value="<?= $data_result[$who]['expiration'] ?? $dos_semanas ?>" id="expiration" name="expiration" class="input wd-100" required />
             </div>
             <p id="" class="help is-danger">&nbsp;</p>
         </div>
