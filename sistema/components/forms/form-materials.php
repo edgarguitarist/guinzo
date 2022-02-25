@@ -19,7 +19,7 @@
             <p>&nbsp;</p>
         </div>
         <div class="control wd-10">
-            <input id="precio_material" name="precio" class="input solo-precio" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" required>
+            <input id="precio_material" name="precio" class="input" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="number" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-4c">

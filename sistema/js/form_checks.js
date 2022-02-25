@@ -214,23 +214,6 @@ $(document).ready(function () {
   })
 })
 
-$(document).ready(function () {
-  $(".solo-precio").keyup(function () {
-    $(this).val(
-      $(this)
-        .val()
-        .replace(/[^0-9.]/g, "")
-    )
-    puntos = $(this).val().split(".")
-    if (puntos.length > 2) {
-      $(this).val(puntos[0] + "." + puntos[1])
-    }
-    if (puntos[1].length > 2) {
-      $(this).val(puntos[0] + "." + puntos[1].substring(0, 2))
-    }
-  })
-})
-
 //preguntar cuantos puntos hay en un string
 
 ////////////SOLO LETRA////////
