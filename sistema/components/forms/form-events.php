@@ -44,7 +44,7 @@
     <div class="forms_row">
         <label class="label has-text-left wd-2c">Descripción *</label>
         <label class="label has-text-left wd-custom">Dirección *</label>
-        <label class="label has-text-left wd-10">Lugar Propio *</label>
+        <label class="label has-text-left wd-10">Lugar*</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">
@@ -57,10 +57,8 @@
         </div>
         <div class="control wd-10">
             <div class="is-flex mt-7">
-                <input class="" type="radio" name="ownsite" id="ownsiteYes" value="1" required>
-                <label class="mr-20 is-size-5 mt--7">SI</label>
-                <input type="radio" name="ownsite" id="ownsiteNo" value="0">
-                <label class="is-size-5 mt--7">NO</label>
+                <input id="place" name="place" class="input" onkeyup="checkLength(this, false, 3, false)" minlength="3" maxlength="50" type="text" placeholder="Lugar" value="" required>
+                <p>&nbsp;</p>
             </div>
             <p>&nbsp;</p>
         </div>
@@ -150,7 +148,7 @@
             <div class="mt-20">
                 <div id="chefs" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Chefs Disponibles</p>
@@ -173,7 +171,7 @@
             <div class="mt-20">
                 <div id="waitress" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Saloneros Disponibles</p>
@@ -196,7 +194,7 @@
             <div class="mt-20">
                 <div id="stewards" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Stewards Disponibles</p>
@@ -220,7 +218,7 @@
 
                 <div id="others" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Empleados Disponibles</p>
@@ -257,7 +255,7 @@
             <div class="mt-20">
                 <div id="entrances" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Entradas Disponibles</p>
@@ -280,7 +278,7 @@
             <div class="mt-20">
                 <div id="principals" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Platos Fuertes Disponibles</p>
@@ -303,7 +301,7 @@
             <div class="mt-20">
                 <div id="desserts" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Postres Disponibles</p>
@@ -326,7 +324,7 @@
             <div class="mt-20">
                 <div id="othermenus" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Menús Disponibles</p>
@@ -364,7 +362,7 @@
             <div class="mt-20">
                 <div id="meats" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Carnes Disponibles</p>
@@ -387,7 +385,7 @@
             <div class="mt-20">
                 <div id="fruitsveges" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Frutas o Vegetales Disponibles</p>
@@ -410,7 +408,7 @@
             <div class="mt-20">
                 <div id="drinks" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Bebidas Disponibles</p>
@@ -433,7 +431,7 @@
             <div class="mt-20">
                 <div id="otherproducts" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Productos Disponibles</p>
@@ -448,10 +446,10 @@
 <div class="field">
     <div class="forms_row">
         <label class="label has-text-left wd-5c">Cocina *</label>
-        <label class="label has-text-left wd-5c">Cubertería  *</label>
-        <label class="label has-text-left wd-5c">Bar  *</label>
+        <label class="label has-text-left wd-5c">Cubertería *</label>
+        <label class="label has-text-left wd-5c">Bar *</label>
         <label class="label has-text-left wd-5c">Decoración *</label>
-        <label class="label has-text-left wd-5c">Otros  *</label>
+        <label class="label has-text-left wd-5c">Otros *</label>
     </div>
     <div class="field-body forms_row2">
         <div class="control wd-5c">
@@ -471,7 +469,7 @@
             <div class="mt-20">
                 <div id="kitchen" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
@@ -494,7 +492,7 @@
             <div class="mt-20">
                 <div id="cuberteria" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
@@ -517,7 +515,7 @@
             <div class="mt-20">
                 <div id="bar" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
@@ -540,14 +538,14 @@
             <div class="mt-20">
                 <div id="decoration" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
                 <?php  } ?>
             </div>
         </div>
-        
+
         <div class="control wd-5c">
             <div class="select is-fullwidth">
                 <select class="wd-100 input" name="otrosMateriales" id="otrosMateriales" onchange="addCheckfromSelect(this, 'othermaterials', true)">
@@ -564,7 +562,7 @@
             <div class="mt-20">
                 <div id="othermaterials" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Materiales Disponible</p>
@@ -600,7 +598,7 @@
             <div class="mt-20">
                 <div id="transporte" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Proveedor Disponible</p>
@@ -623,7 +621,7 @@
             <div class="mt-20">
                 <div id="buffet" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Bebidas Disponibles</p>
@@ -645,7 +643,7 @@
             </div>
             <div class="mt-20">
                 <div id="otherproviders" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->                    
+                    <!-- Aquí se muestra lo seleccionado -->
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Productos Disponibles</p>
@@ -659,14 +657,14 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-100"><a class=" button is-dark is-outlined is-size-6-desktop is-size-4" onclick="addOtherConcepts()" >Agregar OTROS CONCEPTOS</a></label>
+        <label class="label has-text-left wd-100"><a class=" button is-dark is-outlined is-size-6-desktop is-size-4" onclick="addOtherConcepts()">Agregar OTROS CONCEPTOS</a></label>
     </div>
     <div class="field-body forms_row2">
         <div class="control wd-100">
             <div class="mt-20">
                 <div id="otherConcepts" class="mt-5 wd-100 columns is-multiline">
                     <!-- Aquí se muestra lo seleccionado -->
-                    
+
                 </div>
             </div>
         </div>

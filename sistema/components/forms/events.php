@@ -13,7 +13,7 @@ if (isset($_POST['action'])) {
     $address = $_POST['address'];
     $amount_guest = $_POST['cantidad'];
     $type_event = $_POST['tipo_evento'];
-    $ownsite = $_POST['ownsite'];
+    $place = $_POST['place'];
     $price = $_POST['precio'] ?? $_POST['price_total'];
     $id_customer = $_POST['customer'];
     $date_request = $_POST['date_request'];
@@ -78,7 +78,7 @@ if (isset($_POST['action'])) {
 
     $consultas = [
         0 => [ #Event_details
-            "query" => "INSERT INTO events_details (name_event, description_event, address_event, amount_guest, id_type_event, income_place, price, id_customer, date_request, date_approval, date_event, date_clausura) VALUES ('$name_event', '$description', '$address', '$amount_guest', '$type_event', '$ownsite', '$price', (SELECT id_customer FROM customers WHERE id_user = '$id_customer'), '$date_request', '$date_approval', '$date_event', '$date_clausure')"
+            "query" => "INSERT INTO events_details (name_event, description_event, address_event, amount_guest, id_type_event, place, price, id_customer, date_request, date_approval, date_event, date_clausura) VALUES ('$name_event', '$description', '$address', '$amount_guest', '$type_event', '$place', '$price', (SELECT id_customer FROM customers WHERE id_user = '$id_customer'), '$date_request', '$date_approval', '$date_event', '$date_clausure')"
         ],
         1 => [ #Event
             "query" => "INSERT INTO eventos (id_event_detail, status) VALUES ((SELECT id_event_detail FROM events_details WHERE name_event = '$name_event' AND date_event ='$date_event'), 'Aprobado')"

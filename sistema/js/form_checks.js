@@ -482,7 +482,7 @@ const calculatePrice = () => {
 
   let total_final = document.getElementById("precio")
   let price_total_final = document.getElementById("price_total")
-  let ownsite = document.getElementsByName("ownsite")
+  let place = document.getElementById("place")
   let total = 0
 
   //numero de invitados
@@ -491,11 +491,11 @@ const calculatePrice = () => {
   //tipo de evento
   total += prices.event_type[type_event].price
 
+  lugares = ["propio", "casa", "lugar propio", "casa propia", "propia"]
+  
   // Lugar Propio
-  for (let i = 0; i < ownsite.length; i++) {
-    if (ownsite[i].id == "ownsiteNo" && ownsite[i].checked) {
-      total += 100
-    }
+  if (!lugares.includes(place.value.toLowerCase())) {
+    total += 100
   }
 
   // Empleados

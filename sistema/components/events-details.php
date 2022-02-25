@@ -54,7 +54,8 @@ $stewards = $stewards[0] != "" ? $stewards[0] . '. (' . $stewards[1] . ')' : "Si
 $otherEmployees = getFullNameEmployees($con, $id_event, 10);
 $otherEmployees = $otherEmployees[0] != "" ? $otherEmployees[0] . '. (' . $otherEmployees[1] . ')' : "Sin otros Empleados.";
 
-$lugar = $row['income_place'] == 0 ? "CASA" : "EXTERIOR";
+$lugar = $row['place'];
+
 
 function getMenu($con, $id_event, $type_menu)
 {
@@ -185,17 +186,20 @@ function getOtherConcepts($con, $id_event)
 }
 
 $concepts = getOtherConcepts($con, $id_event) != "" ? getOtherConcepts($con, $id_event) : "No hay Otros Conceptos";
+$nombre_evento = $row['name_event'];
+$fecha_evento = $row['date_event'];
+$namepdf = $nombre_evento . '_' . $fecha_evento;
 
 ?>
 
 <div class="container">
-    <div class="card">
+    <div id="pdf_container" class="card">
         <div class="card-content">
             <div class="content has-text-centered">
                 <br>
                 <br>
                 <img class="addButton" style="width: 150px; margin-top: -25px !important;" src="images/logos/logo-bockcao-black.png" alt="logo">
-                <h1 class="title is-4">EVENTO <?= $row['name_event'] ?></h1>
+                <h1 class="title is-4">EVENTO <?= $nombre_evento ?></h1>
                 <br>
                 <br>
                 <div class="columns">
@@ -411,5 +415,4 @@ $concepts = getOtherConcepts($con, $id_event) != "" ? getOtherConcepts($con, $id
             <br>
         </div>
     </div>
-</div>
 </div>
