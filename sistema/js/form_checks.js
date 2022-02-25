@@ -470,7 +470,7 @@ const calculatePrice = () => {
   let total = 0
 
   //numero de invitados
-  total += amount_guest * 10
+  total += amount_guest * 5
 
   //tipo de evento
   total += prices.event_type[type_event].price
@@ -479,7 +479,7 @@ const calculatePrice = () => {
   
   // Lugar Propio
   if (!lugares.includes(place.value.toLowerCase())) {
-    total += 100
+    total += 50
   }
 
   // Empleados

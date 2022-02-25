@@ -5,7 +5,7 @@
             <th>Nombre Evento</th>
             <th>Tipo</th>
             <th>Descripción &nbsp;</th>
-            <th>Dirección</th>
+            <th style="width: 300px;">Dirección</th>
             <th>Precio&nbsp;</th>
             <th>N° Invitados</th>
             <!-- <th>Fecha de Solicitud</th> -->
@@ -29,6 +29,7 @@
                 $eliminar_material = $data['deleted'] == 0 ? "<a class='" . $default_class_anchors . "' title='Eliminar' href='components/tables/update-data.php?who=events&action=delete&id=" . $data['id_event'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='" . $default_class_anchors . "' title='Restaurar' href='components/tables/update-data.php?who=events&action=undelete&id=" . $data['id_event'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
                 $salida = $ver_evento . " " . $eliminar_material;
                 $date_event = $data["date_event"] ? $data["date_event"] : "Por Definir";
+                $completed = $data["status"] != 'Completado' ? "<a href='components/tables/update-data.php?who=events&action=completed&id=" . $data['id_event'] . "' class='has-text-success'><em class='fas fa-check'></em> </a>" : "<a href='components/tables/update-data.php?who=events&action=nocompleted&id=" . $data['id_event'] . "' class='has-text-danger'><em class='fas fa-times'></em> </a>";
         ?>
                 <tr>
                     <td> <?= $data["name"].' '. $data["lastname"]; ?></td>
@@ -41,7 +42,7 @@
                     <!-- No Necesario -->
                     <!-- <td> <?= $data['date_request']; ?></td> -->
                     <td align="center" class="wd-fit-content"> <?= $date_event ?></td>
-                    <td align="center" class="wd-fit-content"> <?= $data["status"] ?></td>
+                    <td align="center" class="wd-fit-content"> <?= $data["status"] .' '. $completed ?></td>
                     <td align="center" class="wd-fit-content"> <?= $salida  ?> </td>
                 </tr>
             <?php

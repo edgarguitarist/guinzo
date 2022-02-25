@@ -85,43 +85,50 @@ if (isset($_POST['action'])) {
         ],
     ];
 
+    $priceEmployee = [50,35,30,25,25];
+
     $consultas_form = [
         0 => [ #Employees
             0 => [
                 "var" => $captains,
+                "price" => 50,
             ],
             1 => [
                 "var" => $chefs,
+                "price" => 35,
             ],
             2 => [
                 "var" => $waitress,
+                "price" => 30,
             ],
             3 => [
                 "var" => $stewards,
+                "price" => 25,
             ],
             4 => [
                 "var" => $others,
+                "price" => 25,
             ],
-            "query" => "INSERT INTO events_employee (id_employee, id_event) VALUES ((SELECT id_employee FROM employee WHERE id_user = 'TEMP_VALUE'), 'ACTUAL_EVENT')",
+            "query" => "INSERT INTO events_employee (id_employee, price, id_event) VALUES ((SELECT id_employee FROM employee WHERE id_user = 'TEMP_VALUE'), 'PRICE_EMPLOYEE', 'ACTUAL_EVENT')",
             "otherquery" => true,
             "query2" => "UPDATE employee SET available = '0' WHERE id_user= 'TEMP_VALUE'",
         ],
         1 => [  #Menus
             0 => [
                 "var" => $entrances,
-                "input" => $entrancesInput,
+                "var2" => $entrancesInput,
             ],
             1 => [
                 "var" => $principals,
-                "input" => $principalsInput,
+                "var2" => $principalsInput,
             ],
             2 => [
                 "var" => $desserts,
-                "input" => $dessertsInput,
+                "var2" => $dessertsInput,
             ],
             3 => [
                 "var" => $othermenus,
-                "input" => $othermenusInput,
+                "var2" => $othermenusInput,
             ],
             "query" => "INSERT INTO events_menu (id_menu, amount, id_event) VALUES ((SELECT id_menu FROM menus WHERE name_menu = 'TEMP_VALUE'), 'SECOND_TV', 'ACTUAL_EVENT')",
             "otherquery" => false,
@@ -211,6 +218,7 @@ if (isset($_POST['action'])) {
     for ($i = 0; $i < count($consultas_form); $i++) {
         for ($j = 0; $j < count($consultas_form[$i]) - 3; $j++) {
             $temp_vars = $consultas_form[$i][$j]['var'];
+            $temp_price = $consultas_form[$i][$j]['price'] ?? "";
             $temp_vars2 = $consultas_form[$i][$j]['var2'] ?? "";
             $temp_vars3 = $consultas_form[$i][$j]['var3'] ?? "";
 
@@ -223,6 +231,7 @@ if (isset($_POST['action'])) {
                     continue;
                 }
                 $price = $consultas_form[$i][$j]['price'] ?? 0;
+                $query = str_replace("PRICE_EMPLOYEE", $temp_price, $query);
                 $query = str_replace("TEMP_VALUE", $new_temp_var, $query);
                 $query = str_replace("SECOND_TV", $new_temp_var2, $query);
                 $query = str_replace("THIRDS", $new_temp_var3, $query);

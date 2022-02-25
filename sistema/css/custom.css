@@ -797,6 +797,14 @@ svg {
   margin: 15px 0px 0px 10%;
 }
 
+.buscador {
+  display: block;
+  position: absolute;
+  align-items: center;
+  margin: -4.5% 0px 0px 62.5%;
+  width: 30%;
+}
+
 .has-text-no-decoration {
   text-decoration: none !important;
 }

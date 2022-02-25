@@ -29,7 +29,9 @@ if (isset($_GET['who']) && isset($_GET['action']) && isset($_GET['id'])) {
         ],
         "events" => [
             "delete" => "UPDATE eventos SET deleted = 1, status = 'Cancelado' WHERE id_event = '$id'",
-            "undelete" => "UPDATE eventos SET deleted = 0, status = 'Pendiente' WHERE id_event = '$id'",
+            "undelete" => "UPDATE eventos SET deleted = 0, status = 'Aprobado' WHERE id_event = '$id'",
+            "completed" => "UPDATE eventos SET status = 'Completado' WHERE id_event = '$id'",
+            "nocompleted" => "UPDATE eventos SET status = 'Aprobado' WHERE id_event = '$id'",
         ],
         "menus" => [
             "delete" => "UPDATE menus SET deleted = 1 WHERE id_menu = '$id'",

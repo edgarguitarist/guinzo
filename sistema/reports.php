@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+$initial_date = $_GET['initial_date'] ?? null;
+$final_date = $_GET['final_date'] ?? null;
+?>
 
 <head>
     <?php
-    $site = "Proveedores";
+    $site = "Reporte";
     $ssite = substr($site, 0, -2);
     include "components/head.php";
     include "includes/dbcon.php";
@@ -19,13 +23,22 @@
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <a class="addButton button is-dark is-outlined is-size-6-desktop is-size-4" id="addProvider"><em class="has-text-success fas fa-plus"></em>Añadir Proveedor</a> 
-            <h1 class="has-text-centered title is-cookie">Proveedores</h1>
-        </div>
-        <div class="wd-90">
-            <?php include "components/tables/table-providers.php" ?>
+            <h1 class="has-text-centered title is-cookie">Reporte</h1>
         </div>
 
+        <div class="buscador">
+                <?php include "components/buscador.php" ?>  
+        </div>
+
+        <div class="wd-90">
+            <?php include "components/tables/table-report-events.php" ?>
+        </div>
+        <br><br><br>
+        <hr><br><br><br>
+        <div class="wd-90">
+            <?php //include "components/tables/table-report-profit.php" 
+            ?>
+        </div>
     </div>
 </body>
 
