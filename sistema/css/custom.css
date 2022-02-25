@@ -70,6 +70,14 @@ p.large {
   font-size: 16px;
 }
 
+.zoom-view-event{
+  min-zoom: 100% !important;
+  max-zoom: 110% !important;
+  -ms-zoom: 100% !important;
+  user-zoom: 100% !important;
+  zoom: 100% !important;
+}
+
 a,
 a:hover,
 a:focus,

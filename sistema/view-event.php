@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="zoom-view-event">
 
 <head>
     <?php
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/tables.css">
 </head>
 
-
 <body>
     <!-- Navigation -->
     <?php include "components/nav.php" ?>
@@ -22,17 +21,17 @@
             <a onclick="history.back()" rel="external nofollow" class="addButton button is-dark is-outlined is-size-6-desktop is-size-4"><em class="has-text-success fas fa-share"></em>Volver a la Pagina Anterior</a>
             <h1 class="has-text-centered title is-cookie">Detalles</h1>
         </div>
-        <div class="wd-90 hidden">
+        <div class="wd-90 ">
             <?php include "components/events-details.php" ?>
         </div>
-        <div class="wd-90">
+        <div id="" class="wd-90">
             <?php include "components/events-contract.php" ?>
         </div>
         <br>
         <br>
         <div class="has-text-centered">
             <button class="button is-info is-outlined is-size-5-desktop is-size-4 b-bolder" onclick="genPDF('<?= $namepdf; ?>', 'pdf_container')"><em class="fas fa-print"></em> IMPRIMIR</button>
-            <button class="button is-dark is-outlined is-size-5-desktop is-size-4 b-bolder" onclick="genPDF('<?= 'Contrato_' . $namepdf; ?>', 'pdf_container_contrato')"><em class="fas fa-file-alt "></em> CONTRATO</button>
+            <button class="button is-dark is-outlined is-size-5-desktop is-size-4 b-bolder" onclick="genPDF('<?= 'Contrato_' . $namepdf; ?>', 'pdf_container_contrato', true)"><em class="fas fa-file-alt "></em> CONTRATO</button>
         </div>
     </div>
 </body>

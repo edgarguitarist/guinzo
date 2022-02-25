@@ -1,6 +1,6 @@
-<br>
+
 <div class="container">
-    <div id="pdf_container_contrato" class="card">
+    <div style="display: none;" id="pdf_container_contrato" class="card">
         <div class="card-content">
             <div class="content has-text-centered mh-20">
                 <div class="page1">
@@ -123,7 +123,7 @@
                 </div>
                 <!-- SEXTA -->
                 <br>
-                <div class="page2">
+                <div class="page2 ">
                     <div id="clausulas">
                         <div class="clausula">
                             <p class="has-text-justified">

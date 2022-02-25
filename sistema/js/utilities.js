@@ -47,14 +47,20 @@ const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-function genPDF(name, container) {
+function genPDF(name, container, hidden = false) {
   const { jsPDF } = window.jspdf
   var scaleBy = 1
-  html2canvas(document.getElementById(container), {
+  let contenedor = document.getElementById(container)
+  if (hidden) {
+      contenedor.style.display = "block"
+  }
+  html2canvas(contenedor, {
     useCORS: true,
     onrendered: (canvas) => {
       let doc = new jsPDF("p", "mm", "a4")
-
+      if (hidden) {
+        contenedor.style.display = "none"
+    }
       let a4Size = {
         w: convertPointsToUnit(595.28, "px"),
         h: convertPointsToUnit(841.89, "px"),
@@ -88,16 +94,14 @@ function genPDF(name, container) {
         let width = doc.internal.pageSize.getWidth() - 10
         let height = doc.internal.pageSize.getHeight()
         if (page == 0) {
-          // si es la primera pagina, va directo a doc
           doc.addImage(imgtoPdf, "PNG", 4, 0, width, height)
         } else {
-          // Si no ya tengo que agregar nueva hoja.
           let page = doc.addPage()
           page.addImage(imgtoPdf, "PNG", 4, 15, width, height)
         }
-        ctx.clearRect(0, 0, canvastoPrint.width, canvastoPrint.height) // Borro el canvas
-        printed += resized //actualizo lo que ya imprimi
-        page++ // actualizo mi pagina
+        ctx.clearRect(0, 0, canvastoPrint.width, canvastoPrint.height) 
+        printed += resized 
+        page++ 
       }
       doc.save(name + ".pdf")
     },
