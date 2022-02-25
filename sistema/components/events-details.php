@@ -44,7 +44,7 @@ function getFullNameEmployees($con, $id_event, $role, $anotherRole = false, $sec
 }
 
 $captains = getFullNameEmployees($con, $id_event, 2);
-$captains = $captains[0] != "" ? $captains[0] . '. (' . $captains[1] . ')' : "No hay capitanes";
+$captains = $captains[0] != "" ? $captains[0] . '. (' . $captains[1] . ')' : "Sin capitanes";
 $chefs = getFullNameEmployees($con, $id_event, 3, true, 9);
 $chefs = $chefs[0] != "" ? $chefs[0] . '. (' . $chefs[1] . ')' : "Sin Chefs.";
 $waitress = getFullNameEmployees($con, $id_event, 4, true, 5);
@@ -69,10 +69,10 @@ function getMenu($con, $id_event, $type_menu)
     return $row_menu_details['name_menu'] ?? null;
 }
 
-$entrada = getMenu($con, $id_event, 1) ?? "No hay Entrada";
-$plato_fuerte = getMenu($con, $id_event, 2) ?? "No hay Plato Fuerte";
-$postre = getMenu($con, $id_event, 3) ?? "No hay Postre";
-$otro_plato = getMenu($con, $id_event, 4) ?? "No hay Otro Plato";
+$entrada = getMenu($con, $id_event, 1) ?? "Sin Entrada";
+$plato_fuerte = getMenu($con, $id_event, 2) ?? "Sin Plato Fuerte";
+$postre = getMenu($con, $id_event, 3) ?? "Sin Postre";
+$otro_plato = getMenu($con, $id_event, 4) ?? "Sin Otro Plato";
 
 
 
@@ -100,10 +100,10 @@ function getProducts($con, $id_event, $type_product, $anotherProduct = false, $s
     return $salida;
 }
 
-$carnes = getProducts($con, $id_event, 1) != "" ? getProducts($con, $id_event, 1) : "No hay Carnes";
-$frutavege = getProducts($con, $id_event, 2, true, 5) != "" ? getProducts($con, $id_event, 2, true, 5) : "No hay Frutas y Verduras";
-$bebidas = getProducts($con, $id_event, 3, true, 4) != "" ? getProducts($con, $id_event, 3, true, 4) : "No hay Bebidas";
-$otrosProductos = getProducts($con, $id_event, 5, true, 6) != "" ? getProducts($con, $id_event, 5, true, 6) : "No hay Otros Productos";
+$carnes = getProducts($con, $id_event, 1) != "" ? getProducts($con, $id_event, 1) : "Sin Carnes";
+$frutavege = getProducts($con, $id_event, 2, true, 5) != "" ? getProducts($con, $id_event, 2, true, 5) : "Sin Frutas y Verduras";
+$bebidas = getProducts($con, $id_event, 3, true, 4) != "" ? getProducts($con, $id_event, 3, true, 4) : "Sin Bebidas";
+$otrosProductos = getProducts($con, $id_event, 5, true, 6) != "" ? getProducts($con, $id_event, 5, true, 6) : "Sin Otros Productos";
 
 function getMaterials($con, $id_event, $type_material, $anotherMaterial = false, $secType_material = '')
 {
@@ -129,11 +129,11 @@ function getMaterials($con, $id_event, $type_material, $anotherMaterial = false,
     return $salida;
 }
 
-$kitchen = getMaterials($con, $id_event, 1) != "" ? getMaterials($con, $id_event, 1) : "No hay Materiales de Cocina";
-$cuberteria = getMaterials($con, $id_event, 2) != "" ? getMaterials($con, $id_event, 2) : "No hay Materiales de Cubertería";
-$bar = getMaterials($con, $id_event, 3) != "" ? getMaterials($con, $id_event, 3) : "No hay Materiales de Bar";
-$decoration = getMaterials($con, $id_event, 4) != "" ? getMaterials($con, $id_event, 4) : "No hay Materiales de Decoración";
-$otherMaterial = getMaterials($con, $id_event, 5) != "" ? getMaterials($con, $id_event, 5) : "No hay Otros Materiales";
+$kitchen = getMaterials($con, $id_event, 1) != "" ? getMaterials($con, $id_event, 1) : "Sin Materiales de Cocina";
+$cuberteria = getMaterials($con, $id_event, 2) != "" ? getMaterials($con, $id_event, 2) : "Sin Materiales de Cubertería";
+$bar = getMaterials($con, $id_event, 3) != "" ? getMaterials($con, $id_event, 3) : "Sin Materiales de Bar";
+$decoration = getMaterials($con, $id_event, 4) != "" ? getMaterials($con, $id_event, 4) : "Sin Materiales de Decoración";
+$otherMaterial = getMaterials($con, $id_event, 5) != "" ? getMaterials($con, $id_event, 5) : "Sin Otros Materiales";
 
 
 function getProviders($con, $id_event, $type_provider)
@@ -160,9 +160,9 @@ function getProviders($con, $id_event, $type_provider)
     return $salida;
 }
 
-$transporte = getProviders($con, $id_event, 5) != "" ? getProviders($con, $id_event, 5) : "No hay Transporte";
-$buffet = getProviders($con, $id_event, 4) != "" ? getProviders($con, $id_event, 4) : "No hay Buffet";
-$otherProvider = getProviders($con, $id_event, 7) != "" ? getProviders($con, $id_event, 7) : "No hay Otros Proveedores";
+$transporte = getProviders($con, $id_event, 5) != "" ? getProviders($con, $id_event, 5) : "Sin Transporte";
+$buffet = getProviders($con, $id_event, 4) != "" ? getProviders($con, $id_event, 4) : "Sin Buffet";
+$otherProvider = getProviders($con, $id_event, 7) != "" ? getProviders($con, $id_event, 7) : "Sin Otros Proveedores";
 
 
 function getOtherConcepts($con, $id_event)
@@ -185,9 +185,22 @@ function getOtherConcepts($con, $id_event)
     return $salida;
 }
 
-$concepts = getOtherConcepts($con, $id_event) != "" ? getOtherConcepts($con, $id_event) : "No hay Otros Conceptos";
+$concepts = getOtherConcepts($con, $id_event) != "" ? getOtherConcepts($con, $id_event) : "Sin Otros Conceptos";
 $nombre_evento = $row['name_event'];
-$fecha_evento = $row['date_event'];
+
+$full_fecha_evento = $row['date_event'];
+$date_event = date('d/m/Y', strtotime($full_fecha_evento));
+$time_event = date('H:i a', strtotime($full_fecha_evento));
+$day_event = date('d', strtotime($full_fecha_evento));
+$month_event = date('m', strtotime($full_fecha_evento));
+$year_event = date('Y', strtotime($full_fecha_evento));
+
+$full_fecha_clausura = $row['date_clausura'];
+$date_clausura = date('d/m/Y', strtotime($full_fecha_clausura));
+$time_clausura = date('H:i a', strtotime($full_fecha_clausura));
+$day_clausura = date('d', strtotime($full_fecha_clausura));
+$month_clausura = date('m', strtotime($full_fecha_clausura));
+$year_clausura = date('Y', strtotime($full_fecha_clausura));
 $namepdf = $nombre_evento . '_' . $fecha_evento;
 
 ?>

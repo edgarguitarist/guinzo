@@ -60,7 +60,7 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'providers', '<?= $data_result[$who]['provider'] ?>')" onchange="checkSelect(this, false)" id="providers" name="providers" class="input" required>
+                <select onmouseover="loadSelects(this, 'providers', '<?= $data_result[$who]['provider'] ?? '' ?>')" onchange="checkSelect(this, false)" id="providers" name="providers" class="input" required>
                     <option value="">Seleccione una opción</option>
                 </select>
             </div>

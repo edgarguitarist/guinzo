@@ -84,7 +84,7 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
         $id_provider = $_POST['providers'];
 
         $consultas = [
-            "add" => "INSERT INTO products (name_product, amount, type_amount, price, type_product, description_product, expiry_date, id_provider) VALUES ('$name', '$amount', '$type_amount', '$price' '$type_product', '$description', '$expiration', '$id_provider')",
+            "add" => "INSERT INTO products (name_product, amount, type_amount, price, type_product, description_product, expiry_date, id_provider) VALUES ('$name', '$amount', '$type_amount', '$price', '$type_product', '$description', '$expiration', '$id_provider')",
             "add2" => "",
             "update" => "UPDATE products SET name_product = '$name', amount = '$amount', type_amount = '$type_amount', price = '$price', type_product = '$type_product', description_product = '$description', expiry_date = '$expiration', id_provider = '$id_provider' WHERE id_product = '$id'",
             "update2" => "",
@@ -104,7 +104,7 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
         $id_provider = $_POST['providers'];
 
         $consultas = [
-            "add" => "INSERT INTO materials (name_material, amount, type_material, description_material, expiry_date_material, id_provider) VALUES ('$name', '$amount', '$type_material', '$description', '$expiration', '$id_provider')",
+            "add" => "INSERT INTO materials (name_material, amount, price, type_material, description_material, expiry_date_material, id_provider) VALUES ('$name', '$amount', '$price', '$type_material', '$description', '$expiration', '$id_provider')",
             "add2" => "",
             "update" => "UPDATE materials SET name_material = '$name', amount = '$amount', price = '$price' , type_material = '$type_material', description_material = '$description', expiry_date_material = '$expiration', id_provider = '$id_provider' WHERE id_material = '$id'",
             "update2" => "",
@@ -147,6 +147,7 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
 
     $query = $consultas[$action];
     $result = mysqli_query($con, $query);
+    //echo $result;
     $result2 = $twoinserts ? mysqli_query($con, $insert2) : true;
     if ($result && $result2) {
         header("Location: ../../" . $who . ".php?info=" . $action);

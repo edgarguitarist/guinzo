@@ -49,6 +49,14 @@ body {
   color: #777;
 }
 
+.clausula{
+  margin: 30px 30px;
+}
+
+#clausulas{
+  margin-top: 20px;
+}
+
 .text-primary {
   color: var(--text-primary);
 }
@@ -315,6 +323,16 @@ img::-moz-selection {
   margin-bottom: 20px !important;
 }
 
+.mv-40{
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+.mv-50{
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+
 .mv-auto {
   margin-top: auto !important;
   margin-bottom: auto !important;
@@ -346,6 +364,9 @@ img::-moz-selection {
 }
 .ml-20 {
   margin-left: 20px !important;
+}
+.ml-30 {
+  margin-left: 30px !important;
 }
 
 .mr-10 {
