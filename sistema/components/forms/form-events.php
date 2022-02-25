@@ -101,10 +101,10 @@
 <div class="field">
     <div class="forms_row">
         <label class="label has-text-left wd-5c">Capitanes Disponibles *</label>
-        <label class="label has-text-left wd-5c">Cocineros Disponibles *</label>
+        <label class="label has-text-left wd-5c">Cocineros Disponibles </label>
         <label class="label has-text-left wd-5c">Saloneros Disponibles *</label>
-        <label class="label has-text-left wd-5c">Stewards *</label>
-        <label class="label has-text-left wd-5c">Otros *</label>
+        <label class="label has-text-left wd-5c">Stewards </label>
+        <label class="label has-text-left wd-5c">Otros </label>
 
     </div>
     <div class="field-body forms_row2">
@@ -232,10 +232,10 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Entrada *</label>
-        <label class="label has-text-left wd-4c">Plato Fuerte *</label>
-        <label class="label has-text-left wd-4c">Postre *</label>
-        <label class="label has-text-left wd-4c">Otros *</label>
+        <label class="label has-text-left wd-4c">Entrada </label>
+        <label class="label has-text-left wd-4c">Plato Fuerte </label>
+        <label class="label has-text-left wd-4c">Postre </label>
+        <label class="label has-text-left wd-4c">Otros </label>
     </div>
     <div class="field-body forms_row2">
         <div class="control wd-4c">
@@ -338,10 +338,10 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Carnes *</label>
-        <label class="label has-text-left wd-4c">Frutas y Verduras *</label>
-        <label class="label has-text-left wd-4c">Bebidas *</label>
-        <label class="label has-text-left wd-4c">Otros *</label>
+        <label class="label has-text-left wd-4c">Carnes </label>
+        <label class="label has-text-left wd-4c">Frutas y Verduras </label>
+        <label class="label has-text-left wd-4c">Bebidas </label>
+        <label class="label has-text-left wd-4c">Otros </label>
     </div>
     <div class="field-body forms_row2">
         <div class="control wd-4c">
@@ -445,11 +445,11 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-5c">Cocina *</label>
-        <label class="label has-text-left wd-5c">Cubertería *</label>
-        <label class="label has-text-left wd-5c">Bar *</label>
-        <label class="label has-text-left wd-5c">Decoración *</label>
-        <label class="label has-text-left wd-5c">Otros *</label>
+        <label class="label has-text-left wd-5c">Cocina </label>
+        <label class="label has-text-left wd-5c">Cubertería </label>
+        <label class="label has-text-left wd-5c">Bar </label>
+        <label class="label has-text-left wd-5c">Decoración </label>
+        <label class="label has-text-left wd-5c">Otros </label>
     </div>
     <div class="field-body forms_row2">
         <div class="control wd-5c">
@@ -576,9 +576,9 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-3c">Transporte *</label>
-        <label class="label has-text-left wd-3c">Buffet *</label>
-        <label class="label has-text-left wd-3c">Otros *</label>
+        <label class="label has-text-left wd-3c">Transporte </label>
+        <label class="label has-text-left wd-3c">Buffet </label>
+        <label class="label has-text-left wd-3c">Otros </label>
     </div>
     <div class="field-body forms_row2">
         <div class="control wd-3c">
