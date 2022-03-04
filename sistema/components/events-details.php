@@ -103,7 +103,7 @@ function getProducts($con, $id_event, $type_product, $anotherProduct = false, $s
 $carnes = getProducts($con, $id_event, 1) != "" ? getProducts($con, $id_event, 1) : "Sin Carnes";
 $frutavege = getProducts($con, $id_event, 2, true, 5) != "" ? getProducts($con, $id_event, 2, true, 5) : "Sin Frutas y Verduras";
 $bebidas = getProducts($con, $id_event, 3, true, 4) != "" ? getProducts($con, $id_event, 3, true, 4) : "Sin Bebidas";
-$otrosProductos = getProducts($con, $id_event, 5, true, 6) != "" ? getProducts($con, $id_event, 5, true, 6) : "Sin Otros Productos";
+$otrosProductos = getProducts($con, $id_event, 6, true, 7) != "" ? getProducts($con, $id_event, 6, true, 7) : "Sin Otros Productos";
 
 function getMaterials($con, $id_event, $type_material, $anotherMaterial = false, $secType_material = '')
 {
@@ -130,9 +130,9 @@ function getMaterials($con, $id_event, $type_material, $anotherMaterial = false,
 }
 
 $kitchen = getMaterials($con, $id_event, 1) != "" ? getMaterials($con, $id_event, 1) : "Sin Materiales de Cocina";
-$cuberteria = getMaterials($con, $id_event, 2) != "" ? getMaterials($con, $id_event, 2) : "Sin Materiales de Cubertería";
-$bar = getMaterials($con, $id_event, 3) != "" ? getMaterials($con, $id_event, 3) : "Sin Materiales de Bar";
-$decoration = getMaterials($con, $id_event, 4) != "" ? getMaterials($con, $id_event, 4) : "Sin Materiales de Decoración";
+$bar = getMaterials($con, $id_event, 2) != "" ? getMaterials($con, $id_event, 2) : "Sin Materiales de Bar";
+$decoration = getMaterials($con, $id_event, 3) != "" ? getMaterials($con, $id_event, 3) : "Sin Materiales de Decoración";
+$cuberteria = getMaterials($con, $id_event, 4) != "" ? getMaterials($con, $id_event, 4) : "Sin Materiales de Cubertería";
 $otherMaterial = getMaterials($con, $id_event, 5) != "" ? getMaterials($con, $id_event, 5) : "Sin Otros Materiales";
 
 

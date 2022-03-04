@@ -3,7 +3,7 @@ include "../../includes/dbcon.php";
 
 if (isset($_POST['action'])) {
     #helpers
-    $price = 0;
+    //$price = 0;
     $count = 0;
     $total_errors = 0;
 
@@ -85,31 +85,31 @@ if (isset($_POST['action'])) {
         ],
     ];
 
-    $priceEmployee = [50,35,30,25,25];
+    $priceEmployee = [50, 35, 30, 25, 25];
 
     $consultas_form = [
         0 => [ #Employees
             0 => [
                 "var" => $captains,
-                "price" => 50,
+                "var2" => 50,
             ],
             1 => [
                 "var" => $chefs,
-                "price" => 35,
+                "var2" => 35,
             ],
             2 => [
                 "var" => $waitress,
-                "price" => 30,
+                "var2" => 30,
             ],
             3 => [
                 "var" => $stewards,
-                "price" => 25,
+                "var2" => 25,
             ],
             4 => [
                 "var" => $others,
-                "price" => 25,
+                "var2" => 25,
             ],
-            "query" => "INSERT INTO events_employee (id_employee, price, id_event) VALUES ((SELECT id_employee FROM employee WHERE id_user = 'TEMP_VALUE'), 'PRICE_EMPLOYEE', 'ACTUAL_EVENT')",
+            "query" => "INSERT INTO events_employee (id_employee, price, id_event) VALUES ((SELECT id_employee FROM employee WHERE id_user = 'TEMP_VALUE'), 'SECOND_TV', 'ACTUAL_EVENT')",
             "otherquery" => true,
             "query2" => "UPDATE employee SET available = '0' WHERE id_user= 'TEMP_VALUE'",
         ],
@@ -218,7 +218,7 @@ if (isset($_POST['action'])) {
     for ($i = 0; $i < count($consultas_form); $i++) {
         for ($j = 0; $j < count($consultas_form[$i]) - 3; $j++) {
             $temp_vars = $consultas_form[$i][$j]['var'];
-            $temp_price = $consultas_form[$i][$j]['price'] ?? "";
+            // $temp_price = $consultas_form[$i][$j]['price'] ?? "";
             $temp_vars2 = $consultas_form[$i][$j]['var2'] ?? "";
             $temp_vars3 = $consultas_form[$i][$j]['var3'] ?? "";
 
@@ -230,8 +230,8 @@ if (isset($_POST['action'])) {
                 if (!$new_temp_var) {
                     continue;
                 }
-                $price = $consultas_form[$i][$j]['price'] ?? 0;
-                $query = str_replace("PRICE_EMPLOYEE", $temp_price, $query);
+                //$price = $consultas_form[$i][$j]['price'] ?? 0;
+                // $query = str_replace("PRICE_EMPLOYEE", $temp_price, $query);
                 $query = str_replace("TEMP_VALUE", $new_temp_var, $query);
                 $query = str_replace("SECOND_TV", $new_temp_var2, $query);
                 $query = str_replace("THIRDS", $new_temp_var3, $query);
@@ -261,6 +261,5 @@ if (isset($_POST['action'])) {
     } else {
         echo "Error al crear el evento";
         header("Location: ../../events.php?info=event_error");
-
     }
 }
