@@ -186,6 +186,16 @@ if (isset($_POST['action'])) {
                 "var2" => $transporteInput,
                 "var3" => $transporteDescription,
             ],
+            1 => [
+                "var" => $buffet,
+                "var2" => $buffetInput,
+                "var3" => $buffetDescription,
+            ],
+            2 => [
+                "var" => $otherproviders,
+                "var2" => $otherprovidersInput,
+                "var3" => $otherprovidersDescription,
+            ],
             "query" => "INSERT INTO events_thirds (id_provider, price_event_third, description_event_third, id_event) VALUES ('TEMP_VALUE', 'SECOND_TV', 'THIRDS', 'ACTUAL_EVENT')",
             "otherquery" => false,
             "query2" => ""

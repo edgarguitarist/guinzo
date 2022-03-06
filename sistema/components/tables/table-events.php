@@ -55,5 +55,5 @@
     </tbody>
     </table>
 <?php   }
-        $foot = $result > 8 ? "" : "footer2";
+        $foot = $result > 7 ? "" : "footer2";
 ?>

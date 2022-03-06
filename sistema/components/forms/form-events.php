@@ -421,7 +421,7 @@
                     <option value="">Seleccione un Producto</option>
                     <?php
                     #otherProducts
-                    $consulta = "SELECT *, SUM(amount) AS total FROM products WHERE (type_product = 3 OR type_product = 4) GROUP BY name_product";
+                    $consulta = "SELECT *, SUM(amount) AS total FROM products WHERE (type_product = 6 OR type_product = 7) GROUP BY name_product";
                     $resultado = mysqli_query($con, $consulta);
                     while ($row = mysqli_fetch_array($resultado)) { ?>
                         <option value="<?php echo $row['name_product']; ?>"><?php echo $row['name_product']; ?></option>
@@ -527,7 +527,7 @@
                 <select class="wd-100 input" name="decoracion" id="decoracion" onchange="addCheckfromSelect(this, 'decoration', true)">
                     <option value="">Seleccione el mat. de Decoración</option>
                     <?php
-                    #bebidas
+                    #decoracion
                     $consulta = "SELECT *, SUM(amount) AS total FROM materials WHERE (type_material = 3) GROUP BY name_material";
                     $resultado = mysqli_query($con, $consulta);
                     while ($row = mysqli_fetch_array($resultado)) { ?>
@@ -634,7 +634,7 @@
                     <option value="">Seleccione un Proveedor</option>
                     <?php
                     #otherProducts
-                    $consulta = "SELECT * FROM providers WHERE type_company = 4 ORDER BY lastname_provider";
+                    $consulta = "SELECT * FROM providers WHERE type_company = 7 ORDER BY lastname_provider";
                     $resultado = mysqli_query($con, $consulta);
                     while ($row = mysqli_fetch_array($resultado)) { ?>
                         <option value="<?php echo $row['dni_provider']; ?>"><?php echo $row['lastname_provider'] . ' ' . $row['name_provider'] . ' - ' . $row['name_company']; ?></option>

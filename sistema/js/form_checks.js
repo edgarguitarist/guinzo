@@ -559,6 +559,7 @@ const addOtherConcepts = () => {
   otherConceptsInput3.name = "otherConceptsPrice[]"
   otherConceptsInput3.className = "input wd-30 right2-0 other_concepts_price"
   otherConceptsInput3.placeholder = "Precio"
+  otherConceptsInput3.required = true
   let p = document.createElement("p")
   let p2 = document.createElement("p")
   let p3 = document.createElement("p")

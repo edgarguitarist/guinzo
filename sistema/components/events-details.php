@@ -59,14 +59,19 @@ $lugar = $row['place'];
 
 function getMenu($con, $id_event, $type_menu)
 {
-    $query_menu = "SELECT * FROM events_menu WHERE id_event = $id_event";
+    // $query_menu = "SELECT * FROM events_menu WHERE id_event = $id_event";
+    // $result_menu = mysqli_query($con, $query_menu);
+    // $row_menu = mysqli_fetch_array($result_menu);
+    // $id_menu = $row_menu['id_menu'] ?? 0;
+    // $query_menu_details = "SELECT * FROM menus WHERE id_menu = $id_menu AND type_menu = $type_menu";
+    // $result_menu_details = mysqli_query($con, $query_menu_details);
+    // $row_menu_details = mysqli_fetch_array($result_menu_details);
+    // return $row_menu_details['name_menu'] ?? null;
+
+    $query_menu = "SELECT * FROM events_menu em, menus me WHERE id_event = $id_event AND em.id_menu = me.id_menu AND me.type_menu = $type_menu";
     $result_menu = mysqli_query($con, $query_menu);
     $row_menu = mysqli_fetch_array($result_menu);
-    $id_menu = $row_menu['id_menu'] ?? 0;
-    $query_menu_details = "SELECT * FROM menus WHERE id_menu = $id_menu AND type_menu = $type_menu";
-    $result_menu_details = mysqli_query($con, $query_menu_details);
-    $row_menu_details = mysqli_fetch_array($result_menu_details);
-    return $row_menu_details['name_menu'] ?? null;
+    return $row_menu['name_menu'].'('.$row_menu['amount'].')' ?? null;
 }
 
 $entrada = getMenu($con, $id_event, 1) ?? "Sin Entrada";
@@ -91,7 +96,7 @@ function getProducts($con, $id_event, $type_product, $anotherProduct = false, $s
         $result_product_details = mysqli_query($con, $query_product_details);
         $row_product_details = mysqli_fetch_array($result_product_details);
         $product_name = $row_product_details['name_product'] ?? "";
-        $product_amount = $row_product_details['amount'] ?? 0;
+        $product_amount = $row_product['amount'] ?? 0;
         if (strlen($product_name) > 1) {
             $temp_salida = "<span>$product_name ($product_amount)</span>";
             $salida .= $salida == '' ? $temp_salida : ', ' . $temp_salida;
@@ -120,7 +125,8 @@ function getMaterials($con, $id_event, $type_material, $anotherMaterial = false,
         $result_material_details = mysqli_query($con, $query_material_details);
         $row_material_details = mysqli_fetch_array($result_material_details);
         $material_name = $row_material_details['name_material'] ?? "";
-        $material_amount = $row_material_details['amount'] ?? 0;
+        $material_amount = $row_material['amount'] ?? 0;
+        
         if (strlen($material_name) > 1) {
             $temp_salida = "<span>$material_name ($material_amount)</span>";
             $salida .= $salida == '' ? $temp_salida : ', ' . $temp_salida;
