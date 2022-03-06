@@ -32,7 +32,14 @@
                 $type = $data['type_amount'] == 1 ? " lbs." : " lts.";
                 $total = $data ['peso'] - $data['usado'];
                 $total_peso = $total == 0 ? "0" . $type : $total . $type;
-
+                if($total == 0){
+                    $total_peso = "0" . $type;
+                } else if($total < 0){
+                    $total_peso = "Faltan " . abs($total) . $type;
+                } else if ($total == 1){
+                    $total_peso = $total . substr($type, 0, -1);
+                }
+                $danger = $total < 0 ? " has-text-danger" : "";
         ?>
                 <tr>
                     <td> <?= $data["name_product"]; ?></td>
@@ -45,7 +52,7 @@
                     <td align="center"> <?= $data["expiry_date"]; ?></td>
                     <!-- No Necesario -->
                     <td> <?= $data['name_company']; ?></td>
-                    <td align="center" class="wd-fit-content"> <?= $total_peso ?></td>
+                    <td align="center" class="wd-fit-content <?= $danger ?>"> <?= $total_peso ?></td>
                     <td align="center" class="wd-fit-content"> <?= $salida  ?> </td>
                 </tr>
             <?php
