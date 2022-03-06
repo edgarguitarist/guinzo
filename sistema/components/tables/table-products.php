@@ -16,7 +16,7 @@
     </thead>
     <tbody>
         <?php
-        $query = mysqli_query($con, "SELECT *, p.deleted AS del, (SELECT SUM(pr.amount) FROM products pr WHERE pr.name_product = p.name_product AND pr.deleted = 0 GROUP BY name_product) AS peso, (SELECT SUM(ep.amount) FROM events_products ep WHERE ep.id_product = p.id_product) AS usado FROM products p, type_product tp, providers pro, status_product sp WHERE pro.dni_provider = p.id_provider AND tp.id_type_product = p.type_product AND sp.id_status_product = p.status ORDER BY arrival_date"); // consulta para obtener los proveedores
+        $query = mysqli_query($con, "SELECT *, p.deleted AS del, (SELECT SUM(pr.amount) FROM products pr WHERE pr.name_product = p.name_product AND pr.deleted = 0 GROUP BY name_product) AS peso, (SELECT SUM(ep.amount) FROM events_products ep WHERE ep.id_product = (SELECT prod.id_product FROM products prod WHERE prod.name_product = p.name_product GROUP BY p.name_product)) AS usado FROM products p, type_product tp, providers pro, status_product sp WHERE pro.dni_provider = p.id_provider AND tp.id_type_product = p.type_product AND sp.id_status_product = p.status ORDER BY arrival_date"); // consulta para obtener los proveedores
         mysqli_close($con);
         $result = mysqli_num_rows($query);
 
@@ -30,7 +30,8 @@
                 $salida = $editar_product . " " . $eliminar_product;
                 $fecha = explode(" " , $data['arrival_date']);
                 $type = $data['type_amount'] == 1 ? " lbs." : " lts.";
-                $peso = $data["peso"] > 0 ? $data["peso"] . $type : "0" . $type;
+                $total = $data ['peso'] - $data['usado'];
+                $total_peso = $total == 0 ? "0" . $type : $total . $type;
 
         ?>
                 <tr>
@@ -44,7 +45,7 @@
                     <td align="center"> <?= $data["expiry_date"]; ?></td>
                     <!-- No Necesario -->
                     <td> <?= $data['name_company']; ?></td>
-                    <td align="center" class="wd-fit-content"> <?= $peso ?></td>
+                    <td align="center" class="wd-fit-content"> <?= $total_peso ?></td>
                     <td align="center" class="wd-fit-content"> <?= $salida  ?> </td>
                 </tr>
             <?php
