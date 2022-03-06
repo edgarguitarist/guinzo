@@ -10,7 +10,7 @@ $(document).ready(function() {
 		"oLanguage": {
 			"sLengthMenu": "_MENU_ Registros por pagina"
 		},
-		"searching": false
+		"searching": false,
 	} );
 } );
 </script>

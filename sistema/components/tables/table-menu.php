@@ -28,7 +28,7 @@
                     <td> <?= $data["name_menu"]; ?></td>
                     <td> <?= $data["description_menu"]; ?></td>
                     <td> <?= $data["name_type_menu"]; ?></td>
-                    <td align="right">$ <?= $data["price_menu"]; ?></td>
+                    <td align="right">$ <?= number_format($data["price_menu"],2); ?></td>
                    
                     <td align="center" class="wd-fit-content"> <?= $salida  ?> </td>
                 </tr>

@@ -16,7 +16,7 @@
     </thead>
     <tbody>
         <?php
-        $query = mysqli_query($con, "SELECT *, p.deleted AS del, (SELECT SUM(pr.amount) FROM products pr WHERE pr.name_product = p.name_product AND pr.deleted = 0 GROUP BY name_product) AS peso FROM products p, type_product tp, providers pro, status_product sp WHERE pro.dni_provider = p.id_provider AND tp.id_type_product = p.type_product AND sp.id_status_product = p.status ORDER BY arrival_date"); // consulta para obtener los proveedores
+        $query = mysqli_query($con, "SELECT *, p.deleted AS del, (SELECT SUM(pr.amount) FROM products pr WHERE pr.name_product = p.name_product AND pr.deleted = 0 GROUP BY name_product) AS peso, (SELECT SUM(ep.amount) FROM events_products ep WHERE ep.id_product = p.id_product) AS usado FROM products p, type_product tp, providers pro, status_product sp WHERE pro.dni_provider = p.id_provider AND tp.id_type_product = p.type_product AND sp.id_status_product = p.status ORDER BY arrival_date"); // consulta para obtener los proveedores
         mysqli_close($con);
         $result = mysqli_num_rows($query);
 
@@ -37,7 +37,7 @@
                     <td> <?= $data["name_product"]; ?></td>
                     <td align="right"> <?= $data["amount"] . $type ?></td>
                     <td> <?= $data["name_type_product"]; ?></td>
-                    <td align="right">$ <?= $data["price"]; ?></td>
+                    <td align="right">$ <?= number_format($data["price"],2); ?></td>
                     <td> <?= $data["name_status_product"]; ?> </td>
                     <td> <?= $data["description_product"]; ?></td>
                     <td align="center"> <?= $data['arrival_date']; ?></td>

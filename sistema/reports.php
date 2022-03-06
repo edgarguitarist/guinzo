@@ -34,11 +34,13 @@ $final_date = $_GET['final_date'] ?? null;
             <?php include "components/tables/table-report-events.php" ?>
         </div>
         <br><br><br>
-        <hr><br><br><br>
         <div class="wd-90">
-            <?php //include "components/tables/table-report-profit.php" 
-            ?>
+            <h1 class="title">
+                GANANCIA TOTAL: 
+                <span id="sumatoria"></span>
+            </h1>    
         </div>
+        <hr><br><br><br>
     </div>
 </body>
 
@@ -48,6 +50,6 @@ $final_date = $_GET['final_date'] ?? null;
 
 <?php include "includes/scripts.php" ?>
 <?php include "components/jgrowl-messages.php" ?>
-<?php include "components/tables/script.php" ?>
+<?php include "components/tables/script_sum.php" ?>
 
 </html>

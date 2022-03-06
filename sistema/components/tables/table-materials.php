@@ -31,7 +31,7 @@
                 <tr>
                     <td> <?= $data["name_material"]; ?></td>
                     <td align="right"> <?= $data["amount"]; ?></td>
-                    <td align="right">$ <?= $data["price"]; ?></td>
+                    <td align="right">$ <?= number_format($data["price"],2); ?></td>
                     <td> <?= $data["name_type_material"]; ?></td>
                     <td> <?= $data["description_material"]; ?></td>
                     <td align="center"> <?= $data['arrival_date_material']; ?></td>

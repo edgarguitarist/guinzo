@@ -37,7 +37,7 @@
                     <td> <?= $data["name_type_event"]; ?></td>
                     <td> <?= $data["description_event"]; ?></td>
                     <td> <?= $data['address_event']; ?></td>
-                    <td align="right">$ <?= $data["price"]; ?></td>
+                    <td align="right">$ <?= number_format($data["price"],2); ?></td>
                     <td align="right"> <?= $data["amount_guest"]; ?></td>
                     <!-- No Necesario -->
                     <!-- <td> <?= $data['date_request']; ?></td> -->

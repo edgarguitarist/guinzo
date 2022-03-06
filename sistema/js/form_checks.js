@@ -475,10 +475,8 @@ const calculatePrice = () => {
   //tipo de evento
   total += prices.event_type[type_event].price
 
-  lugares = ["propio", "casa", "lugar propio", "casa propia", "propia"]
-  
   // Lugar Propio
-  if (!lugares.includes(place.value.toLowerCase())) {
+  if (place.value == "Domicilio") {
     total += 50
   }
 
@@ -527,10 +525,10 @@ const calculatePrice = () => {
   }
 
   // Other Concepts
- for (let i = 0; i < other_concepts.length; i++) {
+  for (let i = 0; i < other_concepts.length; i++) {
     valor = parseInt(other_concepts[i].value)
     total += valor
- }
+  }
 
   total_final.value = total
   price_total_final.value = total
@@ -614,7 +612,6 @@ const addCheckfromSelect = (
   checkbox.id = value
   checkbox.className = extraClass
   checkbox.checked = true
-  checkbox.required = true
   let label = document.createElement("label")
   label.htmlFor = value
   label.innerHTML = text
@@ -624,7 +621,16 @@ const addCheckfromSelect = (
   li.appendChild(checkbox)
   li.appendChild(label)
   if (inputText) {
+    checkbox.onclick = () => {
+      const myInput = document.getElementById(value + "input")
+      if (checkbox.checked) {
+        myInput.required = true
+      } else {
+        myInput.required = false
+      }
+    }
     let input = document.createElement("input")
+    input.id = value + "input"
     input.type = "number"
     input.name = where + "Input[]"
     input.placeholder = placeholder
@@ -647,4 +653,26 @@ const addCheckfromSelect = (
   destiny.appendChild(li)
   select.remove(select.selectedIndex)
   select.value = ""
+}
+
+function minClausure() {
+  const fecha = document.getElementById("date_event")
+  const fecha2 = document.getElementById("date_clausure")
+
+  const newFecha = new Date(fecha.value)
+  const newHour = newFecha.getHours() + 1
+  let newDate = new Date(newFecha.setHours(newHour))
+  newDate = new Date(newDate.setMonth(newDate.getMonth() + 1))
+  console.log(newFecha)
+
+  year = newDate.getFullYear()
+  month = newDate.getMonth() > 9 ? newDate.getMonth() : "0" + newDate.getMonth()
+  day = newDate.getDate() > 9 ? newDate.getDate() : "0" + newDate.getDate()
+  hour = newDate.getHours() > 9 ? newDate.getHours() : "0" + newDate.getHours()
+  minute =
+    newDate.getMinutes() > 9 ? newDate.getMinutes() : "0" + newDate.getMinutes()
+
+  const fechaFinal = year + "-" + month + "-" + day + "T" + hour + ":" + minute
+  console.log(fechaFinal)
+  fecha2.min = fechaFinal
 }

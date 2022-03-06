@@ -59,19 +59,17 @@ $lugar = $row['place'];
 
 function getMenu($con, $id_event, $type_menu)
 {
-    // $query_menu = "SELECT * FROM events_menu WHERE id_event = $id_event";
-    // $result_menu = mysqli_query($con, $query_menu);
-    // $row_menu = mysqli_fetch_array($result_menu);
-    // $id_menu = $row_menu['id_menu'] ?? 0;
-    // $query_menu_details = "SELECT * FROM menus WHERE id_menu = $id_menu AND type_menu = $type_menu";
-    // $result_menu_details = mysqli_query($con, $query_menu_details);
-    // $row_menu_details = mysqli_fetch_array($result_menu_details);
-    // return $row_menu_details['name_menu'] ?? null;
 
     $query_menu = "SELECT * FROM events_menu em, menus me WHERE id_event = $id_event AND em.id_menu = me.id_menu AND me.type_menu = $type_menu";
     $result_menu = mysqli_query($con, $query_menu);
     $row_menu = mysqli_fetch_array($result_menu);
-    return $row_menu['name_menu'].'('.$row_menu['amount'].')' ?? null;
+    $num_rows = mysqli_num_rows($result_menu);
+    if ($num_rows > 0) {
+        $menu = $row_menu['name_menu'];
+    } else {
+        $menu = null;
+    }
+    return $menu;
 }
 
 $entrada = getMenu($con, $id_event, 1) ?? "Sin Entrada";

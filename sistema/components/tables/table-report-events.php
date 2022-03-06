@@ -13,7 +13,7 @@
             <th>FECHA DEL EVENTO</th>
             <th>PRECIO</th>
             <th>GANANCIA</th>
-            <th>SUMA TOTAL</th>
+            <!-- <th>SUMA TOTAL</th> -->
         </tr>
     </thead>
     <tbody>
@@ -26,7 +26,10 @@
             while ($data = mysqli_fetch_array($query)) {
                 $precio_others = 0;
                 $costo = 0;
-                $precio_thirds = 0; $precio_products = 0; $precio_materials  = 0; $precio_menus = 0;
+                $precio_thirds = 0;
+                $precio_products = 0;
+                $precio_materials  = 0;
+                $precio_menus = 0;
 
                 $id_event = $data['id_event'];
                 $employees = "SELECT *, (SELECT SUM(price) FROM events_employee WHERE id_event = $id_event) AS COSTO FROM events_employee WHERE id_event = $id_event";
@@ -79,17 +82,16 @@
                     <td> <?= $data["name_event"] ?></td>
                     <td align="right"> <?= $data["amount_guest"] ?></td>
                     <td align="right"> <?= $result_employees ?></td>
-                    <td align="right"> $ <?= $costo ?></td>
-                    <td align="right"> $ <?= $precio_menus ?></td>
-                    <td align="right"> $ <?= $precio_products ?></td>
-                    <td align="right"> $ <?= $precio_materials ?></td>
-                    <td align="right"> $ <?= $precio_thirds ?></td>
-                    <td align="right"> $ <?= $precio_others ?></td>
+                    <td align="right"> $ <?= number_format($costo, 2) ?></td>
+                    <td align="right"> $ <?= number_format($precio_menus, 2) ?></td>
+                    <td align="right"> $ <?= number_format($precio_products, 2) ?></td>
+                    <td align="right"> $ <?= number_format($precio_materials, 2) ?></td>
+                    <td align="right"> $ <?= number_format($precio_thirds, 2) ?></td>
+                    <td align="right"> $ <?= number_format($precio_others, 2) ?></td>
                     <td align="center"> <?= $data["date_event"] ?></td>
-                    <td align="right"> $ <?= $data["price"] ?></td>
-                    <td align="right"> $ <?= $ganancia ?></td>
-                    <td align="right"> $ <?= $data['Total'] ?></td>
-
+                    <td align="right"> $ <?= number_format($data["price"], 2) ?></td>
+                    <td align="right"> $ <?= number_format($ganancia, 2) ?></td>
+                    <!-- <td align="right" > </td> -->
                 </tr>
             <?php
             }

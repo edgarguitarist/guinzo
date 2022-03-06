@@ -43,23 +43,27 @@
 <div class="field">
     <div class="forms_row">
         <label class="label has-text-left wd-2c">Descripción *</label>
-        <label class="label has-text-left wd-custom">Dirección *</label>
         <label class="label has-text-left wd-10">Lugar*</label>
+        <label class="label has-text-left wd-custom">Dirección *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">
             <input id="description" name="description" class="input" onkeyup="checkLength(this, false, 10, false)" minlength="10" maxlength="40" type="text" placeholder="Descripción" value="" required>
             <p>&nbsp;</p>
         </div>
-        <div class="control wd-custom">
-            <input id="address" name="address" class="input" onkeyup="checkLength(this, false, 10, false)" minlength="10" maxlength="70" type="text" placeholder="Dirección" value="" required>
-            <p>&nbsp;</p>
-        </div>
         <div class="control wd-10">
             <div class="is-flex mt-7">
-                <input id="place" name="place" class="input" onkeyup="checkLength(this, false, 3, false)" minlength="3" maxlength="50" type="text" placeholder="Lugar" value="" required>
-                <p>&nbsp;</p>
+                <select name="place" id="place" class="input" required> 
+                    <option value="">Seleccione una opción</option>
+                    <option value="Domicilio">Domicilio</option>
+                    <option value="Hotel">Hotel</option>
+                    <option value="Locales">Local</option>
+                </select>
             </div>
+            <p>&nbsp;</p>
+        </div>
+        <div class="control wd-custom">
+            <input id="address" name="address" class="input" onkeyup="checkLength(this, false, 10, false)" minlength="10" maxlength="70" type="text" placeholder="Dirección" value="" required>
             <p>&nbsp;</p>
         </div>
     </div>
@@ -82,14 +86,15 @@
 
         <div class="control wd-30">
             <div class="wd-100 ">
-                <input title="Fecha del Evento" type="datetime-local" id="date_event" name="date_event" class="input wd-100" required />
+                <input title="Fecha del Evento" type="datetime-local" id="date_event" name="date_event" class="input wd-100" min="<?= $hoy_extended ?>" onchange="minClausure(this)" required />
             </div>
             <p id="" class="help is-danger">&nbsp;</p>
         </div>
 
         <div class="control wd-30">
             <div class="wd-100 ">
-                <input title="Fecha de Clausura" type="datetime-local" id="date_clausure" name="date_clausure" class="input wd-100" required />
+                <input title="Fecha de Clausura" type="datetime-local" id="date_clausure" name="date_clausure" class="input wd-100" 
+                 required />
             </div>
             <p id="" class="help is-danger">&nbsp;</p>
         </div>
