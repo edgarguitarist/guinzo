@@ -37,7 +37,7 @@
                 } else if($total < 0){
                     $total_peso = "Faltan " . abs($total) . $type;
                 } else if ($total == 1){
-                    $total_peso = $total . substr($type, 0, -1);
+                    $total_peso = $total . substr($type, 0, -2) . ".";
                 }
                 $danger = $total < 0 ? " has-text-danger" : "";
         ?>

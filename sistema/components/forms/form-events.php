@@ -612,7 +612,7 @@
         </div>
         <div class="control wd-3c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="buffets" id="buffets" onchange="addCheckfromSelect(this, 'buffet', true)">
+                <select class="wd-100 input" name="buffets" id="buffets" onchange="addCheckfromSelect(this, 'buffet', true, true, 'Precio')">
                     <option value="">Seleccione Proveedor</option>
                     <?php
                     #buffet
@@ -635,7 +635,7 @@
         </div>
         <div class="control wd-3c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="otrosProveedores" id="otrosProveedores" onchange="addCheckfromSelect(this, 'otherproviders', true)">
+                <select class="wd-100 input" name="otrosProveedores" id="otrosProveedores" onchange="addCheckfromSelect(this, 'otherproviders', true, true, 'Precio')">
                     <option value="">Seleccione un Proveedor</option>
                     <?php
                     #otherProducts
