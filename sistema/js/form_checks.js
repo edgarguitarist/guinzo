@@ -647,7 +647,7 @@ const addCheckfromSelect = (
     input2.placeholder = "Descripción"
     input2.style = "width: 98% !important;"
     input2.className = "ml-10 input is-size-5 textarea-check"
-    input2.required = true
+    input2.required = false
     li.appendChild(input2)
   }
   destiny.appendChild(li)
