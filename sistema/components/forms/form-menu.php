@@ -2,7 +2,7 @@
 
 <div class="file-upload2">
     <div class="image-upload-wrap2 area-img-modal2">
-    <input class="input" type="hidden" name="id_menu" id="id_menu" value="<?= $id ?>">
+        <input class="input" type="hidden" name="id_menu" id="id_menu" value="<?= $id ?>">
         <input type="hidden" name="MAX_FILE_SIZE" value="3000000" /> <!-- 3MB -->
         <input id="photo_menu" name="photo_menu" class="file-upload-input2" type='file' onchange="readURL2(this);" accept="image/*" required />
         <div class="drag-text">

@@ -91,25 +91,25 @@ if (isset($_POST['action'])) {
         0 => [ #Employees
             0 => [
                 "var" => $captains,
-                "var2" => 50,
+                "price" => 50,
             ],
             1 => [
                 "var" => $chefs,
-                "var2" => 35,
+                "price" => 35,
             ],
             2 => [
                 "var" => $waitress,
-                "var2" => 30,
+                "price" => 30,
             ],
             3 => [
                 "var" => $stewards,
-                "var2" => 25,
+                "price" => 25,
             ],
             4 => [
                 "var" => $others,
-                "var2" => 25,
+                "price" => 25,
             ],
-            "query" => "INSERT INTO events_employee (id_employee, price, id_event) VALUES ((SELECT id_employee FROM employee WHERE id_user = 'TEMP_VALUE'), 'SECOND_TV', 'ACTUAL_EVENT')",
+            "query" => "INSERT INTO events_employee (id_employee, price, id_event) VALUES ((SELECT id_employee FROM employee WHERE id_user = 'TEMP_VALUE'), 'PRICE_EMPLOYEE', 'ACTUAL_EVENT')",
             "otherquery" => true,
             "query2" => "UPDATE employee SET available = '0' WHERE id_user= 'TEMP_VALUE'",
         ],
@@ -228,7 +228,7 @@ if (isset($_POST['action'])) {
     for ($i = 0; $i < count($consultas_form); $i++) {
         for ($j = 0; $j < count($consultas_form[$i]) - 3; $j++) {
             $temp_vars = $consultas_form[$i][$j]['var'];
-            // $temp_price = $consultas_form[$i][$j]['price'] ?? "";
+            $temp_price = $consultas_form[$i][$j]['price'] ?? "";
             $temp_vars2 = $consultas_form[$i][$j]['var2'] ?? "";
             $temp_vars3 = $consultas_form[$i][$j]['var3'] ?? "";
 
@@ -240,8 +240,8 @@ if (isset($_POST['action'])) {
                 if (!$new_temp_var) {
                     continue;
                 }
-                //$price = $consultas_form[$i][$j]['price'] ?? 0;
-                // $query = str_replace("PRICE_EMPLOYEE", $temp_price, $query);
+                $price = $consultas_form[$i][$j]['price'] ?? 0;
+                $query = str_replace("PRICE_EMPLOYEE", $temp_price, $query);
                 $query = str_replace("TEMP_VALUE", $new_temp_var, $query);
                 $query = str_replace("SECOND_TV", $new_temp_var2, $query);
                 $query = str_replace("THIRDS", $new_temp_var3, $query);
