@@ -45,18 +45,21 @@
                         </div>
 
                         <div class="forms_field">
-                            <input title="Cedula" type="text" placeholder="Cedula" onkeyup="checkCedula()" id="cedula" name="cedula" minlength="10" maxlength="10" class="forms_field-input wd-45  solo-numeros" required />
+                            <input title="Cedula" type="text" placeholder="Cedula" onkeyup="checkCedula('root', this)" id="cedula" name="cedula" minlength="10" maxlength="10" class="forms_field-input wd-45  solo-numeros" required />
+                            
                             <input title="Telefono" type="text" style="position: relative; float: right;" placeholder="Telefono" id="phone" name="phone" minlength="10" maxlength="10" class="forms_field-input wd-45  solo-numeros" required />
-                            <span id="dni_error" style="display: flex;"></span>
+                            <span id="cedula_error" style=" display: flex;"></span>
                         </div>
 
                         <div class="forms_field">
-                            <input title="Correo" type="email" placeholder="Correo" id="email_r" name="email_r" class="forms_field-input wd-100" required />
+                            <input title="Correo" type="email" placeholder="Correo" onkeyup="checkEmail(this)" id="email_r" name="email_r" class="forms_field-input wd-100" required />
                         </div>
+                        <span id="email_r_error" class="help is-danger" style="margin-top: -15px;display: flex;"></span>
                         <div class="forms_field">
                             <input title="Contraseña" type="password" placeholder="Contraseña" id="password_r" name="password_r" minlength="8" maxlength="30" class="forms_field-input wd-45" required />
                             <input title="Fecha de Nacimiento" type="date" style="position: relative; float: right;" max="<?= $minimo; ?>" value="<?= $minimo; ?>" id="birthday" name="birthday" class="forms_field-input wd-45" required />
                         </div>
+                        
                     </fieldset>
                     <div class="center mt-5">
                         <input type="submit" id="submit" value="Registrarse" class="forms_buttons-action">

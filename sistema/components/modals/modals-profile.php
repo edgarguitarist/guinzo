@@ -17,7 +17,7 @@
                         <form enctype="multipart/form-data" method="post" action="sistema/components/update-profile.php">
                             <div class="file-upload">
                                 <div class="image-upload-wrap area-img-modal">
-                                    <input id="dniPhoto" name="dniPhoto" type="hidden" value="<?= $_SESSION['dni']; ?>">
+                                    <input id="dniPhoto" name="dniPhoto" type="hidden" value="<?= $_SESSION['dni'] ??''; ?>">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" /> <!-- 3MB -->
                                     <input id="photo" name="photo" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" required />
                                     <div class="drag-text">
@@ -63,7 +63,7 @@
                         <form enctype="multipart/form-data" method="post" action="components/update-profile.php">
                             <div class="file-upload">
                                 <div class="image-upload-wrap area-img-modal">
-                                    <input id="dniS" name="dniPhoto" type="hidden" value="<?= $_SESSION['dni']; ?>">
+                                    <input id="dniS" name="dniPhoto" type="hidden" value="<?= $_SESSION['dni'] ??''; ?>">
                                     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" /> <!-- 3MB -->
                                     <input id="photo" name="photo" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" required />
                                     <div class="drag-text">
