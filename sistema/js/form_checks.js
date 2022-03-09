@@ -1,4 +1,4 @@
-function checkCedula(path = "root", elemento) {
+function checkCedula(path = "root", elemento, work = false) {
   const submit = document.getElementById("submit")
   const cad = document.getElementById(elemento.id).value.trim(),
     box = document.getElementById(elemento.id),
@@ -9,7 +9,7 @@ function checkCedula(path = "root", elemento) {
   let longcheck = longitud - 1
   let ruta = path == "root" ? "sistema/api/cedula.php" : "api/cedula.php"
   let inputClass =
-    path == "root"
+    path == "root" && !work
       ? "forms_field-input wd-45 solo-numeros"
       : "input solo-numeros mt--5"
   if (
