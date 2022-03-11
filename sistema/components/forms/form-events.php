@@ -53,7 +53,7 @@
         </div>
         <div class="control wd-10">
             <div class="is-flex mt-7">
-                <select name="place" id="place" class="input" required> 
+                <select name="place" id="place" class="input" required>
                     <option value="">Seleccione una opción</option>
                     <option value="Domicilio">Domicilio</option>
                     <option value="Hotel">Hotel</option>
@@ -93,8 +93,7 @@
 
         <div class="control wd-30">
             <div class="wd-100 ">
-                <input title="Fecha de Clausura" type="datetime-local" id="date_clausure" name="date_clausure" class="input wd-100" 
-                 required />
+                <input title="Fecha de Clausura" type="datetime-local" id="date_clausure" name="date_clausure" class="input wd-100" required />
             </div>
             <p id="" class="help is-danger">&nbsp;</p>
         </div>
@@ -245,7 +244,7 @@
     <div class="field-body forms_row2">
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="entradas" id="entradas" onchange="addCheckfromSelect(this, 'entrances', true)">
+                <select class="wd-100 input" name="entradas" id="entradas" onchange="addCheckfromSelect(this, 'entrances', true, true, 'Cantidad' , true, 'menu')">
                     <option value="">Seleccione la Entrada</option>
                     <?php
                     #entradas
@@ -269,7 +268,7 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="fuertes" id="fuertes" onchange="addCheckfromSelect(this, 'principals', true)">
+                <select class="wd-100 input" name="fuertes" id="fuertes" onchange="addCheckfromSelect(this, 'principals', true, true, 'Cantidad' , true, 'menu')">
                     <option value="">Seleccione el Plato Fuerte</option>
                     <?php
                     #plato fuerte
@@ -292,7 +291,7 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="postres" id="postres" onchange="addCheckfromSelect(this, 'desserts', true)">
+                <select class="wd-100 input" name="postres" id="postres" onchange="addCheckfromSelect(this, 'desserts', true, true, 'Cantidad' , true, 'menu')">
                     <option value="">Seleccione el Postre</option>
                     <?php
                     #bebidas
@@ -315,7 +314,7 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="otrosMenus" id="otrosMenus" onchange="addCheckfromSelect(this, 'othermenus', true)">
+                <select class="wd-100 input" name="otrosMenus" id="otrosMenus" onchange="addCheckfromSelect(this, 'othermenus', true, true, 'Cantidad' , true, 'menu')">
                     <option value="">Seleccione otro Menú</option>
                     <?php
                     #otherMenu
@@ -343,7 +342,7 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Carnes </label>
+        <label class="label has-text-left wd-4c">Proteínas </label>
         <label class="label has-text-left wd-4c">Frutas y Verduras </label>
         <label class="label has-text-left wd-4c">Bebidas </label>
         <label class="label has-text-left wd-4c">Otros </label>
@@ -351,7 +350,7 @@
     <div class="field-body forms_row2">
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="carnes" id="carnes" onchange="addCheckfromSelect(this, 'meats', true)">
+                <select class="wd-100 input" name="carnes" id="carnes" onchange="addCheckfromSelect(this, 'meats', true, true, 'Cantidad' , true, 'product')">
                     <option value="">Seleccione las Carnes</option>
                     <?php
                     #carnes
@@ -376,7 +375,7 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select class="wd-100 input" name="frutaveges" id="frutaveges" onchange="addCheckfromSelect(this, 'fruitsveges', true)">
+                <select class="wd-100 input" name="frutaveges" id="frutaveges" onchange="addCheckfromSelect(this, 'fruitsveges', true, true, 'Cantidad' , true, 'product')">
                     <option value="">Seleccione las Frutas o Verduras</option>
                     <?php
                     #frutas y verduras
@@ -654,6 +653,15 @@
                     <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Productos Disponibles</p>
                 <?php  } ?>
             </div>
+        </div>
+    </div>
+</div>
+<hr>
+<h1 class="title">Observaciones</h1>
+<div class="field">
+    <div class="field-body forms_row2">
+        <div class="control wd-100">
+            <textarea class="textarea is-fullwidth input" name="observations" id="observations" placeholder="Observaciones" minlength="10" required></textarea>
         </div>
     </div>
 </div>

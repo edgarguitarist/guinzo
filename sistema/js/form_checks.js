@@ -247,7 +247,7 @@ function checkForm() {
     if (inputs[i].className.includes("is-danger") || inputs[i].value == "") {
       submit.disabled = true
     }
-    console.log(inputs[i])
+    //console.log(inputs[i])
   }
 }
 
@@ -452,9 +452,11 @@ const calculatePrice = () => {
 
   let menu = document.getElementsByClassName("menu") // Menus
   let amount_menu = document.getElementsByClassName("menu_amount")
+  let menu_price = document.getElementsByClassName("menu_price")
 
   let product = document.getElementsByClassName("product") // Productos
   let amount_product = document.getElementsByClassName("product-amount")
+  let product_price = document.getElementsByClassName("product-price")
 
   let material = document.getElementsByClassName("material") // Materiales
   let amount_material = document.getElementsByClassName("material-amount")
@@ -491,18 +493,20 @@ const calculatePrice = () => {
 
   // Menus
   for (let i = 0; i < menu.length; i++) {
-    let name = menu[i].name.substring(0, menu[i].name.length - 2)
     if (menu[i].checked) {
-      valor = prices.menus[name].price * amount_menu[i].value
+      let cantidad = amount_menu[i].value != '' ? parseInt(amount_menu[i].value) : 0
+      let precio = menu_price[i].value != '' ? parseFloat(menu_price[i].value) : 0
+      valor = precio * cantidad
       total += valor
     }
   }
 
   // Productos
   for (let i = 0; i < product.length; i++) {
-    let name = product[i].name.substring(0, product[i].name.length - 2)
     if (product[i].checked) {
-      valor = prices.products[name].price * amount_product[i].value
+      let cantidad = amount_product[i].value != '' ? parseInt(amount_product[i].value) : 0
+      let precio = product_price[i].value != '' ? parseFloat(product_price[i].value) : 0
+      valor = precio * cantidad
       total += valor
     }
   }
@@ -582,7 +586,9 @@ const addCheckfromSelect = (
   where,
   inputText = false,
   description = false,
-  placeholder = "Cantidad"
+  placeholder = "Cantidad",
+  hidden = false,
+  table = ""
 ) => {
   let extraClass = ""
   let extraClass2 = ""
@@ -591,9 +597,11 @@ const addCheckfromSelect = (
   } else if (prices.menus[where]) {
     extraClass = "menu"
     extraClass2 = "menu_amount"
+    extraClass3 = "menu_price"
   } else if (prices.products[where]) {
     extraClass = "product"
     extraClass2 = "product-amount"
+    extraClass3 = "product-price"
   } else if (prices.materials[where]) {
     extraClass = "material"
     extraClass2 = "material-amount"
@@ -641,18 +649,53 @@ const addCheckfromSelect = (
     li.appendChild(input)
   }
   if (description) {
-    let input2 = document.createElement("textarea")
-    input2.type = "text"
-    input2.name = where + "Description[]"
-    input2.placeholder = "Descripción"
-    input2.style = "width: 98% !important;"
-    input2.className = "ml-10 input is-size-5 textarea-check"
-    input2.required = false
-    li.appendChild(input2)
+    if (!hidden) {
+      let input2 = document.createElement("textarea")
+      input2.type = "text"
+      input2.name = where + "Description[]"
+      input2.placeholder = "Descripción"
+      input2.style = "width: 98% !important;"
+      input2.className = "ml-10 input is-size-5 textarea-check"
+      input2.required = false
+      li.appendChild(input2)
+    } else {
+      let input2 = document.createElement("input")
+      input2.type = "hidden"
+      input2.name = where + "Price[]"
+      input2.placeholder = "Price"
+      idInput2 = value + "Price"
+      input2.id = idInput2
+      input2.style = "width: 98% !important;"
+      input2.className = "ml-10 input is-size-5 input-check "+ extraClass3
+      input2.required = false
+      getPrice(table, value, idInput2)
+      li.appendChild(input2)
+    }
   }
   destiny.appendChild(li)
   select.remove(select.selectedIndex)
   select.value = ""
+}
+
+async function getPrice(table, name, id) {
+  const ruta = "api/prices.php"
+  setTimeout(() => {
+    const elemento = document.getElementById(id)
+    console.log(elemento)
+    $.ajax({
+      type: "POST",
+      url: ruta,
+      data: { table: table, name: name },
+      success: function (resultado) {
+        console.log(resultado)
+        elemento.value = parseFloat(resultado).toFixed(2)
+      },
+      error: function (resultado) {
+        console.log("Error al Buscar los Datos: " + resultado)
+        return false
+      },
+    })
+  }, 100)
 }
 
 function minClausure() {
@@ -663,7 +706,7 @@ function minClausure() {
   const newHour = newFecha.getHours() + 1
   let newDate = new Date(newFecha.setHours(newHour))
   newDate = new Date(newDate.setMonth(newDate.getMonth() + 1))
-  console.log(newFecha)
+  //console.log(newFecha)
 
   year = newDate.getFullYear()
   month = newDate.getMonth() > 9 ? newDate.getMonth() : "0" + newDate.getMonth()
@@ -673,6 +716,6 @@ function minClausure() {
     newDate.getMinutes() > 9 ? newDate.getMinutes() : "0" + newDate.getMinutes()
 
   const fechaFinal = year + "-" + month + "-" + day + "T" + hour + ":" + minute
-  console.log(fechaFinal)
+  //console.log(fechaFinal)
   fecha2.min = fechaFinal
 }

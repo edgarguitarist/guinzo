@@ -28,7 +28,7 @@
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
-            <input id="cedula_employee" name="cedula" minlength="10" maxlength="10" class="input solo-numeros mt--5" onkeyup="checkCedula('gg')" type="text" placeholder="Su Cédula" value="<?= $data_result[$who]['dni'] ?? '' ?>" required>
+            <input id="cedula_employee" name="cedula" minlength="10" maxlength="10" class="input solo-numeros mt--5" onkeyup="checkCedula('gg', this)" type="text" placeholder="Su Cédula" value="<?= $data_result[$who]['dni'] ?? '' ?>" required>
             <input type="hidden" id="dni" name="dni" value="<?= $data_result[$who]['dni'] ?? '' ?>">
             <p id="cedula_employee_error" class="help is-danger">&nbsp;</p>
         </div>

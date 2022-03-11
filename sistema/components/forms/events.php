@@ -20,6 +20,7 @@ if (isset($_POST['action'])) {
     $date_approval = $date_request;
     $date_event = $_POST['date_event'];
     $date_clausure = $_POST['date_clausure'];
+    $observations = $_POST['observations'];
 
     #employees
     $captains = $_POST['captains'] ?? [];
@@ -31,22 +32,30 @@ if (isset($_POST['action'])) {
     #menus
     $entrances = $_POST['entrances'] ?? [];
     $entrancesInput = $_POST['entrancesInput'] ?? [];
+    $entrancesPrice = $_POST['entrancesPrice'] ?? [];
     $principals = $_POST['principals'] ?? [];
     $principalsInput = $_POST['principalsInput'] ?? [];
+    $principalsPrice = $_POST['principalsPrice'] ?? [];
     $desserts = $_POST['desserts'] ?? [];
     $dessertsInput = $_POST['dessertsInput'] ?? [];
+    $dessertsPrice = $_POST['dessertsPrice'] ?? [];
     $othermenus = $_POST['othermenus'] ?? [];
     $othermenusInput = $_POST['othermenusInput'] ?? [];
+    $othermenusPrice = $_POST['othermenusPrice'] ?? [];
 
     #products
     $meats = $_POST['meats'] ?? [];
     $meatsInput = $_POST['meatsInput'] ?? "";
+    $meatsPrice = $_POST['meatsPrice'] ?? "";
     $fruitsveges = $_POST['fruitsveges'] ?? [];
     $fruitsvegesInput = $_POST['fruitsvegesInput'] ?? "";
+    $fruitsvegesPrice = $_POST['fruitsvegesPrice'] ?? "";
     $drinks = $_POST['drinks'] ?? [];
     $drinksInput = $_POST['drinksInput'] ?? "";
+    $drinksPrice = $_POST['drinksPrice'] ?? "";
     $otherproducts = $_POST['otherproducts'] ?? [];
     $otherproductsInput = $_POST['otherproductsInput'] ?? "";
+    $otherproductsPrice = $_POST['otherproductsPrice'] ?? "";
 
     #materials
     $kitchen = $_POST['kitchen'] ?? [];
@@ -78,7 +87,7 @@ if (isset($_POST['action'])) {
 
     $consultas = [
         0 => [ #Event_details
-            "query" => "INSERT INTO events_details (name_event, description_event, address_event, amount_guest, id_type_event, place, price, id_customer, date_request, date_approval, date_event, date_clausura) VALUES ('$name_event', '$description', '$address', '$amount_guest', '$type_event', '$place', '$price', (SELECT id_customer FROM customers WHERE id_user = '$id_customer'), '$date_request', '$date_approval', '$date_event', '$date_clausure')"
+            "query" => "INSERT INTO events_details (name_event, description_event, address_event, amount_guest, id_type_event, place, price, id_customer, date_request, date_approval, date_event, date_clausura, observations) VALUES ('$name_event', '$description', '$address', '$amount_guest', '$type_event', '$place', '$price', (SELECT id_customer FROM customers WHERE id_user = '$id_customer'), '$date_request', '$date_approval', '$date_event', '$date_clausure', '$observations')"
         ],
         1 => [ #Event
             "query" => "INSERT INTO eventos (id_event_detail, status) VALUES ((SELECT id_event_detail FROM events_details WHERE name_event = '$name_event' AND date_event ='$date_event'), 'Aprobado')"
@@ -117,20 +126,24 @@ if (isset($_POST['action'])) {
             0 => [
                 "var" => $entrances,
                 "var2" => $entrancesInput,
+                "var3" => $entrancesPrice,
             ],
             1 => [
                 "var" => $principals,
                 "var2" => $principalsInput,
+                "var3" => $principalsPrice,
             ],
             2 => [
                 "var" => $desserts,
                 "var2" => $dessertsInput,
+                "var3" => $dessertsPrice,
             ],
             3 => [
                 "var" => $othermenus,
                 "var2" => $othermenusInput,
+                "var3" => $othermenusPrice,
             ],
-            "query" => "INSERT INTO events_menu (id_menu, amount, id_event) VALUES ((SELECT id_menu FROM menus WHERE name_menu = 'TEMP_VALUE'), 'SECOND_TV', 'ACTUAL_EVENT')",
+            "query" => "INSERT INTO events_menu (id_menu, amount, price, id_event) VALUES ((SELECT id_menu FROM menus WHERE name_menu = 'TEMP_VALUE'), 'SECOND_TV', 'THIRDS', 'ACTUAL_EVENT')",
             "otherquery" => false,
             "query2" => ""
         ],
@@ -138,20 +151,24 @@ if (isset($_POST['action'])) {
             0 => [
                 "var" => $meats,
                 "var2" => $meatsInput,
+                "var3" => $meatsPrice,
             ],
             1 => [
                 "var" => $fruitsveges,
                 "var2" => $fruitsvegesInput,
+                "var3" => $fruitsvegesPrice,
             ],
             2 => [
                 "var" => $drinks,
                 "var2" => $drinksInput,
+                "var3" => $drinksPrice,
             ],
             3 => [
                 "var" => $otherproducts,
                 "var2" => $otherproductsInput,
+                "var3" => $otherproductsPrice,
             ],
-            "query" => "INSERT INTO events_products (id_product, amount, id_event) VALUES ((SELECT id_product FROM products WHERE name_product = 'TEMP_VALUE' GROUP BY name_product), 'SECOND_TV', 'ACTUAL_EVENT')",
+            "query" => "INSERT INTO events_products (id_product, amount, price,id_event) VALUES ((SELECT id_product FROM products WHERE name_product = 'TEMP_VALUE' GROUP BY name_product), 'SECOND_TV', 'THIRDS', 'ACTUAL_EVENT')",
             "otherquery" => false,
             "query2" => ""
         ],

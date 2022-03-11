@@ -1,23 +1,4 @@
-//TODO: Agregar informacion de los dueños, y de las experiencias con el servicio http://bockcao.com.ec/
-
-//TODO: Copiar la metadata del sitio actual de Bockcao para agregar lo del CEO, SEO y lo otro.
-
-//DOIT: Informacion de contacto: 
-    Telefono: +593 99 173 7020
-    Correo: info@bockcao.com
-
-//DOIT: Redes Sociales:
-    Facebook: https://www.facebook.com/bockcao
-    Twitter: https://twitter.com/bockcao
-    Instagram: https://www.instagram.com/bockcao/
-    Pinterest: https://www.pinterest.com/bockcao/
-
-//INFO: Texto a ReUsar : 
-    ¿Quieres un momento inolvidable?
-        Bockcao hace de tus celebraciones momentos inolvidables, cada detalle cuenta para ofrecerte lo mejor de lo mejor.
-
-        Te ofrecemos diseño integral, originalidad, presentación fuera de lo común, porque hacemos lo ordinario… extraordinario.
-    
-Celebre junto a Bockcao!
-Somos un equipo de profesionales que resolveremos todo por ti
-Creamos momentos únicos y especiales, haciendo lo ordinario… extraordinario.
+DOIT: Calcular los precios de los menus y los productos segun su precio real
+DOIT: Agregar Campo de Observacion -> tambien en la vista
+DOIT: Cambiar carne por Proteina
+DOIT: Arreglar la validacion de la cedula en empleado modal

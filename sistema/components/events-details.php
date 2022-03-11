@@ -427,6 +427,17 @@ $namepdf = $nombre_evento . '_' . $full_fecha_evento;
                         </ul>
                     </div>
                 </div> <!-- break -->
+                <h1 class="title is-4">OBSERVACIONES</h1>
+                <div class="columns">
+                    <div class="column is-1"></div>
+                    <div class="column is-11">
+                        <div class="wd-0 has-text-left">
+                            <span class="ml-30 b-semibold subtitle ">
+                                <?= $row['observations'] != '' ? $row['observations'] : 'Sin Observaciones.' ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <br>
             <br>
