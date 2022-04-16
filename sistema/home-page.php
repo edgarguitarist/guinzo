@@ -30,7 +30,7 @@
 
         <section id="services" class="wd-90 pv-0">
             <h1 class="title mt-6 has-text-left">Servicios</h1>
-            <?php //include "components/cards/cards-carousel-customers.php" 
+            <?php include "components/cards/cards-services.php" 
             ?>
         </section>
 
@@ -41,13 +41,22 @@
 
     </div>
 </body>
-
+<script>
+    function setType(type, id = 'type_upload') {
+        document.getElementById(id).value = type;
+    }
+</script>
 <footer id="footy">
     <?php include "components/footer.php" ?>
 </footer>
 
-<?php include "includes/scripts_nm.php" ?>
-<?php include "components/jgrowl-messages.php" ?>
-<?php include "components/tables/script.php" ?>
+<?php 
+    include "includes/scripts_nm.php";
+    include "components/jgrowl-messages.php";
+    include "components/tables/script.php";
+    include "components/modals/modal-change-carousel-image.php"; 
+    include "components/modals/modal-add-service.php"; 
+    ?>
+
 
 </html>

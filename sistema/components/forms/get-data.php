@@ -68,6 +68,15 @@ $data_who = [
         "query" => "SELECT * FROM menus WHERE id_menu = '$id'",
         "query2" => "",
         "isquery2" => false,
+    ],
+    "admins" => [
+        "translate" => "Administrador",
+        "title" => "Editar Administrador",
+        "form" => "form-admins.php",
+        "who" => "admins",
+        "query" => "SELECT * FROM users WHERE id_role BETWEEN 2 AND 5",
+        "query2" => "",
+        "isquery2" => false,
     ], 
 ];
 $query = $data_who[$who]['query'];
@@ -144,6 +153,14 @@ $data_result = [
         "description" => $row['description_menu'] ?? '',
         "price" => $row['price_menu'] ?? '',
         "type" => $row['type_menu'] ?? '',
+    ],
+    "admins" => [
+        "firstname" => $row['name'] ?? '',
+        "lastname" => $row['lastname'] ?? '',
+        "dni" => $row['dni'] ?? '',
+        "phone" => $row['phone'] ?? '',
+        "email" => $row['email'] ?? '',
+        "birthday" => $row['birthday'] ?? '',
     ],
 ];
 

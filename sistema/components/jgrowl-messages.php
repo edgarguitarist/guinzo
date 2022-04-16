@@ -127,6 +127,11 @@ $mensajes = [
         'message' => 'No hemos podido crear un nuevo evento.',
         'type' => 'ERROR'
     ],
+    'upload_success' => [
+        'header' => 'Datos Actualizados! ',
+        'message' => 'Carga Exitosa.',
+        'type' => 'SUCCESS'
+    ],
 ];
 
 

@@ -35,7 +35,14 @@ $modales = [
         "title" => "Nuevo Material",
         "who" => "materials",
         "form" => "form-materials.php"
-    ]
+    ],
+    "addAdminModal" => [
+        "index" => "Administrador",
+        "name" => "addAdminModal",
+        "title" => "Nuevo Administrador",
+        "who" => "admins",
+        "form" => "form-admins.php"
+    ],
 ];
 $conterstine = 0;
 $ssite = $ssite ?? "";

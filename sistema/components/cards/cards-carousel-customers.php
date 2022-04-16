@@ -23,7 +23,7 @@ $query_carousel_customers = mysqli_query($con, "SELECT * FROM carousel_customers
     <?php } ?>
     <div class="column is-one-fifth-desktop is-half servicio-item scale-101 mb-6">
     <div class="card" style="height: 100%;">
-            <a id="prueba" href="#changeCarouselImage" class="img-card-fix servicio-link" data-toggle="modal">
+            <a id="prueba" href="#changeCarouselImage" onclick="setType('clients')" class="img-card-fix servicio-link" data-toggle="modal">
                 <div class="img-card-fix servicio-hover img-responsive">
                     <div class="servicio-hover-content">
                         <em class="fa fa-plus fa-3x"></em>
@@ -34,7 +34,7 @@ $query_carousel_customers = mysqli_query($con, "SELECT * FROM carousel_customers
                 </div>
             </a>
             <footer class="card-footer">
-                <a href="#changeCarouselImage" class="card-footer-item decoration-none" data-toggle="modal"><em class='has-text-success fas fa-plus'></em>Agregar Nueva Imagen</a>
+                <a onclick="setType('clients')" href="#changeCarouselImage" class="card-footer-item decoration-none" data-toggle="modal"><em class='has-text-success fas fa-plus'></em>Agregar Nueva Imagen</a>
             </footer>
         </div>
     </div>

@@ -15,7 +15,7 @@ $queryModal = mysqli_query($con, "SELECT * FROM services WHERE status='1'");
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div style="text-align: -webkit-center;" class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <h2><?= $dataModal['name_service'] ?></h2>
                             <img class="img-modal modern" src="<?= $dataModal['path'] ?>" alt="encasa">
@@ -23,9 +23,9 @@ $queryModal = mysqli_query($con, "SELECT * FROM services WHERE status='1'");
                                 <?= $dataModal['description'] ?>
                             </div>
                         </div>
-                        <div>
-                            <a href="service.php?details=<?= $dataModal['id_service'] ?>" type="button" class="btn btn-info b-700 f-16"><em class="fas fa-info"></em> Detalles</a>
-                            <button style="margin-left: 90px;" type="button" class="btn btn-danger b-700 f-16" data-dismiss="modal"><em class="fa fa-times"></em> Cerrar</button>
+                        <div style="width: 35% ; display: flex; justify-content:center; align-items: center;">
+                            <!-- <a href="service.php?details=<?= $dataModal['id_service'] ?>" type="button" class="btn btn-info b-700 f-16"><em class="fas fa-info"></em> Detalles</a> -->
+                            <button  type="button" class="btn btn-danger b-700 f-16" data-dismiss="modal"><em class="fa fa-times"></em> Cerrar</button>
                         </div>
                     </div>
                 </div>

@@ -60,6 +60,9 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
                     <a class="mobile-white navbar-item has-text-weight-medium has-text-black is-size-6-desktop is-size-3" href="employees-request.php">
                         <em class="fas fa-users"></em>Solicitudes
                     </a>
+                    <a class="mobile-white navbar-item has-text-weight-medium has-text-black is-size-6-desktop is-size-3" href="admins.php">
+                        <em class="fas fa-user-shield"></em>Administradores
+                    </a>
                 </div>
             </div>
             <a class="<?= $a_class; ?>" href="providers.php">
