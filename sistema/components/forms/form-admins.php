@@ -1,7 +1,6 @@
 <?php
-# TODO: Obtener los datos de los usuarios que pueden ser administradores
+include "includes/dbcon.php";
 ?>
-<?php $who = $who ?? ''; ?>
 <div class="field">
     <div class="">
         <label class="label has-text-centered wd-100">USUARIO</label>
@@ -9,69 +8,87 @@
     <div class="field-body forms_row">
         <div class="wd-3c control"></div>
         <div class="control wd-3c">
-            <select name="users" id="users">
-                <option value="">Seleccione una opción</option>
-                <?php foreach ($data_result['admins'] as $key => $value) { ?>
-                    <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
-                <?php } ?>
-            </select>
-            <h1><?= $data_result ?></h1>
-            <h1><?= $who ?></h1>
+            <div class="select wd-100">
+                <select onmousemove="checkForm()" onchange="getAdmin(this)" class="wd-100 is-success" name="users" id="users" required>
+                    <option value="">Seleccione una opción</option>
+                    <?php
+                    $query = "SELECT * FROM users u INNER JOIN roles r ON u.id_role = r.id_role WHERE u.id_role BETWEEN 2 AND 3 OR u.id_role = 7";
+                    $result = mysqli_query($con, $query);
+                    ?>
+                    <?php while ($row = mysqli_fetch_array($result)) { ?>
+                        <option value="<?= $row['dni'] ?>"><?= $row['name'] . " " . $row['lastname'] . " - " . $row['name_role'] ?></option>
+                    <?php } ?>
+                </select>
+            </div>
             <p>&nbsp;</p>
-        </div>        
+        </div>
         <div class="wd-3c control"></div>
     </div>
 </div>
 <div class="field">
     <div class="">
-        <label class="label has-text-centered wd-100">FOTO</label>
+        <label onmousemove="checkForm()" class="label has-text-centered wd-100">FOTO</label>
     </div>
     <div class="field-body forms_row">
         <div class="wd-3c control"></div>
         <div class="control wd-3c">
-            <img src="" alt="">
-        </div>        
+            <img onmousemove="checkForm()" id="foto_admin" class="photo-rounded" src="images/logos/logo-bockcao-black.png" alt="">
+        </div>
         <div class="wd-3c control"></div>
     </div>
 </div>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Cedula</label>
-        <label class="label has-text-left wd-4c">Nombres</label>
-        <label class="label has-text-left wd-4c">Celular</label>
+        <label class="label has-text-left wd-15">Cedula</label>
+        <label class="label has-text-left wd-5c">Nombres</label>
+        <label class="label has-text-left wd-15">Celular</label>
         <label class="label has-text-left wd-4c">Correo</label>
+        <label class="label has-text-left wd-15">Rol</label>
     </div>
     <div class="field-body forms_row">
-        <div class="control wd-4c">
-            <input class="input" type="hidden" name="id" id="id" value="<?= $id ?? 99 ?>">
-            <input id="name" name="name" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre de Producto" value="<?= $data_result[$who]['name'] ?? '' ?>" required>
-            <p>&nbsp;</p>
+        <div class="control wd-6c">
+            <input class="input" type="text" id="dni" disabled>
         </div>
         <div class="control wd-4c">
-            <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'type_product', '<?= $data_result[$who]['tipo'] ?? '' ?>')" onchange="checkSelect(this, false)" id="tipo_producto" name="tipo_producto" class="input is-success" required>
-                    <option value="">Seleccione una opción</option>
-                </select>
-            </div>
-            <p>&nbsp;</p>
+            <input class="input" type="text" id="names" disabled>
         </div>
-        <div class="control wd-10">
-            <input id="precio" name="precio" class="input" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="number" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" required>
-            <p>&nbsp;</p>
+        <div class="control wd-6c">
+            <input class="input" type="text" id="phone" disabled>
         </div>
-        <div class="control wd-10">
-            <input id="peso" name="peso" class="input solo-numeros" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Peso" value="<?= $data_result[$who]['peso'] ?? '' ?>" required>
-            <p>&nbsp;</p>
+        <div class="control wd-3c">
+            <input class="input" type="text" id="email" disabled>
         </div>
-        <div class="control wd-20">
-            <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'type_amount')" onchange="checkSelect(this, false)" id="tipo_peso" name="tipo_peso" class="input is-success" required>
-                    <option value="">Seleccione una opción</option>
-                </select>
-            </div>
-            <p>&nbsp;</p>
+        <div class="control wd-5c">
+            <input class="input" type="text" id="role" disabled>
         </div>
     </div>
 </div>
 
-
+<script>
+    function getAdmin(sel) {
+        var id = sel.value;
+        if (id != '') {
+            $.ajax({
+                type: "GET",
+                url: "components/forms/get-data.php",
+                data: "id=" + id + "&who=admins",
+                success: function(data) {
+                    var json = JSON.parse(data);
+                    $('#dni').val(json.dni);
+                    $('#names').val(json.name + " " + json.lastname);
+                    $('#phone').val(json.phone);
+                    $('#email').val(json.email);
+                    $('#role').val(json.name_role);
+                    document.getElementById("foto_admin").src = "" + json.foto;
+                }
+            });
+        }else{
+            $('#dni').val('');
+            $('#names').val('');
+            $('#phone').val('');
+            $('#email').val('');
+            $('#role').val('');
+            document.getElementById("foto_admin").src = "images/logos/logo-bockcao-black.png";
+        }
+    }
+</script>

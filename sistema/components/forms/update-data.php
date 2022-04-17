@@ -25,25 +25,27 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
     }
 
     if ($who == "employees") {
-        $middle_name = $_POST['middleName']; //
-        $second_lastname = $_POST['secondLastName']; //
-        $city = $_POST['residence'];  //
-        $type_employee = $_POST['type_employees']; //
-        $role_employee = $_POST['role_employees']; //
+        $middle_name = $_POST['middleName'] ?? ''; //
+        $second_lastname = $_POST['secondLastName'] ?? ''; //
+        $city = $_POST['residence'] ?? '';  //
+        $type_employee = $_POST['type_employees'] ?? ''; //
+        $role_employee = $_POST['role_employees'] ?? ''; //
 
-        $name = $_POST['firstName'];
-        $lastname = $_POST['lastName'];
+        $name = $_POST['firstName'] ?? '';
+        $lastname = $_POST['lastName'] ?? '';
         $cedula = $_POST['cedula'] ?? $_POST['dni'];
-        $phone = $_POST['phone'];
-        $birthday = $_POST['birthday'];
-        $email = $_POST['email'];
+        $phone = $_POST['phone'] ?? '';
+        $birthday = $_POST['birthday'] ?? '';
+        $email = $_POST['email'] ?? '';
         $token = base64_encode($email);
+        $id = $_POST['id'] ?? '';
 
         $consultas = [
             "add" => "INSERT INTO users (dni, name, lastname, phone, birthday, email, token, id_role) VALUES ('$cedula', '$name', '$lastname', '$phone', '$birthday', '$email', '$token', '$role_employee')",
             "add2" => "INSERT INTO employee (id_user, middleName, secondLastName, city, rank_employee) VALUES ('$cedula', '$middle_name', '$second_lastname', '$city', '$type_employee')",
             "update" => "UPDATE users SET name = '$name', lastname = '$lastname', phone = '$phone', birthday = '$birthday', email = '$email', id_role = '$role_employee' WHERE dni = '$cedula'",
             "update2" => "UPDATE employee SET middleName = '$middle_name', secondLastName = '$second_lastname', city = '$city', rank_employee = '$type_employee' WHERE id_user = '$cedula'",
+            
         ];
         $insert2 = $consultas[$action . "2"];
         $twoinserts = true;
@@ -114,6 +116,17 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
         $twoinserts = false;
     }
 
+    if ($who == "admins") {
+        $id = $_POST['users'] ?? '';
+
+        $consultas = [
+            "add" => "UPDATE users SET id_role = 1 WHERE dni = '$id'",
+            "add2" => "",
+        ];
+        $insert2 = $consultas[$action . "2"];
+        $twoinserts = false;
+    }
+
     if ($who == "menus") {
         $id = $_POST['id_menu'] ?? '';
         $name = $_POST['name_menu'];
@@ -130,7 +143,7 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
         $uploaded_photo = $path . $namePhoto . '.' . $ext;
         $path_photo = "uploads/" . $namePhoto . '.' . $ext;
 
-        move_uploaded_file($_FILES['photo_menu']['tmp_name'], $uploaded_photo);      
+        move_uploaded_file($_FILES['photo_menu']['tmp_name'], $uploaded_photo);
 
         $photo_menu = $path_photo;
 

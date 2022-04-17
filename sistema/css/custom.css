@@ -188,6 +188,12 @@ img::-moz-selection {
   border-radius: 50%;
 }
 
+.photo-rounded {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
 .center {
   width: 100%;
   text-align: -webkit-center !important;

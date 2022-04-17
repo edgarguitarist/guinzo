@@ -2,6 +2,10 @@
 $who  = $_GET['who'] ?? '';
 $id   = $_GET['id'] ?? '';
 $info = $_GET['info'] ?? '';
+$con = $con ?? false;
+if(!$con){
+    include "../../includes/dbcon.php";
+}
 
 if($info === 'update-photo') {
     header("Location: index.php?info=update-photo");
@@ -74,7 +78,7 @@ $data_who = [
         "title" => "Editar Administrador",
         "form" => "form-admins.php",
         "who" => "admins",
-        "query" => "SELECT * FROM users WHERE id_role BETWEEN 2 AND 5",
+        "query" => "SELECT * FROM users u INNER JOIN roles r ON u.id_role = r.id_role  WHERE u.dni = '$id'",
         "query2" => "",
         "isquery2" => false,
     ], 
@@ -155,16 +159,17 @@ $data_result = [
         "type" => $row['type_menu'] ?? '',
     ],
     "admins" => [
-        "firstname" => $row['name'] ?? '',
+        "foto" => $row['path_photo'] ?? '',
+        "name" => $row['name'] ?? '',
         "lastname" => $row['lastname'] ?? '',
         "dni" => $row['dni'] ?? '',
         "phone" => $row['phone'] ?? '',
         "email" => $row['email'] ?? '',
         "birthday" => $row['birthday'] ?? '',
+        "name_role" => $row['name_role'] ?? '',
     ],
 ];
 
 $control = $data_who[$who]['lastname'] ?? '';
-
+echo json_encode($data_result[$who]);
 $disableDNI = $control === '' ? true : false;
-?>

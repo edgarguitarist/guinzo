@@ -11,7 +11,7 @@ if (isset($_GET['who']) && isset($_GET['action']) && isset($_GET['id'])) {
             "undelete" => "UPDATE users SET status_user = 'Active' WHERE dni = '$id'",
             "upgrade" => "UPDATE employee SET rank_employee = rank_employee + 1 WHERE id_user = '$id'",
             "downgrade" => "UPDATE employee SET rank_employee = rank_employee - 1 WHERE id_user = '$id'",
-            "accept" => "UPDATE employee SET rank_employee = 1 WHERE id_user = '$id'",
+            "accept" => "UPDATE users SET id_role = 5 WHERE dni = '$id'",
         ],
         "customers" => [
             "delete" => "UPDATE users SET status_user = 'Inactive' WHERE dni = '$id'",

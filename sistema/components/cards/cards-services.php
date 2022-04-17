@@ -15,8 +15,8 @@ $query_services = mysqli_query($con, "SELECT * FROM services");
                         </figure>
                     </a>
                 </div>
-                <div class="card-content">
-                    <div class="media">
+                <div style="padding: 0px!important;" class="card-content">
+                    <div style="padding: 10px!important;" class="media">
                         <div class="media-content">
                             <p class="title is-5"><?= $data['name_service']; ?></p>
                             <p style="margin: 7px 0px -3px ;" class="subtitle is-6"><?= $data['subtitle']; ?></p>
