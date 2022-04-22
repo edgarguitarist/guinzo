@@ -803,6 +803,10 @@ svg {
   margin: 15px 0px 0px 10%;
 }
 
+.addButton:hover, .addButton:focus, .addButton:active {
+  text-decoration: none;
+}
+
 .buscador {
   display: block;
   position: absolute;
@@ -1017,6 +1021,9 @@ button[type="submit"]:disabled {
     position: absolute;
     align-items: center;
     margin: 15px 0px 0px 3%;
+  }
+  .addButton:hover, .addButton:focus, .addButton:active {
+    text-decoration: none;
   }
 }
 

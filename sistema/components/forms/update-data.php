@@ -45,7 +45,7 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
             "add2" => "INSERT INTO employee (id_user, middleName, secondLastName, city, rank_employee) VALUES ('$cedula', '$middle_name', '$second_lastname', '$city', '$type_employee')",
             "update" => "UPDATE users SET name = '$name', lastname = '$lastname', phone = '$phone', birthday = '$birthday', email = '$email', id_role = '$role_employee' WHERE dni = '$cedula'",
             "update2" => "UPDATE employee SET middleName = '$middle_name', secondLastName = '$second_lastname', city = '$city', rank_employee = '$type_employee' WHERE id_user = '$cedula'",
-            
+
         ];
         $insert2 = $consultas[$action . "2"];
         $twoinserts = true;
@@ -158,14 +158,43 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
         $twoinserts = false;
     }
 
+    if ($who == "types") {
+        $id = $_POST['id_type'] ?? '';
+        $table = $_POST['table'];
+        $type = $_POST['type'];
+        $name = $_POST['name_type'];
+        $description = $_POST['description_type'];
+        $campo1 = "id_" . $table;
+        $campo2 = "name_" . $table;
+        $campo3 = "description_" . $table;
+        
+        $consultas = [
+            "add" => "INSERT INTO $table ($campo2, $campo3) VALUES ('$name', '$description')",
+            "add2" => "",
+            "update" => "UPDATE $table SET $campo2 = '$name', $campo3 = '$description' WHERE $campo1 = '$id'",
+            "update2" => "",
+        ];
+
+        $insert2 = $consultas[$action . "2"];
+        $twoinserts = false;
+    }
+
     $query = $consultas[$action];
     $result = mysqli_query($con, $query);
     //echo $result;
     $result2 = $twoinserts ? mysqli_query($con, $insert2) : true;
     if ($result && $result2) {
-        header("Location: ../../" . $who . ".php?info=" . $action);
+        if ($who == 'types') {
+            header("Location: ../../" . $who . ".php?info=" . $action . "&type=" . $type);
+        } else {
+            header("Location: ../../" . $who . ".php?info=" . $action);
+        }
     } else {
-        header("Location: ../../" . $who . ".php?info=" . $action . "_error");
+        if ($who == 'types') {
+            header("Location: ../../" . $who . ".php?info=" . $action . "_error&type=" . $type);
+        } else {
+            header("Location: ../../" . $who . ".php?info=" . $action . "_error");
+        }
     }
 } else {
     echo "<script>history.back()</script>";

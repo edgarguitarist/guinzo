@@ -1,5 +1,6 @@
 <!-- MODAL -->
 <?php
+$name_type = $name_type ?? "";
 $modales = [
     "addCustomerModal" => [
         "index" => "Cliente",
@@ -43,6 +44,13 @@ $modales = [
         "who" => "admins",
         "form" => "form-admins.php"
     ],
+    "addTypeModal" => [
+        "index" => "Tipo",
+        "name" => "addTypeModal",
+        "title" => "Nuevo Tipo de " . $name_type,
+        "who" => "types",
+        "form" => "form-types.php"
+    ],
 ];
 $conterstine = 0;
 $ssite = $ssite ?? "";
@@ -80,6 +88,6 @@ foreach ($modales as $modal => $data) {
     }  
 } 
 if ($conterstine == 0) {
-    echo "<script>//console.log('No se ha encontrado ningún modal que coincida con este sitio')</script>";
+    echo "<script>console.log('No se ha encontrado ningún modal que coincida con este sitio')</script>";
 }
 ?>

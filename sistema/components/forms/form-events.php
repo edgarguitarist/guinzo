@@ -22,7 +22,7 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'type_event')" onchange="checkSelect(this, false)" id="tipo_evento" name="tipo_evento" class="input" required>
+                <select onmouseover="loadSelects(this, 'type_event', '', 'status = 1')" onchange="checkSelect(this, false)" id="tipo_evento" name="tipo_evento" class="input" required>
                     <option value="">Seleccione una opción</option>
                 </select>
             </div>

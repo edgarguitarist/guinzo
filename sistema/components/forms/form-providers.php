@@ -100,7 +100,7 @@
         </div>
         <div class="control wd-1-3c">
             <div class="select wd-100">
-                <select onmouseover="loadSelects(this, 'type_company')" id="companyType" name="companyType" class="wd-100" onchange="checkSelect(this)"  required>
+                <select onmouseover="loadSelects(this, 'type_company', '', 'status = 1')" id="companyType" name="companyType" class="wd-100" onchange="checkSelect(this)"  required>
                     <option value="">Seleccione el Tipo</option>
                 </select>
             </div>

@@ -27,6 +27,7 @@
 </script>
 <?php
 $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop is-size-3";
+$a_dropdown = "mobile-white navbar-item has-text-weight-medium has-text-black is-size-6-desktop is-size-3"
 ?>
 
 <nav class="navbar is-fixed-top has-background-black-bis" role="navigation" aria-label="main navigation">
@@ -57,29 +58,68 @@ $a_class = "navbar-item has-text-weight-medium has-text-white is-size-6-desktop 
                 </a>
 
                 <div class="navbar-dropdown">
-                    <a class="mobile-white navbar-item has-text-weight-medium has-text-black is-size-6-desktop is-size-3" href="employees-request.php">
+                    <a class="<?= $a_dropdown ?>" href="employees-request.php">
                         <em class="fas fa-users"></em>Solicitudes
                     </a>
-                    <a class="mobile-white navbar-item has-text-weight-medium has-text-black is-size-6-desktop is-size-3" href="admins.php">
+                    <a class="<?= $a_dropdown ?>" href="admins.php">
                         <em class="fas fa-user-shield"></em>Administradores
+                    </a>
+                    <a class="<?= $a_dropdown ?>" href="types.php?type=role">
+                        <em class="fas fa-users"></em>Rol de Empleado
                     </a>
                 </div>
             </div>
-            <a class="<?= $a_class; ?>" href="providers.php">
-                <em class="fas fa-truck"></em>Proveedores
-            </a>
-            <a class="<?= $a_class; ?>" href="products.php">
-                <em class="fas fa-apple-alt"></em>Productos
-            </a>
-            <a class="<?= $a_class; ?>" href="materials.php">
-                <em class="fas fa-utensils"></em>Materiales
-            </a>
-            <a class="<?= $a_class; ?>" href="menus.php">
-                <em class="fas fa-hamburger"></em>Menús
-            </a>
-            <a class="<?= $a_class; ?>" href="events.php">
-                <em class="fas fa-calendar-alt"></em>Eventos
-            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="<?= $a_class; ?>" href="providers.php">
+                    <em class="fas fa-truck"></em>Proveedores
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="<?= $a_dropdown ?>" href="types.php?type=provider">
+                        <em class="fas fa-users"></em>Tipo de Proveedor
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="<?= $a_class; ?>" href="products.php">
+                    <em class="fas fa-apple-alt"></em>Productos
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="<?= $a_dropdown ?>" href="types.php?type=product">
+                        <em class="fas fa-users"></em>Tipo de Producto
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="<?= $a_class; ?>" href="materials.php">
+                    <em class="fas fa-utensils"></em>Materiales
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="<?= $a_dropdown ?>" href="types.php?type=material">
+                        <em class="fas fa-users"></em>Tipo de Material
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="<?= $a_class; ?>" href="menus.php">
+                    <em class="fas fa-hamburger"></em>Menús
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="<?= $a_dropdown ?>" href="types.php?type=menu">
+                        <em class="fas fa-users"></em>Tipo de Menú
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="<?= $a_class; ?>" href="events.php">
+                    <em class="fas fa-calendar-alt"></em>Eventos
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="<?= $a_dropdown ?>" href="types.php?type=event">
+                        <em class="fas fa-users"></em>Tipo de Evento
+                    </a>
+                </div>
+            </div>
+
             <a class="<?= $a_class; ?>" href="reports.php">
                 <em class="fas fa-table"></em>Reporte
             </a>

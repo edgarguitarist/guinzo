@@ -2,6 +2,9 @@
 $who  = $_GET['who'] ?? '';
 $id   = $_GET['id'] ?? '';
 $info = $_GET['info'] ?? '';
+$type = $type ?? '';
+$table = $table ?? '';
+$campo = "id_" . $table;
 $con = $con ?? false;
 if(!$con){
     include "../../includes/dbcon.php";
@@ -81,7 +84,16 @@ $data_who = [
         "query" => "SELECT * FROM users u INNER JOIN roles r ON u.id_role = r.id_role  WHERE u.dni = '$id'",
         "query2" => "",
         "isquery2" => false,
-    ], 
+    ],
+    "types" => [
+        "translate" => "Tipo",
+        "title" => "Editar Tipo de ". $name_type,
+        "form" => "form-types.php",
+        "who" => "types",
+        "query" => "SELECT * FROM $table WHERE $campo = '$id'",
+        "query2" => "",
+        "isquery2" => false,
+    ],
 ];
 $query = $data_who[$who]['query'];
 $result = mysqli_query($con, $query);
@@ -167,6 +179,12 @@ $data_result = [
         "email" => $row['email'] ?? '',
         "birthday" => $row['birthday'] ?? '',
         "name_role" => $row['name_role'] ?? '',
+    ],
+    "types" => [
+        "id" => $row["id_".$table] ?? '',
+        "name" => $row["name_".$table] ?? '',
+        "description" => $row["description_".$table] ?? '',
+        "status" => $row["status"] ?? '',
     ],
 ];
 

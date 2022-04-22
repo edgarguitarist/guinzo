@@ -2,6 +2,9 @@
 <html class="no-overflow-x" lang="es">
 <?php
 include "includes/dbcon.php";
+if(isset($_GET['type'])){
+    include "components/types.php";
+}
 include "components/forms/get-data.php";
 ?>
 

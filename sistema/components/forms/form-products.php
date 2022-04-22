@@ -4,7 +4,7 @@
         <label class="label has-text-left wd-4c">Nombre *</label>
         <label class="label has-text-left wd-4c">Tipo *</label>
         <label class="label has-text-left wd-10">Precio *</label>
-        <label class="label has-text-left wd-10">Peso *</label>
+        <label class="label has-text-left wd-10">Cantidad *</label>
         <label class="label has-text-left wd-20">Unidad de Medida *</label>
     </div>
     <div class="field-body forms_row">
@@ -15,23 +15,23 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'type_product', '<?= $data_result[$who]['tipo'] ?? '' ?>')" onchange="checkSelect(this, false)" id="tipo_producto" name="tipo_producto" class="input is-success" required>
+                <select onmouseover="loadSelects(this, 'type_product', '<?= $data_result[$who]['tipo'] ?? '' ?>', 'status = 1')" onchange="checkSelect(this, false)" id="tipo_producto" name="tipo_producto" class="input is-success" required>
                     <option value="">Seleccione una opción</option>
                 </select>
             </div>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-10">
-            <input id="precio" name="precio" class="input" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="number" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" required>
+            <input id="precio" name="precio" class="input" onkeyup="checkLength(this, false, 1, true)" min="0" minlength="1" maxlength="10" type="number" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" step=".01" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-10">
-            <input id="peso" name="peso" class="input solo-numeros" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Peso" value="<?= $data_result[$who]['peso'] ?? '' ?>" required>
+            <input id="peso" name="peso" class="input" onkeyup="checkLength(this, false, 1, true)" min="0" minlength="1" maxlength="10" type="number" placeholder="Cantidad" value="<?= $data_result[$who]['peso'] ?? '' ?>" step=".01" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-20">
             <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'type_amount')" onchange="checkSelect(this, false)" id="tipo_peso" name="tipo_peso" class="input is-success" required>
+                <select onmouseover="loadSelects(this, 'type_amount', '', '')" onchange="checkSelect(this, false)" id="tipo_peso" name="tipo_peso" class="input is-success" required>
                     <option value="">Seleccione una opción</option>
                 </select>
             </div>
@@ -60,7 +60,7 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'providers', '<?= $data_result[$who]['provider'] ?? '' ?>')" onchange="checkSelect(this, false)" id="providers" name="providers" class="input" required>
+                <select onmouseover="loadSelects(this, 'providers', '<?= $data_result[$who]['provider'] ?? '' ?>', 'type_company = 7 OR type_company BETWEEN 1 AND 3')" onchange="checkSelect(this, false)" id="providers" name="providers" class="input" required>
                     <option value="">Seleccione una opción</option>
                 </select>
             </div>

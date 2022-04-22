@@ -6,8 +6,8 @@
             <th>Precio &nbsp;</th>
             <th>Tipo</th>
             <th>Descripción</th>
-            <th>Fecha de Llegada</th>
-            <th>Fecha de Expiración</th>
+            <th>Fecha de Adquisición</th>
+            <th>Cumplimiento de Uso</th>
             <th>Proveedor</th>
             <th>Total &nbsp;</th>
             <th>Acciones</th>

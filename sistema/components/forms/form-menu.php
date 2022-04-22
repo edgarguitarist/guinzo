@@ -35,14 +35,14 @@
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'type_menu', '<?= $data_result[$who]['type'] ?? '' ?>')" onchange="checkSelect(this, false)" id="tipo_menu" name="tipo_menu" class="input is-success" required>
+                <select onmouseover="loadSelects(this, 'type_menu', '<?= $data_result[$who]['type'] ?? '' ?>', 'status = 1')" onchange="checkSelect(this, false)" id="tipo_menu" name="tipo_menu" class="input is-success" required>
                     <option value="">Seleccione una opción</option>
                 </select>
             </div>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-4c">
-            <input id="precio_menu" name="precio_menu" class="input solo-precio" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Precio" value="<?= $data_result[$who]['price'] ?? '' ?>" required>
+            <input id="precio_menu" name="precio_menu" class="input" onkeyup="checkLength(this, false, 1, true)" min="1" minlength="1" maxlength="10" type="number" placeholder="Precio" value="<?= $data_result[$who]['price'] ?? '' ?>" step=".01" required>
             <p>&nbsp;</p>
         </div>
     </div>

@@ -4,6 +4,13 @@ if (isset($_GET['who']) && isset($_GET['action']) && isset($_GET['id'])) {
     $action = $_GET['action'];
     $id = $_GET['id'];
     $who = $_GET['who'];
+    if ($who == "types") {
+        include "../types.php";
+        $campo = "id_" . $table;
+        if($table == "roles"){
+            $campo = "id_role";
+        }
+    }
 
     $consultas = [
         "employees" => [
@@ -41,14 +48,26 @@ if (isset($_GET['who']) && isset($_GET['action']) && isset($_GET['id'])) {
             "delete" => "UPDATE users SET id_role = 7 WHERE dni = '$id'",
             "setadmin" => "UPDATE users SET id_role = 1 WHERE dni = '$id'",
         ],
+        "types" => [
+            "delete" => "UPDATE $table SET status = 0 WHERE $campo = '$id'",
+            "undelete" => "UPDATE $table SET status = 1 WHERE $campo = '$id'",
+        ],
     ];
     $query = $consultas[$who][$action];
     $result = mysqli_query($con, $query);
 
     if ($result) {
-        header("Location: ../../" . $who . ".php?info=" . $action);
+        if ($who == 'types') {
+            header("Location: ../../" . $who . ".php?info=" . $action . "&type=" . $type);
+        } else {
+            header("Location: ../../" . $who . ".php?info=" . $action);
+        }
     } else {
-        header("Location: ../../" . $who . ".php?info=" . $action . "_error");
+        if ($who == 'types') {
+            header("Location: ../../" . $who . ".php?info=" . $action . "_error&type=" . $type);
+        } else {
+            header("Location: ../../" . $who . ".php?info=" . $action . "_error");
+        }
     }
 } else {
     header("Location: ../../" . $who . ".php");

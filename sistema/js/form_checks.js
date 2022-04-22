@@ -246,7 +246,7 @@ function checkForm() {
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].className.includes("is-danger") || inputs[i].value == "") {
       submit.disabled = true;
-    }else{
+    } else {
       submit.disabled = false;
     }
   }
@@ -279,7 +279,12 @@ let stateLoadSelect = {
   },
 };
 
-function loadSelects(elemento, who, default_option = "", condition = "") {
+function loadSelects(
+  elemento,
+  who,
+  default_option = "",
+  condition = ""
+) {
   const select = document.getElementById(elemento.id);
   if (stateLoadSelect[who].status) {
     return;
@@ -299,10 +304,14 @@ function loadSelects(elemento, who, default_option = "", condition = "") {
           if (who == "type_amount") {
             default_option = default_option != "" ? default_option : 1;
             option.selected = data_array[0] == default_option ? true : false;
+            const types_amount = {
+              1: "(Libras)",
+              2: "(Litros)",
+            };
+            const id = data_array[0];
+            console.log(id);
             option.innerHTML =
-              data_array[0] == 1
-                ? data_array[1] + " (Libras)"
-                : data_array[1] + " (Litros)";
+              data_array[1] + ` ${types_amount[id]??''}`;
           } else if (who == "providers") {
             default_option = default_option != "" ? default_option : "";
             option.selected = data_array[0] == default_option ? true : false;

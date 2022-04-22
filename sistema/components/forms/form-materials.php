@@ -15,16 +15,16 @@
         </div>
 
         <div class="control wd-10">
-            <input id="cantidad_material" name="cantidad" class="input solo-numeros" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Cantidad" value="<?= $data_result[$who]['cantidad'] ?? '' ?>" required>
+            <input id="cantidad_material" name="cantidad" class="input" onkeyup="checkLength(this, false, 1, true)" min="0" minlength="1" maxlength="10" type="number" placeholder="Cantidad" value="<?= $data_result[$who]['cantidad'] ?? '' ?>" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-10">
-            <input id="precio_material" name="precio" class="input" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="number" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" required>
+            <input id="precio_material" name="precio" class="input" onkeyup="checkLength(this, false, 1, true)" min="0" minlength="1" maxlength="10" type="number" placeholder="Precio" value="<?= $data_result[$who]['precio'] ?? '' ?>" step=".01" required>
             <p>&nbsp;</p>
         </div>
         <div class="control wd-4c">
             <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'type_material' , '<?= $data_result[$who]['tipo'] ?? '' ?>')" onchange="checkSelect(this, false)" id="tipo_material" name="tipo_material" class="input is-success" required>
+                <select onmouseover="loadSelects(this, 'type_material' , '<?= $data_result[$who]['tipo'] ?? '' ?>', 'status = 1')" onchange="checkSelect(this, false)" id="tipo_material" name="tipo_material" class="input is-success" required>
                     <option value="">Seleccione una opción</option>
                 </select>
             </div>
@@ -52,7 +52,7 @@
         </div>
         <div class="control wd-1-3c">
             <div class="select is-fullwidth">
-                <select onmouseover="loadSelects(this, 'providers', '<?= $data_result[$who]['provider'] ?? '' ?>')" onchange="checkSelect(this, false)" id="providers" name="providers" class="input" required>
+                <select onmouseover="loadSelects(this, 'providers', '<?= $data_result[$who]['provider'] ?? '' ?>', 'type_company = 7 OR type_company = 6')" onchange="checkSelect(this, false)" id="providers" name="providers" class="input" required>
                     <option value="">Seleccione una opción</option>
                 </select>
             </div>
