@@ -1,5 +1,5 @@
 <div class="container">
-    <div style="display: block;" id="pdf_container_contrato" class="card">
+    <div style="display: none;" id="pdf_container_contrato" class="card">
         <div class="card-content">
             <div class="content has-text-centered mh-20">
                 <div class="page1">
