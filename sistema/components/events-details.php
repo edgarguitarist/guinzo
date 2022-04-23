@@ -3,7 +3,7 @@
 include "includes/dbcon.php";
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM eventos e, events_details ed, customers cu, users u ,type_event te WHERE e.id_event = $id AND e.id_event_detail = ed.id_event_detail AND ed.id_customer = cu.id_customer AND cu.id_user = u.dni AND ed.id_type_event = te.id_type_event";
+$sql = "SELECT *, e.status AS estado FROM eventos e, events_details ed, customers cu, users u ,type_event te WHERE e.id_event = $id AND e.id_event_detail = ed.id_event_detail AND ed.id_customer = cu.id_customer AND cu.id_user = u.dni AND ed.id_type_event = te.id_type_event";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result);
 
@@ -219,6 +219,7 @@ $namepdf = $nombre_evento . '_' . $full_fecha_evento;
                 <img class="addButton" style="width: 150px; margin-top: -25px !important;" src="images/logos/logo-bockcao-black.png" alt="logo">
                 <h1 class="title is-4">EVENTO <?= $nombre_evento ?></h1>
                 <br>
+                <span class="addButtonInversed cuadro">Evento #<?= $id_event ?></span>
                 <br>
                 <div class="columns">
                     <div class="column is-1"></div>
@@ -275,7 +276,7 @@ $namepdf = $nombre_evento . '_' . $full_fecha_evento;
                             </li>
                             <li>
                                 <span class="b-bolder subtitle is-6">ESTADO: </span>
-                                <span><?= $row['status'] ?></span>
+                                <span><?= $row['estado'] ?></span>
                             </li>
                         </ul>
                     </div>

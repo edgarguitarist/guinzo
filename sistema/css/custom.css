@@ -803,6 +803,23 @@ svg {
   margin: 15px 0px 0px 10%;
 }
 
+.addButtonInversed {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  margin: -60px 0px 0px 70%;
+}
+
+.cuadro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: solid 1px #000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 .addButton:hover, .addButton:focus, .addButton:active {
   text-decoration: none;
 }

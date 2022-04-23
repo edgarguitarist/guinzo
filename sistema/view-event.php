@@ -10,6 +10,7 @@
     ?>
     <!-- Datatables -->
     <link rel="stylesheet" href="css/tables.css">
+    <script src="js/utilities.js"></script>
 </head>
 
 <body>
@@ -44,8 +45,5 @@
 <?php include "includes/scripts.php" ?>
 <?php include "components/jgrowl-messages.php" ?>
 <?php include "components/tables/script.php" ?>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.1.1/jspdf.umd.min.js" integrity="sha512-/Am09zlYshHgRizY3RkConGj4BsYIdb8mS7r5XAXw0rTiLgGSHzpUHTQBhinWR32C/KzLr749J1xuORzT2JnRA==" crossorigin="anonymous"></script> -->
-
 
 </html>

@@ -279,12 +279,7 @@ let stateLoadSelect = {
   },
 };
 
-function loadSelects(
-  elemento,
-  who,
-  default_option = "",
-  condition = ""
-) {
+function loadSelects(elemento, who, default_option = "", condition = "") {
   const select = document.getElementById(elemento.id);
   if (stateLoadSelect[who].status) {
     return;
@@ -309,9 +304,7 @@ function loadSelects(
               2: "(Litros)",
             };
             const id = data_array[0];
-            console.log(id);
-            option.innerHTML =
-              data_array[1] + ` ${types_amount[id]??''}`;
+            option.innerHTML = data_array[1] + ` ${types_amount[id] ?? ""}`;
           } else if (who == "providers") {
             default_option = default_option != "" ? default_option : "";
             option.selected = data_array[0] == default_option ? true : false;
@@ -476,7 +469,7 @@ const calculatePrice = () => {
 
   let other_concepts = document.getElementsByClassName("other_concepts_price"); // Otros Conceptos
 
-  let total_final = document.getElementById("precio");
+  //let total_final = document.getElementById("precio");
   let price_total_final = document.getElementById("price_total");
   let place = document.getElementById("place");
   let total = 0;
@@ -537,20 +530,76 @@ const calculatePrice = () => {
   // Providers
   for (let i = 0; i < providers.length; i++) {
     if (providers[i].checked) {
-      valor = parseInt(price_provider[i].value);
+      valor = parseInt(price_provider[i].value || 0);
       total += valor;
     }
   }
 
   // Other Concepts
   for (let i = 0; i < other_concepts.length; i++) {
-    valor = parseInt(other_concepts[i].value);
+    valor = parseInt(other_concepts[i].value || 0);
     total += valor;
   }
-
-  total_final.value = total;
+  let spantoshow = document.getElementById("spantoshow");
+  //total_final.value = total;
   price_total_final.value = total;
   statePrecio.actual.price = total;
+  spantoshow.innerHTML = total;
+
+  console.log($("#captains").find("*").length);
+  checkRequiredWorkers();
+};
+
+const checkRequiredWorkers = () => {
+  const cantidad = document.getElementById("cantidad").value;
+  const submit = document.getElementById("submit");
+  const workers = [
+    {
+      name: "capitanes",
+      singular: "capitan",
+      id: "captains",
+      min: Math.ceil(cantidad / 20),
+      required: true,
+    },
+    {
+      name: "chefs",
+      singular: "chef",
+      id: "chefs",
+      min: Math.ceil(cantidad / 30),
+      required: false,
+    },
+    {
+      name: "saloneros",
+      singular: "salonero",
+      id: "waitress",
+      min: Math.ceil(cantidad / 10),
+      required: true,
+    },
+    {
+      name: "stewards",
+      singular: "steward",
+      id: "stewards",
+      min: Math.ceil(cantidad / 40),
+      required: false,
+    },
+  ];
+  let selected, mensaje;
+
+  if (cantidad > 0) {
+    for (let i = 0; i < workers.length; i++) {
+      selected = $(`#${workers[i].id}`).find("*").length / 3;
+      
+      if (selected < workers[i].min && workers[i].required) {
+        mensaje = workers[i].min - selected > 1 ? `Faltan ${workers[i].min - selected} ${workers[i].name}` : `Falta ${workers[i].min - selected} ${workers[i].singular}`;
+        $(`#${workers[i].id}_error`).text(mensaje);
+        submit.disabled = true;
+        return false;
+      }else{
+        $(`#${workers[i].id}_error`).text("");
+        submit.disabled = false;
+      }
+    }
+  }
 };
 
 const addOtherConcepts = () => {
@@ -575,6 +624,7 @@ const addOtherConcepts = () => {
   otherConceptsInput3.name = "otherConceptsPrice[]";
   otherConceptsInput3.className = "input wd-30 right2-0 other_concepts_price";
   otherConceptsInput3.placeholder = "Precio";
+  otherConceptsInput3.min = "0";
   otherConceptsInput3.required = true;
   let p = document.createElement("p");
   let p2 = document.createElement("p");
@@ -594,6 +644,14 @@ const addOtherConcepts = () => {
   column.appendChild(p3);
   otherConcepts.appendChild(column);
 };
+
+const nonrecomendifications = [
+  "transporte",
+  "buffet",
+  "otherproviders",
+  "stewards",
+  "others",
+];
 
 const addCheckfromSelect = (
   elemento,
@@ -625,6 +683,7 @@ const addCheckfromSelect = (
   }
   const select = document.getElementById(elemento.id);
   const destiny = document.getElementById(where);
+  const cantidad = document.getElementById("cantidad").value;
   const value = select.value;
   const text = select.options[select.selectedIndex].text;
   let checkbox = document.createElement("input");
@@ -651,12 +710,17 @@ const addCheckfromSelect = (
         myInput.required = false;
       }
     };
+    // INPUT DE CANTIDAD 0 PRECIO
     let input = document.createElement("input");
     input.id = value + "input";
     input.type = "number";
     input.name = where + "Input[]";
     input.placeholder = placeholder;
     input.min = "0";
+    input.step = placeholder === "Precio" ? ".01" : "1";
+    if (!nonrecomendifications.includes(where) && cantidad > 0) {
+      input.value = cantidad;
+    }
     input.className =
       "ml-10 height-30 input is-size-5 input-check " + extraClass2;
     input.required = true;
@@ -695,13 +759,11 @@ async function getPrice(table, name, id) {
   const ruta = "api/prices.php";
   setTimeout(() => {
     const elemento = document.getElementById(id);
-    console.log(elemento);
     $.ajax({
       type: "POST",
       url: ruta,
       data: { table: table, name: name },
       success: function (resultado) {
-        console.log(resultado);
         elemento.value = parseFloat(resultado).toFixed(2);
       },
       error: function (resultado) {
@@ -720,7 +782,6 @@ function minClausure() {
   const newHour = newFecha.getHours() + 1;
   let newDate = new Date(newFecha.setHours(newHour));
   newDate = new Date(newDate.setMonth(newDate.getMonth() + 1));
-  //console.log(newFecha)
 
   year = newDate.getFullYear();
   month =
@@ -733,6 +794,5 @@ function minClausure() {
       : "0" + newDate.getMinutes();
 
   const fechaFinal = year + "-" + month + "-" + day + "T" + hour + ":" + minute;
-  //console.log(fechaFinal)
   fecha2.min = fechaFinal;
 }

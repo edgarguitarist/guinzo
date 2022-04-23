@@ -2,10 +2,10 @@
 <div class="field">
     <div class="forms_row">
         <label class="label has-text-left wd-4c">Cliente *</label>
-        <label class="label has-text-left wd-4c">Evento *</label>
         <label class="label has-text-left wd-4c">Tipo *</label>
-        <label class="label has-text-left wd-10">Numero de invitados *</label>
-        <label class="label has-text-left wd-10">Precio *</label>
+        <label class="label has-text-left wd-3c">Evento *</label>
+        <label class="label has-text-left wd-15">Numero de invitados *</label>
+        <!-- <label class="label has-text-left wd-10">Precio *</label> -->
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
@@ -17,10 +17,6 @@
             <p>&nbsp;</p>
         </div>
         <div class="control wd-4c">
-            <input id="name" name="name" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre del Evento" value="" required autocapitalize autofocus autocomplete="FALSE">
-            <p>&nbsp;</p>
-        </div>
-        <div class="control wd-4c">
             <div class="select is-fullwidth">
                 <select onmouseover="loadSelects(this, 'type_event', '', 'status = 1')" onchange="checkSelect(this, false)" id="tipo_evento" name="tipo_evento" class="input" required>
                     <option value="">Seleccione una opción</option>
@@ -28,31 +24,34 @@
             </div>
             <p>&nbsp;</p>
         </div>
-        <div class="control wd-10">
-            <input id="cantidad" name="cantidad" class="input solo-numeros" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" type="text" placeholder="Cantidad" value="" required>
+        <div class="control wd-3c">
+            <input id="name" name="name" class="input" onkeyup="checkLength(this, false)" minlength="3" maxlength="30" type="text" placeholder="Nombre del Evento" value="" required autocapitalize autofocus autocomplete="FALSE">
             <p>&nbsp;</p>
         </div>
-        <div class="control wd-10">
-            <input id="price_total" name="price_total" type="hidden" required>
-            <input id="precio" disabled name="precio" class="input solo-precio" type="number" placeholder="0" required>
+        <div class="control wd-15">
+            <input id="cantidad" name="cantidad" class="input solo-numeros" onkeyup="checkLength(this, false, 1, true)" minlength="1" maxlength="10" min="5" type="number" placeholder="Cantidad" value="" required>
             <p>&nbsp;</p>
         </div>
+        <input id="price_total" name="price_total" type="hidden" required>
+        <!-- <div class="control wd-10">
+            <input id="precio" disabled name="precio" class="input solo-precio" type="number" placeholder="0" required>            
+        </div> -->
     </div>
 </div>
 
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-2c">Descripción *</label>
-        <label class="label has-text-left wd-10">Lugar*</label>
+        <label class="label has-text-left wd-40">Descripción *</label>
+        <label class="label has-text-left wd-15">Lugar *</label>
         <label class="label has-text-left wd-custom">Dirección *</label>
     </div>
     <div class="field-body forms_row">
-        <div class="control wd-2c">
+        <div class="control wd-40">
             <input id="description" name="description" class="input" onkeyup="checkLength(this, false, 10, false)" minlength="10" maxlength="40" type="text" placeholder="Descripción" value="" required>
             <p>&nbsp;</p>
         </div>
-        <div class="control wd-10">
-            <div class="is-flex mt-7">
+        <div class="control wd-15">
+            <div class="select is-fullwidth">
                 <select name="place" id="place" class="input" required>
                     <option value="">Seleccione una opción</option>
                     <option value="Domicilio">Domicilio</option>
@@ -79,7 +78,7 @@
     <div class="field-body forms_row">
         <div class="control wd-30">
             <div class="wd-100 ">
-                <input title="Fecha de Solicitud" type="datetime-local" id="date_request" name="date_request" class="input wd-100" value="<?= $hoy_extended ?>" required />
+                <input title="Fecha de Solicitud" type="datetime-local" id="date_request" name="date_request" class="input wd-100" min="<?= $hoy_extended ?>" value="<?= $hoy_extended ?>" required />
             </div>
             <p id="" class="help is-danger">&nbsp;</p>
         </div>
@@ -93,144 +92,13 @@
 
         <div class="control wd-30">
             <div class="wd-100 ">
-                <input title="Fecha de Clausura" type="datetime-local" id="date_clausure" name="date_clausure" class="input wd-100" required />
+                <input title="Fecha de Clausura" type="datetime-local" id="date_clausure" name="date_clausure" class="input wd-100" min="<?= $hoy_extended ?>" required />
             </div>
             <p id="" class="help is-danger">&nbsp;</p>
         </div>
     </div>
 </div>
-<hr>
-<h1 class="title">Empleados</h1>
-<br>
-<div class="field">
-    <div class="forms_row">
-        <label class="label has-text-left wd-5c">Capitanes Disponibles *</label>
-        <label class="label has-text-left wd-5c">Cocineros Disponibles </label>
-        <label class="label has-text-left wd-5c">Saloneros Disponibles *</label>
-        <label class="label has-text-left wd-5c">Stewards </label>
-        <label class="label has-text-left wd-5c">Otros </label>
 
-    </div>
-    <div class="field-body forms_row2">
-        <div class="control wd-5c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="capitanes" id="capitanes" onchange="addCheckfromSelect(this, 'captains')">
-                    <option value="">Seleccione un Capitán</option>
-                    <?php
-                    #TODO: cargar capitanes disponibles según la fecha y hora seleccionada del evento
-                    #capitanes
-                    $consultaCapitan = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role = 2 AND u.status_user = 'Active' AND e.rank_employee != 7";
-                    $resultado = mysqli_query($con, $consultaCapitan);
-
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-                <div id="captains" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Capitanes Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-        <div class="control wd-5c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="cocineros" id="cocineros" onchange="addCheckfromSelect(this, 'chefs')">
-                    <option value="">Seleccione un Chef</option>
-                    <?php
-                    #cocineros
-                    $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user  AND (u.id_role = 3 OR u.id_role = 9) AND u.status_user = 'Active' AND e.rank_employee != 7";
-                    $resultado = mysqli_query($con, $consulta);
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-                <div id="chefs" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Chefs Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-        <div class="control wd-5c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="saloneros" id="saloneros" onchange="addCheckfromSelect(this, 'waitress')">
-                    <option value="">Seleccione un Salonero</option>
-                    <?php
-                    #saloneros
-                    $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND (u.id_role = 4 OR u.id_role = 5) AND u.status_user = 'Active' AND e.rank_employee != 7";
-                    $resultado = mysqli_query($con, $consulta);
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-                <div id="waitress" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Saloneros Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-        <div class="control wd-5c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="stiward" id="stiward" onchange="addCheckfromSelect(this, 'stewards')">
-                    <option value="">Seleccione un Stewards</option>
-                    <?php
-                    #stewards
-                    $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role = 8 AND u.status_user = 'Active' AND e.rank_employee != 7";
-                    $resultado = mysqli_query($con, $consulta);
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-                <div id="stewards" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Stewards Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-        <div class="control wd-5c">
-            <div class="select is-fullwidth">
-                <select class="wd-100 input" name="otros" id="otros" onchange="addCheckfromSelect(this, 'others')">
-                    <option value="">Seleccione un Empleado</option>
-                    <?php
-                    #otros
-                    $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role >= 10 AND u.status_user = 'Active' AND e.rank_employee != 7";
-                    $resultado = mysqli_query($con, $consulta);
-                    while ($row = mysqli_fetch_array($resultado)) { ?>
-                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <div class="mt-20">
-
-                <div id="others" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
-
-                </div>
-                <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Empleados Disponibles</p>
-                <?php  } ?>
-            </div>
-        </div>
-    </div>
-</div>
 <hr>
 <h1 class="title">Menús</h1>
 <br>
@@ -262,7 +130,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Entradas Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Entradas Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -285,7 +153,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Platos Fuertes Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Platos Fuertes Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -308,7 +176,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Postres Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Postres Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -331,24 +199,24 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Menús Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay otros Menús Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
     </div>
 </div>
 <hr>
-<h1 class="title">Productos</h1>
+<h1 class="title">Estaciones</h1>
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-4c">Proteínas </label>
-        <label class="label has-text-left wd-4c">Frutas y Verduras </label>
-        <label class="label has-text-left wd-4c">Bebidas </label>
-        <label class="label has-text-left wd-4c">Otros </label>
+        <!-- <label class="label has-text-left wd-4c">Proteínas </label> -->
+        <label class="label has-text-left wd-3c">Frutas y Verduras </label>
+        <label class="label has-text-left wd-3c">Bebidas </label>
+        <label class="label has-text-left wd-3c">Otros </label>
     </div>
     <div class="field-body forms_row2">
-        <div class="control wd-4c">
+        <!-- <div class="control wd-4c">
             <div class="select is-fullwidth">
                 <select class="wd-100 input" name="carnes" id="carnes" onchange="addCheckfromSelect(this, 'meats', true, true, 'Cantidad' , true, 'product')">
                     <option value="">Seleccione las Carnes</option>
@@ -365,15 +233,15 @@
             </div>
             <div class="mt-20">
                 <div id="meats" class="mt-5 wd-100 is-size-5 has-text-left">
-                    <!-- Aquí se muestra lo seleccionado -->
+                    
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Carnes Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Carnes Disponibles</p>
                 <?php  } ?>
             </div>
-        </div>
-        <div class="control wd-4c">
+        </div> -->
+        <div class="control wd-3c">
             <div class="select is-fullwidth">
                 <select class="wd-100 input" name="frutaveges" id="frutaveges" onchange="addCheckfromSelect(this, 'fruitsveges', true, true, 'Cantidad' , true, 'product')">
                     <option value="">Seleccione las Frutas o Verduras</option>
@@ -392,11 +260,11 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Frutas o Vegetales Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Frutas o Vegetales Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
-        <div class="control wd-4c">
+        <div class="control wd-3c">
             <div class="select is-fullwidth">
                 <select class="wd-100 input" name="bebidas" id="bebidas" onchange="addCheckfromSelect(this, 'drinks', true)">
                     <option value="">Seleccione las bebidas</option>
@@ -415,11 +283,11 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Bebidas Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Bebidas Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
-        <div class="control wd-4c">
+        <div class="control wd-3c">
             <div class="select is-fullwidth">
                 <select class="wd-100 input" name="otrosProductos" id="otrosProductos" onchange="addCheckfromSelect(this, 'otherproducts', true)">
                     <option value="">Seleccione un Producto</option>
@@ -438,7 +306,143 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Productos Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay otros Productos Disponibles</p>
+                <?php  } ?>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<h1 class="title">Empleados</h1>
+<br>
+<div class="field">
+    <div class="forms_row">
+        <label class="label has-text-left wd-5c">Capitanes Disponibles *</label>
+        <label class="label has-text-left wd-5c">Cocineros Disponibles </label>
+        <label class="label has-text-left wd-5c">Saloneros Disponibles *</label>
+        <label class="label has-text-left wd-5c">Stewards </label>
+        <label class="label has-text-left wd-5c">Otros </label>
+
+    </div>
+    <div class="field-body forms_row2">
+        <div class="control wd-5c">
+            <div class="select is-fullwidth">
+                <select class="wd-100 input" name="capitanes" id="capitanes" onchange="addCheckfromSelect(this, 'captains')">
+                    <option value="">Seleccione un Capitán</option>
+                    <?php
+                    #capitanes
+                    $consultaCapitan = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role = 2 AND u.status_user = 'Active' AND e.rank_employee != 7";
+                    $resultado = mysqli_query($con, $consultaCapitan);
+
+                    while ($row = mysqli_fetch_array($resultado)) { ?>
+                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="mt-20">
+                <div id="captains" class="mt-5 wd-100 is-size-5 has-text-left">
+                    <!-- Aquí se muestra lo seleccionado -->
+                </div>
+                <p id="captains_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Capitanes Disponibles</p>
+                <?php  } ?>
+            </div>
+        </div>
+        <div class="control wd-5c">
+            <div class="select is-fullwidth">
+                <select class="wd-100 input" name="cocineros" id="cocineros" onchange="addCheckfromSelect(this, 'chefs')">
+                    <option value="">Seleccione un Chef</option>
+                    <?php
+                    #cocineros
+                    $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user  AND (u.id_role = 3 OR u.id_role = 9) AND u.status_user = 'Active' AND e.rank_employee != 7";
+                    $resultado = mysqli_query($con, $consulta);
+                    while ($row = mysqli_fetch_array($resultado)) { ?>
+                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="mt-20">
+                <div id="chefs" class="mt-5 wd-100 is-size-5 has-text-left">
+                    <!-- Aquí se muestra lo seleccionado -->
+
+                </div>
+                <p id="chefs_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em> No hay Chefs Disponibles</p>
+                <?php  } ?>
+            </div>
+        </div>
+        <div class="control wd-5c">
+            <div class="select is-fullwidth">
+                <select class="wd-100 input" name="saloneros" id="saloneros" onchange="addCheckfromSelect(this, 'waitress')">
+                    <option value="">Seleccione un Salonero</option>
+                    <?php
+                    #saloneros
+                    $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND (u.id_role = 4 OR u.id_role = 5) AND u.status_user = 'Active' AND e.rank_employee != 7";
+                    $resultado = mysqli_query($con, $consulta);
+                    while ($row = mysqli_fetch_array($resultado)) { ?>
+                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="mt-20">
+                <div id="waitress" class="mt-5 wd-100 is-size-5 has-text-left">
+                    <!-- Aquí se muestra lo seleccionado -->
+
+                </div>
+                <p id="waitress_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6"><em class="fas fa-info-circle"></em>No hay Saloneros Disponibles</p>
+                <?php  } ?>
+            </div>
+        </div>
+        <div class="control wd-5c">
+            <div class="select is-fullwidth">
+                <select class="wd-100 input" name="stiward" id="stiward" onchange="addCheckfromSelect(this, 'stewards')">
+                    <option value="">Seleccione un Stewards</option>
+                    <?php
+                    #stewards
+                    $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role = 8 AND u.status_user = 'Active' AND e.rank_employee != 7";
+                    $resultado = mysqli_query($con, $consulta);
+                    while ($row = mysqli_fetch_array($resultado)) { ?>
+                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="mt-20">
+                <div id="stewards" class="mt-5 wd-100 is-size-5 has-text-left">
+                    <!-- Aquí se muestra lo seleccionado -->
+
+                </div>
+                <p id="stewards_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Stewards Disponibles</p>
+                <?php  } ?>
+            </div>
+        </div>
+        <div class="control wd-5c">
+            <div class="select is-fullwidth">
+                <select class="wd-100 input" name="otros" id="otros" onchange="addCheckfromSelect(this, 'others')">
+                    <option value="">Seleccione un Empleado</option>
+                    <?php
+                    #otros
+                    $consulta = "SELECT * FROM users u, employee e WHERE u.dni = e.id_user AND u.id_role >= 10 AND u.status_user = 'Active' AND e.rank_employee != 7";
+                    $resultado = mysqli_query($con, $consulta);
+                    while ($row = mysqli_fetch_array($resultado)) { ?>
+                        <option value="<?php echo $row['id_user']; ?>"><?php echo $row['name'] . " " . $row['lastname']; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div class="mt-20">
+
+                <div id="others" class="mt-5 wd-100 is-size-5 has-text-left">
+                    <!-- Aquí se muestra lo seleccionado -->
+
+                </div>
+                <p id="others_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <?php if ($resultado->num_rows == 0) { ?>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay otros Empleados Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -476,7 +480,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Material Disponible</p>
                 <?php  } ?>
             </div>
         </div>
@@ -499,7 +503,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Material Disponible</p>
                 <?php  } ?>
             </div>
         </div>
@@ -522,7 +526,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Material Disponible</p>
                 <?php  } ?>
             </div>
         </div>
@@ -545,7 +549,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Material Disponible</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Material Disponible</p>
                 <?php  } ?>
             </div>
         </div>
@@ -569,7 +573,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Materiales Disponible</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay otros Materiales Disponible</p>
                 <?php  } ?>
             </div>
         </div>
@@ -605,7 +609,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Proveedor Disponible</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Proveedor Disponible</p>
                 <?php  } ?>
             </div>
         </div>
@@ -628,7 +632,7 @@
 
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Bebidas Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Bebidas Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -650,7 +654,7 @@
                     <!-- Aquí se muestra lo seleccionado -->
                 </div>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay otros Productos Disponibles</p>
+                    <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay otros Productos Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -684,4 +688,6 @@
     </div>
 </div>
 <br>
+<hr>
 <br>
+<h1 class="title">TOTAL: <span id="spantoshow">0</span></h1>
