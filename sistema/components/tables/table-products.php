@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th>Nombre</th>
-            <th>Peso &nbsp;</th>
+            <th>Cantidad &nbsp;</th>
             <th>Tipo</th>
             <th>Precio</th>
             <th>Estado</th>
@@ -10,7 +10,7 @@
             <th>Fecha de Llegada</th>
             <th>Fecha de Expiración</th>
             <th>Proveedor</th>
-            <th>Peso Total</th>
+            <th>Cantidad Total</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -26,17 +26,29 @@
 
                 $editar_product = "<a class='$default_class_anchors' title='Editar' href='edit-data.php?who=products&id=" . $data['id_product'] . "' ><em class='has-text-primary fas fa-edit '></em> Editar</a>";
                 $detalle_product = "";
-                $eliminar_product = $data['del'] == 0 ? "<a class='".$default_class_anchors."' title='Eliminar' href='components/tables/update-data.php?who=products&action=delete&id=" . $data['id_product'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='".$default_class_anchors."' title='Restaurar' href='components/tables/update-data.php?who=products&action=undelete&id=" . $data['id_product'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
+                $eliminar_product = $data['del'] == 0 ? "<a class='" . $default_class_anchors . "' title='Eliminar' href='components/tables/update-data.php?who=products&action=delete&id=" . $data['id_product'] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='" . $default_class_anchors . "' title='Restaurar' href='components/tables/update-data.php?who=products&action=undelete&id=" . $data['id_product'] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
                 $salida = $editar_product . " " . $eliminar_product;
-                $fecha = explode(" " , $data['arrival_date']);
-                $type = $data['type_amount'] == 1 ? " lbs." : " lts.";
-                $total = $data ['peso'] - $data['usado'];
+                $fecha = explode(" ", $data['arrival_date']);
+                switch ($data['type_amount']) {
+                    case 1:
+                        $type = " lbs.";
+                        break;
+                    case 2:
+                        $type = " lts.";
+                        break;
+                    case 3:
+                        $type = " unidades";
+                        break;
+                    default:
+                        $type = " kgs.";
+                }
+                $total = $data['peso'] - $data['usado'];
                 $total_peso = $total == 0 ? "0" . $type : $total . $type;
-                if($total == 0){
+                if ($total == 0) {
                     $total_peso = "0" . $type;
-                } else if($total < 0){
+                } else if ($total < 0) {
                     $total_peso = "Faltan " . abs($total) . $type;
-                } else if ($total == 1){
+                } else if ($total == 1) {
                     $total_peso = $total . substr($type, 0, -2) . ".";
                 }
                 $danger = $total < 0 ? " has-text-danger" : "";
@@ -45,7 +57,7 @@
                     <td> <?= $data["name_product"]; ?></td>
                     <td align="right"> <?= $data["amount"] . $type ?></td>
                     <td> <?= $data["name_type_product"]; ?></td>
-                    <td align="right">$ <?= number_format($data["price"],2); ?></td>
+                    <td align="right">$ <?= number_format($data["price"], 2); ?></td>
                     <td> <?= $data["name_status_product"]; ?> </td>
                     <td> <?= $data["description_product"]; ?></td>
                     <td align="center"> <?= $data['arrival_date']; ?></td>
