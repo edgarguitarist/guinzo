@@ -69,8 +69,8 @@
 <div class="field">
     <div class="forms_row">
         <label class="label has-text-left wd-2c">Correo *</label>
-        <label class="label has-text-left wd-4c">Rol de Empleado *</label>
-        <label class="label has-text-left wd-4c">Tipo de Empleado *</label>
+        <label class="label has-text-left wd-2c">Rol de Empleado *</label>
+        <!-- <label  class="label has-text-left wd-4c">Tipo de Empleado *</label> -->
     </div>
     <div class="field-body forms_row">
         <div class="control wd-2c">
@@ -87,13 +87,13 @@
                 <p id="email_employee_error" class="help is-danger">&nbsp;</p>
             </div>
         </div>
-        <div class="control wd-4c">
+        <div class="control wd-2c">
             <div class="select wd-100">
                 <select id="role_employees" name="role_employees" class="input is-success" onchange="checkSelect(this)" required>
                     <option value="">Seleccione el Tipo</option>
                     <?php
                     $employee_role = $data_result[$who]['role'] ?? '';
-                    $roles = [1 => 'Administrador', 2 => 'Capitán', 3 => 'Chef', 9 => 'Cocinero', 4 => 'Salonero Fijo', 5 => 'Salonero Eventual', 8 => 'Steward', 10 => 'Bartender'];
+                    $roles = [ 2 => 'Capitán', 3 => 'Chef', 9 => 'Cocinero', 4 => 'Salonero Fijo', 5 => 'Salonero Eventual', 8 => 'Steward', 10 => 'Bartender'];
                     $defaultrole = $employee_role != '' ? $employee_role : 5;
                     foreach ($roles as $id_role_employee => $role_employee) {
                         if ($id_role_employee == $defaultrole) {
@@ -107,7 +107,7 @@
             </div>
             <p id="role_employees_error" class="help is-danger">&nbsp;</p>
         </div>
-        <div class="control wd-4c">
+        <div style="display: none;" class="control wd-4c">
             <div class="select wd-100">
                 <select id="type_employees" name="type_employees" class="input is-success" onchange="checkSelect(this)" required>
                     <option value="">Seleccione el Tipo</option>
