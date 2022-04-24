@@ -583,11 +583,11 @@ const checkRequiredWorkers = () => {
       required: true,
     },
     {
-      name: "others",
+      name: "Otros",
       singular: "otros",
       id: "others",
       min: Math.ceil(cantidad / 10),
-      required: true,
+      required: false,
     },
   ];
   let selected, mensaje;
@@ -597,9 +597,8 @@ const checkRequiredWorkers = () => {
       selected = $(`#${workers[i].id}`).find("*").length / 3;
       
       if (selected < workers[i].min && workers[i].required) {
-        mensaje = workers[i].min - selected > 1 ? `Faltan ${workers[i].min - selected} ${workers[i].name}` : `Falta ${workers[i].min - selected} ${workers[i].singular}`;
-        $(`#${workers[i].id}_error`).text(mensaje);
-        return false;
+        mensaje = workers[i].min - selected > 1 ? `<i class="fas fa-info-circle"></i> Faltan ${workers[i].min - selected} ${workers[i].name}` : `<em class="fas fa-info-circle"></em> Falta ${workers[i].min - selected} ${workers[i].singular}`;
+        $(`#${workers[i].id}_error`).html(mensaje);
       }else{
         $(`#${workers[i].id}_error`).text("");
       }

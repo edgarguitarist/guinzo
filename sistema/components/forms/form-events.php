@@ -343,9 +343,9 @@
                 <div id="captains" class="mt-5 wd-100 is-size-5 has-text-left">
                     <!-- Aquí se muestra lo seleccionado -->
                 </div>
-                <p id="captains_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <p id="captains_error" class="has-text-left b-bolder has-text-info is-size-6"></p>
                 <?php if ($resultado->num_rows == 0) { ?>
-                    <p class="has-text-left b-bolder has-text-danger is-size-6">No hay Capitanes Disponibles</p>
+                    <p class="has-text-left b-bolder has-text-info is-size-6">No hay Capitanes Disponibles</p>
                 <?php  } ?>
             </div>
         </div>
@@ -367,7 +367,7 @@
                     <!-- Aquí se muestra lo seleccionado -->
 
                 </div>
-                <p id="chefs_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <p id="chefs_error" class="has-text-left b-bolder has-text-info is-size-6"></p>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em> No hay Chefs Disponibles</p>
                 <?php  } ?>
@@ -391,7 +391,7 @@
                     <!-- Aquí se muestra lo seleccionado -->
 
                 </div>
-                <p id="waitress_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <p id="waitress_error" class="has-text-left b-bolder has-text-info is-size-6"></p>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-danger is-size-6"><em class="fas fa-info-circle"></em>No hay Saloneros Disponibles</p>
                 <?php  } ?>
@@ -415,7 +415,7 @@
                     <!-- Aquí se muestra lo seleccionado -->
 
                 </div>
-                <p id="stewards_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <p id="stewards_error" class="has-text-left b-bolder has-text-info is-size-6"></p>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay Stewards Disponibles</p>
                 <?php  } ?>
@@ -440,7 +440,7 @@
                     <!-- Aquí se muestra lo seleccionado -->
 
                 </div>
-                <p id="others_error" class="has-text-left b-bolder has-text-danger is-size-6"></p>
+                <p id="others_error" class="has-text-left b-bolder has-text-info is-size-6"></p>
                 <?php if ($resultado->num_rows == 0) { ?>
                     <p class="wd-100 has-text-left b-bolder has-text-info is-size-6"><em class="fas fa-info-circle"></em>No hay otros Empleados Disponibles</p>
                 <?php  } ?>
