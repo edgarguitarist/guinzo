@@ -566,7 +566,7 @@ const checkRequiredWorkers = () => {
       singular: "chef",
       id: "chefs",
       min: Math.ceil(cantidad / 30),
-      required: false,
+      required: true,
     },
     {
       name: "saloneros",
@@ -580,7 +580,14 @@ const checkRequiredWorkers = () => {
       singular: "steward",
       id: "stewards",
       min: Math.ceil(cantidad / 40),
-      required: false,
+      required: true,
+    },
+    {
+      name: "others",
+      singular: "otros",
+      id: "others",
+      min: Math.ceil(cantidad / 10),
+      required: true,
     },
   ];
   let selected, mensaje;
@@ -592,11 +599,9 @@ const checkRequiredWorkers = () => {
       if (selected < workers[i].min && workers[i].required) {
         mensaje = workers[i].min - selected > 1 ? `Faltan ${workers[i].min - selected} ${workers[i].name}` : `Falta ${workers[i].min - selected} ${workers[i].singular}`;
         $(`#${workers[i].id}_error`).text(mensaje);
-        submit.disabled = true;
         return false;
       }else{
         $(`#${workers[i].id}_error`).text("");
-        submit.disabled = false;
       }
     }
   }

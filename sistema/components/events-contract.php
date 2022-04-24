@@ -6,6 +6,7 @@
                     <div id="cabecera" class="mv-50">
                         <img class="addButton" style="width: 150px; margin-top: -25px !important; margin-left: 2% !important;" src="images/logos/logo-bockcao-black.png" alt="logo">
                         <h1 id="titleContrato" class="title is-4">CONTRATACIÓN DE SERVICIOS DE ORGANIZACIÓN DE<br>EVENTOS y BANQUETES<br>BOCKCAO EVENT DESIGNERS</h1>
+                        <span class="addButtonInversed cuadro">N. : <?= $id_event ?></span>
                     </div>
 
                     <div id="estipulaciones">
@@ -57,6 +58,7 @@
 
                     <div id="clausulas">
                         <h1 class="title is-4 has-text-centered">Clausulas</h1>
+                        
                         <div class="clausula">
                             <p class="has-text-justified">
                                 <span class="b-bolder">PRIMERA.-</span>
