@@ -317,12 +317,11 @@
 <br>
 <div class="field">
     <div class="forms_row">
-        <label class="label has-text-left wd-5c">Capitanes Disponibles *</label>
+        <label class="label has-text-left wd-5c">Capitanes Disponibles </label>
         <label class="label has-text-left wd-5c">Cocineros Disponibles </label>
-        <label class="label has-text-left wd-5c">Saloneros Disponibles *</label>
+        <label class="label has-text-left wd-5c">Saloneros Disponibles </label>
         <label class="label has-text-left wd-5c">Stewards </label>
         <label class="label has-text-left wd-5c">Otros </label>
-
     </div>
     <div class="field-body forms_row2">
         <div class="control wd-5c">
