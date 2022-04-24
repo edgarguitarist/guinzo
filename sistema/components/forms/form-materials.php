@@ -5,7 +5,7 @@
         <label class="label has-text-left wd-10">Cantidad *</label>
         <label class="label has-text-left wd-10">Precio *</label>
         <label class="label has-text-left wd-4c">Tipo *</label>
-        <label class="label has-text-left wd-4c">Fecha de Expiración *</label>
+        <label class="label has-text-left wd-4c">Fecha de Adquisición *</label>
     </div>
     <div class="field-body forms_row">
         <div class="control wd-4c">
