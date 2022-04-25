@@ -3,6 +3,24 @@
 <?php
 $initial_date = $_GET['initial_date'] ?? null;
 $final_date = $_GET['final_date'] ?? null;
+$type = $_GET['type'] ?? 'events';
+$types = [
+    'events' => [
+        'title' => 'Reporte',
+        'form' => 'table-report-events.php',
+        'who' => 'events',
+    ],
+    'customer' => [
+        'title' => 'Reporte Cliente',
+        'form' => 'table-report-customers.php',
+        'who' => 'customer',
+    ],
+    'provider' => [
+        'title' => 'Reporte Proveedor',
+        'form' => 'table-report-providers.php',
+        'who' => 'provider',
+    ]
+];
 ?>
 
 <head>
@@ -27,20 +45,13 @@ $final_date = $_GET['final_date'] ?? null;
         </div>
 
         <div class="buscador">
-                <?php include "components/buscador.php" ?>  
+            <?php include "components/buscador.php" ?>
         </div>
 
         <div class="wd-90">
-            <?php include "components/tables/table-report-events.php" ?>
+            <?php include "components/tables/" . $types[$type]['form'] ?>
         </div>
-        <br><br><br>
-        <div class="wd-90">
-            <h1 class="title">
-                GANANCIA TOTAL: 
-                <span id="sumatoria"></span>
-            </h1>    
-        </div>
-        <hr><br><br><br>
+        
     </div>
 </body>
 

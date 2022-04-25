@@ -105,3 +105,11 @@
 <?php   }
         $foot = $result > 8 ? "" : "footer2";
 ?>
+<br><br><br>
+<div class="wd-90">
+    <h1 class="title">
+        GANANCIA TOTAL:
+        <span id="sumatoria"></span>
+    </h1>
+</div>
+<hr><br><br><br>
