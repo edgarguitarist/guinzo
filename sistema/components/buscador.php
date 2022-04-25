@@ -4,20 +4,14 @@ $consultas = [
     'events' => [
         'label' => 'Evento',
         'value' => 'table-report-events.php',
-        'input' => 'events',
-        'query' => ''
     ],
     'customer' => [
         'label' => 'Cliente',
         'value' => 'table-report-customers.php',
-        'input' => '',
-        'query' => ''
     ],
     'provider' => [
         'label' => 'Proveedores',
         'value' => 'table-report-providers.php',
-        'input' => 'provider',
-        'query' => ''
     ],
 ];
 ?>
@@ -42,22 +36,22 @@ $consultas = [
             <?php
             if ($type === 'customer') {
             ?>
-            <div class="select <?= $wdcontrol; ?>">
-                <select onmouseover="loadSelects(this, 'users' , '<?= $customer?>', 'id_role = 6')" onchange="checkSelect(this, false)" id="customer" name="customer" class="input" required autofocus>
-                    <option value="">Seleccione una opción</option>
-                </select>
-            </div>                
+                <div class="select <?= $wdcontrol; ?>">
+                    <select onmouseover="loadSelects(this, 'users' , '<?= $customer ?>', 'id_role = 6')" onchange="checkSelect(this, false)" id="customer" name="customer" class="input" required autofocus>
+                        <option value="">Seleccione una opción</option>
+                    </select>
+                </div>
             <?php
             }
             if ($type === 'provider') {
-                ?>
+            ?>
                 <div class="select <?= $wdcontrol; ?>">
-                    <select onmouseover="loadSelects(this, 'providers' , '<?= $provider?>', '')" onchange="checkSelect(this, false)" id="customer" name="customer" class="input" required autofocus>
+                    <select onmouseover="loadSelects(this, 'providers' , '<?= $provider ?>', '')" onchange="checkSelect(this, false)" id="customer" name="customer" class="input" required autofocus>
                         <option value="">Seleccione una opción</option>
                     </select>
-                </div>                
-                <?php
-                }
+                </div>
+            <?php
+            }
             ?>
             <div class="control <?= $wdcontrol; ?>">
                 <input max="<?= $hoy ?>" class="input" type="date" name="initial_date" value="<?= $initial_date ?>" required>

@@ -21,15 +21,20 @@
                 $eliminar_menu = $data['status'] == 1 ? "<a class='$default_class_anchors' title='Eliminar' href='components/tables/update-data.php?who=types&type=$type&action=delete&id=" . $data[0] . "' ><em class='has-text-danger fas fa-user-times'></em> Eliminar </a>" : "<a class='$default_class_anchors' title='Restaurar' href='components/tables/update-data.php?who=types&type=$type&action=undelete&id=" . $data[0] . "' ><em class='has-text-info fas fa-trash-restore'></em> Restaurar </a>";
                 $salida = $editar_menu . " " . $eliminar_menu;
                 $estado = $data[3] == 1 ? "<span class='b-bolder has-text-info'>Activo</span>" : "<span class='b-bolder has-text-danger'>Inactivo</span>";
-                $salida = $type == "role" && $data[0] == 1 || $data[0] == 7 ? "" : $salida; 
+                $salida = $type == "role" && $data[0] == 1 || $data[0] == 7 ? "" : $salida;
+                if ($type == "role" && $data[0] == 1 || $data[0] == 7) {
+                } else {
+
+
         ?>
-                <tr>
-                    <td style="width:20%;"> <?= $data[1]; ?></td>
-                    <td style="width:50%;"> <?= $data[2]; ?></td>
-                    <td style="width:10%;" align="center"> <?= $estado; ?></td>
-                    <td style="width:20%;" align="center" class="wd-fit-content"> <?= $salida  ?> </td>
-                </tr>
+                    <tr>
+                        <td style="width:20%;"> <?= $data[1]; ?></td>
+                        <td style="width:50%;"> <?= $data[2]; ?></td>
+                        <td style="width:10%;" align="center"> <?= $estado; ?></td>
+                        <td style="width:20%;" align="center" class="wd-fit-content"> <?= $salida  ?> </td>
+                    </tr>
             <?php
+                }
             }
             ?>
     </tbody>
