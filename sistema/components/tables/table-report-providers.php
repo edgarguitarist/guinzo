@@ -76,7 +76,7 @@
 <br><br><br>
 <div class="wd-90">
     <h1 class="title">
-        GANANCIA TOTAL:
+        TOTAL:
         <span id="sumatoria"></span>
     </h1>
 </div>
