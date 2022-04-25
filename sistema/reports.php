@@ -21,6 +21,9 @@ $types = [
         'who' => 'provider',
     ]
 ];
+if(!isset($types[$type])){
+    header('Location: index.php');
+}
 ?>
 
 <head>
