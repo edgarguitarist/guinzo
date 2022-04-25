@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
-$initial_date = $_GET['initial_date'] ?? null;
-$final_date = $_GET['final_date'] ?? null;
+$initial_date = $_GET['initial_date'] ?? '';
+$final_date = $_GET['final_date'] ?? '';
+$customer = $_GET['customer'] ?? '';
+$provider = $_GET['provider'] ?? '';
 $type = $_GET['type'] ?? 'events';
 $types = [
     'events' => [
@@ -47,10 +49,10 @@ if (!isset($types[$type])) {
             <h1 class="has-text-centered title is-cookie">Reporte de <?= $types[$type]['title'] ?></h1>
         </div>
 
-        <div class="buscador">
+        <div class="buscador2">
             <?php include "components/buscador.php" ?>
         </div>
-
+<br>
         <div class="wd-90">
             <?php include "components/tables/" . $types[$type]['form'] ?>
         </div>

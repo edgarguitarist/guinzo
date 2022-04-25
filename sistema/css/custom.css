@@ -831,6 +831,12 @@ svg {
   margin: -4.5% 0px 0px 65.5%;
   width: 30%;
 }
+.buscador2 {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 5%;
+}
 
 .has-text-no-decoration {
   text-decoration: none !important;
