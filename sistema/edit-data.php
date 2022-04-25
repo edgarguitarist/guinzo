@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html class="no-overflow-x" lang="es">
-<?php
-include "includes/dbcon.php";
-if(isset($_GET['type'])){
-    include "components/types.php";
-}
-require_once "components/forms/get-data.php";
-?>
-
+<html lang="es">
 
 <head>
+    <link rel="icon" type="image/png" href="images/logos/cropped-logo_bockcao-black-270x270.png" />
     <?php
+    require_once "includes/dbcon.php";
+    if (isset($_GET['type'])) {
+        require_once "components/types.php";
+    }
+    require_once "components/forms/get-data.php";
     $site = $who != '' ? $data_who[$who]["title"] : 'Editar Datos';
     $ssite = substr($site, 0, -1);
-    include "components/head.php";
+    require_once "components/head.php";
     ?>
     <!-- Datatables CSS -->
     <link rel="stylesheet" href="css/tables.css">

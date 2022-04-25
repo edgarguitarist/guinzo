@@ -97,7 +97,6 @@ $data_who = [
     ],
 ];
 $query = $data_who[$who]['query'];
-echo $query;
 $result = mysqli_query($con, $query);
 $num_rows = mysqli_num_rows($result);
 if ($num_rows != 1) {
