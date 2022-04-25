@@ -14,7 +14,7 @@
             },
             drawCallback: function(settings) {
                 var api = this.api();
-                var sumatoria = api.column(11, {
+                var sumatoria = api.column(columnPrecio, {
                         page: 'current'
                     }).data().sum()
                 $(api.table().footer()).html(

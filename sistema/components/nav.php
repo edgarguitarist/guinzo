@@ -127,6 +127,9 @@ $a_dropdown = "mobile-white navbar-item has-text-weight-medium has-text-black is
                     <a class="<?= $a_dropdown ; ?>" href="reports.php?type=customer">
                         <em class="fas fa-table"></em>Reporte Cliente
                     </a>
+                    <a class="<?= $a_dropdown ; ?>" href="reports.php?type=provider">
+                        <em class="fas fa-table"></em>Reporte Proveedores
+                    </a>
                 </div>
             </div>
             <a class="<?= $a_class; ?>" href="home-page.php">

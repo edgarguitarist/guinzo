@@ -46,7 +46,7 @@ $consultas = [
             if ($type === 'provider') {
             ?>
                 <div class="select <?= $wdcontrol; ?>">
-                    <select onmouseover="loadSelects(this, 'providers' , '<?= $provider ?>', '')" onchange="checkSelect(this, false)" id="customer" name="customer" class="input" required autofocus>
+                    <select onmouseover="loadSelects(this, 'providers' , '<?= $provider ?>', '')" onchange="checkSelect(this, false)" id="provider" name="provider" class="input" required autofocus>
                         <option value="">Seleccione una opción</option>
                     </select>
                 </div>

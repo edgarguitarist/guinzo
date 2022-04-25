@@ -113,3 +113,6 @@
     </h1>
 </div>
 <hr><br><br><br>
+<script>
+    var columnPrecio = 11;
+</script>
