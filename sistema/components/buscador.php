@@ -63,7 +63,7 @@ $consultas = [
                 <input max="<?= $hoy ?>" class="input" type="date" name="initial_date" value="<?= $initial_date ?>" required>
             </div>
             <div class="control <?= $wdcontrol; ?>">
-                <input max="<?= $hoy ?>" class="input" type="date" name="final_date" value="<?= $final_date ?>" required>
+                <input max="" class="input" type="date" name="final_date" value="<?= $final_date ?>" required>
             </div>
             <div class="control has-text-right <?= $wdcontrol; ?>">
                 <button class="button is-primary" type="submit">Filtrar por Fecha</button>
