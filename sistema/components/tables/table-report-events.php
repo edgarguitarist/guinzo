@@ -37,7 +37,7 @@
                 if ($query_employees) {
                     $result_employees = mysqli_num_rows($query_employees);
                     $costo = mysqli_fetch_array($query_employees);
-                    $costo = $costo['COSTO'];
+                    $costo = $costo['COSTO'] ?? 0;
                 }
 
                 $providers = "SELECT *, (SELECT SUM(price_event_third) FROM events_thirds WHERE id_event = $id_event) AS PRECIO FROM events_thirds WHERE id_event = $id_event";
@@ -45,7 +45,7 @@
                 if ($query_providers) {
                     $result_providers = mysqli_num_rows($query_providers);
                     $precio_thirds = mysqli_fetch_array($query_providers);
-                    $precio_thirds = $precio_thirds['PRECIO'];
+                    $precio_thirds = $precio_thirds['PRECIO'] ?? 0;
                 }
 
                 $products = "SELECT * FROM events_products WHERE id_event = $id_event";

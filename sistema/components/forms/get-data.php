@@ -4,18 +4,19 @@ $id   = $_GET['id'] ?? '';
 $info = $_GET['info'] ?? '';
 $type = $type ?? '';
 $table = $table ?? '';
-$campo = "id_" . $table;
-$con = $con ?? false;
-if(!$con){
-    include "../../includes/dbcon.php";
-}
+$campo = $table !== "roles" ? "id_" . $table : "id_role";
+$name = $table !== "roles" ? "name_" . $table : "name_role";
+$description = $table !== "roles" ? "description_" . $table : "description_role";
 
-if($info === 'update-photo') {
+require_once "includes/dbcon.php";
+
+
+if ($info === 'update-photo') {
     header("Location: index.php?info=update-photo");
     exit();
 }
 
-if($who === '' && $id === '' ){
+if ($who === '' && $id === '') {
     header("Location: index.php?info=error");
     exit();
 }
@@ -87,7 +88,7 @@ $data_who = [
     ],
     "types" => [
         "translate" => "Tipo",
-        "title" => "Editar Tipo de ". $name_type,
+        "title" => "Editar Tipo de " . $name_type,
         "form" => "form-types.php",
         "who" => "types",
         "query" => "SELECT * FROM $table WHERE $campo = '$id'",
@@ -96,6 +97,7 @@ $data_who = [
     ],
 ];
 $query = $data_who[$who]['query'];
+echo $query;
 $result = mysqli_query($con, $query);
 $num_rows = mysqli_num_rows($result);
 if ($num_rows != 1) {
@@ -181,10 +183,10 @@ $data_result = [
         "name_role" => $row['name_role'] ?? '',
     ],
     "types" => [
-        "id" => $row["id_".$table] ?? '',
-        "name" => $row["name_".$table] ?? '',
-        "description" => $row["description_".$table] ?? '',
-        "status" => $row["status"] ?? '',
+        "id" => $row[$campo] ?? '',
+        "name" => $row[$name] ?? '',
+        "description" => $row[$description] ?? '',
+        "status" => $row['status'] ?? '',
     ],
 ];
 

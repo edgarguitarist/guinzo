@@ -164,10 +164,10 @@ if (isset($_POST['action']) && isset($_POST['who'])) {
         $type = $_POST['type'];
         $name = $_POST['name_type'];
         $description = $_POST['description_type'];
-        $campo1 = "id_" . $table;
-        $campo2 = "name_" . $table;
-        $campo3 = "description_" . $table;
-        
+        $campo1 = $table !== "roles" ? "id_" . $table : "id_role";
+        $campo2 = $table !== "roles" ? "name_" . $table : "name_role";
+        $campo3 = $table !== "roles" ? "description_" . $table : "description_role";
+
         $consultas = [
             "add" => "INSERT INTO $table ($campo2, $campo3) VALUES ('$name', '$description')",
             "add2" => "",

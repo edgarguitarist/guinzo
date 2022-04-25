@@ -3,11 +3,11 @@
 
 <head>
     <?php
-    include 'components/types.php';
+    require_once 'components/types.php';
     $site = "Tipo de " . $name_type;
     $ssite = "Tipo";
     include "components/head.php";
-    include "includes/dbcon.php";
+    require_once "includes/dbcon.php";
     ?>
     <!-- Datatables -->
     <link rel="stylesheet" href="css/tables.css">

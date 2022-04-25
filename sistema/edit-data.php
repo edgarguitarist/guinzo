@@ -5,7 +5,7 @@ include "includes/dbcon.php";
 if(isset($_GET['type'])){
     include "components/types.php";
 }
-include "components/forms/get-data.php";
+require_once "components/forms/get-data.php";
 ?>
 
 
