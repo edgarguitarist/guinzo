@@ -6,22 +6,22 @@ $final_date = $_GET['final_date'] ?? null;
 $type = $_GET['type'] ?? 'events';
 $types = [
     'events' => [
-        'title' => 'Reporte',
+        'title' => 'Eventos',
         'form' => 'table-report-events.php',
         'who' => 'events',
     ],
     'customer' => [
-        'title' => 'Reporte Cliente',
+        'title' => 'Cliente',
         'form' => 'table-report-customers.php',
         'who' => 'customer',
     ],
     'provider' => [
-        'title' => 'Reporte Proveedor',
+        'title' => 'Proveedores',
         'form' => 'table-report-providers.php',
         'who' => 'provider',
     ]
 ];
-if(!isset($types[$type])){
+if (!isset($types[$type])) {
     header('Location: index.php');
 }
 ?>
@@ -44,7 +44,7 @@ if(!isset($types[$type])){
 
     <div class="is-center wd-100 top-nav">
         <div>
-            <h1 class="has-text-centered title is-cookie">Reporte</h1>
+            <h1 class="has-text-centered title is-cookie">Reporte de <?= $types[$type]['title'] ?></h1>
         </div>
 
         <div class="buscador">
@@ -54,7 +54,7 @@ if(!isset($types[$type])){
         <div class="wd-90">
             <?php include "components/tables/" . $types[$type]['form'] ?>
         </div>
-        
+
     </div>
 </body>
 
